@@ -1,2 +1,8 @@
 ====== OpenNIC Core Team ======
-  * [[user:fusl]]
+  * [[user:fusl|Fusl (Katie Holly)]]
+  * [julian] (Julian DeMarchi)
+  * brianko (Brian Koontz)
+  * Shdwdrgn (Jeff Taylor)
+  * stephan48 (Stephan Jauernick)
+  * purrdeta (Alex Hanselka)
+  * phschafft (Philipp Schafft)
