@@ -1,0 +1,18 @@
+====== .pirate TLD ======
+:!: Copied from http://dotpirate.org/
+
+===== Features =====
+.Pirate domains do more than just give you a sexy TLD they protect your freedom and your users ability to find you.
+<columns 100% 25% 25% 25% 25%>
+==== Secure ====
+Don't let your domain get seized by some government. .Pirate domains are secure and decenteralized, you don't have to worry!
+<newcolumn>
+==== Simple ====
+We manage your DNS if you want, or you can use your own nameservers and do it remotely. It's all free.
+<newcolumn>
+==== Private ====
+While we have a whois database, we strip your name and email from it. People have to use our website and fill out a CAPCHA to send you an email (which is processed through our servers, so your address is private).
+<newcolumn>
+==== Awesome ====
+The .Pirate space is full of awesome people, by getting a .Pirate domain name you are showing your users and the rest of the world that you are a cool person. Men and women will be more attracted to you.
+</columns>

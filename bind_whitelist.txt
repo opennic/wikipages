@@ -1,0 +1,171 @@
+====== BIND Whitelist ======
+BIND-whitelist is a version-specific patch for BIND that implements whitelist functionality. It uses a very fast Berkeley database backend to track and whitelist IPs (both IPv4 and IPv6) that routinely query OpenNIC TLDs. So long as a specific IP queries for OpenNIC TLDs within the TTL (time to live, default 1 month) value, the IP will remain in the whitelist and be permitted to query any TLD (OpenNIC, ICANN, etc.) IPs that are not in the whitelist will have all queries returned as REFUSED. This typically takes less than 1 ms to process.
+
+BIND-whitelist distributions are version-specific. Please ensure you are using a BIND-whitelist distribution that matches the version number of BIND that you are compiling against. Each BIND-whitelist distribution contains a detailed README that explains how to install and test. Below is a typical README; please note that READMEs may differ depending upon the BIND version.
+
+Currently, the OpenNIC Tier 2 server at 142.4.204.111 (more on Tier2) is running BIND-whitelist; you can easily test against this server provided you have never accessed an OpenNIC TLD via the IP you're testing with. Simply attempt to access a non-OpenNIC domain:
+
+  dig @142.4.204.111 www.google.com
+
+The request should be REFUSED. Now, access an OpenNIC domain:
+
+  dig @142.4.204.111 www.geek
+
+This should resolve with a valid ANSWER section. Now you should be able to repeat the first dig command and have the query return with a valid answer.
+
+=== BIND-whitelist-9.3.4-P1.README ===
+  $Id: BIND-whitelist.README,v 1.1 2011/08/13 23:50:25 root Exp root $
+  
+  BIND-whitelist (for BIND 9.3.4-P1)
+  
+  Copyright (c) 2011, Brian Koontz <brian@opennicproject.org>
+  
+  This file is part of BIND-whitelist.
+  
+  	BIND-whitelist is free software: you can redistribute it and/or modify
+  	it under the terms of the GNU General Public License as published by
+  	the Free Software Foundation, either version 3 of the License, or
+  	(at your option) any later version.
+  
+  	BIND-whitelist is distributed in the hope that it will be useful,
+  	but WITHOUT ANY WARRANTY; without even the implied warranty of
+  	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  	GNU General Public License for more details.
+  
+  	You should have received a copy of the GNU General Public License
+  	along with BIND-whitelist.  If not, see <http://www.gnu.org/licenses/>.
+  
+  
+  This README belongs to a collection of files and patches that
+  implements an IP-based whitelist for BIND.  These files are
+  version-specific and will most likely not work with versions of
+  BIND other than that version specified at the top of this file.
+  
+  WHAT IT DOES
+  
+  BIND-whitelist implements an IP-based whitelist at the query
+  level for the named daemon.  In this implementation, IPs that
+  query any of the existing OpenNIC TLDs are added to the
+  whitelist, along with the time of the query.  IPs that are in the
+  whitelist are permitted to query any TLD (OpenNIC or ICANN).  IPs
+  not in the whitelist must query an OpenNIC TLD first before
+  subsequent ICANN TLDs can be queried.  If an IP is not the
+  whitelist, queries against ICANN TLDs are returned as REFUSED. 
+  
+  IPs are removed from the whitelist after a specified timeout
+  period (default is 1 month). Each time an OpenNIC TLD is queried,
+  the timestamp is updated and the timeout period "resets."
+  
+  PREREQUISITES
+  
+  In addition to the specific version of BIND specified above, this
+  distribution requires Berkeley DB 4.  The BDB 4 utilities
+  (especially db_stat and db_dump) are not required, but are very
+  useful for monitoring whitelist activity.
+  
+  INSTALLATION
+  
+  The BIND source tree for the version specified above needs to be
+  downloaded from http://www.isc.org/software.
+  
+  Prior to compiling BIND per the instructions included in the
+  distribution, unarchive the BIND-whitelist-<version> distribution
+  in the top-level BIND source tree directory.  The
+  BIND-whitelist-<version>.patch file must be applied to the source
+  tree.  Make sure the patch file is in the top-level directory,
+  the execute the patch utility:
+  
+  patch -p0 < BIND-whitelist-<version>.patch
+  
+  After applying the patch, open bin/named/whitelist.h and modify
+  the DATABASE and TTL (time-to-live) defines as appropriate.  Keep
+  in mind that if you're running named in a chroot jail (using the
+  named -t option), the DATABASE path should reflect the path
+  within the chroot environment.
+  
+  Compile and install BIND per the instructions provided in the
+  distribution.  (If you are using the source tree for an existing
+  BIND installation, you can change to the bin/named directory and
+  run "make" to rebuild the named daemon.  You will need to
+  manually copy this to wherever named is currently installed.)
+  
+  The whitelist database must be created and initialized prior to
+  use.  
+  
+  Compile the create_db.c file using the following command:
+  
+  gcc -O2 create_db.c -o create_db -ldb
+  
+  You should now have a file called whitelist.db.  Use the
+  following command to view the contents:
+  
+  db_dump -p ./whitelist.db
+  
+  You should see output similar to the following:
+  
+  VERSION=3
+  format=print
+  type=btree
+  db_pagesize=4096
+  HEADER=END
+   bbs
+   
+   bzh
+   
+   dyn
+   
+   free
+   
+   fur
+   
+   geek
+   
+   gopher
+   
+   indy
+   
+   ing
+   
+   micro
+   
+   null
+   
+   oss
+   
+   parody
+   
+  DATA=END
+  
+  If the output matches the above, copy the whitelist.db file to
+  whatever you set DATABASE to in whitelist.h (keep in mind that
+  you will need to prepend your chroot path to this value if you
+  are running named in a chroot jail).
+  
+  Stop and restart named.  Typically:
+  
+  /etc/init.d/named stop
+  /etc/init.d/named start
+  
+  TESTING THE INSTALLATION
+  
+  Test by trying to resolve an ICANN TLD:
+  
+  dig @<your nameserver IP> www.google.com
+  
+  The return value should be REFUSED.
+  
+  Now attempt to resolve an OpenNIC TLD:
+  
+  dig @<your nameserver IP> www.geek
+  
+  You should receive a valid ANSWER section back.
+  
+  Now retest with another ICANN TLD.  It should now resolve
+  normally.
+  
+  You can routinely monitor the contents of the whitelist database
+  by using db_dump or, alternatively, db_stat.  Typically:
+  
+  db_dump -p /var/named/chroot/var/named/whitelist.db
+  
+  db_stat -d /var/named/chroot/var/named/whitelist.db

@@ -1,0 +1,28 @@
+====== .dyn TLD ======
+===== Charter =====
+Domains registered in .dyn serve as dynamic DNS pointers. These domains are restricted in functionality and require frequent validation to remain active. Unused domains will be removed after 28 days.
+
+.dyn is a TLD that is designed to resolve host names to dynamic Internet Protocol addresses, which usually are a result of the respective Internet Service Provider. Non-dynamic IP addresses also known as static IP addresses may be used.
+
+===== Contact =====
+  * Administrator - JeffTaylor
+  * Hostmaster - hostmaster@opennic.oss
+  * Abuse - abuse@opennic.oss
+  * Web Site - http://www.oss/
+  * IRC - #opennic @ freenode (Shdwdrgn)
+
+===== Domain Registration =====
+  * Web Site - http://reg.dyn/
+
+===== Configuring DynDNS =====
+The principle behind dynamic DNS is to give you a fixed domain name that you can use to follow a system which does not have a static IP address. In order for your address to remain valid, you must periodically refresh your information.
+
+After registering a .dyn domain, you will be provided with a URI for updating the IP address of this domain. You need to load this URI from the computer or server that you wish to track. If your computer has a browser available, you can simply load the address and your IP will be recorded -- however for proper operation you want to automate this process. On unix-style systems, you have wget and curl available from the command line. Windows also has winwget available. You can set up a small script and schedule it to load this URI periodically, and it is recommended that you also run it at boot time. How often you run the script depends on your situation. If your address changes randomly through the day, you might want to run the script every 10 minutes. If your address rarely changes, you could run the script once a day.
+
+=== Example Script ===
+  #!/bin/sh
+  wget -qO- "http://api.opennicproject.org/ddns/example.dyn?user=myUserName&auth=myAuthCode" > /dev/null
+
+Replace the URI with the exact line you are given for your domain. This script loads the URI but does not save any output.
+
+Domains registered under .dyn are required to be used or they will expire. Refreshing your IP by calling the URI will automatically renew your domain. If you do not refresh your address or manually renew your domain within 28 days, the domain will be deleted. Even if your IP address does not change often, you should refresh it at least once a day to keep your domain active.

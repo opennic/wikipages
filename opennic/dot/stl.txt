@@ -1,0 +1,23 @@
+====== .stl TLD ======
+===== Revision History =====
+This TLD was proposed January 25, 2015. It was approved by OpenNIC membership Feb 11, 2015.
+
+===== Charter =====
+The .stl TLD is to be used by individuals and groups (both commercial and non-commercial) to promote themselves and their connection to the St. Louis, Missouri region. Use by entities outside this geographical region, while not prohibited, may be subject to certain restrictions.
+
+===== Policies =====
+In keeping with the philosophy that the Internet should be a free and open space, and that creating the infrastructure of the Internet itself should not be a money-making venture, the OpenNIC Project was started to provide a free alternative means for registering domain names. Likewise, registration of domains on the .stl TLD will always be provided free of charge.
+
+The .stl TLD adheres to the OpenNIC policy that the registry be run by its members. It is not required that registrants be members of OpenNIC, but, by registering a domain, registrants agree to be bound by OpenNIC policies and decisions.
+
+Sending unsolicited email (spamming), promoting cracking/warez, or purposefully disrupting the network from a .stl domain is grounds for domain removal.
+
+Names in the .stl TLD are provided on a first-come, first-serve, basis with certain names reserved for TLD operation.
+
+===== Domain Disputes =====
+An existing domain may be disputed by the holder of a trademark registered before the domain in question was registered. Disputes must first be brought to both the .stl Hostmaster and the registrant of the disputed domain. The registrant will be contacted by the Hostmaster, and if the registrant does not reply within 30 days, the domain will be released. If circumstances of the dispute are unclear, the matter will be referred to a vote by the .stl membership pool. Since legal issues are involved, the .stl TLD will abide by the decisions of a court of competent jurisdiction. Obtaining proof of a trademark claim or seeking such a court decision will be the sole responsibility of the entity bringing the dispute.
+
+===== Resources =====
+  * Domain registration: http://opennic.stl
+  * Hostmaster: Jerry Pipes (hostmaster@opennic.stl)
+  * Abuse: abuse@opennic.stl

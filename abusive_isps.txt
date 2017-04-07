@@ -1,0 +1,36 @@
+====== Abusive ISPs ======
+
+These are Internet Service Providers that have been found to tamper with your DNS (or OpenNIC related) traffic, do note that this list is only for previously mentioned abuse, nothing else.
+
+==== Is my ISP intercepting DNS traffic? ====
+Some abusive ISPs will intercept DNS traffic on port 53 and return results from their own servers instead. This makes access to alternative TLDs difficult, and is a privacy concern as it allows the ISPs to carry out more detailed logging of the domains you resolve.
+
+Some OpenNIC DNS servers also listen on an alternative port (generally 5353) which is less likely to be tampered with by ISPs.
+
+To test if an ISP is tampering with DNS traffic, you can use the dig command from the dnsutils package. Select a server from the Tier 2 page which supports an alternative port. In my example I have used 106.186.17.181.  First, try querying for the root zone (.) on the default port:
+
+  dig SOA . @106.186.17.181
+  ...
+  .	58346	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2015080300 1800 900 604800 86400
+
+You can see from the returned SOA above that the DNS request has been hijacked by the ISP as 'a.root-servers.net' is not an OpenNIC DNS server. If the SOA you get looks more like the one below, then your ISP is probably not hijacking your DNS requests.
+
+Now try again on the alternative port:
+
+  dig SOA . @106.186.17.181 -p 5353
+  ...
+  .	86319	IN	SOA	ns0.opennic.glue. hostmaster.opennic.glue. 2015080301 1800 900 604800 3600
+
+You can see that the SOA returned is OpenNIC's, meaning no hijacking has taken place on the alternative port. If this result differs from the previous result, then your ISP is likely to be hijacking DNS.
+
+==== What can I do about it? ====
+Please refer to the answer of [[https://unix.stackexchange.com/questions/144482/|this question]] to use iptables to reroute your DNS traffic to an alternative port on an OpenNIC server. Remember to change the server's IP address.
+
+You could also contact your ISP to complain about their use of DNS hijacking.
+
+==== Abusive ISP List ====
+This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
+
+^ Country       ^ ISP     ^ Reported ^ Reporter ^ Notes ^
+| Canada        | Rogers  | 2007     | //news// | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
+| United States | Comcast | 2009     | //news// | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/ |

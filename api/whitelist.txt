@@ -1,0 +1,33 @@
+====== DNS Whitelisting API ======
+Due to repeated amplification attacks, Tier 2 servers now have the option to only allow access from registered IP addresses. Please check the notes on the Tier 2 wiki page to determine which servers are making use of this feature.
+
+Privacy is important, so we have taken steps to ensure that your identity is protected. When you register your IP address, your username is not passed to any of the servers. The servers will only receive a list of what addresses have been registered, nothing else.
+
+=== Advantages ===
+  * Because these servers do not respond to attackers, you will receive faster and more reliable responses to your DNS queries.
+
+=== Disadvantages ===
+  * When your IP address changes, there may be a 1-2 minute delay before you are able to make queries again. IP address changes may happen at different intervals depending on your ISP.
+  * To circumvent any problems, you should always have a non-whitelisted DNS server as the last entry in your list. This will allow continuous (although slower) lookups even while your new IP address is being registered.
+
+You may register multiple IP addresses under your account. After 4 weeks your old addresses will expire and be removed from the system. If you log in to the members page it will provide you with a list of the IP addresses you have registered. By clicking on any of these addresses, you will be shown when the IP was first registered and last renewed, and given the option to delete that address.
+
+Setting up scripts can be an advanced subject. If you need assistance, please feel free to ask for help on the mailing list or in #opennic on Freenode.
+
+==== Registering Static/Dynamic IP ====
+=== Linux ===
+First you need an OpenNIC member account. Visit http://www.opennicproject.org/members/ and create a new account, or log in to your existing account.
+
+After signing in, towards the bottom of the page you will see a box marked "If you wish to register your IP for whitelisting". The command listed here contains your username and a unique hash to authenticate you.
+
+Run the following command to install a script and cron job to update the whitelist with your IP every 5 minutes. If you are in a text-only environment, please see [[https://web.archive.org/web/20160803045248/https://raw.githubusercontent.com/CalumMc/OpenNIC-Whitelist-Updater/master/install.sh|this script]] for install instructions.
+
+  bash <(curl -s https://raw.githubusercontent.com/CalumMc/OpenNIC-Whitelist-Updater/master/install.sh)
+
+Optionally, you can visit this URL to verify the content of the script.
+You will need to enter your username and the unique hash, both of which are contained in the command on http://www.opennicproject.org/members/. For more details please see [[https://github.com/CalumMc/OpenNIC-Whitelist-Updater|OpenNIC Whitelist Updater on GitHub]].
+
+=== Windows ===
+An easy-to-use Windows IP update script will be available in the near future.
+
+Windows users can download a version of 'wget' from [[https://sourceforge.net/projects/gnuwin32/|SourceForge.net]]. You can create a batch file to run this script. You should set up a scheduled task from the control panel to run this script at least once per week to renew your IP. Remember, you can't connect to api.opennicproject.org if your IP is not whitelisted. You should use an IP address in this case. 

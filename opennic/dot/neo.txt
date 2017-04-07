@@ -1,0 +1,38 @@
+====== .neo TLD ======
+.neo is a general purpose TLD.
+
+In a perfect world, the content of domains using this TLD would lean towards themes present in the 'emo subculture' with influences of technology, music and other forms of multimedia.
+
+===== Charter =====
+The .neo TLD encourages non-commercial-isms, however, commercial space, though frowned upon, is accepted.
+
+.neo domain names are available on a first-come, first-serve basis, unless explicitly stated. (See: Section 5 (Reserved Domains))
+
+Since commercial interests may be involved, trademarks will be honored. Disputes will be handled under the .neo dispute policy.
+
+The usage of the .neo TLD is a privilege, not a right. If this privilege is abused, the consequence will be termination of the domains in question.
+
+==== Policies ====
+Usage of .neo domains in any of the following manners will be grounds for immediate domain termination:
+
+  * Domain Squatting
+  * Domain Harvesting
+
+As a general rule, a domain may only be disputed by the holder of any trademark registered before the domain in question was registered. Disputes must first be brought to both the .neo Hostmaster and the registrant of the disputed domain. The registrant will be contacted and their response sought. In the event the registrant does not make an initial reply within 28 days, indicates the domain should be released or, in the opinion of the .neo TLD team the dispute is not clear-cut, the matter will be referred to a vote by the .neo membership pool.
+
+Since legal issues are involved, the .neo TLD will abide by the decisions of a court of competent jurisdiction. Obtaining proof of a trademark claim or seeking such a court decision will be the responsibility of the entity seeking the dispute.
+
+Trademarks will be accepted from all international regions, and applied towards domains on a first come, first serve basis.
+
+==== Reserved Domains ====
+^ User ^ Domain ^ Description ^
+| Administration | www.neo | Landing page for .neo enthusiasts |
+| Administration | nic.neo | Domain Registration page |
+| Administration | opennic.neo | Redirection page for opennic.glue |
+| Neo | neo.neo | Personal page for Neo |
+| Neo | rrn.neo | Home page for Rave Radio Networks |
+
+==== Contacts ====
+  * Amritpal Panesar - apanesar@4195tech.com (neo@neo apanesar@neo)
+  * Abuse - abuse@opennic.neo
+  * Administration Team - hostmaster@opennic.neo - webmaster@opennic.neo

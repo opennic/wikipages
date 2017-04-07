@@ -1,0 +1,18 @@
+====== .oz TLD ======
+===== General Description =====
+dot OZ is the TLD (Top Level Domain) custom made for Australians, but still available to everyone. dot OZ is targeted to those who may want a domain with the cultural association with Australia, but without the requirements of .com.au, net.au or org.au registrations.
+
+===== Charter =====
+This is a copy of the .OZ charter as it appeared on the 11th June 2012 when the vote was started.
+
+====  Registrant Criteria ====
+Registrations are available to all entities such as persons, partnerships, corporations, non-profits, etc. It is recommended, though not required, that an entity register one domain and have others, such as specific promotions and so forth, underneath their existing registration. Registrants will be allowed to register as many domains as they wish, within reason and subject to network and administrative resources, server support, etc.
+
+==== General Policies ====
+By default and intention, the .oz TLD includes the OpenNIC general policies against spamming from registered domains and that the registry is run by its members, who are domain holders. Domain registrations will be accepted on a first-come first-served basis. Since commercial interests can be involved, trademarks will be honoured. Disputes will be handled under the .oz dispute policy. Proven violation of .oz policies will result in the immediate suspension of the domain name. No domain name will be suspended, barring exceptional circumstances, on the basis of a complaint or dispute alone.
+
+==== Domain Disputes ====
+As a general rule, a domain may only be disputed by the holder of a trademark registered before the domain in question was registered. Disputes must first be brought to both the .oz Hostmaster and the registrant of the disputed domain. The registrant will be contacted and given a chance to respond. In the event the registrant does not make an initial response within 14 days, the domain may be released or, if in the opinion of the .oz TLD team the dispute is not clear-cut, the matter will be referred to a vote by the .oz membership. Since legal issues are involved, the .oz TLD will abide by the decisions of a court of competent jurisdiction. Obtaining proof of a trademark claim or seeking such a court decision will be the responsibility of the entity seeking the dispute.
+
+==== Notes ====
+Trademarks are honoured only to ensure the commercial viability of the .oz TLD. The dispute policy is intended to be a democratic balance between the needs of a commercial registrant and the rights of a domain holder.

@@ -1,0 +1,28 @@
+====== .indy TLD ======
+===== Charter =====
+This charter may be outdated, please see History and/or References for details.
+
+==== Proposal ====
+.indy is intended to be a TLD through which independent media of all types can show their unique ways of bringing information and entertainment to all of us.
+
+==== Registrant Criteria ====
+Since, for one reason or another, indy media may be commercially-based, registrations will be available to all entities (person, partnership, corporation, non-profit, etc). It is recommended that an entity register one domain, and have any others (such as movie names and so forth) as subdomains underneath their existing registration. Registrants will be limited to a reasonable number domains, with exceptions on a case-by-case basis.
+
+==== Policies ====
+By default and intention, the .indy TLD includes the OpenNIC general policies against spamming from registered domains and that the registry is run by its members, who are domain holders. (Clarification request: It was unclear to me whether domain holders are required to be OpenNIC members. If they are, consider the next sentence removed from the charter for the purposes of voting. It will be done so once/if the TLD is approved.) It is not required that registrants also be members of the OpenNIC, but, by registering a domain, registrants do agree to be bound by OpenNIC policies and decisions.
+
+By its very nature, independent media is simply that, independent, so domain registrations will be accepted on a first-come first-served basis. Since commercial interests are likely to be involved, trademarks will be honored. Disputes will be handled under the .indy dispute policy.
+
+Proven violation of .indy policies will result in the immediate suspension of the domain name. No domain name will be suspended, barring exceptional circumstances, on the basis of a complaint or dispute alone.
+
+=== Domain Disputes ===
+As a general rule, a domain may only be disputed by the holder of a trademark registered before the domain in question was registered. Disputes must first be brought to both the .indy Hostmaster and the registrant of the disputed domain. The registrant will be contacted and their response sought. In the event the registrant does not make an initial reply within 14 days, indicates the domain should be released or, in the opinion of the .indy TLD team the dispute is not clear-cut, the matter will be referred to a vote by the .indy membership.
+
+Since legal issues are involved, the .indy TLD will abide by the decisions of a court of competent jurisdiction. Obtaining proof of a trademark claim or seeking such a court decision will be the responsibility of the entity seeking the dispute.
+
+==== Contacts ====
+  * Julian DeMarchi julian@jdcomputers.com.au
+  * reg.for.free
+
+==== Notes ====
+This charter deliberately uses terms such as "generally" and "case-by-case." We would prefer to see a registry with a defined scope, but other than that as few restrictions as possible. The only reason trademarks will be honored is to ensure the commercial viability of the .indy TLD. The dispute policy is supposed to be a democratic balance between the needs of a commercial registrant and the rights of a domain holder.

@@ -1,0 +1,16 @@
+====== .o TLD ======
+===== Charter =====
+This is a summary of the charter. See www.moderntld.com/about/charter for details.
+
+The .o TLD, operated by the ModernTLD administration, is to be used by commercial and non-commercial entities (individual or groups) to promote themselves on the OpenNIC free network. This domain is intended to be used in a general sense, akin to .com in the ICANN network, and as such has a very general use case and little restrictions on registration. Registration is available on a first-come, first-serve basis.
+
+==== Policies ====
+.o generally accepts any OpenNIC policies regarding abuse. The activities we prohibit include, but are not limited to: domain squatting, spam email delivery, malware distribution, or malicious interference with computer systems. See our full charter linked above and www.moderntld.com/about/policies for details.
+
+==== Contacts ====
+  * Website: www.moderntld.com / tld.o
+  * ModernTLD Administration: admins@moderntld.com (hostmaster@opennic.o forwards here)
+  * Abuse Reporting: abuse@tld.o (abuse@opennic.o forwards here)
+  * Webmaster: jonah@moderntld.com (webmaster@tld.o, webmaster@opennic.o forwards here)
+  * Trademark Disputes: trademarks@tld.o
+  * Other Contact: hello@moderntld.com

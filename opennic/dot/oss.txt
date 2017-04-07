@@ -1,0 +1,13 @@
+====== .oss TLD ======
+===== Charter =====
+.oss is reserved exclusively for Open Source Software projects.
+
+===== Contacts =====
+  * Administrator - JeffTaylor
+  * Hostmaster - hostmaster@opennic.oss
+  * Abuse - abuse@opennic.oss
+  * Web Site - http://reg.oss/
+
+===== Domain Registration =====
+  * Website - http://reg.oss/
+  * Problems - hostmaster@opennic.oss

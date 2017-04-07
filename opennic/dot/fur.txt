@@ -1,0 +1,6 @@
+====== .fur TLD ======
+===== Overview =====
+The Top Level Domain "fur" is provided by FurNIC. FurNIC peers with OpenNIC to mutually provide access to the Top Level Domains of the other party.
+
+===== History =====
+There was a Top Level Domain "fur" in OpenNIC proper several years ago.

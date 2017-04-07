@@ -1,0 +1,19 @@
+====== .gopher TLD ======
+===== Charter =====
+.gopher is chartered for use by sites offering content via the gopher protocol and is intended to showcase existing gopher sites as well as foster the establishment of new sites. Sites hosted on a .gopher domain should not serve content via any other protocol. Commercial or non-commercial entities may register .gopher domains. Multiple registrations by a single entity are permissible provided multiple qualifying uses exist.
+
+.gopher domain names are first-come, first-serve, excluding those reserved for .gopher operational matters (currently opennic.gopher, www.gopher, and register.gopher). No challenges to a domain holder on any basis other than .gopher or OpenNIC policy violation, or non-use of the domain, will be considered. .gopher domain names must be at least 3 characters long (before the .gopher TLD) and be otherwise consistent with the relevant RFC's.
+
+==== Policies ====
+
+.gopher accepts the general OpenNIC policies forbidding spam and cracking, but extends the prohibitions to include spamming or cracking through non .gopher systems, the sale, marketing, or promotion of spamware, spam services, cracking tools, warez, or provision of any service whatsoever to spammers, crackers, warez hosting services or to anyone providing any Internet service to spammers or crackers. Legitimate complaints regarding these activities will result in the revocation of all appropriate .gopher domains.
+
+The following decisions may require a vote of the .gopher TLD membership (one vote per each OpenNIC member who holds a .gopher domain):
+
+  * revoking a domain for violation of .gopher Charter or .gopher or OpenNIC policy (always requires a vote)
+  * accepting a domain request with a purpose that might violate the .gopher Charter
+  * changing the .gopher Charter or Policies (always requires a vote)
+  * other matters that might arise from time to time regarding the operation and administration of the .gopher TLD and related resources
+
+==== Contacts ====
+FIXME

@@ -1,0 +1,8 @@
+====== Getting Help ======
+OpenNIC provides various contact methods when you need help getting started or just want to chat. Currently those contact methods are:
+  * Mailing List: [[https://lists.opennicproject.org/sympa/info/discuss|discuss@lists.opennicproject.org]]
+  * IRC: [[https://webchat.freenode.net/?randomnick=1&channels=%23opennic|#opennic]] on the [[https://freenode.net/|freenode IRC network]]
+  * Traditional Email: [[support@opennicproject.org]]
+
+Other contact methods which require a working OpenNIC setup on your PC:
+  * Forum: [[http://talk.geek/|talk.geek]]

@@ -1,0 +1,24 @@
+====== .geek TLD ======
+===== Charter =====
+.geek is Chartered for use by Geek-oriented sites. Appropriate sites can include anything of a personal or hobbyist nature that would be considered "geeky". This description is deliberately vague to reflect the huge range of interests that might qualify.
+
+.geek is a non-commercial space. Only natural persons who are OpenNIC members may register .geek domains. People can register more than one .geek domain if they have multiple qualifying uses for them.
+
+.geek sites should be mostly non-commercial. Enforcement of this policy is subjective and might require a vote of the members (see below). For example, a .geek porn site with paying members would certainly not be permitted, whereas someone selling telescopes or rare auto parts out of their garage, or a site with a few banner ads, would most likely be OK.
+
+.geek domain names are first-come, first-serve, excluding those reserved for .geek operational matters (www.geek and opennic.geek). No challenges to a domain holder on any basis other than .geek or OpenNIC policy violation, or non-use of the domain, will be considered. .geek domain names must be at least 3 characters long (before the .geek) and be otherwise consistent with the relevant RFC's.
+
+==== Policies ====
+.geek accepts the general OpenNIC policies forbidding spam and cracking, but extends the prohibitions to include spamming or cracking through non .geek systems, the sale or marketing of spamware, spam services, cracking tools, or provision of any service whatsoever to spammers or crackers or to anyone providing any Internet service to spammers or crackers. Legitimate complaints regarding these activities will result in the revocation of all appropriate .geek domains.
+
+The following decisions may require a vote of the membership (one vote per each OpenNIC member who holds a .geek domain):
+  * revoking a domain for violation of .geek Charter or .geek or OpenNIC policy (always requires a vote)
+  * accepting a domain request with a purpose that might violate the .geek Charter
+  * changing the .geek Charter or Policies (always requires a vote)
+  * other matters that might arise from time to time regarding the operation and administration of the .geek TLD and related resources
+
+==== Contacts ====
+  * Hostmaster - JulianDemarchi
+  * Abuse - JulianDemarchi
+  * Web Site Administrator - Dustin aka TexnoFobix
+  * hostmaster@opennic.geek, postmaster@opennic.geek

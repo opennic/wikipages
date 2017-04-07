@@ -1,0 +1,12 @@
+====== Setting up OpenNIC on macOS ======
+FIXME Copied from http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/, replace with own text and screenshots!
+
+  - Go to the Apple menu and select "System Preferences"
+  - Choose the "Network" control panel, select your network interface from the left side ("Wi-Fi" or “Ethernet” for example), then click the "Advanced" button in the lower right corner of the Network window \\ {{:setup:change-dns-mac-os-x.jpg?400|}}
+  - Choose the "DNS" tab at the top of the screen
+    * To add a new DNS server: click on the [+] plus button
+    * To edit an existing DNS server: click twice on the DNS IP address you wish to change
+    * To remove a DNS server: select a DNS server IP address and then click either the [-] minus button or hit the delete key \\ {{:setup:set-change-add-dns-servers-mac-os-x.jpg?400|}}
+  - When finished making changes to the DNS settings, click on the "OK" button
+  - Now click on "Apply" for the DNS changes to take effect, close out of System Preferences as usual
+  - 

@@ -1,0 +1,18 @@
+====== .parody TLD ======
+===== Background =====
+This domain is a venue for non-commercial parody work. The important piece of this domain is that a dedicated parody TLD will remove any legitimacy from parody targets' to claims that a parody site could be mistaken for the business site and thus be an infringement on their trademarks.
+
+:!: Source: http://web.archive.org/web/20030204122236/www.opennic.unrated.net/tlds.html
+
+===== Charter =====
+TBA
+
+===== Contact =====
+  * Administrator - JeffTaylor
+  * Hostmaster - hostmaster@opennic.parody
+  * Abuse - abuse@opennic.parody
+  * Web Site - http://www.parody/
+
+===== Domain Registration =====
+  * Web Site - http://www.parody/domain/
+  * Problems - hostmaster@opennic.parody

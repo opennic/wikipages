@@ -1,0 +1,59 @@
+====== Welcome to the OpenNIC Wiki ======
+<columns 100% 50% 50%>
+===== About OpenNIC =====
+OpenNIC is a user controlled Network Information Center offering a democratic and non-national alternative to the traditional Top-Level Domain registries. In case you were looking for them, traditional TLDs are currently served by Network Solutions with policies set by ICANN.
+
+Use of OpenNIC DNS servers, will allow host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and those namespaces with which the OpenNIC has peering agreements.
+
+===== This Wiki =====
+
+This Wiki is an access controlled work area for OpenNIC working groups (WGs). In accordance with OpenNIC's open access philosophy, working group notes are world-readable. Write access to the various WG areas is however limited only to participants (in order to provide a high signal-to-noise ratio). For more information on how to use this wiki, see: WikiCategory first, and then: CategoryWiki.
+
+If you would like to register an account, please contact the [[opennic:teams:moderation|moderation team]], [[opennic:teams:administration|administration team]] or [[opennic:teams:core|core team]].
+
+===== How you can help =====
+The main thing anyone can do to help is to become a member. Sign up at http://www.opennicproject.org/members/ and join our mailing list! The other great thing you can do to help is to spread the word, even if you don't use our TLDs our DNS network is still the quickest around!
+
+To volunteer assistance with any of these tasks, please enter your name on the relevant project page, then make contact with other team members! These and other 'side projects' are listed at OpenNIC Projects. Once the above tasks are near completion, more will be posted. NB Project areas are currently limited in order to allow timeous forward progress. Should you perchance have ideas for future projects though, please, do get in touch. We are always open to suggestions.
+
+===== Need help getting started? =====
+There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, setup to resolve OpenNIC TLDs, volunteering to set up a Tier 2 server, etc. Please use one of the following contact methods:
+  * Post a message to the "discuss" mailing list
+  * Find help on the IRC channel: [[https://webchat.freenode.net/?randomnick=1&channels=%23opennic|#opennic]] on [[https://freenode.net/|freenode]]
+  * Send us an email at [[support@opennicproject.org]]
+The OpenNIC administrators monitor all of these, and you'll usually receive a response within hours.
+<newcolumn>
+===== Useful resources =====
+==== Primary Tier 2 DNS Resolvers ====
+
+  * 185.121.177.177
+  * 185.121.177.53
+  * 2a05:dfc7:5::53
+  * 2a05:dfc7:5::5353
+
+A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick servers from the server list (not the primary ones).
+
+==== DNS Wizards ====
+Interested in modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
+  * Android - [[https://play.google.com/store/apps/details?id=com.burakgon.dnschanger|DNS Changer (no root 3G/WiFi)]] Please consider supporting the developer of this app by downloading the SetDNS Pro version!
+  * iOS - [[https://itunes.apple.com/us/app/dns-override/id1060830093|DNS Override]]
+  * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]]
+
+We are always looking for more wizards on other platforms - if interested in developing one, please contact us.
+
+==== Web Proxies ====
+Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
+  * http://proxy.opennicproject.org/
+
+==== Server Management/Status Reports ====
+  * Master Pool (Tier 1) Servers
+    * [[http://opennicproject.org/report/log_.php?tier=1|Status]]
+  * Public Access (Tier 2) Servers
+    * [[http://opennicproject.org/report/log_.php?tier=2|Status]]
+    * [[https://servers.opennicproject.org/|List]]
+  * [[http://report.opennicproject.org/t2log/t2.php|Tier 1 and Tier2 testing tool]]
+
+==== OpenNIC Search Engines ====
+  * [[http://grep.geek/|grep.geek]]
+  * [[http://bithunt.bit/|bithunt]]
+</columns>

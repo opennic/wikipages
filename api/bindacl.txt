@@ -1,0 +1,45 @@
+====== BIND9 Access Control Lists  API ======
+Administrators running open Tier 1 and Tier 2 servers may wish to make use of the automatically-generated ACL file. This file is a BIND-formatted ACL which has listings for Tier 1 addresses, Tier 2 addresses, and whitelisted user IP addresses. Each list may be combined as desired to control access to your server. ACL lists have been supported since BIND 8.2.1.
+
+If you are a Tier1 or Tier2 administrator and need access to this feature, please contact Shdwdrgn on the mailing list or IRC. Once you have access, you may log in to the [[https://web.archive.org/web/20160913110201/http://www.opennicproject.org/members/|members page]] and you will be shown a wget command with your username and a hash key for authentication:
+  wget -qO- "https://api.opennicproject.org/acl/bind/?user=myUser&auth=myHash"
+  curl "https://api.opennicproject.org/acl/bind/?user=myUser&auth=myHash"
+
+There is also an SHA256 hash provided to validate the information you receive. The hash may be accessed in the same manner as the ACL file:
+  wget -qO- "https://api.opennicproject.org/acl/hash/?user=myUser&auth=myHash"
+  curl "https://api.opennicproject.org/acl/hash/?user=myUser&auth=myHash"
+
+The hash can be calculated in linux as follows:
+  sha256sum <acl-file.name>
+
+Complete automation may be achieved by calling the following script as a cron job. It only updates when a new file is available, so you should check it at least every 1-5 minutes.
+  #!/bin/sh
+  
+  USER="myUserName"
+  AUTH="myAuthCode"
+  DIR="/etc/bind"
+  FILE="OpenNIC.acl"
+  
+  curl -sR "https://api.opennicproject.org/acl/bind/?user=$USER&auth=$AUTH" -z $FILE -o $DIR/$FILE -w %{http_code} | if [ "${*:-`cat`}" == "200" ]; then /usr/sbin/rndc reload; fi
+
+You will need to include this file in your named.conf configuration. Please note that you cannot put this in the options section of named.conf; if you do you will get an unknown option 'acl' error! Just place it anywhere outside of the named sections:
+  include "/etc/bind/OpenNIC.acl"
+
+To include these ACLs in BIND9, you could add something like the following to the appropriate named.conf or view:
+
+  allow-recursion {
+  	opennic_T0; opennic_T1; opennic_T2;
+  	opennic_whitelist; localhost;
+  };
+  allow-query {
+  	opennic_T0; opennic_T1; opennic_T2;
+  	opennic_whitelist; localhost;
+  };
+  allow-query-cache {
+  	opennic_T0; opennic_T1; opennic_T2;
+  	opennic_whitelist; localhost;
+  };
+  allow-transfer {
+  	opennic_T0; opennic_T1; opennic_T2;
+  	opennic_whitelist; localhost;
+  };

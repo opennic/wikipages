@@ -1,0 +1,22 @@
+====== .free TLD ======
+===== Charter =====
+THE FREENIC ACCEPTABLE USE POLICY, TERMS AND CONDITIONS
+
+===== Mission =====
+The FreeNIC provides NAMESPACE, CERT AUTH and other services to its membership and to the general public to encourage the NON-COMMERCIAL USE of the Free Internet and the existing and future INTERNET infrastructure. For-profit organizations are permitted to use the Free Internet but must uphold the policy of NON-COMMERCIAL USE as detailed in the AUP. Commercial use for all other purposes is not acceptable and violates this policy.
+
+===== Acceptable Uses =====
+  * Communication between Free sites via verifiable secure and insecure (E)SMTP transactions.
+  * File transfers between Free sites and other Free or non-Free sites, via verifiable secure and insecure protocols, excluding unsolicited advertisements.
+  * Exchanging mail/news between the Free Internet and other non-commercial networks, using any suitable protocol.
+  * Non-commercial advertisements in appropriate venues.
+  * Promotion of commercial products and services, fundraising or public relations activities, contained solely within an individual or organization's own Free Internet site.
+
+===== Unacceptable Use =====
+  * UNSOLICITED COMMUNICATION outside of its site origin in which goods and/or services are offered for or not-for-profit violates the Free Internet MISSION of NON-COMMERCIAL USE. Incidents may be reported, logged and open to review of a site's membership status.
+  * Gatewaying mail/news from the commercial internet (including Usenet) into the Free Internet.
+  * Activities which violate the MISSION or ACCEPTABLE USES.
+
+===== Contact Info =====
+  * postmaster@opennic.free
+  * hostmaster@opennic.free

@@ -1,0 +1,12 @@
+====== .null TLD ======
+===== Charter =====
+.null is Chartered to be used similarly to how you might use a DNS version of Usenet's alt. hierarchy. Any member of the OpenNIC may register one .null Second-Level domain and domain allocations will be strictly first come-first served. No challenges to a domain holder on any basis other than .null policy violation or non-use of the domain will be considered.
+
+.null is declared as completely non-commercial and only natural persons (lawyer-speak for "no corporations; actual physical people only") may hold .null domains. As a non-commercial domain space, .null subdomains may not be transferred for compensation.
+
+==== Policies ====
+.null accepts the general OpenNIC policies forbidding spam and cracking, but extends the prohibitions to include spamming or cracking through non .null systems. Demonstration of spam or cracking activity involving persons or machines which have not given explicit permission will result in the revocation of all appropriate .null domains.
+
+==== Contacts ====
+  * Julian DeMarchi julian@jdcomputers.com.au
+  * Website - http://reg.for.free

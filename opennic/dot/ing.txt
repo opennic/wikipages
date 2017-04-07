@@ -1,0 +1,22 @@
+====== .ing TLD ======
+===== Charter =====
+==== Policies ====
+dot ING accepts the general OpenNIC policies forbidding spam and cracking, but extends the prohibitions to include spamming or cracking through non dot ING systems, the sale or marketing of spamware, spam services, cracking tools, or provision of any service whatsoever to spammers or crackers or to anyone providing any Internet service to spammers or crackers. Legitimate complaints regarding these activities will result in the revocation of all appropriate dot ING domains.
+
+The following decisions may require a vote of the membership (one vote per each OpenNIC member who holds a .ing domain):
+  * Revoking a domain for violation of the dot ING Charter or OpenNIC policy (always requires a vote, except regarding the Charter requirement that dot ING domains must have valid DNS)
+  * Accepting a domain request with a purpose that might violate the dot ING Charter
+  * Changing the dot ING Charter or Policies (always requires a vote)
+  * Other matters that might arise from time to time regarding the operation and administration of the dot ING TLD and related resources
+
+dot ING domains must be resolvable. That is, one or more of the name servers that are registered with the TLD operator as being authoritative for the domain must carry a valid zone for the domain, including a valid SOA record, at all times.
+
+The dot ING Hostmaster may occasionally test all dot ING domains to ensure that at a minimum a valid SOA record is resolvable for each domain. For any domain found not to have a resolvable SOA record, the domain owner will be notified by e-mail via the OpenNIC re mailer and given one week to correct the problem. Failure to provide valid DNS or to respond to the notification will result in the revocation of the unresolvable domain. The domain name will be available immediately to a new registrant, or for future re-registration by the old registrant if desired.
+
+dot ING is chartered for use by both personal websites and business sites. dot ING is both a commercial and a non-commercial space. Only natural persons who are OpenNIC members may register dot ING domains. OpenNIC members can register more than one dot ING domain if they have multiple qualifying uses for them.
+
+dot ING domain names are first-come, first-serve, excluding those reserved for dot ING operational matters (www.ing and opennic.ing). No challenges to a domain holder on any basis other than dot ING or OpenNIC policy violation, or non-use of the domain, will be considered. dot ING domain names must be at least 3 characters long (before the dot ING) and be otherwise consistent with the relevant RFC's.
+
+==== Contacts ====
+  * Tim Groeneveld ('Tim G') - tim[at]timg(dot)ws
+  * www.ing and http://timg.ws

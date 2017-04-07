@@ -1,0 +1,2 @@
+====== OpenNIC Core Team ======
+  * [[user:fusl]]

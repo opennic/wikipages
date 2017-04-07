@@ -1,0 +1,22 @@
+====== .micro TLD ======
+.micro is a TLD designated for use by micronations and their entities only.
+
+===== Charter =====
+.micro is a non-commercial TLD in the sense that sites with paying members are not allowed, but banner ads are allowed.
+
+.micro follows a first come, first serve basis. You cannot challenge a domain, unless it violates OpenNIC policies.
+
+Enforcement of all of the above is decided by member vote.
+
+==== Policies ====
+.micro prohibits spamming and cracking in accordance with OpenNIC policies on the matter.
+
+The following policies require member voting (one vote for every member with a .micro domain):
+
+  * revoking a domain with a violation of .micro charter, .micro, or OpenNIC policies.
+  * accepting a domain with intension of violating the .micro charter.
+  * changing the .micro charter or policies.
+  * other matters requiring voting on the administration and/or operation of the .micro TLD and similar resources.
+
+==== Contacts ====
+FIXME

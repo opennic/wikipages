@@ -1,0 +1,22 @@
+====== OpenNIC . TLDs ======
+When creating a new TLD page, please use the following template whenever possible. This is not a strict policy, so if you think that you have a good layout, please use that and let us know and we will take a look.
+
+  ====== .glue TLD ======
+  <short intro goes here>
+  
+  ===== Charter =====
+  <charter intro goes here>
+  
+  ==== Policies ====
+    * You can use this TLD
+    * You should use this TLD
+    * You need to use this TLD
+    * Use of this TLD is forbidden
+    * The next statement is false
+    * The previous statement is true
+  
+  ==== Contacts ====
+    * Website: http://opennic.org/
+    * IRC: [[https://webchat.freenode.net/?randomnick=1&channels=%23opennic|#opennic]] on [[https://freenode.net/|freenode]]
+    * Email: support@freenode.net
+    * ...

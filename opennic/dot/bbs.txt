@@ -1,0 +1,12 @@
+====== .bbs TLD ======
+===== History =====
+opennic-discuss m/l (29Dec2000, From: Robin (krystal@devnull.net), Subject: OpenNIC Discuss: Sample Charters)
+
+===== Charter =====
+The .BBS TLD is aimed toward Bulletin Board System servers, and BBS affiliated/related/owned websites. Bulletin Board System being defined as an actual telnet accessable server, or by a website with the features typical of a BBS - Message bases, Email, Chat, etc... The TLD should also allow for BBS information, support, or promotion websites. Seeing as some BBS systems are pay to cover their bills, this TLD should allow for commercial systems.
+
+===== Acceptable Usage Policy =====
+Of course, sending unsolicited (commercial) email, promoting cracking/warez, or purposefully disrupting the network (such as a ping flood or trying to kill a machine) from a .bbs TLD should be grounds for removing the domain. If a site is no longer providing BBS type services, that should also be grounds for removal of the domain.
+
+===== Links =====
+http://register.bbs/ - To register
