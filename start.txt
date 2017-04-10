@@ -30,7 +30,7 @@ There are plenty of OpenNIC folks available to help with whatever problem you ma
 A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick servers from the server list (not the primary ones).
 
 ==== DNS Wizards ====
-Interested in modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
+Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
   * Android - [[https://play.google.com/store/apps/details?id=com.burakgon.dnschanger|DNS Changer (no root 3G/WiFi)]] Please consider supporting the developer of this app by downloading the SetDNS Pro version!
   * iOS - [[https://itunes.apple.com/us/app/dns-override/id1060830093|DNS Override]]
   * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]]
