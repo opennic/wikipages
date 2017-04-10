@@ -8,7 +8,7 @@ Use of OpenNIC DNS servers will allow host name resolution in the Legacy U.S. Go
 ===== This Wiki =====
 This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy all notes and documents are world-readable. Write access is restricted however to participants relevant for this specific project to provide quality content and have cross-verification by other members.
 
-If you would like to register an account, please contact the [[opennic:teams:moderation|moderation team]], [[opennic:teams:administration|administration team]] or [[opennic:teams:core|core team]].
+If you would like to register an account, please follow the sign-up page [[/start?do=register|here]].
 ===== How you can help =====
 The main thing anyone can do to help is to become a member. Sign up at http://www.opennicproject.org/members/ and join our mailing list! The other great thing you can do to help is to spread the word, even if you don't use our TLDs our DNS network is still the quickest around!
 
