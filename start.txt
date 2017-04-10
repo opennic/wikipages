@@ -6,11 +6,9 @@ OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled
 Use of OpenNIC DNS servers will allow host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and those namespaces with which the OpenNIC has peering agreements.
 
 ===== This Wiki =====
-
-This Wiki is an access controlled work area for OpenNIC working groups (WGs). In accordance with OpenNIC's open access philosophy, working group notes are world-readable. Write access to the various WG areas is however limited only to participants (in order to provide a high signal-to-noise ratio). For more information on how to use this wiki, see: WikiCategory first, and then: CategoryWiki.
+This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy all notes and documents are world-readable. Write access is restricted however to participants relevant for this specific project to provide quality content and have cross-verification by other members.
 
 If you would like to register an account, please contact the [[opennic:teams:moderation|moderation team]], [[opennic:teams:administration|administration team]] or [[opennic:teams:core|core team]].
-
 ===== How you can help =====
 The main thing anyone can do to help is to become a member. Sign up at http://www.opennicproject.org/members/ and join our mailing list! The other great thing you can do to help is to spread the word, even if you don't use our TLDs our DNS network is still the quickest around!
 
