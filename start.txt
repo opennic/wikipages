@@ -45,7 +45,7 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
   * Public Access (Tier 2) Servers
     * [[http://opennicproject.org/report/log_.php?tier=2|Status]]
     * [[https://servers.opennicproject.org/|List]]
-  * [[http://report.opennicproject.org/t2log/t2.php|Tier 1 and Tier2 testing tool]]
+  * [[http://report.opennicproject.org/t2log/t2.php|Tier 1 and Tier 2 testing tool]]
 
 ==== OpenNIC Search Engines ====
   * [[http://grep.geek/|grep.geek]]
