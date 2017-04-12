@@ -1,0 +1,21 @@
+====== Current OpenNIC Wiki Sutation ======
+
+Or, "What happened to the WikkaWiki?"
+
+===== What We Know =====
+
+  * The server on which the WikkaWiki software was hosted on is offline since 2017-04-04 due to a yet unknown reason
+  * ''2017-04-03T02:26:06Z <Angelica> Shdwdrgn: Thanks, I'll follow the instructions on wiki/API_BindACL'' is the last message from someone who successfully accessed the wiki. 
+  * ''2017-04-04T13:39:35Z <Spruce> Is the server hosting the wiki down?'' is the first report of the Wiki being down
+
+For this reason, I ([[fusl]]) have created a DokuWiki instance with a live mirror to [[https://github.com/OpenNIC/WikiPages|Github / OpenNIC / WikiPages]].
+
+===== What Is Still Unclear =====
+
+  * What happened to the server?
+  * When will it come back online?
+  * What's the status of the WikkaWiki database?
+  * Will we ever see our again?
+  * What will happen to the replacement Wiki in case the WikkaWiki wiki will ever come back online?\\Possibilities for this are:
+    * The WikkaWiki instance will be completely replaced by dokuwiki (Requirements to be met are: LDAP authentication)
+    * Changes to the wiki pages are backported to the WikkaWiki instance (Requirements to be met are: live mirroring to GitHub)
