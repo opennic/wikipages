@@ -8,10 +8,10 @@ The following tests will be performed for all servers:
   * Reply size test: please visit https://www.dns-oarc.net/oarc/services/replysizetest for complete information
   * Port randomness test: please visit https://www.dns-oarc.net/oarc/services/porttest for complete information
   * OpenNIC root zone: confirms that you are using OpenNIC's root hints file, rather than the standard ICANN hints
-  * dns.opennic.glue: All tier1 and tier2 servers should have this zone configured in their DNS server setup
+  * dns.opennic.glue: All Tier 1 and Tier 2 servers should have this zone configured in their DNS server setup
   * OpenNIC TLD zones: checks all available TLDs to confirm you are resolving queries for each
-  * ICANN queries: if you are running a tier2, we want to confirm that you allow recursive lookups to answer queries for ICANN domains
+  * ICANN queries: if you are running a Tier 2, we want to confirm that you allow recursive lookups to answer queries for ICANN domains
 
 After the test completes, you will get a pass/fail status. Feel free to perform this test as often as needed while configuring your server. Once your server passes all tests, and if you are willing, it may be considered for addition to the list of official servers.
 
-The code used for validating server operation is also used to run automated daily status checks. Once every 12 hours, the results are sent to the reports mailing list. The results of these tests affect the active status of the servers listed on Tier2 and will cause the dns.opennic.glue zone to be regenerated. If your server is marked as 'temp outage' and you believe this is in error, please contact Shdwdrgn on IRC to manually verify your server's accessibility.
+The code used for validating server operation is also used to run automated daily status checks. Once every 12 hours, the results are sent to the reports mailing list. The results of these tests affect the active status of the servers listed on Tier 2 and will cause the dns.opennic.glue zone to be regenerated. If your server is marked as 'temp outage' and you believe this is in error, please contact Shdwdrgn on IRC to manually verify your server's accessibility.
