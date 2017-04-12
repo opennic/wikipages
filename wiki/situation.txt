@@ -2,6 +2,7 @@
 
 Or, "What happened to the WikkaWiki?"
 
+<columns 100% 50% 50%>
 ===== What We Know =====
 
   * The server on which the WikkaWiki software was hosted on is offline since 2017-04-04 due to a yet unknown reason
@@ -9,7 +10,7 @@ Or, "What happened to the WikkaWiki?"
   * ''2017-04-04T13:39:35Z <Spruce> Is the server hosting the wiki down?'' is the first report of the Wiki being down
 
 For this reason, I ([[fusl]]) have created a DokuWiki instance with a live mirror to [[https://github.com/OpenNIC/WikiPages|Github / OpenNIC / WikiPages]].
-
+<newcolumn>
 ===== What Is Still Unclear =====
 
   * What happened to the server?
@@ -19,3 +20,4 @@ For this reason, I ([[fusl]]) have created a DokuWiki instance with a live mirro
   * What will happen to the replacement Wiki in case the WikkaWiki wiki will ever come back online?\\Possibilities for this are:
     * The WikkaWiki instance will be completely replaced by dokuwiki (Requirements to be met are: LDAP authentication)
     * Changes to the wiki pages are backported to the WikkaWiki instance (Requirements to be met are: live mirroring to GitHub)
+</columns>
