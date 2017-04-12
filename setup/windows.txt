@@ -1,0 +1,16 @@
+====== Setting up OpenNIC on Windows 7, 8, 10 ======
+
+FIXME Add the rest of the screenshots ([[http://web.archive.org/web/20170130131136/http://wiki.opennicproject.org/GettingStarted|link]]) and add IPv6 instructions.
+
+1. Right click the WiFi or Ethernet symbol in your task bar and click “Open Network and Sharing Center”
+{{ :setup:open-network-and-sharing-center.png |}}
+
+2. Select the link next to “Connections,” as shown highlighted below:
+
+3. Select Properties. Admin rights will be needed to perform this step.
+
+4. Select Internet Protocol Version 4 (TCP/IPv4), then click Properties.
+
+5. Select Use the following DNS server addresses, then enter any two of the IP addresses at the top of this guide:
+
+6. Click OK, Close, and Close to close the 3 dialog boxes, then exit Network and Sharing Center.
