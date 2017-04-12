@@ -3,7 +3,7 @@ BIND-whitelist is a version-specific patch for BIND that implements whitelist fu
 
 BIND-whitelist distributions are version-specific. Please ensure you are using a BIND-whitelist distribution that matches the version number of BIND that you are compiling against. Each BIND-whitelist distribution contains a detailed README that explains how to install and test. Below is a typical README; please note that READMEs may differ depending upon the BIND version.
 
-Currently, the OpenNIC Tier 2 server at 142.4.204.111 (more on Tier2) is running BIND-whitelist; you can easily test against this server provided you have never accessed an OpenNIC TLD via the IP you're testing with. Simply attempt to access a non-OpenNIC domain:
+Currently, the OpenNIC Tier 2 server at 142.4.204.111 (more on Tier 2) is running BIND-whitelist; you can easily test against this server provided you have never accessed an OpenNIC TLD via the IP you're testing with. Simply attempt to access a non-OpenNIC domain:
 
   dig @142.4.204.111 www.google.com
 
