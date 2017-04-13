@@ -1,6 +1,6 @@
 ====== Setting up OpenNIC on Windows 7, 8, 10 ======
 
-FIXME Add the rest of the screenshots ([[http://web.archive.org/web/20170130131136/http://wiki.opennicproject.org/GettingStarted|link]]) and add IPv6 instructions.
+FIXME add IPv6 instructions.
 
   - Right click the WiFi or Ethernet symbol in your task bar and click "Open Network and Sharing Center"\\ {{:setup:open-network-and-sharing-center.png|}}
   - Select the link next to "Connections", as shown highlighted below:\\ {{http://i.imgur.com/KNFXgcw.png|}}
