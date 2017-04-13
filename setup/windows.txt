@@ -3,8 +3,10 @@
 FIXME Add the rest of the screenshots ([[http://web.archive.org/web/20170130131136/http://wiki.opennicproject.org/GettingStarted|link]]) and add IPv6 instructions.
 
   - Right click the WiFi or Ethernet symbol in your task bar and click "Open Network and Sharing Center"\\ {{:setup:open-network-and-sharing-center.png|}}
-  - Select the link next to "Connections", as shown highlighted below:
-  - Select Properties. Admin rights will be needed to perform this step.
-  - Select Internet Protocol Version 4 (TCP/IPv4), then click Properties.
-  - Select Use the following DNS server addresses, then enter any two of the IP addresses at the top of this guide:
+  - Select the link next to "Connections", as shown highlighted below:\\ {{http://i.imgur.com/KNFXgcw.png|}}
+  - Select Properties. Admin rights will be needed to perform this step.\\ {{http://i.imgur.com/4an8Ypf.png|}}
+  - Select Internet Protocol Version 4 (TCP/IPv4), then click Properties.\\ {{http://i.imgur.com/9MjngDb.png|}}
+  - Select Use the following DNS server addresses, then enter any two of the IP addresses at the top of this guide:\\ {{http://i.imgur.com/1ap2Z7N.png|}}
   - Click OK, Close, and Close to close the 3 dialog boxes, then exit Network and Sharing Center.
+====Congrats!====
+You should now be able to visit OpenNIC domains, you can test by navigating to http://grep.geek in your browser of choice!
