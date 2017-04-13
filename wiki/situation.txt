@@ -20,4 +20,4 @@ Or, "What happened to the WikkaWiki?", or "What happened to wiki.opennicproject.
     * The WikkaWiki instance will be completely replaced by DokuWiki (Requirements to be met are: LDAP authentication)
     * Changes to the wiki pages are backported to the WikkaWiki instance (Requirements to be met are: live mirroring to GitHub and LDAP authentication)
 </columns>
-For the reasons given, I ([[fusl]]) have created a DokuWiki instance with a live mirror to [[https://github.com/OpenNIC/WikiPages|Github / OpenNIC / WikiPages]].
+For the reasons given, I ([[user:fusl]]) have created a DokuWiki instance with a live mirror to [[https://github.com/OpenNIC/WikiPages|Github / OpenNIC / WikiPages]].
