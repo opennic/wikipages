@@ -1,6 +1,6 @@
 ====== Current OpenNIC Wiki Sutation ======
 
-Or, "What happened to the WikkaWiki?"
+Or, "What happened to the WikkaWiki?", or "What happened to wiki.opennicproject.org?"... or "Is the wiki down?"
 
 <columns 100% 50% 50%>
 ===== What We Know =====
