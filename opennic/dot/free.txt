@@ -1,5 +1,3 @@
 ~~REDIRECT>opennic:dotarch:free~~
 
-This page has moved to [[opennic:dotarch:free|]].
-
-For its replacement, see [[opennic:dot:libre|]].
+For **.free**'s active replacement, see [[opennic:dot:libre|]].
