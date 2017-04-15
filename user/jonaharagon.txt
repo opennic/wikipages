@@ -7,7 +7,7 @@ Admin:
 
 Contact:
   * jonah@moderntld.com
-  * ''jonaharagon'' on [[IRC|help]]
+  * ''jonaharagon'' on [[help|IRC]]
 
 Websites:
   * moderntld.com
