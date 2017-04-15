@@ -20,7 +20,7 @@ PGP: https://keybase.io/jonaharagon
 
 Keybase will verify I am the verified owner of moderntld.com, jonaharagon.com, my PGP key, the Bitcoin address for ModernTLD, and the various email addresses I use. If you wish to contact me my PGP key can be found at the link above or pasted below.
 
-<file jonah.asc>
+<file - jonah.asc>
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v2
 
