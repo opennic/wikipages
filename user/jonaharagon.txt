@@ -16,7 +16,7 @@ Websites:
 
 Bitcoin: 16HiDkcj8oYLv5LnfjMa5qzWmY1xEVcuog
 
-PGP: https://keybase.io/jonaharagon
+PGP: https://keybase.io/jonaharagon or https://github.com/JonahAragon/JonahAragon.github.io/blob/master/keys/jonah-master.asc
 
 Keybase will verify I am the verified owner of moderntld.com, jonaharagon.com, my PGP key, the Bitcoin address for ModernTLD, and the various email addresses I use. If you wish to contact me my PGP key can be found at the link above or pasted below.
 
