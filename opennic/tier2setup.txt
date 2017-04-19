@@ -32,7 +32,7 @@ Consider using the [[opennic:t2hints|BIND root-hints method]] if you want:
   * No local maintenance required
   * A private-use Tier 2
 
-The root-hints method is **strongly discouraged** when running a public server, because it creates unnecessary strain on our infrastructure. If you are going to run a publicly listed server, you must run one of the following two options.
+The root-hints method is **strongly discouraged** when running a public server, because it creates unnecessary strain on our infrastructure. If you are going to run a publicly listed server, you must run one a slaved zone method.
 
 ==== Slave Zone Method (BIND) ====
 
