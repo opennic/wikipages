@@ -15,7 +15,7 @@ The main thing anyone can do to help is to become a member. Sign up at http://ww
 To volunteer assistance with any of these tasks, please enter your name on the relevant project page, then make contact with other team members! These and other 'side projects' are listed at OpenNIC Projects. Once the above tasks are near completion, more will be posted. NB Project areas are currently limited in order to allow timeous forward progress. Should you perchance have ideas for future projects though, please, do get in touch. We are always open to suggestions.
 
 ===== Need help getting started? =====
-There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, setup to resolve OpenNIC TLDs, volunteering to set up a Tier 2 server, etc. Please use one of the contact methods listed [[help|here]]
+There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, setup to resolve OpenNIC TLDs, volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
 <newcolumn>
 ===== Useful resources =====
 ==== Primary Tier 2 DNS Resolvers ====
@@ -38,6 +38,11 @@ We are always looking for more wizards on other platforms - if interested in dev
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
   * http://proxy.opennicproject.org/
+
+==== Infrastructure Setup ====
+
+  * [[opennic:tier2setup|Tier 2 Server Setup]]
+  * [[opennic:tier1|Tier 1 Server Information]]
 
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
