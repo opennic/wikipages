@@ -1,0 +1,41 @@
+====== All About Tier 2 Servers ======
+
+Tier 2 server information and FAQs.
+
+===== What is a "Tier 2" Server? =====
+
+Tier 2 servers are "DNS Resolvers" or, servers that actually do the heavy-lifting when querying OpenNIC's DNS infrastructure. These are the servers that **clients use in their configuration** directly, and they provide access to the network. Anybody can operate a Tier 2 server, but there is a large amount of "Public Tier 2" servers to choose from at [[http://servers.opennicproject.org/|servers.opennicproject.org]].
+
+Once you choose a server, you can setup your computers, phones, and all your other devices by following the guides at [[setup:start|the setup guides]].
+
+===== Who Runs the Tier 2 Servers? =====
+
+Any community member can operate a public Tier 2 server. These servers have various policies, but the majority don't keep any logs, and some support technologies such as DNSCrypt. It's up to the individual operator as far as how they're run, so make sure you have trust in the Tier 2 operator before using their servers.
+
+You can always create your own server for full control of your DNS, and if you allow others to use it, you'll help contribute to our infrastructure.
+
+===== How can I run a Tier 2 server? =====
+
+We have a list of tutorials at [[opennic:tier2setup|Tier 2 Setup]] to help you get started! You'll need a Linux machine (server), and you'll probably want to install ''bind9''.
+
+==== Can I run it from home? ====
+
+We don't recommend you run it from a home connection, unless you have a high bandwidth and **low latency connection** with no bandwidth caps. Low WAN latency is important for running a DNS server, because the server itself is in charge of lookups, and high latency (e.g. on a home connection) can slow down requests dramatically compared to a server hosted with a low-latency connection in a datacenter. This graphic is a vast oversimplification of the DNS process but demonstrates why hosting at home is rarely a good idea:
+
+{{ :opennic:latency.png?nolink&600 |}}
+
+The first graphic is an example of a Tier 2 server hosted at home. It needs to make numerous requests to "[[opennic:tier1|Authoritative]]" DNS servers, which are slowed down by the latency of the home connection. The second graphic has a higher latency between the user and the Tier 2 server, because it's outside the LAN, but the speed increases when communicating with Authoritative servers create a faster experience overall.
+
+==== Anything I should be aware of? ====
+
+**Public** Tier 2 servers are very likely to be used in an [[https://www.incapsula.com/ddos/attack-glossary/dns-amplification.html|amplification attack]]. This is the threat you need to be the most aware of as a Tier 2 operator. Make sure you read the [[opennic:tier2security|Tier 2 Security]] guidelines to ensure your server and network is fully protected.
+
+Community members are generally available on IRC or the Mailing List if you are experiencing an attack you can't mitigate and require help, but in the end it comes down to the individual server operator to solve any issues that may occur when operating a Tier 2.
+
+===== Why Should I Run a Tier 2 Server? =====
+
+In addition to improving OpenNIC's infrastructure, using your own Tier 2 servers bolsters your ability to know for sure what your data is being used for, and helps decentralize our system and the internet's DNS as a whole. Tier 2 hosting is very inexpensive with various cloud providers, and is a small price to pay in return for greater privacy, reliability, and access to OpenNIC's namespaces.
+
+===== [Other Questions] =====
+
+Please contact us on IRC if you need assistance. (Also, if your question is something that everyone should know, message ''jonaharagon'' on IRC and [[user:jonaharagon|I]]'ll try to answer it on this page for future members)
