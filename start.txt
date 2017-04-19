@@ -42,9 +42,8 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
 ==== Infrastructure Setup ====
 
-  * [[opennic:tier2setup|Tier 2 Server Setup]]
-  * [[opennic:tier1|Tier 1 Server Information]]
-
+  * [[opennic:tier2setup|Tier 2 Server Setup]] and [[opennic:tier2|Info]]
+  * [[opennic:tier1setup|Tier 1 Server Setup]] and [[opennic:tier1|Info]]
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
     * [[http://opennicproject.org/report/log_.php?tier=1|Status]]
