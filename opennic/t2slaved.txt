@@ -1,0 +1,216 @@
+====== Slaved Zones with BIND9 ======
+
+FIXME This guide was copied directly from the old wiki. It likely needs some updates for the latest BIND software and OpenNIC configuration. If this guide doesn't work, try using the [[opennic:srvzone|srvzone script]].
+
+For those wishing to set up a more robust local nameserver, or if you plan on running a public tier-1 or tier-2 server for OpenNIC, configuring BIND with slave zones is the preferred method. Please read the policies before running a public T2 server. You should also join the appropriate MailingLists so you'll be notified of changing situations which may affect your operation.
+
+Slave zones contain the full record of domain names for each OpenNIC TLD. When a query is made for an OpenNIC domain, you have the exact information needed to proceed directly to that domain, thus eliminating several hops in processing a query. Note that the only difference between a tier-1 and tier-2 server is that tier-1 servers do not process public queries for ICANN domains - they ONLY process OpenNIC TLD requests.
+
+Linux - BIND8/9
+Using your package manager, you may install either BIND8 or BIND9, however we recommend using BIND9 due to its more advanced tools for preventing abuse.
+
+Most systems will install BIND either in /etc/bind/ or /var/named/. Within named.conf or one of its included files, you should find a block similar to this:
+
+<code>
+zone "." {
+	type hint;
+	file "/etc/bind/db.root";
+};
+</code>
+
+You need to comment or remove these lines. Instead of using a hints file, you will now be slaving the root zone plus another zone which contains a list of all OpenNIC public tier-2 servers. Typically you will have an options file in your default BIND configuration. Within the options file will be a 'directory' parameter. This parameter tells BIND where you plan on storing your slave files. For example, under debian/ubuntu systems, you may find something like this:
+directory "/var/named";
+Grab
+This line tells us that BIND will save your slave files under /var/named/. If you cannot find this parameter, or you are uncertain, you should use full path names in the 'file' parameters specified for each zone. However if you do have a directory specified, you can simply give filenames, as below.
+
+Add the following lines to your named.conf in place of the above 'hint' section:
+
+<file>
+masters opennicNS {
+	45.56.115.189;				# ns0.opennic.glue
+	45.56.116.224;				# ns0.opennic.glue
+	173.160.58.202;				# ns2.opennic.glue
+	2001:470:f032:10:0:100:53:10;		# ns2.opennic.glue
+	198.46.244.109;				# ns3.opennic.glue
+	2001:470:8269::53;			# ns3.opennic.glue
+	178.63.145.230;				# ns4.opennic.glue
+	2a01:4f8:101:3062::5:2;			# ns4.opennic.glue
+	94.103.153.176;				# ns5.opennic.glue
+	2a02:990:219:1:ba:1337:cafe:3;		# ns5.opennic.glue
+	207.192.71.13;				# ns6.opennic.glue
+	2002:cfc0:470d::1;			# ns6.opennic.glue
+	45.79.192.100;				# ns7.opennic.glue
+	2600:3c02::f03c:91ff:fec8:d863;		# ns7.opennic.glue
+	178.63.116.152;				# ns8.opennic.glue
+	2a01:4f8:141:4281::999;			# ns8.opennic.glue
+	188.226.215.149;			# ns9.opennic.glue
+	2a03:b0c0:0:1010::48:4001;		# ns9.opennic.glue
+	50.116.19.70;				# ns10.opennic.glue
+	188.226.146.136;			# ns10.opennic.glue
+};
+masters opennicPeers {
+};
+
+zone "." in {
+		type slave;
+		file "tld-root";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; };
+};
+zone "dns.opennic.glue" in {
+		type slave;
+		file "dns.opennic.glue.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+</file>
+
+Note the 'masters' sections which allows you to specify all of the available tier-1 servers in a single block. This simplifies making updates when needed. OpenNIC peers will typically carry their own root zone, but otherwise provides all other OpenNIC zones.
+
+If you have a firewall or port-forwarding configured to direct DNS traffic to your server, please ensure that port 53 for both UDP and TCP are enabled. The most common failure for a public tier-2 server is that port 53 TCP is blocked, which will cause you to fail testing of the 'dns.opennic.glue' zone.
+
+This completes the most basic slave zone configuration, and will be suitable for any private or public nameserver. However you can take this a step further and slave ALL of the OpenNIC zones, which further improves the efficiency of the queries your server performs. The caveat of this setup is that you must be aware of TLDs being added or removed, as noted on the mailing lists.
+
+To slave all of the OpenNIC zones, add the following below the 'dns' zone.
+
+<file>
+zone "bbs" in {
+		type slave;
+		file "bbs.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "bit" in {
+		type slave;
+		file "bit.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "chan" in {
+		type slave;
+		file "chan.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "dyn" in {
+		type slave;
+		file "dyn.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "free" in {
+		type slave;
+		file "free.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "fur" in {
+		type slave;
+		file "fur.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "geek" in {
+		type slave;
+		file "geek.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "gopher" in {
+		type slave;
+		file "gopher.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "indy" in {
+		type slave;
+		file "indy.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "neo" in {
+		type slave;
+		file "neo.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "null" in {
+		type slave;
+		file "null.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "opennic.glue" in {
+		type slave;
+		file "opennic.glue.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "oss" in {
+		type slave;
+		file "oss.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "oz" in {
+		type slave;
+		file "oz.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "parody" in {
+		type slave;
+		file "parody.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+zone "pirate" in {
+		type slave;
+		file "pirate.zone";
+		allow-transfer { any; };
+		notify yes;
+		masters { opennicNS; opennicPeers; };
+};
+</file>
+
+Finally, you will want to consider WHO is allowed to query your server and add an appropriate line to your options file. The default behavior (if you have not specified otherwise) is to only allow your local network to query, and the line for your options file would look like this:
+
+<code>
+allow-recursion { localnets; localhost; };
+</code>
+
+However if you wish to allow anyone from the internet to query your server (for example, running a public Tier 2 server), you would use this option:
+
+<code>
+allow-recursion { any; };
+</code>
+
+To finish your new configuration, restart BIND. If you have logging enabled, you should see BIND attempting to transfer the various zones to your server. If you look in the directory specified in the options file (or in the directory you specified if full path names were used), you should see the zone files being added.
+
+If you are creating a public tier-2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting http://opennicproject.org/t2log/test.php and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
+
+===== Alternate Configurations =====
+
+A standard configuration will provide full nameserver capabilities, however in certain cases you may wish to modify the configuration below. As an example, if you are setting up a server within a company or school campus which already has their own nameservers providing DNS information for locating on-site computers. To allow both on-site and OpenNIC name resolution, try the following:
+  * Do not include the root zone or hints
+  * Do include slave zones for all of the OpenNIC TLDs
+  * Add 127.0.0.1 as the first nameserver in resolv.conf
+
+This solution should allow your server to ONLY resolve OpenNIC domains, then pass resolution of everything else back to your network.
