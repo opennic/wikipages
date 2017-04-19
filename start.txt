@@ -1,4 +1,5 @@
 ====== Welcome to the OpenNIC Wiki ======
+[[wiki:situation|"What happened to the old wiki?", "Why can't I find something?", and other similar questions.]]
 <columns 100% 50% 50%>
 ===== About OpenNIC =====
 OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled top-level Network Information Center that offers a non-national alternative to traditional Top-Level Domain (TLD) registries such as ICANN. In case you were looking for them, traditional TLDs are currently served by Network Solutions with policies set by ICANN.
