@@ -1,0 +1,36 @@
+====== Local BIND Caching Server ======
+
+The easiest setup is to use a local caching server. The following will configure a private nameserver for your personal use. 
+
+:!: If you wish to run a public Tier 2 server, follow [[http://wiki.opennic.org/opennic:tier2setup#slave_zone_method_bind|the Slaved Zones instructions]], not these.
+
+If you are trying to anonymize your browsing history, please be aware that installing your own nameserver or using OpenNIC services will not hide your queries. OpenNIC operators are only in control of OpenNIC domains. Any queries you make to ICANN domains will still be processed by ICANN servers. However, configuring your own nameserver does give you more control over the processing of your queries, and can bypass any modifications your ISP may make to those lookups.
+
+Using your package manager, you should install ''bind9'' before proceeding.
+
+Most systems will install BIND either in /etc/bind/ or /var/named/. Within named.conf or one of its included files, you should find a block similar to this:
+
+  zone "." {
+  	type hint;
+  	file "/etc/bind/db.root";
+  };
+
+Make note of the filename, in this case "/etc/bind/db.root". This is your root hints file, which instructs BIND where to go to find 'hints' about the location of each TLD. The default file will direct you to the standard ICANN root servers. We want to replace this with a hints file that instead queries OpenNIC servers:
+
+  dig . NS @75.127.96.89 > /etc/bind/db.root
+
+If you wish to ensure this file stays up to date, you could set up a cron job to perform the above command periodically. Note that the servers listed in this file are not expected to change frequently.
+
+By changing the root hints, BIND will continue to query ICANN servers for the common TLDs such as .com and .org, but now it will now also query OpenNIC servers for any OpenNIC TLDs such as .geek or .oss.
+
+To finish your new configuration, restart BIND. Finally, look in "/etc/resolv.conf" for a line that reads
+
+  nameserver 127.0.0.1
+
+If the line does not exist, add it near the top of the file, before any other 'nameserver' lines. Save the file and exit. If you are setting up BIND on a server, make sure you configure your workstations to query your server for DNS information.
+
+You should now be able to access OpenNIC domains. To verify BIND is working, from a command line try the following:
+
+  ping opennic.glue
+
+This should resolve to 75.127.96.89, the same as opennicproject.org. If you cannot resolve opennic.glue, verify that BIND has been started successfully.
