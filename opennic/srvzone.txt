@@ -1,0 +1,93 @@
+====== Automatic OpenNIC Zone Generation ======
+
+The information below is based on a Debian/Ubuntu server with BIND9 installed. You may need to make adjustments for different distributions or if you are using a chroot setup. The directions below do not require that you already have access to OpenNIC domains for configuration. All steps will be performed from the command line.
+
+Note that this configuration may be used for both Tier-1 and Tier-2 servers, as well as private servers.
+
+===== Getting the script =====
+
+This script will automatically generate a file for BIND9 that lists all of the OpenNIC zones and their master servers. The conf file needs to be located in the same directory as the script. For convenience, you may wish to place these files in /etc/bind/ (or wherever your distribution places your BIND9 configuration). Run the following commands to download the files.
+
+  wget http://173.160.58.202/opennic.oss/files/scripts/srvzone
+  wget http://173.160.58.202/opennic.oss/files/scripts/srvzone.conf
+  chown bind.bind srvzone
+  chmod 700 srvzone
+
+Now edit srvzone.conf with your preferred editor. You will see a section with paths for several files, which can be changed to match your configuration. The first three entries dictate where BIND will store the zone files. Note that file_master does not apply to Tier-2 servers. In the example paths given, note that $TLD will be expanded to each zone name as it is created -- so for example the string "$TLD.zone" would save the .geek zone as "geek.zone". The destination variable indicated where you want the final zone configuration file to be stored, and tmp_dest is just a temporary location to create new files.
+
+Make sure the folder where you wish to store the files has been created. In the example srvzone.conf file, zones would be stored in /etc/bind/opennic/ so you want to create that folder and change the permissions to allow your bind user full access to read and write it.
+
+:!: If you are a [[opennic:tier1|Tier 1]] operator, please briefly skip to the **Tier 1 Operators** section at the bottom of this page.
+
+Now we are ready to test out the script...
+
+  sudo ./srvzone -d
+
+The script should run in less than 10 seconds, then will output the values you gave for the variables above. If there are any errors reported, check the values in the last section of srvzone.conf and make sure the commands on your system are in the same locations.
+
+Once the script runs without errors, check the generated output file at the location you specified in tmp_dest (/tmp/named.conf.opennic). You should have a file beginning with the root zone, and containing all of the OpenNIC TLD zones, configured to slave each of these zones and listing the master servers for each zone.
+
+===== Configuring BIND =====
+
+Now you should be ready to change your BIND9 configuration to use the new output. Start by editing /etc/bind/named.conf and adding the following line (edited to match your 'destination' configuration in srvzone.conf):
+
+<file - named.conf>
+include "/etc/bind/named.conf.opennic";
+</file>
+
+Next you want to edit /etc/bind/named.conf.default-zones and **delete** the root zone, which should look like this:
+
+<file - named.conf.default-zones>
+zone "." {
+	type hint;
+	file "/etc/bind/db.root";
+};
+</file>
+
+Finally check /etc/resolv.conf to make sure that lookups will be performed by your own server. The first 'nameserver' line in this file should contain the IP of your server (or 127.0.0.1).
+
+===== Test Your Setup =====
+
+It is time to see if everything works. Run the srvzone script again, but this time do not include the debug flag (-d)...
+
+  sudo ./srvzone
+
+If BIND9 was not already running, you will likely get an error from rndc. Let's restart BIND to make sure everything is running now:
+
+  /etc/init.d/bind9 restart
+
+And finally we'll issue a command to test lookups:
+
+  dig NS geek. @127.0.0.1
+
+This should produce a list of several nameservers that can be used to query the .geek zone. At the bottom you should see an entry for SERVER which shows your IP address -- if not, check troubleshooting below.
+
+If you are setting up a public server and wish to confirm it is responding properly to queries from the internet, visit http://opennicproject.org/t2log/test.php and enter your IP address. If you are using a firewall or port-forwarding, make sure that you are allowing port 53 on both UDP and TCP. If the testing passes for everything but dns.opennic.glue, you are almost certainly not allowing traffic over TCP.
+
+===== Automating Everything =====
+
+Once everything is working correctly, you want to automate the updates so your server always carries the latest zone files for all of the OpenNIC TLDs. The easiest way is to add a line to /etc/crontab (adjust the path to match where you placed the script):
+
+  50 * * * * root /etc/bind/srvzone
+
+===== Troubleshooting =====
+
+When something doesn't work, where do you start? The best place to begin is with your log files. By default, BIND9 will typically log problems to your syslog. Look for any warning lines that may indicate you have bad path names or overlapping zone files (did you remove any previous root zone entries?). Also check the log to confirm that BIND actually started.
+
+Did the srvzone script create the file in the location indicated by your include line in named.conf?
+
+Check file permissions -- Does the bind user have read/write access the new files and directories that were created by you?
+
+Does your server respond to direct queries? Try using your internet-side IP address, and 127.0.0.1, to see if this command will give you a reply. If you get a reply where your IP is in the SERVER line at the bottom, but you do not see your IP when not using the @<addr> directive, check /etc/resolv.conf to make sure your server's IP is the first nameserver line in the file. You might also check /etc/bind/named.conf.options to make sure no directives have been added that block local lookups.
+
+  dig NS geek. @127.0.0.1
+
+When in doubt, there are frequently people available on the mailing list or on IRC chat that can help you troubleshoot.
+
+===== Tier 1 Operators =====
+
+This information has been moved to the bottom to prevent confusion.
+
+If you are a current **Tier 1** operator and are setting up a Tier 1 server, you should include your NS number in all of the srvzone commands, for example, ''sudo ./srvzone -d'' becomes ''sudo ./srvzone -d ns11'' (replacing with your NS number).
+
+:!: **Everyone else:** You should **not** include a number if you do not **currently** operate a TLD with OpenNIC. It will break your configuration.
