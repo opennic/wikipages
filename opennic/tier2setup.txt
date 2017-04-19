@@ -1,0 +1,75 @@
+====== Setting up a Tier 2 Server ======
+
+Tier 2 servers (DNS resolvers) can be used for public or private DNS lookups, on the OpenNIC and ICANN namespaces.
+
+Recommended Minimum Server Specifications
+  * Linux
+  * 1 CPU Core
+  * 512 MB RAM
+  * 4 GB SSD
+
+===== Considerations =====
+
+Please keep the following in mind when deciding whether or not to run a public Tier 2 server, some considerations are involved.
+
+  * Your server and network equipment, including your internet connection, must be reliable.
+  * Typical bandwidth usage may only be a few-hundred MB/month, but without proper protection and rate limiting, a DDoS attack can easily put you into hundreds of gigabytes in a few days!
+  * You will personally need to monitor your equipment and be willing to quickly resolve any failures. This includes having the knowledge to troubleshoot both hardware and software failures.
+  * When your service becomes unavailable from the internet for more than two hours, you will receive an automated email warning. Please do not ignore these emails -- you will only receive them when there is a problem.
+  * Tier-2 servers **will** experience DDoS attacks. Please be sure to visit the [[opennic:tier2security|Tier 2 Security]] page for information on how to mitigate these attacks. Other members will do what they can to provide assistance, however ultimately it is your responsibility to ensure that your own servers do not participate in man-in-the-middle or amplification attacks. You do not want to become part of an attack!
+  * Various attacks will use up a lot of bandwidth. If your provider places data caps on your monthly internet usage, you may want to reconsider having a public service. Every attack is different, so no predictions can be on what your data usage will be each month -- however as an example, attacks can continue for several months and have been known to blast up to 20Mb/s of queries to an individual server. If you wish to run a public service, be prepared for the worst!
+
+We highly recommend you do not run a Tier 2 server on a home connection, for private usage, public usage or otherwise. Consider purchasing a VPS (Virtual Private Server) from a hosting company like DigitalOcean, Vultr, Linode, AWS, or Azure.
+
+===== Configuration Options =====
+
+There are a number of configuration methods available to run your server. 
+
+==== Root-Hints Method (BIND) ====
+
+Consider using the [[opennic:t2hints|BIND root-hints method]] if you want:
+  * Easy configuration
+  * No local maintenance required
+  * A private-use Tier 2
+
+The root-hints method is **strongly discouraged** when running a public server, because it creates unnecessary strain on our infrastructure. If you are going to run a publicly listed server, you must run one of the following two options.
+
+==== Slave Zone Method (BIND) ====
+
+Consider using the [[opennic:t2slaved|BIND slaved zone method]] if you want:
+  * Local redundancy of zone files.
+  * Minimize the number of queries sent to other servers.
+  * No reliance on other OpenNIC servers for resolving OpenNIC domains.
+  * Have a special case where you want to resolve OpenNIC domains but also need to resolve local network entries.
+  * To run a public Tier 2 server.
+
+This method creates a local copy of the root zone and all of OpenNIC's TLDs, and is the best way to contribute to our network.
+
+=== Automated Slave Zones ===
+
+There are some automated scripts that allow you to keep your slave BIND server always up-to-date, often requiring just a single command or minor configuration to get up and running. **This is the recommended way to setup a new Tier 2 server** unless you know you specifically need another setup.
+
+  * [[opennic:srvzone|Srvzone method]]: Automated script for BIND9 by Jeff Taylor.
+
+==== DJBDNS ====
+
+For those of you who prefer DJBDNS, an updated guide will be posted soon. [[http://web.archive.org/web/20161002203246/http://wiki.opennicproject.org:80/Tier2ConfigDJBDNS|Archived guide]].
+
+==== Unbound ====
+
+For those of you who prefer Unbound, an updated guide will be posted soon. [[http://web.archive.org/web/20160904020628/http://wiki.opennicproject.org:80/Tier2ConfigUnbound|Archived guide]].
+
+==== Windows Server ====
+
+We highly discourage public Windows Tier 2 servers, but these guides exist if you require running it in a LAN, Corporate Network, etc.
+
+  * Windows 2016: //We lost this guide with the old wiki, we're working on remaking it!//
+  * Windows 2012: Guide will be posted at [[opennic:t2win12|t2win12]] shortly. [[http://web.archive.org/web/20160628170446/http://wiki.opennicproject.org:80/Tier2ConfigWindows2012|Archived guide]].
+
+===== Post-Setup Configuration =====
+
+Make sure you read the following guides to ensure your server is setup in the best way possible for the OpenNIC network.
+
+  * [[opennic:bindlogconfig|BIND Logging Configuration]]. [[http://web.archive.org/web/20160913110735/http://wiki.opennicproject.org/Tier2ConfigBindLogging|Archived guide]].
+  * [[opennic:bindloganon|BIND Logging Obfuscation]]. [[http://web.archive.org/web/20160913110708/http://wiki.opennicproject.org/Tier2ConfigObfuscatingLogs|Archived guide]].
+  * [[opennic:tier2security|Tier 2 Security Measures]]. [[http://web.archive.org/web/20160905195029/http://wiki.opennicproject.org:80/Tier2Security|Archived guide]].
