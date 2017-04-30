@@ -1,5 +1,4 @@
 ====== Welcome to the OpenNIC Wiki ======
-[[wiki:situation|"What happened to the old wiki?", "Why can't I find something?", and other similar questions.]]
 <columns 100% 50% 50%>
 ===== About OpenNIC =====
 OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled top-level Network Information Center that offers a non-national alternative to traditional Top-Level Domain (TLD) registries such as ICANN. In case you were looking for them, traditional TLDs are currently served by Network Solutions with policies set by ICANN.
@@ -19,6 +18,9 @@ To volunteer assistance with any of these tasks, please enter your name on the r
 There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, setup to resolve OpenNIC TLDs, volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
 <newcolumn>
 ===== Useful resources =====
+==== Domain Registration ====
+Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:namespaces|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
+
 ==== Primary Tier 2 DNS Resolvers ====
 
   * 185.121.177.177
