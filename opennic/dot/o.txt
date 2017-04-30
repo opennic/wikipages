@@ -1,16 +1,51 @@
 ====== .o TLD ======
-===== Charter =====
-This is a summary of the charter. See www.moderntld.com/about/charter for details.
-
 The .o TLD, operated by the ModernTLD administration, is to be used by commercial and non-commercial entities (individual or groups) to promote themselves on the OpenNIC free network. This domain is intended to be used in a general sense, akin to .com in the ICANN network, and as such has a very general use case and little restrictions on registration. Registration is available on a first-come, first-serve basis.
 
+===== Charter =====
+Please see www.moderntld.com/about/charter for the most up-to-date version of this charter.
+
+The .o TLD, operated by the ModernTLD (a.k.a. ‘mTLD’) administration, is to be used by commercial and non-commercial entities (individual or groups) to promote themselves on the OpenNIC free network. This domain is intended to be used in a general sense, akin to .com in the ICANN network, and as such has a very general use case and little restrictions on registration.
+
+Use of this TLD is not a given right to any holder, and domain names may be revoked by the mTLD administration team or by a vote of domain holders (henceforth known as “Members”), especially pertaining to violations of our policies (see Section 2).
+
+“Members” in this charter refers to owners of .o domains and not OpenNIC members unless otherwise noted.
+
+=== Registration ===
+
+“.o” domains will be available on a first-come, first-serve basis. Some domains have been reserved for administrative use (see Section 6) prior to public registration.
+
+Registrations immediately after approval will be handled manually via email. An automated registration system is in development and will be available at tld.o when it becomes available. Registrations will be available from 3 month to 2 year periods. All registrations will be available for free after approval, however, the modernTLD administration holds the right to raise prices as needed to cover operating costs.
+
+=== Abuse ===
+
+mTLD will not tolerate the following behavior, and use of our domains for any of the following is grounds for termination:  * 
+ - Domain squatting
+ - Spam email delivery
+ - Malware distribution
+ - Malicious interference with computer systems
+
+Our abuse policies are in line with OpenNIC’s abuse policies as well (http://wiki.opennicproject.org/TLDPolicy – “Obnoxious Activity: Spam & Cracking”), and any policies listed there apply to “.o” domains as well. The mTLD registry/administration is not a domain police force and meaningful abuse enforcement will be reliant on members reporting. All abusive behavior should be immediately reported to abuse@tld.o so administration can take action.
+
+=== Termination ===
+
+Domains can be immediately terminated if they are found to be in violation of our policies by the mTLD administration, and a notice will be sent to the registrant of the offending domain. Domains can also be terminated via a member vote. Membership is granted to any domain holder, 1 vote per member regardless of the amount registrations they hold. Member votes are subject to policies as listed in Section 4.
+
+Domains may also be revoked by the mTLD administration if the OpenNIC membership at large moves to revoke a registration. We do not foresee a circumstance where OpenNIC as a whole will be required to vote on the revocation of a .o domain, but if the need arises we will comply with any such vote.
+
+=== Disputes ===
+
+Trademark holders should email trademarks@tld.o if they wish to dispute a domain. mTLD will revoke or transfer registrations if ordered by a legitimate court of law, as a courtesy to that country, as applicable to OpenNIC’s dispute policy.
+
+=== Amendments ===
+
+Amendments to this charter may be added by a vote of .o domain holders. Additionally, the mTLD administration is permitted to provide a binding user agreement for registrations at tld.o that may include policies outside the scope of this charter.
+
 ==== Policies ====
-.o generally accepts any OpenNIC policies regarding abuse. The activities we prohibit include, but are not limited to: domain squatting, spam email delivery, malware distribution, or malicious interference with computer systems. See our full charter linked above and www.moderntld.com/about/policies for details.
+Please see https://www.moderntld.com/about/policies/ for the most up-to-date organizational policies regarding this TLD.
+
+.o generally accepts any OpenNIC policies regarding abuse. The activities we prohibit include, but are not limited to: domain squatting, spam email delivery, malware distribution, or malicious interference with computer systems. 
 
 ==== Contacts ====
   * Website: www.moderntld.com / tld.o
-  * ModernTLD Administration: admins@moderntld.com (hostmaster@opennic.o forwards here)
-  * Abuse Reporting: abuse@tld.o (abuse@opennic.o forwards here)
-  * Webmaster: jonah@moderntld.com (webmaster@tld.o, webmaster@opennic.o forwards here)
-  * Trademark Disputes: trademarks@tld.o
+  * Administrator: jonah@moderntld.com
   * Other Contact: hello@moderntld.com
