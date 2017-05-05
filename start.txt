@@ -1,3 +1,4 @@
+~~NOTOC~~
 ====== Welcome to the OpenNIC Wiki ======
 <columns 100% 50% 50%>
 ===== About OpenNIC =====
