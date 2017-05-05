@@ -1,0 +1,3 @@
+====== Setting up OpenNIC ======
+  * [[setup:macos|Setting up OpenNIC on macOS]]
+  * [[setup:windows|Setting up OpenNIC on Windows 7, 8, 10]]
