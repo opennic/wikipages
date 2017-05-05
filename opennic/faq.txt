@@ -11,7 +11,7 @@ Users of OpenNIC DNS servers, in addition to resolving host names in the Legacy 
 Membership in OpenNIC is open to every user of the Internet. All decisions are made either by a democratically elected administrator or through a direct ballot of the interested members. All decisions within OpenNIC, regardless of how they are made, are appealable to a vote of the general membership.
 
 ===== How did OpenNIC start? =====
-An article was posted on [[https://en.wikipedia.org/wiki/Kuro5hin|kuro5hin.org]] on June 1, 2000, advocating the need for a democratically governed Domain Name System (DNS). Out of the resulting discussion, OpenNIC was born. 
+[[https://scr.meo.ws/files/1493956057263795159-K5%20An%20Immodest%20DNS%20Proposal.html|An article]] was posted on [[https://en.wikipedia.org/wiki/Kuro5hin|kuro5hin.org]] on June 1, 2000, advocating the need for a democratically governed Domain Name System (DNS). Out of the resulting discussion, OpenNIC was born. 
 
 ===== How can I contact OpenNIC and/or its members? =====
 You have several options, depending on what sort of info you're looking for: See [[help|this wiki page]] for more information.
