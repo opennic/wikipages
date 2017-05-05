@@ -31,7 +31,7 @@ masters opennicNS {
 	45.56.116.224;				# ns0.opennic.glue
 	173.160.58.202;				# ns2.opennic.glue
 	2001:470:f032:10:0:100:53:10;		# ns2.opennic.glue
-	198.46.244.109;				# ns3.opennic.glue
+	104.168.144.17;				# ns3.opennic.glue
 	2001:470:8269::53;			# ns3.opennic.glue
 	178.63.145.230;				# ns4.opennic.glue
 	2a01:4f8:101:3062::5:2;			# ns4.opennic.glue
@@ -39,14 +39,13 @@ masters opennicNS {
 	2a02:990:219:1:ba:1337:cafe:3;		# ns5.opennic.glue
 	207.192.71.13;				# ns6.opennic.glue
 	2002:cfc0:470d::1;			# ns6.opennic.glue
-	45.79.192.100;				# ns7.opennic.glue
-	2600:3c02::f03c:91ff:fec8:d863;		# ns7.opennic.glue
 	178.63.116.152;				# ns8.opennic.glue
 	2a01:4f8:141:4281::999;			# ns8.opennic.glue
-	188.226.215.149;			# ns9.opennic.glue
-	2a03:b0c0:0:1010::48:4001;		# ns9.opennic.glue
-	50.116.19.70;				# ns10.opennic.glue
+	138.68.128.160;				# ns9.opennic.glue
+	2a03:b0c0:1:a1::46b:a001;		# ns9.opennic.glue
 	188.226.146.136;			# ns10.opennic.glue
+	2001:470:1f04:ebf::2;			# ns10.opennic.glue
+	138.197.44.179;				# ns11.opennic.glue
 };
 masters opennicPeers {
 };
