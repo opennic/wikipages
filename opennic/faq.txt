@@ -1,0 +1,41 @@
+====== FAQ ======
+
+===== What is OpenNIC? =====
+
+OpenNIC is a user owned and controlled Network Information Center offering a democratic, non-national alternative to the traditional Top-Level Domain registries.
+
+Users of OpenNIC DNS servers, in addition to resolving host names in the Legacy ICANN (Internet Corporation for Assigned Names and Numbers) root, can resolve host names in OpenNIC operated namespaces as well as in the namespaces with which we have peering agreements.
+
+===== Who makes up OpenNIC? =====
+
+Membership in OpenNIC is open to every user of the Internet. All decisions are made either by a democratically elected administrator or through a direct ballot of the interested members. All decisions within OpenNIC, regardless of how they are made, are appealable to a vote of the general membership.
+
+===== How did OpenNIC start? =====
+An article was posted on [[https://en.wikipedia.org/wiki/Kuro5hin|kuro5hin.org]] on June 1, 2000, advocating the need for a democratically governed Domain Name System (DNS). Out of the resulting discussion, OpenNIC was born. 
+
+===== How can I contact OpenNIC and/or its members? =====
+You have several options, depending on what sort of info you're looking for: See [[help|this wiki page]] for more information.
+
+===== What is OpenNIC's relationship with the other alternative roots and ICANN? =====
+OpenNIC currently recognizes and peers all of the existing ICANN TLDs (.com, .uk, etc.). Therefore, if you configure your computer to resolve OpenNIC domains, you'll also be able to resolve all of the ICANN TLDs automatically.
+
+OpenNIC has not yet evaluated nor does it hold a formal position on the current/future ICANN TLDs.
+
+===== What TLDs are operated by OpenNIC? =====
+A detailed list of TLDs operated by OpenNIC can be found on the OpenNICNamespaces page.
+
+===== How do I resolve OpenNIC domains? =====
+For step-by-step instructions on resolving OpenNIC domains, please see [[site|this wiki page]].
+
+===== I run a name server. How do I set it to resolve OpenNIC domains? =====
+[[opennic:tier2setup]] has instructions for configuring BIND, djbdns, and Windows DNS Server to resolve OpenNIC domains.
+
+===== How do I register a domain name using an OpenNIC TLD? =====
+To register a domain under one of the OpenNIC Top Level Domains (TLDs) please visit the appropriate registration site listed on the [[opennic:namespaces]] page.
+If you are looking to propose a new TLD under OpenNIC, please see [[creating_new_tlds|this wiki page].
+
+===== Can I register .com/.net/.org domain names through OpenNIC? =====
+No. OpenNIC provides a democratically governed alternative to the traditional Top-Level Domain registries; we do not register non-OpenNIC Top Level Domains, such as .com, .net, and .org.
+
+===== How do I register a new TLD? =====
+Please see here: [[opennic:newtlds]]
