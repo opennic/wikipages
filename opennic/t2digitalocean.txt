@@ -1,0 +1,84 @@
+====== DigitalOcean Droplet Metadata Setup ======
+
+This is an incredibly simple way to create Tier 2 servers on [[https://m.do.co/c/fb6730f5bb99|DigitalOcean]] automatically, en masse, in one minute, no SSH immediately required.
+
+===== Short Version =====
+
+If you know what you're doing, use this User Data when creating an Ubuntu 16.04 Droplet:
+
+<file>
+#cloud-config
+package_update: true
+packages:
+  - bind9
+manage-resolv-conf: true
+resolv_conf:
+  nameservers:
+    - '127.0.0.1'
+    - '138.197.25.214'
+    - '185.121.177.177'
+runcmd:
+    - wget -O /etc/bind/srvzone https://gist.githubusercontent.com/JonahAragon/e13995d17404b4d5f58df44ef3953c96/raw/
+    - chmod +x /etc/bind/srvzone
+    - /bin/bash /etc/bind/srvzone
+    - sed -i '$a include "/etc/bind/named.conf.opennic";' /etc/bind/named.conf
+    - systemctl restart bind9
+</file>
+
+===== Long Version (Full Installation Details) =====
+
+Assuming you already [[https://m.do.co/c/fb6730f5bb99|have a DigitalOcean account]] with billing configured, you can create a Droplet with the following configuration:
+
+**Distributions** (Operating System): **Ubuntu 16.04.2 x64** -- this is the only OS this has been tested on, and is the default. Use others at your own risk.
+
+{{:opennic:do-image.png?600|}}
+
+**Size:** Any pricing option will do for most servers, as BIND isn't resource intensive. Start with **$5/mo**, you can always upgrade in the future.
+
+{{:opennic:do-size.png?600|}}
+
+**Datacenter Region:** Choose the datacenter with the lowest latency to either yourself or the people you intend to use the servers. Check out [[http://cloudharmony.com/speedtest-latency-dns-for-digitalocean:compute|Cloudharmony's latency test here]] as a good way to test every DigitalOcean location from yourself, lowest latency (in ms) is better.
+
+{{:opennic:do-region.png?600|}}
+
+**Additional Options:** Check the following: **IPv6**, **User data**, **Monitoring**. You can also check **Backups**, but this isn't as necessary for a DNS-only server with little important data, and will cost $1/mo extra on a $5/mo server.
+
+In the **User data** box, enter the following:
+
+<file>
+#cloud-config
+package_update: true
+packages:
+  - bind9
+manage-resolv-conf: true
+resolv_conf:
+  nameservers:
+    - '127.0.0.1'
+    - '138.197.25.214'
+    - '185.121.177.177'
+runcmd:
+    - wget -O /etc/bind/srvzone https://gist.githubusercontent.com/JonahAragon/e13995d17404b4d5f58df44ef3953c96/raw/
+    - chmod +x /etc/bind/srvzone
+    - /bin/bash /etc/bind/srvzone
+    - sed -i '$a include "/etc/bind/named.conf.opennic";' /etc/bind/named.conf
+    - systemctl restart bind9
+</file>
+
+**SSH Keys:** Select your SSH key from the list. If you don't have an SSH key, **[[https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2|create one]] and add it**. SSH keys are much more secure in comparison to normal passwords.
+
+{{:opennic:do-ssh.png?600|}}
+
+**Number of Droplets:** This is the number of servers you want to create with the above configuration. If you're new to operating a Tier 2 server you can keep this at **1 Droplet**. The above script is infinitely scalable however, so you can theoretically create as many servers as you'd like automatically.
+**Hostname:** You can keep this as the default, it doesn't really matter for this purpose.
+
+{{:opennic:do-finalize.png?600|}}
+
+Press the green **Create** button and your server will start! Wait a few minutes for everything to configure correctly, and you should have a working Tier 2 Server, congratulations!
+
+===== Testing Your New Server =====
+
+Visit [[http://report.opennicproject.org/t2log/t2.php]] and enter your Droplet's IP address. Everything should function normally and the test will pass:
+
+{{:opennic:t2-passed.png|}}
+
+That's it! Now that your server is created you can add it to our [[https://servers.opennicproject.org/|public server list]]! ([[https://www.opennicproject.org/members/|Registration required]])
