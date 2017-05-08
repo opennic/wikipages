@@ -1,6 +1,6 @@
 ====== API ======
 OpenNIC maintains an API page as a gateway to various projects. The default page is located at https://api.opennicproject.org/ however there is no official website on that page.
 
-The following projects may be accessed through the API:
+The following resources may be accessed through the API:
   * [[api:whitelist]]
   * [[api:bindacl]]
