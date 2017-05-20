@@ -22,14 +22,14 @@ There are plenty of OpenNIC folks available to help with whatever problem you ma
 ==== Domain Registration ====
 Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:namespaces|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
 
-==== Primary Tier 2 DNS Resolvers ====
+==== Anycast Tier 2 DNS Resolvers ====
 
   * 185.121.177.177
-  * 185.121.177.53
+  * 169.239.202.202
   * 2a05:dfc7:5::53
   * 2a05:dfc7:5::5353
 
-A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick servers from the server list (not the primary ones).
+A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick the nearest servers from the server list instead of anycast servers.
 
 ==== DNS Wizards ====
 Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
