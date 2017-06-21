@@ -25,7 +25,7 @@ OpenNIC has not yet evaluated nor does it hold a formal position on the current/
 A detailed list of TLDs operated by OpenNIC can be found on the OpenNICNamespaces page.
 
 ===== How do I resolve OpenNIC domains? =====
-For step-by-step instructions on resolving OpenNIC domains, please see [[site|this wiki page]].
+For step-by-step instructions on resolving OpenNIC domains, please see [[:setup|this wiki page]].
 
 ===== I run a name server. How do I set it to resolve OpenNIC domains? =====
 [[opennic:tier2setup]] has instructions for configuring BIND, djbdns, and Windows DNS Server to resolve OpenNIC domains.
