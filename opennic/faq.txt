@@ -32,7 +32,7 @@ For step-by-step instructions on resolving OpenNIC domains, please see [[:setup|
 
 ===== How do I register a domain name using an OpenNIC TLD? =====
 To register a domain under one of the OpenNIC Top Level Domains (TLDs) please visit the appropriate registration site listed on the [[opennic:namespaces]] page.
-If you are looking to propose a new TLD under OpenNIC, please see [[creating_new_tlds|this wiki page].
+If you are looking to propose a new TLD under OpenNIC, please see [[:creating_new_tlds|this wiki page]].
 
 ===== Can I register .com/.net/.org domain names through OpenNIC? =====
 No. OpenNIC provides a democratically governed alternative to the traditional Top-Level Domain registries; we do not register non-OpenNIC Top Level Domains, such as .com, .net, and .org.
