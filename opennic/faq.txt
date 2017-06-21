@@ -14,7 +14,7 @@ Membership in OpenNIC is open to every user of the Internet. All decisions are m
 [[https://scr.meo.ws/files/1493956057263795159-K5%20An%20Immodest%20DNS%20Proposal.html|An article]] was posted on [[https://en.wikipedia.org/wiki/Kuro5hin|kuro5hin.org]] on June 1, 2000, advocating the need for a democratically governed Domain Name System (DNS). Out of the resulting discussion, OpenNIC was born. 
 
 ===== How can I contact OpenNIC and/or its members? =====
-You have several options, depending on what sort of info you're looking for: See [[help|this wiki page]] for more information.
+You have several options, depending on what sort of info you're looking for: See [[:help|this wiki page]] for more information.
 
 ===== What is OpenNIC's relationship with the other alternative roots and ICANN? =====
 OpenNIC currently recognizes and peers all of the existing ICANN TLDs (.com, .uk, etc.). Therefore, if you configure your computer to resolve OpenNIC domains, you'll also be able to resolve all of the ICANN TLDs automatically.
