@@ -21,7 +21,7 @@ Now try again on the alternative port:
   ...
   .	86319	IN	SOA	ns0.opennic.glue. hostmaster.opennic.glue. 2015080301 1800 900 604800 3600
 
-You can see that the SOA returned is OpenNIC's, meaning no hijacking has taken place on the alternative port. If this result differs from the previous result, then your ISP is likely to be hijacking DNS.
+You can see that the SOA returned is OpenNIC's, meaning no hijacking has taken place on the alternative port. If this result differs from the previous result or the first result times out with ''connection timed out; no servers could be reached'', then your ISP is likely to be hijacking DNS.
 
 ==== What can I do about it? ====
 Please refer to the answer of [[https://unix.stackexchange.com/questions/144482/|this question]] to use iptables to reroute your DNS traffic to an alternative port on an OpenNIC server. Remember to change the server's IP address.
@@ -31,6 +31,7 @@ You could also contact your ISP to complain about their use of DNS hijacking.
 ==== Abusive ISP List ====
 This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
 
-^ Country       ^ ISP     ^ Reported ^ Reporter ^ Notes ^
-| Canada        | Rogers  | 2007     | //news// | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
-| United States | Comcast | 2009     | //news// | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/ |
+^ Country       ^ ISP     ^ Reported ^ Reporter                   ^ Notes                                                                                           ^
+| Peru          | Bitel   | 2017     | Anonymous user on #opennic | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt            |
+| United States | Comcast | 2009     | //news//                   | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/                                   |
+| Canada        | Rogers  | 2007     | //news//                   | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
