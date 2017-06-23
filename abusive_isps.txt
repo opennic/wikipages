@@ -32,6 +32,6 @@ You could also contact your ISP to complain about their use of DNS hijacking.
 This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
 
 ^ Country       ^ ISP     ^ Reported ^ Reporter                   ^ Notes                                                                                           ^
-| Peru          | Bitel   | 2017     | Anonymous user on #opennic | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt            |
+| Peru          | Bitel   | 2017     | Tedel on #opennic          | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt            |
 | United States | Comcast | 2009     | //news//                   | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/                                   |
 | Canada        | Rogers  | 2007     | //news//                   | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
