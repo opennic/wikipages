@@ -72,4 +72,4 @@ Make sure you read the following guides to ensure your server is setup in the be
 
   * [[:bindlogconfig|BIND Logging Configuration]]
   * [[:bindloganon|BIND Logging Obfuscation]]
-  * [[opennic:tier2security|Tier 2 Security Measures]]. [[http://web.archive.org/web/20160905195029/http://wiki.opennicproject.org:80/Tier2Security|Archived guide]].
+  * [[opennic:tier2security|Tier 2 Security Measures]]
