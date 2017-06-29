@@ -2,7 +2,7 @@
 
 These are the Top-Level Domains (TLDs) which are currently being served by OpenNIC, are being constructed with the approval of OpenNIC or which have been proposed to OpenNIC. There are links to the appropriate Web and email contacts for those which are currently accepting domain name registrations.
 
-If you would like to contribute to the project by taking responsibility for organizing a new TLD, please see the [[opennic:newtlds|Registering A TLD]] page. This page is up to date and all links have been tested as of 2017-04-30, all blank entries are placeholders for information we could not definitely determine, or websites which were offline or not functional at the time.
+If you would like to contribute to the project by taking responsibility for organizing a new TLD, please see the [[creating_new_tlds|Registering A TLD]] page. This page is up to date and all links have been tested as of 2017-04-30, all blank entries are placeholders for information we could not definitely determine, or websites which were offline or not functional at the time.
 
 FIXME We're still missing some information! If you can fill in some of the blanks that would be appreciated! 
 
