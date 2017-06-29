@@ -1,0 +1,21 @@
+====== .chan TLD ======
+====== .glue TLD ======
+<short intro goes here>
+
+===== Charter =====
+.chan is established for use by imageboards, as any content or communities inspired by or pertaining to imageboard culture. A .chan domain name can be utilized as either an alternative domain to any previously existing community, or as the domain to a new community. Aforementioned domains may be used for both commercial and non-commercial purposes.
+
+==== Eligibility ====
+An eligible individual for registration is defined as any individual that has not been expelled from the organization. An eligible individual for voting is defined as any individual that has not been expelled from the organization and has an email with at least one domain registered to it.
+
+==== Registration ====
+Registration is available to all eligible individuals. An individual may register a domain on the behalf of any non-human entity, and for the purposes of this charter is entitled to the rights, as well as held to the restrictions, of a singular person. Registrants are asked to only register domain names they intend to use; attempts to “domain park” or otherwise hoard domains will be scrutinized and may result in the denial of your registration request. For the sake of maintaining sanity, only the [[hostmaster@opennic.chan|hostmaster]] needs to approve the registration of a domain.
+
+==== Voting ====
+All eligible individuals with a registered domain will be entitled to one vote on major organizational decisions. A proposal to vote on may be put forward by any individual or group of individuals through our electronic mailing list. The proposal will be available to review, discuss and debate for a period of 48 hours, during which the proposal may be amended as seen fit by the proposal’s writer or writers. Once this debate period ends, the writer or writers of the proposal must indicate that they have discarded the proposal, request a 24-hour extension of the debate period, or put the proposal to vote. If a vote to extend the debate period passes, a further 24 hours will be alloted to he debate period before a final indication must be made to drop the proposal or put it to vote. Should the proposal be dropped, the debate ends and the proposal is discarded. Should the proposal be put to vote, all members will have 48 hours to cast a “Yay” or “Nay” vote on the proposal. After 48 hours, all absent votes will be registered as abstentions and the winner will be determined by a simple majority of all non-abstaining voters. Once the results have been announced, the proposal will go into effect as policy and will be enforced by the relevant individuals in the organization.
+
+==== Anonymity ====
+In recognition of the special nature of the community and demographic this organization is chartering a domain for, this organization will allow all individuals to register and vote without proof of identity or a real name. The sole criteria for to be considered a voting member of the organization will be an email address with one or more registered, non-revoked domains, belonging to a singular person. Should blatant abuse of said anonymity be discovered, the evidence of this activity may be used to propose the expulsion of the offender or offenders. The individual or individuals accused of said abuse will not be eligible voters on this proposal. Should such a proposal pass, the domains of all offending individuals will be revoked and become available for registration, and the individuals will be ineligible to vote on further proposals. The offenders may not have their eligibility to vote or register a domain reinstated. Abuse includes “sock-puppeting”, Sybil attacks, and other similar methods of social subversion.
+
+==== Amendment ====
+Provided the proposal in question does not bring this document in conflict with OpenNIC Policy, this document may be edited or amended by a proposal should the proposal to do so pass.
