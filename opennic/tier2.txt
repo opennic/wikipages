@@ -6,7 +6,7 @@ Tier 2 server information and FAQs.
 
 Tier 2 servers are "DNS Resolvers" or, servers that actually do the heavy-lifting when querying OpenNIC's DNS infrastructure. These are the servers that **clients use in their configuration** directly, and they provide access to the network. Anybody can operate a Tier 2 server, but there is a large amount of "Public Tier 2" servers to choose from at [[http://servers.opennicproject.org/|servers.opennicproject.org]].
 
-Once you choose a server, you can setup your computers, phones, and all your other devices by following the guides at [[setup:start|the setup guides]].
+Once you choose a server, you can setup your computers, phones, and all your other devices by following the guides at [[tier2setup|the setup guides]].
 
 ===== Who Runs the Tier 2 Servers? =====
 
