@@ -1,0 +1,70 @@
+====== Tier 2 Security Measures ======
+
+===== Protecting Against Attacks =====
+Tier 2 operators may frequently find themselves being used as a point of attack. The information below has been developed to mitigate these attacks.
+
+//For multi-line rules, please remember that order is important! Check your rules after insertion to confirm they are in the correct order, or you will have undesirable results.//
+
+==== IPtables Rules ====
+The following iptables rules should be added where appropriate to your setup. When in doubt, add them to the beginning of the INPUT table, before adding your other firewall rules.
+
+To protect against floods from queries for isc.org:
+
+<code>-p udp -m string --hex-string "|00000000000103697363036f726700|" --algo bm --to 65535 --dport 53 -j DROP</code>
+
+To protect against floods from queries for ripe.net:
+
+<code>-p udp -m string --hex-string "|0000000000010472697065036e6574|" --algo bm --to 65535 --dport 53 -j DROP</code>
+
+To limit ANY queries per IP address, use these two lines:
+
+<code>
+-p udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --set --name dnsanyquery
+-p udp --dport 53 -m string --from 50 --algo bm --hex-string '|0000FF0001|' -m recent --name dnsanyquery --rcheck --seconds 60 --hitcount 4 -j DROP
+</code>
+
+These rules will throttle a connection to 30 queries per minute, allowing for burst traffic of 10 queries (more information can be found at IPTablesRulesToBlockDDOSTraffic):
+
+<code>
+-p udp -m hashlimit --hashlimit-srcmask 24 --hashlimit-mode srcip --hashlimit-upto 30/m --hashlimit-burst 10 --hashlimit-name DNSTHROTTLE --dport 53 -j ACCEPT
+-p udp -m udp --dport 53 -j DROP
+</code>
+
+Sometimes just replying that you refuse to answer a query can be enough to saturate your connection. The refusal packet can be a few more bytes than the original request and can add up quickly. It has also been observed that bots which abuse your DNS server will only try harder if you send a refusal packet, but if you do not send any reply (as if your service were offline), many bots will go away...
+
+If you are using the whitelisting service, or have a specific list of IP addresses that you will will respond to, all other queries will generate a "refused" notice sent back to the requester. This rule will prevent your DNS server from actually sending the refused notices, thus giving the appearance that your DNS server has gone dead. Again, note that this is only useful for servers that use an ACL to whitelist who can talk to them!
+
+<code>-A OUTPUT -p udp --source-port 53 -m string --algo kmp --from 30 --to 31 --hex-string "|8105|" -j DROP</code>
+
+If you have a new situation and cannot stop the incoming traffic, iptables string-match rules can be used as a last resort. Keep in mind that string matching is resource-intensive and may slow down your network speed, however if you need to shut out an attack, this option is better than letting your server continue to answer the abusive queries.
+
+First, you need to get a hex-dump of the packets you wish to block. For this, you will use tcpdump:
+
+  # tcpdump -c10 -pntxi eth0 not udp src port 53 and udp dst port 53
+
+The option '''-c10''' specifies that you only want to dump out 10 packets at a time. The portion after the interface specifies that we only want to look at incoming packets on UDP port 53, and ignore outgoing packets.
+
+If your server is being attacked, you will probably see several instances of the particular query within those 10 packets. For example, while being flooded with ANY queries for the root zone, I captured the following:
+
+<code>
+IP 69.9.100.242.58100 > 216.87.84.211.53: 43581+ [1au] ANY? . (28)
+        0x0000:  4500 0038 a48c 0000 f111 4e02 4509 64f2
+        0x0010:  d857 54d3 e2f4 0035 0024 0000 aa3d 0100
+        0x0020:  0001 0000 0000 0001 0000 ff00 0100 0029
+        0x0030:  2328 0000 0000 0000
+IP 99.108.65.243.18176 > 216.87.84.211.53: 40843+ [1au] ANY? . (28)
+        0x0000:  4500 0038 d50a 0000 f111 2220 636c 41f3
+        0x0010:  d857 54d3 4700 0035 0024 0000 9f8b 0100
+        0x0020:  0001 0000 0000 0001 0000 ff00 0100 0029
+        0x0030:  2328 0000 0000 0000
+</code>
+
+You will probably see examples from several different IP addresses. What you are looking for is a block of consecutive bytes that are identical between all queries. In my case, I am going to choose this section near the end:
+
+  0000 0001 0000 ff00 0100 0029 2328 0000
+
+For the iptables rule, you want to remove all the spaces between bytes, and drop the results into a rule like this:
+
+  # iptables -I INPUT -p udp -m string --hex-string "|000000010000ff000100002923280000|" --algo bm --dport 53 -j DROP
+
+Running this rule will immediately shut out all matching queries, preventing your server from wasting time and bandwidth trying to answer them.
