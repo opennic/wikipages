@@ -1,0 +1,27 @@
+====== Logging in Bind 9 ======
+
+Lets go through turning on some logging for your BIND9 DNS server. These logs are interesting to look through, but should not be archived. If you wish to archive them, provided is a perl script, written by Brianko, which will remove all IP addresses and replace them with XXX.XXX.XXX.XXX. It is important that we protect our members' right to browse the internet in complete privacy, so use of this perl script is highly encouraged.
+
+To turn on logging, open named.conf.options in your favourite text editor and add the following to the end of the file:
+
+  logging {
+     channel "misc" {
+  		 file "/var/log/misc.log" versions 2 size 25M;
+  		 severity info; print-severity no;
+  		 print-category yes; print-time yes;
+  		 };
+    channel "querylog" {
+  		 file "/var/log/named.log" versions 2 size 25M;
+  		 severity info; print-severity no;
+  		 print-category no; print-time yes;
+  		 };
+    category "queries" { "querylog"; };
+    category default { "misc"; };
+  };
+
+Depending on your bind setup(we always recommend chroot), the log directory can live in two locations. In a chroot setup it is at /var/lib/named/var/log, and in a normal install it is at /var/log. You know how yours is installed, so go to the log directory and issue:
+
+  touch named.log
+  chown bind:bind named.log
+  touch misc.log
+  chown misc.log
