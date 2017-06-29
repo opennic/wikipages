@@ -71,5 +71,5 @@ We highly discourage public Windows Tier 2 servers, but these guides exist if yo
 Make sure you read the following guides to ensure your server is setup in the best way possible for the OpenNIC network.
 
   * [[:bindlogconfig|BIND Logging Configuration]]
-  * [[opennic:bindloganon|BIND Logging Obfuscation]]. [[http://web.archive.org/web/20160913110708/http://wiki.opennicproject.org/Tier2ConfigObfuscatingLogs|Archived guide]].
+  * [[:bindloganon|BIND Logging Obfuscation]]
   * [[opennic:tier2security|Tier 2 Security Measures]]. [[http://web.archive.org/web/20160905195029/http://wiki.opennicproject.org:80/Tier2Security|Archived guide]].
