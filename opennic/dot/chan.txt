@@ -1,6 +1,4 @@
 ====== .chan TLD ======
-====== .glue TLD ======
-<short intro goes here>
 
 ===== Charter =====
 .chan is established for use by imageboards, as any content or communities inspired by or pertaining to imageboard culture. A .chan domain name can be utilized as either an alternative domain to any previously existing community, or as the domain to a new community. Aforementioned domains may be used for both commercial and non-commercial purposes.
