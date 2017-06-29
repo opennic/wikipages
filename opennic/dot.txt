@@ -1,4 +1,55 @@
-====== OpenNIC . TLDs ======
+====== OpenNIC Operated Top-Level Domains ======
+
+These are the Top-Level Domains (TLDs) which are currently being served by OpenNIC, are being constructed with the approval of OpenNIC or which have been proposed to OpenNIC. There are links to the appropriate Web and email contacts for those which are currently accepting domain name registrations.
+
+If you would like to contribute to the project by taking responsibility for organizing a new TLD, please see the [[opennic:newtlds|Registering A TLD]] page. This page is up to date and all links have been tested as of 2017-04-30, all blank entries are placeholders for information we could not definitely determine, or websites which were offline or not functional at the time.
+
+FIXME We're still missing some information! If you can fill in some of the blanks that would be appreciated! 
+
+===== Current Top-Level Domains =====
+
+^ Name ^ Intended Usage ^ Date Introduced ^ Contacts ^ Website ^ Charter ^
+^ .bbs | Bulletin Board System servers, and related BBS websites and services. | 2000-12-29 | Dustin Souers (texnofobix)\\ texnofobix@gmail.com | | [[opennic:dot:bbs]] |
+^ .chan | A Top Level Domain "for imageboards and communities related to imageboard culture." | 2015-10-21 | | [[https://www.opennic.chan/|opennic.chan]] | [[opennic:dot:chan]] |
+^ .dyn | Dynamic DNS pointers. | 2014-05-30 | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:dyn]] |
+^ <del>.free</del> | <del>Organizations that encourage the Non-Commercial use of the Free Internet.</del>\\ This domain has been depreciated in favor of [[opennic:dot:libre|.libre]] and will soon be removed from the root zone. |  | <del>Jeff Taylor\\ shdwdrgn@sourpuss.net</del> | <del>[[http://be.libre|be.libre]]</del> | <del>[[opennic:dot:free]]</del> |
+^ .geek | Anything of a personal or hobbyist nature that would be considered "geeky" | 2008-02-18 | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:geek]] |
+^ .gopher | Content delivery via the gopher protocol. | | Brian Koontz\\ brian@opennicproject.org | [[http://be.libre|be.libre]] | [[opennic:dot:gopher]] |
+^ .indy | Independent media and arts. | | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:indy]] |
+^ .libre | Organizations that encourage the Non-Commercial use of the Free Internet. | 2017-01-03 | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:bbs]] |
+^ .neo | General purpose, leaning towards themes present in the 'emo subculture' | | Neo\\ neo-domainreg@4195tech.com | [[http://register.neo|register.neo]] | [[opennic:dot:neo]] |
+^ .null | Completely non-commercial and only natural persons. | | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:null]] |
+^ .o | General purpose. | 2016-11-28 | [[user:jonaharagon|Jonah Aragon]]\\ jonah@moderntld.com | [[https://www.moderntld.com|www.moderntld.com]] | [[opennic:dot:o]] |
+^ .oss | Exclusively for Open Source Software. | | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:oss]] |
+^ .oz | Australian websites (alt-ccTLD) | 2012-06-11 | | [[http://opennic.oz/|opennic.oz]] | [[opennic:dot:oz]] |
+^ .parody | This domain is a venue for non-commercial parody work. | | Jeff Taylor\\ shdwdrgn@sourpuss.net | [[http://be.libre|be.libre]] | [[opennic:dot:parody]] |
+^ .pirate | Internet Freedom and sharing. | | Travis McCrea\\ teamcoltra@gmail.com\\ | | [[opennic:dot:pirate]] |
+
+===== Peered Top-Level Domains =====
+
+These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, instead you should contact their respective organization.
+
+^ Authority ^ Name ^ Intended Usage ^ Website ^
+^ Emercoin | .bazar | Free marketplace | [[https://emercoin.com/|emercoin.com]] |
+^ ::: | .coin | Digital currency and commerce websites | ::: |
+^ ::: | .emc | Websites associated with the Emercoin project | ::: |
+^ ::: | .lib | From Words Library and Liberty - that is, knowledge and freedom | ::: |
+^ FurNIC | .fur | Furries, Furry Fandom and other Anthropormorphic interest websites((Originally an OpenNIC TLD)) | [[http://www.nic.fur/|www.nic.fur]] |
+^ Namecoin | .bit | Namecoin systems, websites and services | [[https://namecoin.org/|namecoin.org]] |
+^ New Nations | .ku | Kurdish people | [[http://new-nations.net/|new-nations.net]] |
+^ ::: | .te | Tamil Eelam | ::: |
+^ ::: | .ti | Tibet | ::: |
+^ ::: | .uu | Uyghur people | ::: |
+
+===== Technical Zones =====
+
+These zones are also served on the OpenNIC network for technical and organizational purposes.
+
+^ Name ^ Usage ^ Notes ^
+^ .opennic.glue | Provides hostnames for Tier 1 DNS servers and organizational websites and services. | Arbitrary domains cannot be registered. Domains are granted to each Tier 1 server operator or upon approval of the OpenNIC community. |
+^ .dns.opennic.glue | Provides hostnames for Tier 2 DNS servers on the OpenNIC network. | Arbitrary domains cannot be registered. Domains are automatically created upon the approval of a Tier 2 server. |
+
+===== opennic:dot: wiki sub-pages =====
 When creating a new TLD page, please use the following template whenever possible. This is not a strict policy, so if you think that you have a good layout, please use that and let us know and we will take a look.
 
   ====== .glue TLD ======
