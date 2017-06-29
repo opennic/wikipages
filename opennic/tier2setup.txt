@@ -1,6 +1,6 @@
 ====== Setting up a Tier 2 Server ======
 
-Tier 2 servers (DNS resolvers) can be used for public or private DNS lookups, on the OpenNIC and ICANN namespaces.
+[[opennic:tier2|Tier 2]] servers (DNS resolvers) can be used for public or private DNS lookups, on the OpenNIC and ICANN namespaces.
 
 Recommended Minimum Server Specifications
   * Linux
