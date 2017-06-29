@@ -1,0 +1,151 @@
+====== Obfuscating BIND 9 logs ======
+In the interest of privacy and anonymity, a couple of ideas for obfuscating named logs are presented below. There is no official OpenNIC policy that addresses the privacy and retention of named logs. 
+
+===== method 1: Post-logging processing =====
+This setup anonymizes the named log after queries have been logged.
+
+Here is that script that Brianko wrote;
+
+  #! /usr/bin/perl
+  #
+  # blurAddys.pl - Obfuscate IP addresses in a file
+  #
+  # cat some.log | blurAddys.pl > some_blurred.log
+  #
+  #####################################################################
+  use strict;
+  
+  while(<STDIN>)
+  {
+  	s/\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}/XX$1XX$2XX$3XX/g;
+  	s/([0-9A-Fa-f]{4}:[0-9A-Fa-f:]+:[0-9A-Fa-f]{1,4})([^:0-9A-Fa-f])/XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX$2/g;
+  	print $_;
+  }
+
+Its easy to add this to a script:
+
+  #!/bin/sh
+  
+  date=`date +%d`
+  current=`date +%d%m%y`
+  
+  if [ "$(echo $date)" = 01 ];then
+  		tar cfvz /var/log/named/named.$current.tar.gz /var/log/named/*.log.*
+  		rm /var/log/named/*.log.*
+  fi
+  
+  cat /var/lib/named/var/log/named.log | /usr/local/bin/blurAddys.pl > /var/log/named/named.log.$current
+  rm /var/lib/named/var/log/named.log
+  touch /var/lib/named/var/log/named.log
+  chown bind:bind /var/lib/named/var/log/named.log
+  
+  /etc/init.d/bind9 restart
+
+===== method 2: Log anonymization using named pipes =====
+Note: named will refuse to start, most likely without meaningful error messages, if the perl script is not running prior to starting named!
+
+Note: Please be aware that this method exposes data (in this case, log entries) to processes outside the chroot jail. Be very careful when processing this data, as it is feasible that an injection-type attack is possible if an attacker is aware of vulnerabilities in the external script.
+
+This method anonymizes named logs as they are generated. It also permits preprocessing of raw log data (with IP addresses intact) for purposes of traffic analysis, blacklisting, etc. The instructions below assume the following:
+  * Running on Unix system that supports signals and 'pidof' utility.
+  * Running BIND named daemon in a chroot jail under user 'named'. The chroot jail is /var/named/chroot in this example.
+  * Log will be saved in /var/named/chroot/var/log directory.
+  * Support for named pipes.
+  * Using logrotate to manage logs.
+==== Installation instructions ====
+  * Install the following script outside of your chroot jail. Set the permissions so that it can be executed by user 'named'. (In this example, I've copied the script to /var/named.)
+
+  #! /usr/bin/perl
+  #
+  # processNamedLog.pl - Obfuscate IPv4 addresses in a named log.
+  # Respawns upon receipt of HUP signal (useful for logrotate).
+  #
+  # Usage: su -c ./processNamedLog.pl named &
+  #
+  # Author: Brian Koontz (http://wiki.opennic.glue/BrianKoontz)
+  # Docs: http://wiki.opennic.glue/RunningT2
+  #
+  #####################################################################
+  use strict;
+  use POSIX();
+  # Set autoflush on (keeps named pipe from getting full)
+  my $oldfh = select(OUT);
+  $| = 1;
+  select($oldfh);
+  
+  # POSIX-compliant signal handler
+  my $sigset = POSIX::SigSet->new();
+  my $action = POSIX::SigAction->new(
+                  'HUP_handler',
+                  $sigset,
+                  &POSIX::SA_NODEFER);
+  POSIX::sigaction(&POSIX::SIGHUP, $action);
+  sub HUP_handler {
+      close IN;
+      close OUT;
+      my @args = ("/var/named/processNamedLog.pl&");
+      exec @args;
+      exit(0);
+  }
+  
+  my $pipe = "/var/named/chroot/var/tmp/named.pipe";
+  my $out = "/var/named/chroot/var/log/named.log";
+  open(IN, "+<$pipe") or die "Can't open $pipe for reading!";
+  open(OUT, ">>$out") or die "Can't open $out for writing!";
+  while(<IN>)
+  {
+      s/\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}/XX$1XX$2XX$3XX/g;
+      s/([0-9A-Fa-f]{4}:[0-9A-Fa-f:]+:[0-9A-Fa-f]{1,4})([^:0-9A-Fa-f])/XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX:XXXX$2/g;
+      print OUT $_;
+  }
+
+  * Create a named pipe in the directory of your choice.
+
+  # cd /var/named/chroot/var/tmp
+  # mknod named.pipe p
+  # chmod 0666 named.pipe
+
+  * Create a new channel in your named.conf file. Change your category logging directives to use this new channel for all logging.
+
+  channel pipe_log {
+   file "/var/tmp/named.pipe";
+   print-category no;          // Category unneeded in debug file?
+   print-severity yes;
+   print-time yes;
+  };
+
+  * (Optional) Add a new entry in your /etc/logrotate.conf file.
+
+  # system-specific logs may be also be configured here.
+  /var/named/chroot/var/log/named.log {
+  	rotate 3 
+  	size 20M
+  	postrotate
+  		kill -HUP `/sbin/pidof -x processNamedLog.pl`
+  	endscript
+  }
+
+  * Start the perl script in the background, and then reload your named.conf file. The named process will hang if the perl script is not running prior to reload!
+
+  # su - c /var/named/processNamedLog.pl named &
+  # /sbin/rndc reload
+
+  * Check to make sure named.log has been created and is logging data.
+
+# tail -f /var/named/chroot/var/log/named.log
+
+  * Check to make sure logs are rotated when logrotate is called, and that logging is initiated in the newly-created named.log file.
+
+  # /usr/sbin/logrotate -f /etc/logrotate.conf
+
+  * (Optional) Check to ensure processNamedLog.pl is being respawned. Example output to stdout is for demonstration purposes only.
+
+  # ps -ax | grep processNamedLog.pl
+  8330 ?        S      0:00 /usr/bin/perl /var/named/processNamedLog.pl
+  # kill -HUP 8330
+  # ps -ax | grep processNamedLog.pl
+  9566 ?        S      0:00 /usr/bin/perl /var/named/processNamedLog.pl
+  # tail -f /var/named/chroot/var/log/named.log
+  26-Jun-2009 04:16:23.132 info: client XX.XX.XX.XX#60287: view tier2_server_ipv4: query: ISAI.gateway.2wire.net IN A +
+  26-Jun-2009 04:16:25.880 info: client XX.XX.XX.XX#62970: view tier2_server_ipv4: query: ISAI.gateway.2wire.net IN A +
+  etc...
