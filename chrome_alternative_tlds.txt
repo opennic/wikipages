@@ -53,3 +53,7 @@ Open the Chrome settings, click ''Manage search engines...'' and add a new searc
 Every time you want to visit a domain with a custom TLD, you need to prepend ''direct '' to the domain (with a space).
 
 Example: You're trying to visit the domain ''opennic.glue'', try ''direct opennic.glue'' instead.
+
+==== Switch to another browser ====
+The following browsers don't have this annoying behavior hardcoded, you might want to consider switching:
+  * https://www.mozilla.org/en-US/firefox/
