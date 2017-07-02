@@ -23,4 +23,31 @@ Example: You're trying to visit the domain ''opennic.glue'', try ''opennic.glue/
 ==== Remove address bar search function ====
 Open the Chrome settings, click ''Manage search engines...'' and add a new search engine:
 
-{{:a0e844923a25.png?direct|}}
+{{:23fdef70a027.png|}}
+
+Add a new search engine: ''direct''\\
+Keyword: ''%s''\\
+URL with %s in place of query: ''http:/****/%s/''
+
+Mark the search engine that you just added as default by clicking ''Make default''.
+
+This will cause Chrome to search any text you type into the address bar at ''http:/****/<text>/'' which breaks normal search queries via the address bar. You'll either have to stick with manually opening Google and then searching for something, or you'll have to add keyword search engine:
+
+{{:681ec92e6fa1.png|}}
+
+Add a new search engine: ''Google Search''\\
+Keyword: ''go''\\
+URL with %s in place of query: ''{google:baseURL}search?q=%s&{google:RLZ}{google:originalQueryForSuggestion}{google:assistedQueryStats}{google:searchFieldtrialParameter}{google:iOSSearchLanguage}{google:searchClient}{google:sourceId}{google:instantExtendedEnabledParameter}{google:contextualSearchVersion}ie={inputEncoding}''
+
+Now, every time you want to search for something, you need to type ''go <text>'' into your address bar and it will search ''<text>'' on Google.
+
+==== Add keyword search to prevent Google search ====
+//This workaround is not recommended as it requires more keytrokes (7 keystrokes) than the ''Trailing slash'' workaround (1 keytroke)//
+
+Open the Chrome settings, click ''Manage search engines...'' and add a new search engine:
+
+{{:6b4223f83a96.png|}}
+
+Every time you want to visit a domain with a custom TLD, you need to prepend ''direct '' to the domain (with a space).
+
+Example: You're trying to visit the domain ''opennic.glue'', try ''direct opennic.glue'' instead.
