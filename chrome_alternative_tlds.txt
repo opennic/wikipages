@@ -10,15 +10,17 @@ Google has decided to not fix this issue in favor of performance and usability:
 ===== Possible workarounds =====
 There are a few possible workarounds for this issue, some are inconvenient to use while others require a few minutes of your free time:
 
+==== Trailing slash ====
+//This workaround is recommended as Chrome will learn the domains you frequently navigate to and you won't need to add a forward-slash to the domains you visit frequently//
+
+Every time you want to visit a domain with a custom TLD, try adding a forward-slash (''/'') to the end of the domain.
+
+Example: You're trying to visit the domain ''opennic.glue'', try ''opennic.glue/'' instead.
+
 ==== Leading protocol ====
 Every time you want to visit a domain with a custom TLD, try adding a leading protocol identifier (such as ''http:/****/'', ''https:/****/'', ''ftp:/****/'', etc.) in front of the domain.
 
 Example: You're trying to visit the domain ''opennic.glue'', try ''http:/****/opennic.glue'' instead.
-
-==== Trailing slash ====
-Every time you want to visit a domain with a custom TLD, try adding a forward-slash (''/'') to the end of the domain.
-
-Example: You're trying to visit the domain ''opennic.glue'', try ''opennic.glue/'' instead.
 
 ==== Remove address bar search function ====
 Open the Chrome settings, click ''Manage search engines...'' and add a new search engine:
