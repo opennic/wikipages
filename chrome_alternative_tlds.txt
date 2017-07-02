@@ -56,4 +56,4 @@ Example: You're trying to visit the domain ''opennic.glue'', try ''direct openni
 
 ==== Switch to another browser ====
 The following browsers don't have this annoying behavior hardcoded, you might want to consider switching:
-  * https://www.mozilla.org/en-US/firefox/
+  * [[https://www.mozilla.org/en-US/firefox/|Mozilla Firefox]]
