@@ -44,7 +44,7 @@ URL with %s in place of query: ''{google:baseURL}search?q=%s&{google:RLZ}{google
 Now, every time you want to search for something, you need to type ''go <text>'' into your address bar and it will search ''<text>'' on Google.
 
 ==== Add keyword search to prevent Google search ====
-//This workaround is not recommended as it requires more keytrokes (7 keystrokes) than the ''Trailing slash'' workaround (1 keytroke)//
+//This workaround is not recommended as it requires more keystrokes (7) than the ''Trailing slash'' workaround (1 keystroke)//
 
 Open the Chrome settings, click ''Manage search engines...'' and add a new search engine:
 
