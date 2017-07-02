@@ -1,0 +1,26 @@
+====== Getting alternative TLDs to work with Chrome ======
+Chrome has this very weird behavior where - when typing a full qualified domain name that is not known to Google (such as ''opennic.glue'' or ''grep.geek'' into the address bar - it redirects the user to their primary search engine (Google by default, because it's a Google product after all) instead of navigating to the actual website you just wanted to reach because the browser keeps a hardcoded, non-reconfigurable list of all ICANN TLDs. Annoying, isn't it? This is not annoying, but also a security concern, because it sends those requests directly to Google who is known to indefinitely log all search queries.
+
+This is known to cause issues when using [[https://en.wikipedia.org/wiki/Alternative_DNS_root|alternative DNS roots]] with custom TLDs such as OpenNIC's ''.glue'', ''.bbs'', ''.chan'', etc.
+
+Google has decided to not fix this issue in favor of performance and usability:
+  * [[https://bugs.chromium.org/p/chromium/issues/detail?id=104638|Issue 104638 - CanFindIntranetURL() should look up dotted hosts based only on last component]]
+  * [[https://bugs.chromium.org/p/chromium/issues/detail?id=30636|Issue 30636 - chrome does a search when i want to open a website on a custom TLD]]
+
+===== Possible workarounds =====
+There are a few possible workarounds for this issue, some are inconvenient to use while others require a few minutes of your free time:
+
+==== Leading protocol ====
+Every time you want to visit a domain with a custom TLD, try adding a leading protocol identifier (such as ''http:/****/'', ''https:/****/'', ''ftp:/****/'', etc.) in front of the domain.
+
+Example: You're trying to visit the domain ''opennic.glue'', try ''http:/****/opennic.glue'' instead.
+
+==== Trailing slash ====
+Every time you want to visit a domain with a custom TLD, try adding a forward-slash (''/'') to the end of the domain.
+
+Example: You're trying to visit the domain ''opennic.glue'', try ''opennic.glue/'' instead.
+
+==== Remove address bar search function ====
+Open the Chrome settings, click ''Manage search engines...'' and add a new search engine:
+
+{{:a0e844923a25.png?direct|}}
