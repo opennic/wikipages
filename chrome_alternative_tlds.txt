@@ -57,3 +57,6 @@ Example: You're trying to visit the domain ''opennic.glue'', try ''direct openni
 ==== Switch to another browser ====
 The following browsers don't have this annoying behavior hardcoded, you might want to consider switching:
   * [[https://www.mozilla.org/en-US/firefox/|Mozilla Firefox]]
+
+==== More workarounds ====
+Do you know of another workaround that is worth listing here? Please [[help|let us know]] or add it to this wiki page by editing it.
