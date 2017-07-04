@@ -50,3 +50,6 @@ These parameters define what data is returned.
 | ?resolv&res=5 | Generate a resolv.conf file with 5 nameservers |
 | ?res=8&bare&pct=90 | Return a list of 8 IP addresses where the servers have a reliability of 90% or greater |
 | ?res=4&adm=4&wl | Return a list of 4 servers from 4 different admins, including whitelist servers |
+
+===== Known issues =====
+The GeoIP API is known to report servers in an inaccurate or wrong location. The GeoIP API uses [[https://www.maxmind.com/|MaxMinds GeoIP database]] to look up the physical location of IP addresses, which is not always accurate. Due to this reason, it is always better to manually pick some near servers from https://servers.opennicproject.org/.
