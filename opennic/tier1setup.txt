@@ -1,0 +1,297 @@
+====== Setting up a Tier 1 Server ======
+
+[[tier1|Tier 1]] servers are the core DNS servers that host the actual authoritative zones for all OpenNIC TLDs and the root ('.') zone.
+
+FIXME This legacy wiki article has been copied from http://web.archive.org/web/20161228061854/wiki.opennicproject.org/RunningT1. It is outdated and should not be blindly used for copy-pasting but it should give an idea on how to get started.
+
+===== BIND9 setup =====
+Setting up a OpenNIC ready Tier 1 server requires your DNS to slave all the TLDs within the OpenNIC name-space. We will go through each zone below (this document will be updated as more zones are created). Alternatively, this page will show how to configure bind9 to automatically update available TLDs and their master servers.
+
+As you can see below, all my zones reside in ''/etc/bind/zones'' and ''/etc/bind/zones/slaves''. You will have to change that to suit your style of setup. It is also recommended you run bind in a chroot jail, and that additional Tier 1 servers are listed as masters in each zone for redundancy. Below is the root zone, add this into your ''named.conf''.
+
+== named.conf ==
+<code>
+zone "." {
+	type slave;
+	file "/etc/bind/zones/db.root";
+	masters { 75.127.96.89; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+Below are the zones for each OpenNIC TLD, place these in your ''named.conf''.
+
+== opennic.glue ==
+<code>
+zone "opennic.glue" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/glue.zone";
+	masters { 75.127.96.89; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== dns.opennic.glue ==
+<code>
+zone "dns.opennic.glue" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/dns.glue.zone";
+	masters { 75.127.96.89; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== geek ==
+<code>
+zone "geek" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/geek.zone";
+	masters { 202.83.95.229; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== free ==
+<code>
+zone "free" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/free.zone";
+	masters { 202.83.95.229; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== indy ==
+<code>
+zone "indy" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/indy.zone";
+	masters { 202.83.95.229; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== parody ==
+<code>
+zone "parody" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/parody.zone";
+	masters { 216.87.84.210; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== bbs ==
+<code>
+zone "bbs" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/bbs.zone";
+	masters { 207.192.71.13; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== fur ==
+<code>
+zone "fur" IN {
+	type slave;
+	file "/etc/bind/zones/slaves/fur.zone";
+	masters { 84.200.228.200; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== null ==
+<code>
+zone "null" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/null.zone";
+	masters { 202.83.95.229; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== oss ==
+<code>
+zone "oss" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/oss.zone";
+	masters { 216.87.84.210; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== ing ==
+<code>
+zone "ing" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/ing.zone";
+	masters { 128.177.28.254; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== dyn ==
+<code>
+zone "dyn" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/dyn.zone";
+	masters { 207.192.71.13; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== gopher ==
+<code>
+zone "gopher" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/gopher.zone";
+	masters { 66.244.95.11; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== micro ==
+<code>
+zone "micro" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/micro.zone";
+	masters { 128.177.28.254; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== neo ==
+<code>
+zone "neo" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/neo.zone";
+	masters { 199.30.58.57; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== pirate ==
+<code>
+zone "pirate" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/pirate.zone";
+	masters { 209.141.35.9; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+== oz ==
+<code>
+zone "oz" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/oz.zone";
+	masters { 103.4.16.80; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
+Remember that once done, restart bind!
+
+Lets go through turning on some logging for your bind9 DNS server. These logs are interesting to look through, but should not be archived. If you wish to archive them, I have provided a perl script written by Brianko which will remove all IP addresses and replace them with XXX.XXX.XXX.XXX. It is important that we protect our members right to browse the internet in complete privacy, so the use of this perl script is highly encouraged.
+
+To turn on logging, open ''named.conf.options'' in your favourite text editor and add the below to the end of the file:
+
+<code>
+logging {
+	channel "misc" {
+		file "/var/log/misc.log" versions 2 size 25M;
+		severity info; print-severity no;
+		print-category yes; print-time yes;
+	};
+	channel "querylog" {
+		file "/var/log/named.log" versions 2 size 25M;
+		severity info; print-severity no;
+		print-category no; print-time yes;
+	};
+	category "queries" { "querylog"; };
+	category default { "misc"; };
+};
+</code>
+
+Depending on your bind setup(we always recommend chroot), the log dir can live in two locations. In a chroot setup it is at /var/lib/named/var/log and in a normal install it is at ''/var/log/''. You know how yours is installed, so go to the log dir, and issue:
+
+<code>
+# touch named.log
+# chown bind:bind named.log
+# touch misc.log
+# chown misc.log
+</code>
+
+Here is that script that Brianko wrote:
+
+<code>
+#! /usr/bin/perl
+#
+# blurAddys.pl - Obfuscate IP addresses in a file
+#
+# cat some.log | blurAddys.pl > some_blurred.log
+#
+#####################################################################
+use strict;
+
+while(<STDIN>)
+{
+	s/\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}(\.|-)\d{1,3}/XX$1XX$2XX$3XX/g;
+	print $_;
+}
+</code>
+
+Its easy to add this to a script! Below is what I previously used;
+
+<code>
+#!/bin/sh
+
+date=`date +%d`
+current=`date +%d%m%y`
+
+if [ "$(echo $date)" = 01 ];then
+		tar cfvz /var/log/named/named.$current.tar.gz /var/log/named/*.log.*
+		rm /var/log/named/*.log.*
+fi
+
+cat /var/lib/named/var/log/named.log | /usr/local/bin/blurAddys.pl > /var/log/named/named.log.$current
+rm /var/lib/named/var/log/named.log
+touch /var/lib/named/var/log/named.log
+chown bind:bind /var/lib/named/var/log/named.log
+
+/etc/init.d/bind9 restart
+</code>
+
+I now use the logrotate method to clean my log files. I use syslog-ng, so I added the below entry to ''/etc/logrotate.d/syslog-ng''
+
+<code>
+/var/lib/named/var/log/named-query.log {
+   rotate 7
+   daily
+   compress
+   prerotate
+	  /usr/local/bin/blurAddys.pl
+   endscript
+}
+</code>
+
+I hope that this guide has assisted getting your Tier 1 server ready for your new TLD. Remember to follow the insturctions on creating a new TLD if you have not already had your TLD approved for use within OpenNIC by vote of the membership. [[opennic:creating_new_tlds]]
