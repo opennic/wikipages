@@ -4,6 +4,8 @@ The GeoIP API returns a list of the nearest OpenNIC [[opennic:tier2|Tier 2]] ser
 ===== The API =====
 The APIs base URL is at https://api.opennicproject.org/geoip/
 
+This wiki page is a clone of the [[https://api.opennicproject.org/geoip/?help|?help page]] with some fancy tables and extra glitter.
+
 ===== URL Parameters =====
 URL Parameters are appended to the base URL separated by a question mark (''?''), all parameters are separated by ampersand (''&''), parameter key/value pairs are separated by an equal sign (''='').
 
