@@ -48,12 +48,12 @@ Note: Please be aware that this method exposes data (in this case, log entries) 
 
 This method anonymizes named logs as they are generated. It also permits preprocessing of raw log data (with IP addresses intact) for purposes of traffic analysis, blacklisting, etc. The instructions below assume the following:
   * Running on Unix system that supports signals and 'pidof' utility.
-  * Running BIND named daemon in a chroot jail under user 'named'. The chroot jail is /var/named/chroot in this example.
+  * Running BIND named daemon in a chroot jail under user ''named''. The chroot jail is /var/named/chroot in this example.
   * Log will be saved in /var/named/chroot/var/log directory.
   * Support for named pipes.
   * Using logrotate to manage logs.
 ==== Installation instructions ====
-  * Install the following script outside of your chroot jail. Set the permissions so that it can be executed by user 'named'. (In this example, I've copied the script to /var/named.)
+  * Install the following script outside of your chroot jail. Set the permissions so that it can be executed by user ''named''. (In this example, I've copied the script to /var/named.)
 
   #! /usr/bin/perl
   #

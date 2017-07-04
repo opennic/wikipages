@@ -13,7 +13,7 @@ To test if an ISP is tampering with DNS traffic, you can use the dig command fro
   ...
   .	58346	IN	SOA	a.root-servers.net. nstld.verisign-grs.com. 2015080300 1800 900 604800 86400
 
-You can see from the returned SOA above that the DNS request has been hijacked by the ISP as 'a.root-servers.net' is not an OpenNIC DNS server. If the SOA you get looks more like the one below, then your ISP is probably not hijacking your DNS requests.
+You can see from the returned SOA above that the DNS request has been hijacked by the ISP as ''a.root-servers.net'' is not an OpenNIC DNS server. If the SOA you get looks more like the one below, then your ISP is probably not hijacking your DNS requests.
 
 Now try again on the alternative port:
 
