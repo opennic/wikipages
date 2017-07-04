@@ -1,6 +1,6 @@
 ====== Setting up a Tier 1 Server ======
 
-[[tier1|Tier 1]] servers are the core DNS servers that host the actual authoritative zones for all OpenNIC TLDs and the root ('.') zone.
+[[tier1|Tier 1]] servers are the core DNS servers that host the actual authoritative zones for all OpenNIC TLDs and the root (''.'') zone.
 
 FIXME This legacy wiki article has been copied from http://web.archive.org/web/20161228061854/wiki.opennicproject.org/RunningT1. It is outdated and should not be blindly used for copy-pasting but it should give an idea on how to get started.
 
