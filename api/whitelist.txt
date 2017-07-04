@@ -1,5 +1,5 @@
 ====== DNS Whitelisting API ======
-Due to repeated amplification attacks, Tier 2 servers now have the option to only allow access from registered IP addresses. Please check the notes on the Tier 2 wiki page to determine which servers are making use of this feature.
+Due to repeated amplification attacks, [[:opennic:tier2|Tier 2]] servers now have the option to only allow access from registered IP addresses. Please check the notes on the Tier 2 wiki page to determine which servers are making use of this feature.
 
 Privacy is important, so we have taken steps to ensure that your identity is protected. When you register your IP address, your username is not passed to any of the servers. The servers will only receive a list of what addresses have been registered, nothing else.
 
