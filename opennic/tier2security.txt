@@ -42,7 +42,7 @@ First, you need to get a hex-dump of the packets you wish to block. For this, yo
 
   # tcpdump -c10 -pntxi eth0 not udp src port 53 and udp dst port 53
 
-The option '''-c10''' specifies that you only want to dump out 10 packets at a time. The portion after the interface specifies that we only want to look at incoming packets on UDP port 53, and ignore outgoing packets.
+The option ''-c10'' specifies that you only want to dump out 10 packets at a time. The portion after the interface specifies that we only want to look at incoming packets on UDP port 53, and ignore outgoing packets.
 
 If your server is being attacked, you will probably see several instances of the particular query within those 10 packets. For example, while being flooded with ANY queries for the root zone, I captured the following:
 
