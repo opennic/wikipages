@@ -2,6 +2,6 @@
 OpenNIC maintains an API page as a gateway to various projects. The default page is located at https://api.opennicproject.org/ however there is no official website on that page.
 
 The following resources may be accessed through the API:
-  * [[api:geoip]] - (https://api.opennicproject.org/geoip/)
-  * [[api:whitelist]] - (https://api.opennicproject.org/ip/update/)
-  * [[api:bindacl]] - (https://api.opennicproject.org/acl/bind/)
+  * [[api:geoip]] - ([[https://api.opennicproject.org/geoip/|/geoip/]])
+  * [[api:whitelist]] - ([[https://api.opennicproject.org/ip/update/|/ip/update/]])
+  * [[api:bindacl]] - ([[https://api.opennicproject.org/acl/bind/|/acl/bind/]])
