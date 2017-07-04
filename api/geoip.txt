@@ -1,4 +1,4 @@
-===== GeoIP API ======
+===== Tier 2 GeoIP API ======
 The GeoIP API returns a list of the nearest OpenNIC [[opennic:tier2|Tier 2]] servers.
 
 ===== The API =====
