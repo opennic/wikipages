@@ -1,0 +1,15 @@
+  - Open the server manager
+  - Choose add roles and features
+  - Choose role-based or feature-based installations
+  - Choose the server you are interested in.
+  - Choose DNS server
+  - Accept all of the other defaults and install
+  - When it is finished, go to the Start menu and choose DNS Manager
+  - In the DNS manager, right click on your server name and choose Properties
+  - In the properties dialogue, click Root Hints.
+  - Delete ALL of the default servers.
+  - At the bottom, click "Copy from Server" and input a T1 IP which you can find here.
+  - Click apply and then test it here.
+  - If all passes, you are free to add it to the Tier2 list!
+
+FIXME We're missing images from the old wiki page, if anyone has copies/can make new images please do so!
