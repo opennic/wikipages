@@ -50,6 +50,7 @@ This method creates a local copy of the root zone and all of OpenNIC's TLDs, and
 There are some automated scripts that allow you to keep your slave BIND server always up-to-date, often requiring just a single command or minor configuration to get up and running. **This is the recommended way to setup a new Tier 2 server** unless you know you specifically need another setup.
 
   * [[opennic:srvzone|Srvzone method]]: Automated script for BIND9 by Jeff Taylor.
+  * [[opennic:t2digitalocean|DigitalOcean User Data]]: Automated installation for DigitalOcean Droplets (modified Srvzone with DigitalOcean Metadata) by [[user:jonaharagon|Jonah Aragon]]
 
 ==== DJBDNS ====
 
@@ -63,8 +64,8 @@ For those of you who prefer Unbound, an updated guide will be posted soon. [[htt
 
 We highly discourage public Windows Tier 2 servers, but these guides exist if you require running it in a LAN, Corporate Network, etc.
 
-  * Windows 2016: //We lost this guide with the old wiki, we're working on remaking it!//
-  * Windows 2012: Guide will be posted at [[opennic:t2win12|t2win12]] shortly. [[http://web.archive.org/web/20160628170446/http://wiki.opennicproject.org:80/Tier2ConfigWindows2012|Archived guide]].
+  * [[t2win16|Windows 2016]]
+  * [[t2win12|Windows 2012 (r2)]] shortly.
 
 ===== Post-Setup Configuration =====
 
