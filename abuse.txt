@@ -1,2 +1,2 @@
 ====== Infrastructure Anti-Abuse ======
-Collection of documentation and scripts for preventing abuse on the OpenNIC, Tier 1 and Tier 2 infrastructure.
+Collection of documentation and scripts for preventing abuse on the OpenNIC, [[:opennic:tier1|Tier 1]] and [[:opennic:tier2|Tier 2]] infrastructure.
