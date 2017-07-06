@@ -2,7 +2,7 @@
 
 The easiest setup is to use a local caching server. The following will configure a private nameserver for your personal use. 
 
-:!: If you wish to run a public Tier 2 server, follow [[http://wiki.opennic.org/opennic:tier2setup#slave_zone_method_bind|the Slaved Zones instructions]], not these.
+:!: If you wish to run a public [[tier2|Tier 2]] server, follow [[http://wiki.opennic.org/opennic:tier2setup#slave_zone_method_bind|the Slaved Zones instructions]], not these.
 
 If you are trying to anonymize your browsing history, please be aware that installing your own nameserver or using OpenNIC services will not hide your queries. OpenNIC operators are only in control of OpenNIC domains. Any queries you make to ICANN domains will still be processed by ICANN servers. However, configuring your own nameserver does give you more control over the processing of your queries, and can bypass any modifications your ISP may make to those lookups.
 
