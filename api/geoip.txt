@@ -44,8 +44,9 @@ These parameters define what data is returned.
 | lat | 50 | -33.45 | Set the reference latitude for your location |
 | lon | -50 | 33.45 | Set the reference longitude for your location |
 | ipv | 4 | 6 | Specify which class of IP addresses to return. \\ 4 - Only list IPv4 servers \\ 6 - Only list IPv6 servers \\ all - Include both IPv4 and IPv6 servers |
-| rnd | true | | Randomize the returned server order (omit this parameter to disable randomization) |
+| rnd | true | false | Randomize the returned server order |
 | wl | all | none | Include whitelist servers in the results. \\ If you specify wl=all, ONLY whitelist servers will be shown. |
+| anon | true | false | Return servers with anonymized logs only |
 
 ==== Examples ====
 | ?json | Output JSON data |

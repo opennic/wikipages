@@ -1,0 +1,34 @@
+====== How to report a compromised OpenNIC service ======
+It happens to the best of us: SSH root authentication is not disabled and an insecure password is set; BIND9 or PowerDNS hasn't been updated in time to prevent the latest exploits; ninja hackers have otherwise exploited any of the services running on the same server; etc... and the next thing you know is that you landed on a very obscure website when you actually tried to visit another one. How did that possibly happen?
+
+
+
+It does not always happen but also the best server administrators sometimes make mistakes. Tier 2 server administrators can make mistakes, especially because OpenNIC is not a multi-million $$$ company but a non-profit project and none of the server administrators are actually getting paid for their time they invest in keeping up the infrastructure. At this point, it is not very far from making just a slight mistake (be it an open SSH server, a non-updated service, an incorrectly configured service, an explitable script, etc.) and it will happen faster than expected: The server is completely exploited, a backdoor is installed and sooner or later, DNS requests are being redirected to third party websites.
+
+
+
+But hold on! This does not mean that OpenNIC Tier 2 servers are (more) insecure than other companies DNS resolvers. Let's take Google's Public DNS Resolver (''8.8.8.8'' and ''8.8.4.4'') as an example: Random companies around the world have (not only accidentally) done MITM attacks against ''8.8.8.8'' and ''8.8.4.4'' and your DNS request to the Google servers ended up faster on a non-Google network than you could have even noticed. In fact, larger, reputable companies are a magnet for such attacks, because there are countries that try to block people in those countries from accessing ''8.8.8.8'' and ''8.8.4.4'', and they make mistakes as well and accidentally export a BGP route that should only be announced to the local country, to the entire internet instead, causing headache not only for Google server administrators but also for home users.
+
+OpenNIC is because of exactly this and other reasons considered to be more secure than large companies:
+
+  * OpenNIC is massively decentralized
+  * An (accidental) attack against OpenNIC would require network providers to announce hundreds of /24 prefixes via BGP inside their country which would cause other negative side effects.
+  * OpenNIC, unlike large companies, does not log DNS requests (if we do, we mark these Tier 2 servers at https://servers.opennicproject.org/)
+
+===== I found a compromised server =====
+So I just found a compromised server, or got redirected to a completely different website than the one I tried to visit, what should I do now?
+
+Please collect the following information and [[:help|contact us]] immediately to have a look at the involved server(s):
+  * When did this incident happen? (If you name an exact time, please include your time zone as well)
+  * What Tier 2 server(s) were you using at this time?
+  * What domain have you tried to visit?
+  * At what website did you instead end up?
+
+===== Malware hosted on OpenNIC servers ====
+I noticed that someone has reported that a malware is being hosted on an OpenNIC or Tier 2 server. Does this mean OpenNIC/the Tier 2 has been compromised?
+
+This usually means that a random malware has decided to use OpenNIC Tier 2 DNS resolvers as a hardcoded DNS resolver to reach their botnet controller and other things. This is not different than using for example ''8.8.8.8'', but malware detection systems have decided to whitelist ''8.8.8.8'' and ''8.8.4.4'' because Google is a large company and marking those Google Public DNS Resolvers as "malware" would probably end up in a lawsuit being filed by Google.
+
+Because we resolve a specific domain for malware software doesn't necessarily mean that the Tier 2 in question is infected with malware, it just means that a specific person has decided to hardcode the DNS resolver into their software.
+
+The most simple rule to this is: If you can't reproduce a bad behavior on a Tier 2 server, it's likely that this server is not compromised or infected with malware.

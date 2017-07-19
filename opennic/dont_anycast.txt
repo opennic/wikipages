@@ -1,0 +1,17 @@
+====== Why you shouldn't pick Tier 2 anycast servers ======
+
+===== (-) Anycast server latency fluctuates a lot =====
+Sometimes, Tier 2 anycast servers are faster than normal Tier 2 servers, this is due to the way an anycast network works, however it could also be very slow at times due to the nature of BGP taking a shorter route path that is actually congested vs. a longer route path that is perfectly fine.
+
+Manually picking a server from the [[https://servers.opennicproject.org/|servers.]] list ensures that you always get DNS replies with the same or similar latency.
+
+===== (+) Anycast servers are usually very reliable =====
+Tier 2 anycast servers rarely go down due to the nature of anycast. There may exist up to tens, hundreds or thousands of points of presence for the anycast network and in case one of them goes down, traffic gets immediately re-routed to the  next shortest-path server in the network.
+
+===== (-) Anycast servers make the network centralized =====
+Due to the reliability and the usually very good latency of anycast servers, many people decide to use it instead of the [[https://servers.opennicproject.org/|other listed servers]]. This makes the network very centralized and therefore prone to attacks, outages, etc.
+
+Manually picking a server from the [[https://servers.opennicproject.org/|servers.]] list ensures that the network stays decentralized and well balanced.
+
+===== You decide =====
+Reliability or decentralization? Which ever is more important to you, you decide in the end.

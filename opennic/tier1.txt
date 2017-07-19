@@ -9,4 +9,4 @@ Tier 1 servers are the core DNS servers that host the actual authoritative zones
   * They are also available as slave servers for OpenNIC SponsoredTLDs.
   * They are not appropriate for general public use.
 
-A list of all Tier 1 servers can be found [[https://servers.opennicproject.org/?tier=1|here]].
+A list of all Tier 1 servers can be found [[https://servers.opennicproject.org/?tier=1|here]] and information on setting up a Tier 1 server is available [[tier1setup|here]].

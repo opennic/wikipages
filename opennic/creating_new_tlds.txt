@@ -1,6 +1,6 @@
 ====== Proposing and Creating new TLDs through OpenNIC ======
 Within the OpenNIC, a Top-Level Domain is an independent administrative body, responsible for governing itself and maintaining its own resources. TLD administrative groups are free to administer the TLD however they choose, subject to these restrictions:
-  * each TLD must run at least one Tier 1 server which mirrors the root data of all the OpenNIC TLDs
+  * each TLD must run at least one [[tier1|Tier 1]] server which mirrors the root data of all the OpenNIC TLDs
   * each TLD must have a web site at http://www.opennic.[TLD] for registration and administrative information
   * each TLD must have the following email addresses:
     * hostmaster@opennic.[TLD]

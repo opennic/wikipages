@@ -29,7 +29,7 @@ Our Top-Level Domains are managed by independent members of the community. Check
   * 2a05:dfc7:5::53
   * 2a05:dfc7:5::5353
 
-A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick the nearest servers from the server list instead of anycast servers.
+A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick the nearest servers from the server list instead of anycast servers. [[:opennic:dont_anycast|Why?]]
 
 ==== DNS Wizards ====
 Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
@@ -51,9 +51,10 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
     * [[http://opennicproject.org/report/log_.php?tier=1|Status]]
+    * [[https://servers.opennicproject.org/?tier=1|List]]
   * Public Access (Tier 2) Servers
     * [[http://opennicproject.org/report/log_.php?tier=2|Status]]
-    * [[https://servers.opennicproject.org/|List]]
+    * [[https://servers.opennicproject.org/?tier=2|List]]
   * [[http://report.opennicproject.org/t2log/t2.php|Tier 1 and Tier 2 testing tool]]
 
 ==== OpenNIC Search Engines ====
