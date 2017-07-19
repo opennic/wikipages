@@ -1,0 +1,13 @@
+All fonts placed in this directory will be used randomly for the image captcha.
+The more and exotic fonts you use, the harder it will be to OCR. However you
+should be aware that most fonts are very hard to read when used for small sizes.
+
+Provided TTF fonts for use with image CAPTCHA:
+
+VeraSe.ttf - Bitsream Vera, http://www-old.gnome.org/fonts/
+Rufscript010.ttf - Rufscript, http://openfontlibrary.org/en/font/rufscript
+
+Provided SVG fonts for use with SVG CAPTCHA:
+
+ostrich-sans-black.svg - Ostrich Sans Black, https://github.com/theleagueof/ostrich-sans
+goudy_bookletter_1911-webfont.svg - Goudy Bookletter 1911, https://github.com/theleagueof/goudy-bookletter-1911

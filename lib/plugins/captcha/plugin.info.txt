@@ -1,0 +1,8 @@
+base   captcha
+author Andreas Gohr
+email  andi@splitbrain.org
+date   2017-06-16
+name   CAPTCHA Plugin
+desc   Use a CAPTCHA challenge to protect DokuWiki against automated spam
+url    http://www.dokuwiki.org/plugin:captcha
+

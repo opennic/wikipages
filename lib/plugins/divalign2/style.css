@@ -1,0 +1,23 @@
+/**
+ * @file       divalign2/style.css
+ * @brief      Base stylesheet for divalign2 plugin.
+ * @author     Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+ */
+
+p.divalign-left {
+  text-align: left;
+  }
+
+p.divalign-center {
+  text-align: center;
+  }
+
+p.divalign-right {
+  text-align: right;
+  }
+
+p.divalign-justify {
+  text-align: justify;
+  }
+
+/* end of file */

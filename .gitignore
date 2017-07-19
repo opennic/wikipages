@@ -1,0 +1,8 @@
+data/index/*.idx
+data/cache/*
+data/locks/*.lock
+data/tmp/*
+data/attic/*
+data/media_attic/*
+conf/users.auth.php
+

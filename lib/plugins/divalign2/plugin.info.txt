@@ -1,0 +1,9 @@
+# General Plugin Info do not edit
+
+author Luis Machuca Bezzaza
+email  luis.machuca@gulix.cl
+date   2013-08-12
+name   Divalign2 Plugin
+ver    3.0b
+desc   Paragraph Alignment for DokuWiki
+url    http://www.dokuwiki.org/plugin:divalign2

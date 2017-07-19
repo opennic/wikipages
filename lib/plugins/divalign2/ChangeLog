@@ -1,0 +1,63 @@
+==== Divalign2 for DokuWiki Changelog ====
+
+2013-08-12  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * **BETA VERSION**.
+    * Added info.txt .
+    * Uploaded into a repository.
+    * Factored common code into a _divalign2_common class.
+    * Refactored syntax classes to inherit from common class.
+    * Temporarily disabled ODT compatibility.
+    * Changed the plugin type from container to formatting.
+    * Changed the paragraph typing from stack to block (hopefully temporarily).
+    * Removed support for aligning multiple paragraphs in one go.
+    * Temporarily removing para-stack fixes for <= Lemming.
+
+2010-11-11  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Version: 2.3
+    * Syntax: updated for 'stack' PType fix in Anteater release
+    (see http://github.com/splitbrain/dokuwiki/commit/f4daa9a18d9c09a1bac0696d92e2bceef8a6800f) 
+    and conditional fix for pre-Anteater releases.
+    * syntax/: fixed missing calls to ::getPType() and ::getAllowedTypes()
+    in all syntax mode files.
+    * action.php: Added file with conditional stack-view fix.
+    * images/: new toolbar icons by faraday <weichei01 [at] gmx [dot] net>.
+    * print.css: Added file for print-view stylesheet.
+    * ODT: compatibility is temporarily removed.
+    * All php files: tidying PHP code.
+    * ChangeLog: file added.
+
+2010-10-09  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Plugin and demo moved to new location, references fixed.
+
+2010-03-30  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Version: 2.2
+    * ODT: slightly better compatibility with the renderer 
+    (but see notes in web page).
+    *  All php files: code has been refactored.
+    * common.php: all common functions have been moved here.
+    * print.css: Added file with CSS for print view.
+    * script.js: corrections to the toolbar as per discussion.
+
+2009-08-14  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Version: 2.0
+    * Text: compatibility with text renderer.
+    * ODT: partial compatibility with renderer.
+    * style.css: fixed a mistake that prevented justify styling from working.
+    * script.js: Added file with initial toolbar support (via picker).
+    * images/: images for toolbar.
+
+2009-04-17  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * syntax/justify.php: Added file with justified syntax mode.
+
+2009-02-11  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Version: 1.0
+    * syntax/: Left, Right and Center alignment syntax modes.
+    * Forked from plugin:divalign by Jason Byrne.
+

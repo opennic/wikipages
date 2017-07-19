@@ -1,0 +1,7 @@
+base    pageredirect
+author  Elan Ruusamäe, David Lorentsen
+email   glen@delfi.ee
+date    2017-05-12
+name    Page Redirect
+desc    Redirects page requests based on content
+url     https://www.dokuwiki.org/plugin:pageredirect

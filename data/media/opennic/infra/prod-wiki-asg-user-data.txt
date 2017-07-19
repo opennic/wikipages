@@ -1,0 +1,77 @@
+#!/bin/bash
+mkdir /deploystats
+PS4='+ $(date "+%s.%N") '
+exec &> /deploystats/deploylog.txt
+set -x
+deploy_start=$(date +%s%N)
+echo "===== Started deployment of prod-wiki at $(TZ=Etc/UTC date -Is) ====="
+mount -o remount,discard,noatime,nodiratime /
+META_ISP="aws"
+META_LOC=$(curl http://169.254.169.254/latest/meta-data/placement/availability-zone)
+META_IID=$(curl http://169.254.169.254/latest/meta-data/instance-id/)
+aptget(){ env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get -y --no-install-recommends -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" "${@}";}
+cat > /etc/apt/apt.conf.d/01norecommend << EOF
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
+EOF
+aptget update
+# aptget upgrade
+# aptget dist-upgrade
+aptget install nfs-common git-core php-common php7.0-cli php7.0-common php7.0-fpm php7.0-gd php7.0-json php7.0-ldap php7.0-mbstring php7.0-opcache php7.0-readline php7.0-xml nginx-light php-memcached
+systemctl stop nginx php7.0-fpm
+mkdir -p "/${META_ISP}/${META_LOC}/${META_IID}/wiki"
+rm /etc/nginx/sites-enabled/default
+(base64 -d | gzip -d | sed "s|{{META_ISP}}|${META_ISP}|g;s|{{META_LOC}}|${META_LOC}|g;s|{{META_IID}}|${META_IID}|g" > /etc/nginx/sites-enabled/wiki.opennic.org) << EOF
+H4sIALNMDVkCA4VU+2/aMBD+uf0rPC1qw6rG0D1UgVCHKN0ilYeATZv6sEziEAtjZ7ZTYI
+X97bMT3jBNiMj3fffdne07KyJfiASvpyeKaCQJZogmKJJiDIpe9oPFyunJiogJDo37j8s7
+ISdYhiS0K+OAg4AohZgYAhFFBmBUacLBdRGEJMIp00hlqTbUQ7n8VD7gAU1ePgnOZlXBbW
+IhNICvr81Gv4b8XmexWBn37frG8P1bY0zoiFbsTmwgxPGYAAt5IiGc08ATcmhoykMyBdnX
+S+JkuYr1mIFQjFKLbYJoMSJcLfeEUy1ydW4HjBKu0RhP0UCEM6TobwI+NDdMhg7SKDKRMr
+J0dT2yJyACrKng4A+A7qPJPQ+xxnAeCB7B+YByOKc8gHO326jdNhvz741uz2+35vV256ff
++mJIpTFjj7bWglOw13cSEj4DBjThF1sZYEgSJmbGXyuYOWJGsdrF9zWZn5YzFFFGFHBSSb
+MPBJ/tES3PeVuyxjOpJBNJNQHPEI1JSDF0vXcFABkdQDIlMCI6iG3tNxlbdUqAYaUru8qQ
+aEzZnjQH/6sl00RIDd2HZ/h0UVjGWN3uTSiquQNySmc0rDpXR2K4N29s0sKe1rqXzhwsh2
+otertRaTyEhwqDlo3K5FWxmBjrzPyX6LEoR3JuJ1zsdFDWBU527jQCrhNrnaApilYTihIp
+tABVcG6Z87xbzEZ1Kjl4XywBC6syhLkyFko7kvxKidLI3LktbWHbZjPh8AVLaBaQDymfwp
+zxDGB9I1NjMKRIJYxqlGAdI8ojAZ5d7yJvWBd6FwWn8q8Wg1tTaF8l4GyCOKvoa2g7ZYIl
+HoNOrf8V+a279pZw22tv/i1lho2lIQFLF8/O4RE8T6AOU/bqXb/TR3f+faNVazaAE4ogHd
+sXwL5f66JVIGmis4fpMEa3cet3G/U+6vVr/W89cFUs7jopBVJOp+Xs9GXKoSn+42WUjD0l
+glHWFovTv2DsGErQBQAA
+EOF
+echo "fs-ee48faa7.efs.us-east-1.amazonaws.com:/ /${META_ISP}/${META_LOC}/${META_IID}/wiki nfs4 defaults,noatime,nodiratime,sync 0 0" > /etc/fstab
+mount /${META_ISP}/${META_LOC}/${META_IID}/wiki
+cat > /etc/php/7.0/fpm/php-fpm.conf << EOF
+[global]
+pid = /run/php5-fpm.pid
+error_log = /var/log/php5-fpm.log
+emergency_restart_threshold = 10
+emergency_restart_interval = 600
+process_control_timeout = 1h
+process.priority = -19
+events.mechanism = epoll
+systemd_interval = 10
+[www]
+user = www-data
+group = www-data
+listen = /var/run/php5-fpm.sock
+listen.owner = www-data
+listen.group = www-data
+process.priority = -19
+pm = dynamic
+pm.max_children = 10
+pm.start_servers = 1
+pm.min_spare_servers = 1
+pm.max_spare_servers = 1
+pm.max_requests = 1000
+pm.status_path = /status
+ping.path = /ping
+ping.response = pong
+chdir = /
+EOF
+cat > /etc/php/7.0/fpm/conf.d/00-cache.ini << EOF
+session.save_handler = memcached
+session.save_path = "prod-wiki-sess.xqtznt.cfg.use1.cache.amazonaws.com:11211"
+EOF
+systemctl start nginx php7.0-fpm
+deploy_end=$(date +%s%N)
+echo "===== Finished deployment of prod-wiki at $(TZ=Etc/UTC date -Is) for ${META_ISP}/${META_LOC}/${META_IID} in $(((${deploy_end}-${deploy_start})/1000000000)) seconds =="
