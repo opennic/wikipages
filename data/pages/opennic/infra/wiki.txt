@@ -121,3 +121,5 @@ An [[https://aws.amazon.com/elasticloadbalancing/|Elastic Load Balancer]] distri
       * Whenever: ''Average Latency''
       * Is: ''<='' ''500''
       * For at least: ''1'' consecutive period(s) of ''5 Minutes''
+===== git sync =====
+The entire web root directory is synced to [[https://github.com/opennic/wikipages|GitHub]] approximately every 30 minutes using [[https://github.com/opennic/wikipages/blob/master/sync.sh|this]] simple bash script. Some files are [[https://github.com/opennic/wikipages/blob/master/.gitignore|not synced]] to the repository, for example the ''conf/users.auth.php'' file containing all users with their email addresses and passwords until LDAP authentication is up and running.
