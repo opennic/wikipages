@@ -5,3 +5,5 @@ data/tmp/*
 data/attic/*
 data/media_attic/*
 conf/users.auth.php
+data/meta/*
+!data/meta/_dummy
