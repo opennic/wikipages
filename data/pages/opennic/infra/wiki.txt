@@ -37,13 +37,13 @@ To automatically scale the wiki instances to the desired performance and to ensu
 ==== Scaling Policies ====
 === prod-wiki-high ===
   * Policy type: ''Simple scaling''
-  * Execute policy when: ''prod-wiki-high'' (breaches the alarm threshold: ''TargetResponseTime >= 1'' for *300* seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
+  * Execute policy when: ''prod-wiki-high'' (breaches the alarm threshold: ''TargetResponseTime >= 1'' for ''300'' seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
   * Take the action: ''Add 2 instances''
   * And then wait: ''180 seconds before allowing another scaling activity''
 
 === prod-wiki-low ===
   * Policy type: ''Simple scaling''
-  * Execute policy when: ''prod-wiki-low'' (breaches the alarm threshold: ''TargetResponseTime <= 0.5'' for *300* seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
+  * Execute policy when: ''prod-wiki-low'' (breaches the alarm threshold: ''TargetResponseTime <= 0.5'' for ''300'' seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
   * Take the action: ''Remove 1 instances''
   * And then wait: ''180 seconds before allowing another scaling activity''
 

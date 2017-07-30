@@ -59,5 +59,4 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
 ==== OpenNIC Search Engines ====
   * [[http://grep.geek/|grep.geek]]
-  * [[http://bithunt.bit/|bithunt]]
 </columns>
