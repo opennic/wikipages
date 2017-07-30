@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /bin/
+Disallow: /conf/
+Disallow: /data/
+Disallow: /inc/
+Disallow: /lib/
+Disallow: /vendor/
