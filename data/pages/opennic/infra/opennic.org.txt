@@ -1,0 +1,20 @@
+====== OpenNIC Route 53 DNS zone ======
+Some of the OpenNIC DNS zones are hosted on [[https://aws.amazon.com/|Amazon Web Service (AWS)]]'s [[https://aws.amazon.com/route53/|Route 53]].
+
+===== Route 53 exporter =====
+This is a simple bash script for exporting all DNS records out of Route 53 as a BIND semi-compatible format.
+
+<code bash>
+#!/bin/bash
+
+aws --region us-east-01 --profile=opennic route53 list-hosted-zones | jq -r '.HostedZones[] | if .Config.PrivateZone == false then (.Name | split(".") | reverse | join(".")) + "/" + .Name + .Id else empty end' | tr '/' ' ' | sort | while read _ name _ id; do
+    aws --region us-east-01 --profile=opennic route53 list-resource-record-sets --hosted-zone-id "${id}" \
+        | jq -r '.ResourceRecordSets | .[] | if .ResourceRecords then .Type + "\t" + .Name + "\t" + (.TTL | tostring) + "\t" + .ResourceRecords[].Value else if .AliasTarget then "ALIAS-" + .Type + "\t" + .Name + "\t0\t" + .AliasTarget.DNSName else empty end end' \
+        | sort \
+        | awk -v"zonename=${name}" -F'\t' 'BEGIN{print "==== "zonename" Zonefile ===="; print "^ Name ^ TTL ^ Class ^ Type ^ Target ^"; print "| @ORIGIN . |||||";}{print "|", $2, "|", $3, "|", "IN", "|", $1, "|", $4, "|"}'
+done
+</code>
+
+===== Zonefiles =====
+
+//Zone files will appear here soon//
