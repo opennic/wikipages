@@ -32,17 +32,17 @@ FIXME We're still missing some information! If you can fill in some of the blank
 
 These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, instead you should contact their respective organization.
 
-^ Authority ^ Name ^ Intended Usage ^ Website ^
-^ Emercoin | .bazar | Free marketplace | [[https://emercoin.com/|emercoin.com]] |
-^ ::: | .coin | Digital currency and commerce websites | ::: |
-^ ::: | .emc | Websites associated with the Emercoin project | ::: |
-^ ::: | .lib | From Words Library and Liberty - that is, knowledge and freedom | ::: |
-^ FurNIC | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | [[http://www.nic.fur/|www.nic.fur]] |
-^ Namecoin | .bit | Namecoin systems, websites and services | [[https://namecoin.org/|namecoin.org]] |
-^ New Nations | .ku | Kurdish people | [[http://new-nations.net/|new-nations.net]] |
-^ ::: | .te | Tamil Eelam | ::: |
-^ ::: | .ti | Tibet | ::: |
-^ ::: | .uu | Uyghur people | ::: |
+^ Authority                               ^ Name                              ^ Intended Usage ^
+^ [[https://emercoin.com/|Emercoin]]      | .bazar                            | Free marketplace |
+^ :::                                     | .coin                             | Digital currency and commerce websites |
+^ :::                                     | .emc                              | Websites associated with the Emercoin project |
+^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom |
+^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites |
+^ [[https://namecoin.org/|Namecoin]]      | .bit                              | Namecoin systems, websites and services |
+^ [[http://new-nations.net/|New Nations]] | .ku                               | Kurdish people |
+^ :::                                     | .te                               | Tamil Eelam |
+^ :::                                     | .ti                               | Tibet |
+^ :::                                     | .uu                               | Uyghur people |
 
 ===== Technical Zones =====
 
