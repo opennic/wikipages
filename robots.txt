@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /_export/
 Disallow: /bin/
 Disallow: /conf/
 Disallow: /data/
