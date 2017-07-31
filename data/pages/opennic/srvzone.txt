@@ -8,8 +8,8 @@ Note that this configuration may be used for both [[tier1|Tier 1]] and [[tier2|T
 
 This script will automatically generate a file for BIND9 that lists all of the OpenNIC zones and their master servers. The conf file needs to be located in the same directory as the script. For convenience, you may wish to place these files in /etc/bind/ (or wherever your distribution places your BIND9 configuration). Run the following commands to download the files.
 
-  wget http://173.160.58.202/opennic.oss/files/scripts/srvzone
-  wget http://173.160.58.202/opennic.oss/files/scripts/srvzone.conf
+  wget http://161.97.219.84/opennic.oss/files/scripts/srvzone
+  wget http://161.97.219.84/opennic.oss/files/scripts/srvzone.conf
   chown bind.bind srvzone
   chmod 700 srvzone
 

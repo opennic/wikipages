@@ -29,8 +29,8 @@ Add the following lines to your named.conf in place of the above 'hint' section:
 masters opennicNS {
 	45.56.115.189;				# ns0.opennic.glue
 	45.56.116.224;				# ns0.opennic.glue
-	173.160.58.202;				# ns2.opennic.glue
-	2001:470:f032:10:0:100:53:10;		# ns2.opennic.glue
+	161.97.219.84;				# ns2.opennic.glue
+	2001:470:4212:10:0:100:53:10;		# ns2.opennic.glue
 	104.168.144.17;				# ns3.opennic.glue
 	2001:470:8269::53;			# ns3.opennic.glue
 	178.63.145.230;				# ns4.opennic.glue
