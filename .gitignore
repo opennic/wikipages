@@ -7,3 +7,5 @@ data/media_attic/*
 conf/users.auth.php
 data/meta/*
 !data/meta/_dummy
+data/media_meta/*
+!data/media_meta/_dummy
