@@ -1,14 +1,15 @@
 ====== wiki.opennic.org structure ======
-  * **''(root)''**       - Unsorted Pages - Everything that doesn't fit anywhere else goes into the root directory
-    * **''opennic:''**   - OpenNIC Related Pages
-      * **''api:''**     - API Related Pages - Everything related to external infrastructure automation based on the api.opennicproject.org API
-      * **''dot:''**     - Active TLD Pages - Documentation about currently active TLDs are in here
-      * **''dotarch:''** - Archived TLD Pages - Old, no more used TLDs should be moved in here
-      * **''dotprop:''** - TLD Proposal Pages - This contains all wiki pages for TLD proposals. Accepted TLDs should be moved into ''dot:'', declined to ''arch:''.
-      * **''teams:''**   - OpenNIC Teams (Read-Only)
+  * **''(root)''**                - Unsorted Pages - Everything that doesn't fit anywhere else goes into the root directory
+    * **''api:''**                - API Related Pages - Everything related to external infrastructure automation based on the api.opennicproject.org API
+    * **''opennic:''**            - OpenNIC Related Pages
+      * **''dot:''**              - Active TLD Pages - Documentation about currently active TLDs are in here
+      * **''dotarch:''**          - Archived TLD Pages - Old, no more used TLDs should be moved in here
+      * **''dotprop:''**          - TLD Proposal Pages - This contains all wiki pages for TLD proposals. Accepted TLDs should be moved into ''dot:'', declined to ''arch:''.
+      * **''infra:''**            - OpenNIC core infrastructure documentation (wiki, mailing list, webserver, etc.)
+      * **''teams:''**            - OpenNIC Teams (Read-Only)
         * **''administration:''** - OpenNIC Administration Team
-        * **''core:''**  - OpenNIC Core Team
-        * **''moderation:''** - OpenNIC Moderation Team
-    * **''setup:''**     - How-To Pages For Accessing OpenNIC
-    * **''user:''**      - Wiki User Pages
-    * **''wiki:''**      - Wiki How-Tos And Rules Pages
+        * **''core:''**           - OpenNIC Core Team
+        * **''moderation:''**     - OpenNIC Moderation Team
+    * **''setup:''**              - How-To pages for accessing OpenNIC
+    * **''user:''**               - Wiki User Pages
+    * **''wiki:''**               - Wiki How-Tos And Rules Pages
