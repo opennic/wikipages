@@ -1,0 +1,37 @@
+====== .cyb TLD ======
+===== Registering =====
+Domains can be registered at [[http://opennic.cyb|opennic.cyb]], or with valid SSL at [[https://cyb.uptime.party|cyb.uptime.party]].
+
+===== Charter =====
+=== Description ===
+.cyb is a space for all things cyberpunk, including the 'underground' use of technology in the real world. This includes cyberpunk fiction, computers, and any kind of homebrew/hobbyist technology.
+
+.cyb is no ordinary TLD. We strive to bring TLDs to a community level by automating the registration process, and providing services such as free DNS/mail/XMPP/web hosting to all holders of .cyb domains.
+
+We are also going to implement an opt-in mailing list which would permit notifications of domain registrations to be sent out to all those interested. This will, of course, be optional on both sides (opt-in to notify, opt-in to receive).
+
+Furthermore, we will provide a certificate authority and issue each domain owner with a corresponding certificate. Alternative names and wildcards can also be requested.
+
+=== Registration ===
+Registration of .cyb domains is free of charge. Any person can register as many .cyb domains as they wish, providing they have a legitimate use for them (as described within this charter).
+
+Registrations are offered on a first-come first-served basis, and last one year before they must be renewed.
+
+We aim to provide a web interface for managing and registering domains, however, early users of the TLD may register domains by email.
+
+=== Policies ===
+The following activities are prohibited, and will result in revocation of the offending domain(s):
+    * Domain squatting
+    * Distribution of child pornography
+    * Distribution of spam/malware
+    * Unauthorised access of other computer systems
+
+Domains will be revoked if the .cyb administration or membership deems them to be in violation of this policy. Please report any violating domains to the abuse email address (listed in the 'Contacts') section of this charter.
+
+=== Voting ===
+Members (anyone who holds a .cyb domain and is a member of OpenNIC) are eligible to call for, and vote on, motions relating to the administration of the domain. Motions will be passed by a majority of votes.
+
+=== Contacts ===
+    * DNS master - hostmaster@opennic.cyb
+    * Abuse -  abuse@opennic.cyb
+    * Webmaster - webmaster@opennic.cyb

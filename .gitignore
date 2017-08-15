@@ -5,6 +5,7 @@ data/tmp/*
 data/attic/*
 data/media_attic/*
 conf/users.auth.php
+conf/local.protected.php
 data/meta/*
 !data/meta/_dummy
 data/media_meta/*
