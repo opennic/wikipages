@@ -8,22 +8,22 @@ FIXME We're still missing some information! If you can fill in some of the blank
 
 ===== Current Top-Level Domains =====
 
-^ Name                           ^ Introduction ^ Contacts                                                ^ Website                                    ^ Intended Usage ^
-^ [[opennic:dot:bbs|.bbs]]       | 2000-12-29   | Dustin Souers (texnofobix)\\ texnofobix@gmail.com       | [[http://register.bbs/|register.bbs]]      | Bulletin Board System servers, and related BBS websites and services. |
-^ [[opennic:dot:chan|.chan]]     | 2015-10-21   |                                                         | [[http://opennic.chan/|opennic.chan]] | A Top Level Domain "for imageboards and communities related to imageboard culture." |
-^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | Al Beano\\ albino@autistici.org, sy\\ sy@zm.is |[[http://opennic.cyb|opennic.cyb]], [[https://cyb.uptime.party|cyb.uptime.party]] (TLS) | A TLD for cyberpunk-related content|
-^ [[opennic:dot:dyn|.dyn]]       | 2014-05-30   | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Dynamic DNS pointers. |
-^ [[opennic:dot:geek|.geek]]     | 2008-02-18   | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Anything of a personal or hobbyist nature that would be considered "geeky" |
-^ [[opennic:dot:gopher|.gopher]] | FIXME        | Brian Koontz\\ brian@opennicproject.org                 | [[http://be.libre|be.libre]]               | Content delivery via the gopher protocol. |
-^ [[opennic:dot:indy|.indy]]     | FIXME        | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Independent media and arts. |
-^ [[opennic:dot:libre|.libre]]   | 2017-01-03   | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Organizations that encourage the Non-Commercial use of the Free Internet. |
-^ [[opennic:dot:neo|.neo]]       | FIXME        | Neo\\ neo-domainreg@4195tech.com                        | [[http://register.neo|register.neo]]       | General purpose, leaning towards themes present in the 'emo subculture' |
-^ [[opennic:dot:null|.null]]     | FIXME        | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Completely non-commercial and only natural persons. |
-^ [[opennic:dot:o|.o]]           | 2016-11-28   | [[user:jonaharagon|Jonah Aragon]]\\ jonah@moderntld.com | [[https://moderntld.com|moderntld.com]]    | General purpose. |
-^ [[opennic:dot:oss|.oss]]       | FIXME        | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | Exclusively for Open Source Software. |
-^ [[opennic:dot:oz|.oz]]         | 2012-06-11   |                                                         | [[http://opennic.oz/|opennic.oz]]          | Australian websites (alt-ccTLD) |
-^ [[opennic:dot:parody|.parody]] | FIXME        | Jeff Taylor\\ shdwdrgn@sourpuss.net                     | [[http://be.libre|be.libre]]               | This domain is a venue for non-commercial parody work. |
-^ [[opennic:dot:pirate|.pirate]] | FIXME        | Travis McCrea\\ teamcoltra@gmail.com                    |                                            | Internet Freedom and sharing. |
+^ Name                           ^ Introduction ^ Contacts                                            ^ Website                                    ^ Intended Usage ^
+^ [[opennic:dot:bbs|.bbs]]       | 2000-12-29   | [[texnofobix@gmail.com|Dustin Souers (texnofobix)]] | [[http://register.bbs/|register.bbs]]      | Bulletin Board System servers, and related BBS websites and services. |
+^ [[opennic:dot:chan|.chan]]     | 2015-10-21   |                                                     | [[http://opennic.chan/|opennic.chan]] | A Top Level Domain "for imageboards and communities related to imageboard culture." |
+^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | [[albino@autistici.org|Al Beano]]\\ [[sy@zm.is|sy]] |[[http://opennic.cyb|opennic.cyb]], [[https://cyb.uptime.party|cyb.uptime.party]] (TLS) | A TLD for cyberpunk-related content|
+^ [[opennic:dot:dyn|.dyn]]       | 2014-05-30   | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Dynamic DNS pointers. |
+^ [[opennic:dot:geek|.geek]]     | 2008-02-18   | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Anything of a personal or hobbyist nature that would be considered "geeky" |
+^ [[opennic:dot:gopher|.gopher]] | FIXME        | [[brian@opennicproject.org|Brian Koontz]]           | [[http://be.libre|be.libre]]               | Content delivery via the gopher protocol. |
+^ [[opennic:dot:indy|.indy]]     | FIXME        | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Independent media and arts. |
+^ [[opennic:dot:libre|.libre]]   | 2017-01-03   | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Organizations that encourage the Non-Commercial use of the Free Internet. |
+^ [[opennic:dot:neo|.neo]]       | FIXME        | [[neo-domainreg@4195tech.com|Neo]]                  | [[http://register.neo|register.neo]]       | General purpose, leaning towards themes present in the 'emo subculture' |
+^ [[opennic:dot:null|.null]]     | FIXME        | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Completely non-commercial and only natural persons. |
+^ [[opennic:dot:o|.o]]           | 2016-11-28   | [[user:jonaharagon|Jonah Aragon]]                   | [[https://moderntld.com|moderntld.com]]    | General purpose. |
+^ [[opennic:dot:oss|.oss]]       | FIXME        | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Exclusively for Open Source Software. |
+^ [[opennic:dot:oz|.oz]]         | 2012-06-11   |                                                     | [[http://opennic.oz/|opennic.oz]]          | Australian websites (alt-ccTLD) |
+^ [[opennic:dot:parody|.parody]] | FIXME        | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | This domain is a venue for non-commercial parody work. |
+^ [[opennic:dot:pirate|.pirate]] | FIXME        | [[teamcoltra@gmail.com|Travis McCrea]]              |                                            | Internet Freedom and sharing. |
 
 ===== Inactive Top-Level Domains =====
 ^ Name                           ^ Introduction ^ Invalidation ^ Intended Usage ^
