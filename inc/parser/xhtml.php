@@ -630,6 +630,8 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
         global $ID;
         global $lang;
 
+        $language = preg_replace(PREG_PATTERN_VALID_LANGUAGE, '', $language);
+
         if($filename) {
             // add icon
             list($ext) = mimetype($filename, false);
@@ -649,7 +651,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
             $text = substr($text, 0, -1);
         }
 
-        if(is_null($language)) {
+        if(empty($language)) { // empty is faster than is_null and can prevent '' string
             $this->doc .= '<pre class="'.$type.'">'.$this->_xmlEntities($text).'</pre>'.DOKU_LF;
         } else {
             $class = 'code'; //we always need the code class to make the syntax highlighting apply
@@ -1285,7 +1287,7 @@ class Doku_Renderer_xhtml extends Doku_Renderer {
                     if($author) {
                         $name = $author->get_name();
                         if(!$name) $name = $author->get_email();
-                        if($name) $this->doc .= ' '.$lang['by'].' '.$name;
+                        if($name) $this->doc .= ' '.$lang['by'].' '.hsc($name);
                     }
                 }
                 if($params['date']) {
