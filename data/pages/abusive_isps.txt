@@ -31,7 +31,8 @@ You could also contact your ISP to complain about their use of DNS hijacking.
 ==== Abusive ISP List ====
 This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
 
-^ Country       ^ ISP     ^ Reported ^ Reporter                   ^ Notes                                                                                           ^
-| Peru          | Bitel   | 2017     | Tedel on #opennic          | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt            |
-| United States | Comcast | 2009     | //news//                   | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/                                   |
-| Canada        | Rogers  | 2007     | //news//                   | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
+^ Country       ^ ISP         ^ Reported ^ Reporter                   ^ Notes ^
+| United States | CenturyLink | 2017     | //some user// on #opennic  | Reproduced by [[:user:fusl|Fusl]], no UDP/53 interception but redirects NXDOMAIN on their own DNS resolvers to ''198.105.244.23'' and ''198.105.245.23'' which redirects to ''http://webhelper.centurylink.com/index.php?origURL=xxx&r=&bc='' | 
+| Peru          | Bitel       | 2017     | Tedel on #opennic          | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt |
+| United States | Comcast     | 2009     | //news//                   | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/ |
+| Canada        | Rogers      | 2007     | //news//                   | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
