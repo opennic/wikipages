@@ -38,4 +38,4 @@ If you are looking to propose a new TLD under OpenNIC, please see [[:creating_ne
 No. OpenNIC provides a democratically governed alternative to the traditional Top-Level Domain registries; we do not register non-OpenNIC Top Level Domains, such as .com, .net, and .org.
 
 ===== How do I register a new TLD? =====
-Please see here: [[:creating_new_tlds]]
+Please see here: [[creating_new_tlds]]
