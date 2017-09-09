@@ -16,7 +16,7 @@ To automatically scale the wiki instances to the desired performance and to ensu
 
 ==== Details ====
   * Auto Scaling Group: ''prod-wiki''
-  * Launch Configuration: ''prod-wiki-20170506-4''
+  * Launch Configuration: ''prod-wiki-20170909''
   * Load Balancers: -
   * Target Groups: ''prod-wiki''
   * Desired: ''2''
@@ -52,7 +52,7 @@ To automatically scale the wiki instances to the desired performance and to ensu
 | Name | prod-wiki | Yes |
 
 ==== Launch Configuration ====
-  * AMI: ''ami-80861296''
+  * AMI: //AMI created by [[https://github.com/opennic/packers/tree/master/opennic-wiki|opennic-wiki packer]]//
   * Instance type: ''t2.nano'' (t2.nano (Variable ECUs, 1 vCPUs, 2.4 GHz, Intel Xeon Family, 0.5 GiB memory, EBS only))
   * Name: ''prod-wiki-20170506-4''
   * Request Spot Instances - Request Spot Instances: No
@@ -60,7 +60,7 @@ To automatically scale the wiki instances to the desired performance and to ensu
   * Monitoring - Enable CloudWatch detailed monitoring: No
   * Kernel ID: ''Use default''
   * RAM Disk ID: ''Use default''
-  * User data (As text): {{:opennic:infra:prod-wiki-asg-user-data.txt|}}
+  * User data (As text): -
   * IP Address Type: ''Assign a public IP address to every instance.''
   * Storage
     * Volume Type: ''Root''
