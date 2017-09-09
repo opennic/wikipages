@@ -10,3 +10,4 @@ data/meta/*
 !data/meta/_dummy
 data/media_meta/*
 !data/media_meta/_dummy
+.gitsync.lock
