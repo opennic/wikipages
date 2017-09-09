@@ -13,7 +13,7 @@ If you would like to register an account, please follow the sign-up page [[/star
 ===== How you can help =====
 The main thing anyone can do to help is to **become a member**. Sign up at http://www.opennicproject.org/members/ and **join our mailing list**! The other great thing you can do to help is to **spread the word**, even if you don't use our TLDs our DNS network is still the quickest around!
 
-**Contributing to the OpenNIC Wiki** are more than welcome. There's lots of stuff to do and missing information needs to be added, articles need to be cleaned and rewritten and other things need to be done. If you're willing to donate some of your free time as contributions to the OpenNIC Wiki, you can do this with just four simple steps:
+**Contributions to the OpenNIC Wiki** are more than welcome. There's lots of stuff to do and missing information needs to be added, articles need to be cleaned and rewritten and other things need to be done. If you're willing to donate some of your free time as contributions to the OpenNIC Wiki, you can do this with just four simple steps:
   - Sign up at http://www.opennicproject.org/members/
   - Log in (with the username and password you chose during sign up) at https://wiki.opennic.org/start?do=login&sectok=
   - Start writing articles or update existing articles. As of this time, there aren't any guidelines in place, so feel free to design the pages in a way you think makes sense.
