@@ -187,6 +187,13 @@ zone "pirate" in {
 	notify yes;
 	masters { opennicNS; opennicPeers; };
 };
+zone "o" in {
+	type slave;
+	file "o.zone";
+	allow-transfer { any; };
+	notify yes;
+	masters { opennicNS; opennicPeers; };
+};
 </file>
 
 Finally, you will want to consider WHO is allowed to query your server and add an appropriate line to your options file. The default behavior (if you have not specified otherwise) is to only allow your local network to query, and the line for your options file would look like this:
