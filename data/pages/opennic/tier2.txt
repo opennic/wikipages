@@ -22,7 +22,7 @@ We have a list of tutorials at [[opennic:tier2setup|Tier 2 Setup]] to help you g
 
 We don't recommend you run it from a home connection, unless you have a high bandwidth and **low latency connection** with no bandwidth caps. Low WAN latency is important for running a DNS server, because the server itself is in charge of lookups, and high latency (e.g. on a home connection) can slow down requests dramatically compared to a server hosted with a low-latency connection in a datacenter. This graphic is a vast oversimplification of the DNS process but demonstrates why hosting at home is rarely a good idea:
 
-{{ :opennic:latency.png?nolink&600 |}}
+{{:opennic:tier2:latency_local.png|}}{{:opennic:tier2:latency_remote.png|}}
 
 The first graphic is an example of a Tier 2 server hosted at home. It needs to make numerous requests to "[[opennic:tier1|Authoritative]]" DNS servers, which are slowed down by the latency of the home connection. The second graphic has a higher latency between the user and the Tier 2 server, because it's outside the LAN, but the speed increases when communicating with Authoritative servers create a faster experience overall.
 
