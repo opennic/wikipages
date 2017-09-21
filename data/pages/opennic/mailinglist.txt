@@ -1,5 +1,4 @@
 ====== OpenNIC Mailing Lists ======
-
 The official OpenNIC mailing lists are served by [[https://www.sympa.org/|sympa]] at [[https://lists.opennicproject.org/|@lists.opennicproject.org]]. See below for descriptions of available lists and instructions for subscribing.
 
 ===== OpenNIC Related Lists =====
@@ -19,3 +18,8 @@ This list is used for DNS reports that include Tier 1 and Tier 2 reports as well
 
 ==== TLS CA ====
 The TLS CA list is a working group list used to communicate and coordinate anything related to building a TLS root certificate authority for OpenNIC TLDs.
+
+List manager: [[/user/fusl]]
+
+===== List Manager (root account holder) =====
+purrdeta is the current root account holder for the mailing list system.
