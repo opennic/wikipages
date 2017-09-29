@@ -13,7 +13,7 @@ The hash can be calculated in linux as follows:
   sha256sum <acl-file.name>
 
 Complete automation may be achieved by calling the following script as a cron job. It only updates when a new file is available, so you should check it at least every 1-5 minutes.
-  #!/bin/sh
+  #!/bin/bash
   
   USER="myUserName"
   AUTH="myAuthCode"
@@ -23,7 +23,7 @@ Complete automation may be achieved by calling the following script as a cron jo
   curl -sR "https://api.opennicproject.org/acl/bind/?user=$USER&auth=$AUTH" -z $FILE -o $DIR/$FILE -w %{http_code} | if [ "${*:-`cat`}" == "200" ]; then /usr/sbin/rndc reload; fi
 
 You will need to include this file in your named.conf configuration. Please note that you cannot put this in the options section of named.conf; if you do you will get an unknown option 'acl' error! Just place it anywhere outside of the named sections:
-  include "/etc/bind/OpenNIC.acl"
+  include "/etc/bind/OpenNIC.acl";
 
 To include these ACLs in BIND9, you could add something like the following to the appropriate named.conf or view:
 
