@@ -138,6 +138,13 @@ zone "indy" in {
 	notify yes;
 	masters { opennicNS; opennicPeers; };
 };
+zone "libre" in {
+	type slave;
+	file "libre.zone";
+	allow-transfer { any; };
+	notify yes;
+	masters { opennicNS; opennicPeers; };
+};
 zone "neo" in {
 	type slave;
 	file "neo.zone";
