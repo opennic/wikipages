@@ -1,0 +1,52 @@
+====== DNS Blacklisting API ======
+OpenNIC implemented a DNS blacklisting API for [[opennic:tier2|Tier 2]] operators to block certain domains from being resolved. The reason for this is mostly to stop spreading malware and stopping highly illegal or abusive behavior on the domain level that would otherwise negatively affect the reputation of the OpenNIC project. DNS blacklisting finds its use mainly on TLDs where a direct zone control is not possible or not wanted (due to OpenNICs no-censorship policy) like the [[opennic:dot:bit|.bit]] TLD where domains are often used to spread malware due to its anonymity which causes a negative IP rating on certain IP blacklist on DNS blacklists like the [[https://www.spamhaus.org/sbl/|Spamhaus Block List]].
+
+===== The API =====
+The APIs base URL is at https://api.opennicproject.org/acl/filter/
+
+This wiki page is a clone of [[https://lists.opennicproject.org/sympa/arc/discuss/2017-08/msg00019.html|this email from Shdwdrgn]] with some fancy tables and extra glitter added.
+
+The default output format for the API is <code>[spamhaus:sbl] malware.bit # SBL123
+[other:list] abusive.com # custom comment</code>
+This format changes with custom parameters applied, see the table below for other examples.
+
+===== URL Parameters =====
+URL Parameters are appended to the base URL separated by a question mark (?), all parameters are separated by ampersand (&), parameter key/value pairs are separated by an equal sign (=).
+
+Example: ''https://api.opennicproject.org/acl/filter/?cat=spamhaus:sbl'' for the parameter key ''cat'' and value ''spamhaus:sbl''
+
+==== Parameters ====
+^ Parameter ^ Example Value ^ Description ^ Example output fromat (if changed) ^
+^ cat       | spamhaus:sbl  | Filter the returned blacklists by the defined category\\ Enables BIND9 zonefile compatible format | <code>zone "malware.bit" {type master; file "db.opennic_filter.spamhaus:sbl";}; # SBL12</code> |
+^ path      | /var/named    | Prepends the value given to the ''file'' parameter in the BIND9 zonefile compatible format\\ Requires a ''cat'' parameter | <code>zone "malware.bit" {type master; file "/var/named/db.opennic_filter.spamhaus:sbl";}; # SBL12</code> |
+
+===== BIND9 configuration =====
+Within the folder where you store your zone files (perhaps using the path you specified to the API), create a file named ''db.opennic_filter.spamhaus:sbl'' and put in the following contents:
+
+<code>
+;
+; Blacklisted domains that should be blocked from resolving
+;
+$TTL 3600
+@                       IN      SOA     ns1.example.com. hostmaster (
+                                2017082300 ; serial
+                                3600 ; refresh
+                                180 ; retry
+                                86400 ; expire
+                                3600 ; default TTL
+                                )
+                        IN      NS      127.0.0.1
+                        IN      A       127.0.0.1
+*                       IN      A       127.0.0.1
+                        IN      AAAA    ::1
+*                       IN      AAAA    ::1
+</code>
+
+
+Save the data from the API page in the same location as named.conf, giving it a name such as ''named.blacklisted''.
+
+And finally, you need to update your named.conf to include the API data page by adding a line such as this:
+
+<code>include "/etc/bind/named.blacklisted";</code>
+
+Now you can restart BIND9 and test that the blackholed domains return ''127.0.0.1'' to your queries.  Note that the API was written so we can create blacklists under different names, allowing admins to choose which information they wish to use.  The zone file is saved using the name of the blacklist, so you could have different lists give different responses.
