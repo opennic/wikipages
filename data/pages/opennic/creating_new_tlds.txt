@@ -27,7 +27,7 @@ It's as easy as 1-2-3! :-)
     * Does it fulfill a unique niche/role that's not currently addressed by an existing TLD (OpenNIC, ICANN, etc)?
     * If the Charter of the TLD has anything out of the ordinary (e.g. OpenNIC policy exceptions), clearly explain why these exceptions are needed.
 === Step 2: Request for Feedback (20% of time and effort) ===
-  * Request feedback on the TLD - before submitting a formal proposal for a TLD on the [[mailinglist|mailing list]], consider informally asking the OpenNIC community either on the [[mailinglist|mailing list]] and/or [[irc|IRC]].
+  * Request feedback on the TLD - before submitting a formal proposal for a TLD on the [[mailinglist|mailing list]], consider informally asking the OpenNIC community either on the [[mailinglist|mailing list]] and/or [[https://webchat.freenode.net/?channels=%23opennic|IRC]].
       - Consider starting with an informal discussion on [[https://webchat.freenode.net/?channels=%23opennic|#opennic IRC channel on FreeNode]] to get immediate feedback.
       - Start a **new thread** for your proposal [[mailinglist#discuss|OpenNIC Discussion mailing list]]. **IMPORTANT: Send a brand new email to the list, don't just hit reply on an existing post!**
       - Be there to answer questions and provide additional information! This is where all the preparations from step 1 will be helpful.
