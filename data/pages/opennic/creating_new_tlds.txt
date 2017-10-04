@@ -1,11 +1,11 @@
 ====== Proposing and Creating new TLDs through OpenNIC ======
 ===== OpenNIC TLD Minimum Requirements =====
-Within the OpenNIC, a Top-Level Domain is an independent administrative body, responsible for governing itself and maintaining its own resources. TLD administrative groups are free to administer the TLD however they choose, as long as the following minimum requirements are met:
-  * TLD must run at least one [[tier1|Tier 1]] server which meets the following criteria:
+Within the OpenNIC project, a TLD is an independent administrative body, responsible for governing itself and maintaining its own resources. TLD administrative groups are free to administer the TLD however they choose, as long as the following minimum requirements are met:
+  * TLD must run at least one [[tier1|Tier 1]] server meeting the following criteria:
     * mirrors the root data of **all** the OpenNIC TLDs
     * passes the [[http://report.opennicproject.org/t2log/t1.php|Tier 1 server test]]
   * TLD must have a web site at <html>http://www.opennic.[TLD]</html> for registration and administrative information
-  * TLD must have the following email addresses:
+  * TLD must have accept and process emails to the following addresses:
     * <html>hostmaster@opennic.[TLD]</html> - for the DNS admin team
     * <html>abuse@opennic.[TLD]</html> - for the TLD-related abuse team (e.g. dealing with spam or malware/viruses being distributed through a subdomain of the TLD)
     * <html>webmaster@opennic.[TLD]</html> - for the web presence team
@@ -18,14 +18,14 @@ Within the OpenNIC, a Top-Level Domain is an independent administrative body, re
 ==== Steps for creating a new OpenNIC TLD ====
 It's as easy as 1-2-3! :-)
 === Step 1: Prepare (70% of time and effort) ===
-  * Join OpenNIC by:
-    * Subscribing to the [[mailinglist#discuss|OpenNIC Discussion]] email list
-    * Registering for an OpenNIC account at [[https://www.opennicproject.org/members/|OpenNIC Membership Page]]
+  * Join OpenNIC by ...
+    * subscribing to the [[mailinglist#discuss|OpenNIC Discussion]] email list
+    * signing up for an OpenNIC account at the [[https://www.opennicproject.org/members/|OpenNIC Membership Page]]
   * Form an admin team - gather a few other administrators to design and maintain the resources for the new TLD.
     * The admin team can be just one or more people, as long as the team handles the 3 types of requests effectively (DNS admin, web admin and abuse reports/complaints). See TLD minimum requirements above.
   * Draft the TLD description, purpose and Charter.
-    * does it fulfill a unique niche/role that's not currently addressed by an existing TLD (OpenNIC, ICANN, etc)?
-    * if the Charter of the TLD has anything out of the ordinary (e.g. OpenNIC policy exceptions), clearly explain why these exceptions are needed.
+    * Does it fulfill a unique niche/role that's not currently addressed by an existing TLD (OpenNIC, ICANN, etc)?
+    * If the Charter of the TLD has anything out of the ordinary (e.g. OpenNIC policy exceptions), clearly explain why these exceptions are needed.
 === Step 2: Request for Feedback (20% of time and effort) ===
   * Request feedback on the TLD - before submitting a formal proposal for a TLD on the [[mailinglist|mailing list]], consider informally asking the OpenNIC community either on the [[mailinglist|mailing list]] and/or [[irc|IRC]].
       - Consider starting with an informal discussion on [[https://webchat.freenode.net/?channels=%23opennic|#opennic IRC channel on FreeNode]] to get immediate feedback.
@@ -35,4 +35,4 @@ It's as easy as 1-2-3! :-)
 === Step 3: Submit the TLD proposal for voting (10% of time and effort) ===
   * Call for a vote - at any point in the discussion of the proposal on the [[mailinglist#discuss|OpenNIC Discussion mailing list]], any member may call for a vote on the proposal
   * More than 50% of the votes cast must be positive in order for the proposal to be successful.
-  * If your proposal passed, congratulations, go ahead and launch - make your DNS server(s) publicly available and start accepting subdomain registrations.
+  * If your proposal passed, congratulations, go ahead and launch - make your DNS server(s) publicly available, start accepting subdomain registrations and get in contact with other [[tier1|Tier 1] 
