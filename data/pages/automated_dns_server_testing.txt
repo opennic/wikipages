@@ -1,7 +1,7 @@
 ====== Automated DNS Server Testing ======
-Every 15 minutes, full testing is performed on each publicly listed Tier 2 server. The results and history of this testing [[https://web.archive.org/web/20161002171624/http://www.opennicproject.org/t2log/|may be viewed from here]]. You can view either Tier 1 or Tier 2 server results, and filter the display based on region. This information may be helpful in choosing reliable servers near you.
+Every 15 minutes, full testing is performed on each publicly listed Tier 2 server. The results and history of this testing [[http://report.opennicproject.org/|may be viewed from here]]. You can view either Tier 1 or Tier 2 server results, and filter the display based on region. This information may be helpful in choosing reliable servers near you.
 
-In addition, you may test a new or unlisted Tier 2 server for functionality. Note that your server must respond to public queries to perform this test. Visit http://www.opennicproject.org/t2log/test.php and enter your IP or hostname, then select the type of server you have.
+In addition, you may test a new or unlisted Tier 2 server for functionality. Note that your server must respond to public queries to perform this test. Visit [[http://report.opennicproject.org/t2log/|the test page]] and enter your IP or hostname, then select the type of server you have.
 
 The following tests will be performed for all servers:
   * Connectivity: verify we can reach your server

@@ -1,18 +1,38 @@
 ====== Proposing and Creating new TLDs through OpenNIC ======
-Within the OpenNIC, a Top-Level Domain is an independent administrative body, responsible for governing itself and maintaining its own resources. TLD administrative groups are free to administer the TLD however they choose, subject to these restrictions:
-  * each TLD must run at least one [[tier1|Tier 1]] server which mirrors the root data of all the OpenNIC TLDs
-  * each TLD must have a web site at http://www.opennic.[TLD] for registration and administrative information
-  * each TLD must have the following email addresses:
-    * hostmaster@opennic.[TLD]
-    * abuse@opennic.[TLD]
-    * webmaster@opennic.[TLD]
-  * each TLD must publish and enforce a Charter for that TLD, which can only conflict with OpenNIC Policies by vote of the OpenNIC membership.
-  * unless specified in the TLD description and authorized by vote of the OpenNIC membership, the TLD governance must be democratic and allow one (and only one) vote to each real person holding a domain registration in that TLD
+===== OpenNIC TLD Minimum Requirements =====
+Within the OpenNIC, a Top-Level Domain is an independent administrative body, responsible for governing itself and maintaining its own resources. TLD administrative groups are free to administer the TLD however they choose, as long as the following minimum requirements are met:
+  * TLD must run at least one [[tier1|Tier 1]] server which meets the following criteria:
+    * mirrors the root data of **all** the OpenNIC TLDs
+    * passes the [[http://report.opennicproject.org/t2log/t1.php|Tier 1 server test]]
+  * TLD must have a web site at <html>http://www.opennic.[TLD]</html> for registration and administrative information
+  * TLD must have the following email addresses:
+    * <html>hostmaster@opennic.[TLD]</html> - for the DNS admin team
+    * <html>abuse@opennic.[TLD]</html> - for the TLD-related abuse team (e.g. dealing with spam or malware/viruses being distributed through a subdomain of the TLD)
+    * <html>webmaster@opennic.[TLD]</html> - for the web presence team
+  * TLD must publish and enforce a Charter for that TLD which must satisfy the following minimum requirements:
+    * the Charter must clearly explain the purpose of the TLD and may include a brief description or examples
+    * the Charter must not conflict with any OpenNIC Policies, unless authorized by vote of the OpenNIC membership
+  * TLD governance must be democratic and allow one (and only one) vote to each real person holding a domain registration in that TLD
+    * any exceptions to the above TLD governance model must be clearly articulated in the TLD description and authorized by vote of the OpenNIC membership
 
-Here are the steps for creating a new OpenNIC TLD:
-
-  * join OpenNIC - at the moment this is accomplished by subscribing to the MailingLists Discussion email list
-  * form an admin team - gather a few other administrators to design and maintain the resources for the new TLD
-  * propose the TLD - choose a TLD name and write a description of how it will be used; write a Charter for the new domain; post these to the discussion list
-  * call for a vote - at any point in the list's discussion of the proposal, any member may call for a vote on the proposal; new TLDs will be established by collecting more than 50% of the votes cast (so if you don't like it, you'd better vote against it ...)
-  * launch - make your DNS server(s) publicly available and start accepting registrations
+==== Steps for creating a new OpenNIC TLD ====
+It's as easy as 1-2-3! :-)
+=== Step 1: Prepare (70% of time and effort) ===
+  * Join OpenNIC by:
+    * Subscribing to the [[mailinglist#discuss|OpenNIC Discussion]] email list
+    * Registering for an OpenNIC account at [[https://www.opennicproject.org/members/|OpenNIC Membership Page]]
+  * Form an admin team - gather a few other administrators to design and maintain the resources for the new TLD.
+    * The admin team can be just one or more people, as long as the team handles the 3 types of requests effectively (DNS admin, web admin and abuse reports/complaints). See TLD minimum requirements above.
+  * Draft the TLD description, purpose and Charter.
+    * does it fulfill a unique niche/role that's not currently addressed by an existing TLD (OpenNIC, ICANN, etc)?
+    * if the Charter of the TLD has anything out of the ordinary (e.g. OpenNIC policy exceptions), clearly explain why these exceptions are needed.
+=== Step 2: Request for Feedback (20% of time and effort) ===
+  * Request feedback on the TLD - before submitting a formal proposal for a TLD on the [[mailinglist|mailing list]], consider informally asking the OpenNIC community either on the [[mailinglist|mailing list]] and/or [[irc|IRC]].
+      - Consider starting with an informal discussion on [[https://webchat.freenode.net/?channels=%23opennic|#opennic IRC channel on FreeNode]] to get immediate feedback.
+      - Start a **new thread** for your proposal [[mailinglist#discuss|OpenNIC Discussion mailing list]]. **IMPORTANT: Send a brand new email to the list, don't just hit reply on an existing post!**
+      - Be there to answer questions and provide additional information! This is where all the preparations from step 1 will be helpful.
+  * Consider the feedback carefully and make changes to your TLD's draft description, purpose and Charter as you see fit. While this is entirely up to you, obviously, adopting others suggestions may increase the chance of your TLD proposal being successful at the voting (next) stage.
+=== Step 3: Submit the TLD proposal for voting (10% of time and effort) ===
+  * Call for a vote - at any point in the discussion of the proposal on the [[mailinglist#discuss|OpenNIC Discussion mailing list]], any member may call for a vote on the proposal
+  * More than 50% of the votes cast must be positive in order for the proposal to be successful.
+  * If your proposal passed, congratulations, go ahead and launch - make your DNS server(s) publicly available and start accepting
