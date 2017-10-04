@@ -35,4 +35,4 @@ It's as easy as 1-2-3! :-)
 === Step 3: Submit the TLD proposal for voting (10% of time and effort) ===
   * Call for a vote - at any point in the discussion of the proposal on the [[mailinglist#discuss|OpenNIC Discussion mailing list]], any member may call for a vote on the proposal
   * More than 50% of the votes cast must be positive in order for the proposal to be successful.
-  * If your proposal passed, congratulations, go ahead and launch - make your DNS server(s) publicly available and start accepting
+  * If your proposal passed, congratulations, go ahead and launch - make your DNS server(s) publicly available and start accepting subdomain registrations.
