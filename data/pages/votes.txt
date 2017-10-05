@@ -1,0 +1,1 @@
+{{namespace>:votes&depth=0&order=created&rsort}}

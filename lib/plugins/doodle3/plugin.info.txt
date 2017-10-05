@@ -1,0 +1,7 @@
+base   doodle3
+author Matthias Jung, Robert Rackl
+email  matzekuh@web.de
+date   2017-03-30
+name   Doodle3 Plugin
+desc   Let users vote for given choices, e.g. to schedule a meeting. Sequel of doodle2.
+url    http://www.dokuwiki.org/plugin:doodle3
