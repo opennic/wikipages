@@ -1,9 +1,9 @@
 ====== Piwik ======
 <columns 100% 30% 70%>
-<doodle title="Implement Piwik for analytics on the home page and wiki?" auth="user" adminGroups="wikiAdmin" voteType="single" fieldwidth="auto" closed="no">
+<devote title="Implement Piwik for analytics on the home page and wiki?">
   * Yes
   * No
-</doodle>
+</devote>
 <newcolumn>
 <code>
 Hello!

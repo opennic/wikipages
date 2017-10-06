@@ -1,1 +1,2 @@
-{{namespace>:votes&depth=0&order=created&rsort}}
+====== OpenNIC Votes ======
+{{namespace>:votes&depth=0&order=created&rsort&link}}
