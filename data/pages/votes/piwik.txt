@@ -4,6 +4,7 @@
   * Yes
   * No
 </devote>
+
 <newcolumn>
 <code>
 Hello!

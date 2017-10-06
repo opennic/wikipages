@@ -93,7 +93,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		$renderer->doc .= '<div class="devote_scrollcontainer">';
 		$renderer->doc .= '<form action="" method="post" accept-charset="utf-8" >';
 		$renderer->doc .= '<input type="hidden" name="formId" value="' . $votehash . '">';
-		$renderer->doc .= '<table class="inline">';
+		$renderer->doc .= '<table class="inline table table-striped table-condensed">';
 		$renderer->doc .= '<tbody>';
 		$renderer->doc .= '<tr>';
 		$renderer->doc .= '<th class="centeralign" colspan="' . (sizeof($choices) + 1) . '">' . hsc($title) . '</th>';
