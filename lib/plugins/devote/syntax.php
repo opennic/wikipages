@@ -110,7 +110,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$renderer->doc  .= '<td class="centeralign" colspan="' . sizeof($choices) . '">No votes</td>';
 		} else {
 			foreach ($choices as $choice) {
-				$renderer->doc .= '<td class="centeralign">' . $votestats[$choice] . ' (' . ($votetotal ? ($votestats[$choice] / $votetotal * 100) : 0) . '%)</td>';
+				$renderer->doc .= '<td class="centeralign">' . $votestats[$choice] . ' (' . ($votetotal ? round($votestats[$choice] / $votetotal * 100, 1) : 0) . '%)</td>';
 			}
 		}
 		$renderer->doc .= '</tr>';
