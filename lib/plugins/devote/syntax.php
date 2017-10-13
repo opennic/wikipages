@@ -138,6 +138,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			}
 			$renderer->doc .= '</tr>';
 			$renderer->doc .= '<tr><td class="centeralign" colspan="' . (sizeof($choices) + 1) . '"><input type="submit" value="Vote" name="cast_vote" class="button"></td></tr>';
+			$renderer->doc .= '<tr><td style="font-size: 0.8em;">Note: Votes and names are public</td></tr>';
 		}
 		$renderer->doc .= '</table>';
 		$renderer->doc .= '</form>';
