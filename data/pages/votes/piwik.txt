@@ -1,6 +1,6 @@
 ====== Piwik ======
 <columns 100% 30% 70%>
-<devote title="Implement Piwik for analytics on the home page and wiki?">
+<devote title="Implement Piwik for analytics on the home page and wiki?" close="2017-10-18">
   * Yes
   * No
 </devote>

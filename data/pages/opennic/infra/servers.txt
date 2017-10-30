@@ -1,0 +1,9 @@
+====== servers.opennic.org infrastructure ======
+==== Maintainers ====
+  - [[/user/shdwdrgn]]
+
+===== The Infrastructure =====
+The servers.opennic.org website runs on [[/user/shdwdrgn|shdwdrgn's]] private infrastructure in [[http://www.openstreetmap.org/#map=12/40.1672/-105.1450|Longmont, CO, United States]].
+
+===== Dependencies =====
+This OpenNIC service depends on [[ldap]] to function properly.

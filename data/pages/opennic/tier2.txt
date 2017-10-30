@@ -36,6 +36,6 @@ Community members are generally available on IRC or the Mailing List if you are 
 
 In addition to improving OpenNIC's infrastructure, using your own Tier 2 servers bolsters your ability to know for sure what your data is being used for, and helps decentralize our system and the internet's DNS as a whole. Tier 2 hosting is very inexpensive with various cloud providers, and is a small price to pay in return for greater privacy, reliability, and access to OpenNIC's namespaces.
 
-===== [Other Questions] =====
+===== Other Questions =====
 
 Please contact us on IRC if you need assistance. (Also, if your question is something that everyone should know, message ''jonaharagon'' on IRC and [[user:jonaharagon|I]]'ll try to answer it on this page for future members)

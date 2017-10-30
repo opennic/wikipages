@@ -1,0 +1,6 @@
+====== ldap.sourpuss.net infrastructure ======
+==== Maintainers ====
+  - [[/user/shdwdrgn]]
+
+===== The Infrastructure =====
+FIXME How are LDAP servers distributed?

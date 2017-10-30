@@ -1,20 +1,24 @@
 ====== wiki.opennic.org infrastructure ======
-The wiki.opennic.org website runs on [[https://aws.amazon.com/|Amazon Web Services (AWS)]] infrastructure and uses various services offered by AWS:
+==== Maintainers ====
+  - [[/user/fusl]]
 
-===== Elastic File System =====
+===== The Infrastructure =====
+The wiki.opennic.org website runs on [[https://aws.amazon.com/|Amazon Web Services (AWS)]] infrastructure and uses various services offered by AWS in the us-east-1 (US East (N. Virginia)) [[http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html|region]]:
+
+==== Elastic File System ====
 The [[https://aws.amazon.com/efs/|EFS service]] is used to store all wiki pages, configurations, attachments, etc. on a scalable, shared filesystem using NFS as protocol. 
 
   * Endpoint: ''fs-ee48faa7.efs.us-east-1.amazonaws.com''
 
-===== ElastiCache =====
+==== ElastiCache ====
 [[https://aws.amazon.com/elasticache/|ElastiCache]] stores all PHP sessions in a single Memcached instance to ensure session and login-state persistency and reliability across all floating wiki.opennic.org webserver instances.
 
   * Endpoint: ''prod-wiki-sess.xqtznt.cfg.use1.cache.amazonaws.com:11211''
 
-===== Auto Scaling =====
+==== Auto Scaling ====
 To automatically scale the wiki instances to the desired performance and to ensure reliability even on instance failures, we use an [[https://aws.amazon.com/autoscaling/|Auto Scaling]] group which handles automatic scaling at your desire.
 
-==== Details ====
+=== Details ===
   * Auto Scaling Group: ''prod-wiki''
   * Launch Configuration: ''prod-wiki-20170909''
   * Load Balancers: -
@@ -34,24 +38,24 @@ To automatically scale the wiki instances to the desired performance and to ensu
   * Enabled Metrics: ''GroupPendingInstances'', ''GroupTotalInstances'', ''GroupInServiceInstances'', ''GroupDesiredCapacity'', ''GroupMaxSize'', ''GroupTerminatingInstances'', ''GroupMinSize'', ''GroupStandbyInstances''
   * Instance Protection: -
 
-==== Scaling Policies ====
-=== prod-wiki-high ===
+=== Scaling Policies ===
+== prod-wiki-high ==
   * Policy type: ''Simple scaling''
   * Execute policy when: ''prod-wiki-high'' (breaches the alarm threshold: ''TargetResponseTime >= 1'' for ''300'' seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
   * Take the action: ''Add 2 instances''
   * And then wait: ''180 seconds before allowing another scaling activity''
 
-=== prod-wiki-low ===
+== prod-wiki-low ==
   * Policy type: ''Simple scaling''
   * Execute policy when: ''prod-wiki-low'' (breaches the alarm threshold: ''TargetResponseTime <= 0.5'' for ''300'' seconds for the metric dimensions ''LoadBalancer = app/prod-wiki/0ec4b8b4601b350c'')
   * Take the action: ''Remove 1 instances''
   * And then wait: ''180 seconds before allowing another scaling activity''
 
-==== Tags ====
+=== Tags ===
 ^ Key ^ Value ^ Tag New Instances ^
 | Name | prod-wiki | Yes |
 
-==== Launch Configuration ====
+=== Launch Configuration ===
   * AMI: //AMI created by [[https://github.com/opennic/packers/tree/master/opennic-wiki|opennic-wiki packer]]//
   * Instance type: ''t2.nano'' (t2.nano (Variable ECUs, 1 vCPUs, 2.4 GHz, Intel Xeon Family, 0.5 GiB memory, EBS only))
   * Name: ''prod-wiki-20170506-4''
@@ -74,7 +78,7 @@ To automatically scale the wiki instances to the desired performance and to ensu
     * Encrypted: No
   * Security group: ''sg-3eccfc41''
 
-===== Elastic Load Balancer =====
+==== Elastic Load Balancer ====
 An [[https://aws.amazon.com/elasticloadbalancing/|Elastic Load Balancer]] distributes HTTP queries to wiki.opennic.org across all instances in the auto scaling group.
 
   * Basic Configuration
@@ -121,5 +125,5 @@ An [[https://aws.amazon.com/elasticloadbalancing/|Elastic Load Balancer]] distri
       * Whenever: ''Average Latency''
       * Is: ''<='' ''500''
       * For at least: ''1'' consecutive period(s) of ''5 Minutes''
-===== git sync =====
-The entire web root directory is synced to [[https://github.com/opennic/wikipages|GitHub]] approximately every 30 minutes using [[https://github.com/opennic/wikipages/blob/master/sync.sh|this]] simple bash script. Some files are [[https://github.com/opennic/wikipages/blob/master/.gitignore|not synced]] to the repository, for example the ''conf/users.auth.php'' file containing all users with their email addresses and passwords until LDAP authentication is up and running.
+==== git sync ====
+The entire web root directory is synced to [[https://github.com/opennic/wikipages|GitHub]] approximately every 60 minutes using a [[https://github.com/opennic/packers/blob/master/opennic-wiki/files-pre/etc/cron.hourly/gitsync|crontab script]] deployed when building the AWS AMI using our [[https://github.com/opennic/packers/tree/master/opennic-wiki|Packer deployment definitions]]. Some files are [[https://github.com/opennic/wikipages/blob/master/.gitignore|not synced]] to the repository.
