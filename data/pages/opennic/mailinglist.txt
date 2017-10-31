@@ -1,15 +1,15 @@
 ====== OpenNIC Mailing Lists ======
-The official OpenNIC mailing lists are served by [[https://www.sympa.org/|sympa]] at [[https://lists.opennicproject.org/|@lists.opennicproject.org]]. See below for descriptions of available lists and instructions for subscribing.
+The official OpenNIC mailing lists are served by Sympa at [[https://lists.opennicproject.org/|@lists.opennicproject.org]]. See below for descriptions of available lists and instructions for subscribing.
 
 ===== OpenNIC Related Lists =====
 
 ==== Discuss ====
-This low-volume list is for folks discussing the organization and operation of the OpenNIC project. All are welcome to subscribe. Subscribe by sending an email to discuss-subscribe@lists.opennicproject.org with 'subscribe' in the body of the message.
+This low-volume list is for folks discussing the organization and operation of the OpenNIC project. All are welcome to subscribe. Subscribe using the [[https://lists.opennicproject.org/sympa/subscribe/discuss|mailing list website]] or by sending an email to [[discuss-subscribe@lists.opennicproject.org]] with 'subscribe' in the body of the message.
 
 Archives of this list can be found on [[http://dir.gmane.org/gmane.network.opennic.general|Gmane]] or [[https://lists.opennicproject.org/info/discuss|here]].
 
 ==== DNS Operations ====
-This low-volume list is to discuss infrastructure details, DNS installation, maintenance, and best practices, and other issues related to administering a [[tier1|Tier 1]] or [[tier2|Tier 2]] name server. All are welcome to subscribe on a read-only basis; only active Tier 1 and Tier 2 administrators will be permitted posting access. Subscribe by sending an email to dns-operations-subscribe@lists.opennicproject.org with 'subscribe' in the body of the message or visit this site. However, the subscription requires approval and will be approved in a reasonable amount of time. By subscribing to this list you will ALSO be AUTOMATICALLY subscribed to the DNS reports list.
+This low-volume list is to discuss infrastructure details, DNS installation, maintenance, and best practices, and other issues related to administering a [[tier1|Tier 1]] or [[tier2|Tier 2]] name server. All are welcome to subscribe on a read-only basis; only active Tier 1 and Tier 2 administrators will be permitted posting access. Subscribe by sending an email to [[dns-operations-subscribe@lists.opennicproject.org]] with 'subscribe' in the body of the message or visit this site. However, the subscription requires approval and will be approved in a reasonable amount of time. By subscribing to this list you will ALSO be AUTOMATICALLY subscribed to the DNS reports list.
 
 ==== DNS Reports ====
 This list is used for DNS reports that include Tier 1 and Tier 2 reports as well as certain outage notifications. ALL members of dns-operations will be automatically subscribed to this list.
@@ -19,7 +19,7 @@ This list is used for DNS reports that include Tier 1 and Tier 2 reports as well
 ==== TLS CA ====
 The TLS CA list is a working group list used to communicate and coordinate anything related to building a TLS root certificate authority for OpenNIC TLDs.
 
-List manager: [[/user/fusl]]
+List manager: [[user>fusl]]
 
 ===== List Manager (root account holder) =====
 purrdeta is the current root account holder for the mailing list system.
