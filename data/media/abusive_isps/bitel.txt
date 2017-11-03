@@ -1,0 +1,112 @@
+Jun 23 16:32:31 Join: * tedel (~tedel@x.x.x.x)
+Jun 23 16:33:38 <tedel> Hello. I wanted to use OpenNic DNS servers, but when I try my Internet connection just doesn't work on anything. Does this mean my ISP has blocked alternative DNS configurations?
+Jun 23 16:33:58 <tedel> if yes, is there any way to circumvent that?
+Jun 23 16:36:33 <Fusl> tedel: First of all, what operating system are you using?
+Jun 23 16:37:53 <Fusl> tedel: You can use https://scr.meo.ws/paste/1497380663931879119.txt to figure out whether your provider blocks alternative DNS servers
+Jun 23 16:38:59 <tedel> I am using Linux
+Jun 23 16:41:19 <Fusl> tedel: Cool, that makes it way easier
+Jun 23 16:41:22 <Fusl> What server did you try?
+Jun 23 16:42:15 <Fusl> You can try to resolve DNS names with `dig +short A opennic.org. @IP-ADDRESS-HERE`
+Jun 23 16:43:45 <tedel> I tried with these ones: 192.95.54.1 / 23.94.5.133 / 45.76.27.27 / 23.94.60.240
+Jun 23 16:44:01 <tedel> with Network manager (KDE)
+Jun 23 16:44:24 <tedel> at a modem level, the DNS are configured with the ISP IP numbers
+Jun 23 16:45:40 <Fusl> Those servers are all working fine, even without whitelisting
+Jun 23 16:45:52 <Fusl> Please check with the dig command I wrote above
+Jun 23 16:46:09 <tedel> dig "command not found"... let me check the repos
+Jun 23 16:46:33 <Fusl> You can also use `host`
+Jun 23 16:46:35 <Fusl> or `drill`?
+Jun 23 16:47:15 <tedel> I will need to install the command
+Jun 23 16:47:31 <tedel> there is a sysdig package in the repos. could that be it?
+Jun 23 16:47:42 <Fusl> What kind of Linux are you using?
+Jun 23 16:48:05 <tedel> Sabayon, it's a precompiled Gentoo
+Jun 23 16:48:28 <Fusl> `net-dns/bind-tools`
+Jun 23 16:48:33 <Fusl> According to this https://forums.gentoo.org/viewtopic-t-953070-view-previous.html?sid=0c739c5eff873802ce33d0ff0c12fa3d
+Jun 23 16:49:21 <tedel> ok, installing...
+Jun 23 16:49:58 <tedel> should I run dig as user or as root?
+Jun 23 16:50:34 <Fusl> Doesn't matter
+Jun 23 16:50:38 <Fusl> You can run it as user
+Jun 23 16:50:55 <tedel> ok, this is the result: connection timed out; no servers could be reached
+Jun 23 16:51:12 <tedel> let me try with another IP number
+Jun 23 16:51:23 <Fusl> Ok, your provider is most likely blocking other DNS servers than their own
+Jun 23 16:51:26 <Fusl> What provider are you using?
+Jun 23 16:51:41 <tedel> Bitel in Peru
+Jun 23 16:51:48 <tedel> bitel.com.pe
+Jun 23 16:52:01 <Fusl> There are workarounds that you can always use and I will introduce you to them very shortly
+Jun 23 16:52:09 <Fusl> But for now, let's try one more thing
+Jun 23 16:52:31 Quit: * jackist (Ping timeout: 240 seconds)
+Jun 23 16:53:01 <tedel> the 4 IP numbers I placed give the same output message
+Jun 23 16:53:14 <tedel> ok :)
+Jun 23 16:53:26 <tedel> (thank you for being so helpful)
+Jun 23 16:54:10 <Fusl> Please run  `dig -p 5353 +short +timeout=1 +tries=1 A opennic.org. @5.9.181.167`
+Jun 23 16:54:27 <Fusl> It will return also connection timed out, but I can see your traffic here due to tcpdump running
+Jun 23 16:54:40 <tedel> right, connection timed out
+Jun 23 16:54:41 <Fusl> Ok, that seems to work, so they don't seem to do deep packet inspection
+Jun 23 16:54:49 <Fusl> Please try with `dig -p 53 +short +timeout=1 +tries=1 A opennic.org. @5.9.181.167`
+Jun 23 16:54:51 <Fusl> It will also time out
+Jun 23 16:55:22 <Fusl> Please let me know when you have done that
+Jun 23 16:55:29 <tedel> this company is fairly new in the market... they began offering Internet services since December, if my memory serves me well
+Jun 23 16:55:55 <tedel> yes, timed out too
+Jun 23 16:56:38 <tedel> I ran both commands... 5353 & 53
+Jun 23 16:56:43 <Fusl> Ok, so your provider seems to be actively blocking UDP packets outbound to port 53 which can also be considered active censorship
+Jun 23 16:56:56 <Fusl> I see your traffic for port 5353, but not for port 53
+Jun 23 16:57:19 <tedel> not to mention the contract states they "can monitor the activity to prevent abuses"
+Jun 23 16:57:49 <Fusl> Ok, so your possible workarounds for this are to pick a server from https://servers.opennicproject.org/ that supports DNSCrypt
+Jun 23 16:57:56 <tedel> (can is usually WILL in these cases)
+Jun 23 16:58:12 <tedel> ok, that was like Japanese for me... what's DNScrypt?
+Jun 23 16:58:41 <Unit193> (Like French, at least you understood the chars he used!)
+Jun 23 16:58:57 <tedel> DNS encryption?
+Jun 23 16:58:59 <Fusl> DNSCrypt is a separate protocol that wraps your plain DNS traffic around encryption and makes it unreadable for your provider
+Jun 23 16:59:15 <tedel> wow... I learned something today :)
+Jun 23 17:00:09 <Fusl> So from the first look at the servers page, there doesn't seem to be any server in/around Peru, but I might as well be blind
+Jun 23 17:00:47 <Fusl> From all of the 4 servers that you have tried using, none supports DNSCrypt unfortunately so you'll have to pick a new one from the list
+Jun 23 17:00:55 <Fusl> you see them marked with the "DNSCrypt" button on the list
+Jun 23 17:01:13 <tedel> Peruvian connections are funny. they often go to US first, and then to the real server
+Jun 23 17:01:22 <tedel> ok, let me check that
+Jun 23 17:02:03 <Fusl> Worst case, you can try pinging 185.121.177.177 and if the latency is ok, we can continue with this one
+Jun 23 17:02:41 <tedel> 185.121.177.177... is "any" for anycast?
+Jun 23 17:02:48 <Fusl> Yes
+Jun 23 17:03:14 <tedel> ping to 185.121.177.177 4 packages received
+Jun 23 17:03:34 <Fusl> What's the latency?
+Jun 23 17:04:28 <Fusl> It should say something like "rtt min/avg/max/mdev = 59.554/64.114/72.733/5.364 ms"
+Jun 23 17:04:29 <tedel> latency is ttl? or time value?
+Jun 23 17:04:31 <Fusl> Just copy that line
+Jun 23 17:04:42 <tedel> 64 bytes from 185.121.177.177: icmp_seq=1 ttl=54 time=201 ms
+Jun 23 17:04:44 Join: * jackist (~jackist@x.x.x.x)
+Jun 23 17:04:50 <Fusl> Oh that's kinda high :/
+Jun 23 17:05:03 <tedel> rtt min/avg/max/mdev = 157.952/199.887/278.107/48.284 ms
+Jun 23 17:05:54 <tedel> compared to yur figures, yes, it's high
+Jun 23 17:09:05 <Fusl> tedel: Please try pinging 186.192.128.66 and let me know what latency you have to that server
+Jun 23 17:09:42 <tedel> rtt min/avg/max/mdev = 188.126/203.389/242.983/22.898 ms
+Jun 23 17:10:07 <Fusl> Sheesh
+Jun 23 17:10:08 <Unit193> 191.441/195.476/207.921/5.361
+Jun 23 17:10:14 <Fusl> That's a server in brazil
+Jun 23 17:11:21 <tedel> the connection travels Peru USA Brazil. there aren't direct connections yet
+Jun 23 17:11:47 <verax_work> Try a mexican server if we have any
+Jun 23 17:11:58 <tedel> well, so they are blocking despite they told me they don't block anything when I asked
+Jun 23 17:12:07 <tedel> (that was before buying)
+Jun 23 17:12:13 <verax_work> That's about the only other country I would expect you to have an easy route to
+Jun 23 17:12:18 <Unit193> 53.528/57.410/67.561/4.087 for 23.94.60.240 (picked up off of https://api.opennicproject.org/geoip/?resolv)  Still not as good as Google's DNS, but nobody will be. :P
+Jun 23 17:12:30 <verax_work> Or maybe austrailia
+Jun 23 17:13:07 <Fusl> Unit193: 8.8.8.8/8.8.4.4 is not always good, especially not in china where the ping is around 2 seconds at times due to GFW DPI and other factors
+Jun 23 17:14:14 <Fusl> tedel: Please try pinging this server in colombia: 138.121.201.10
+Jun 23 17:14:44 <Unit193> Fusl: Right but China is China, and a very weird place. :>
+Jun 23 17:14:59 <tedel> 205.281/218.152/253.202/20.249
+Jun 23 17:15:44 <tedel> 186.3.17.230 >> 166.881/262.523/372.160/91.968 (Ecuador, but not DNScrypt)
+Jun 23 17:20:33 <Fusl> tedel: so how do you want to continue? i suspect that 200ms latency to the nearest dns resolver isn't going to be a really good experience and is going to slow down your surfing behavior considerably
+Jun 23 17:21:36 <verax_work> How do you feel about setting up a local caching resolver?
+Jun 23 17:22:02 <tedel> I'm not sure. I understand to a point, but this is still somewhat new for me.
+Jun 23 17:22:15 <tedel> with the previous carrier I could "just connect"
+Jun 23 17:22:19 <Fusl> caching resolvers help with domains that you're going to visit a lot in a short timeframe, but not on a longer timeframe or for many domains
+Jun 23 17:22:23 <tedel> to OpenNic servers
+Jun 23 17:23:49 <Fusl> tedel: to clarify things, your provider blocks dns requests, there are workarounds for this which make it a slight bit harder but not impossible to use opennic - your problem is the latency to the nearest opennic server which seems to be 200ms+ and will cause issues when you try to surf on the internet
+Jun 23 17:24:16 <tedel> I'm also checking a forum (a Peruvian forum) and some other user is suggesting useing DNScrypt
+Jun 23 17:24:38 <tedel> with something called dnscrypt-proxy
+Jun 23 17:25:50 <tedel> I think I want to ask him how he did it, and come back here when I have a reply (hopefully tomorrow)
+Jun 23 17:26:12 <tedel> he uses archlinux. so it shouldn't be much different from a gentoo variant like the one I use
+Jun 23 17:26:18 <Fusl> tedel: cool. can you leave me your email address or something else I can contact you in case I find a better solution for you?
+Jun 23 17:26:35 <tedel> sure
+Jun 23 17:26:46 <tedel> tedel [at] openmailbox.org
+Jun 23 17:27:25 <tedel> I will farewell for now. thank you very much Fusl
+Jun 23 17:27:28 <tedel> :)
+Jun 23 17:28:17 <Fusl> tedel: have a nice day and talk to you later :)
+Jun 23 17:28:26 Quit: * tedel (Quit: Konversation terminated!)

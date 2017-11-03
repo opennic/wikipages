@@ -31,8 +31,10 @@ You could also contact your ISP to complain about their use of DNS hijacking.
 ==== Abusive ISP List ====
 This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
 
-^ Country       ^ ISP         ^ Reported ^ Reporter                   ^ Notes ^
-| United States | CenturyLink | 2017     | //some user// on #opennic  | Reproduced by [[:user:fusl|Fusl]], no UDP/53 interception but redirects NXDOMAIN on their own DNS resolvers to ''198.105.244.23'' and ''198.105.245.23'' which redirects to ''http://webhelper.centurylink.com/index.php?origURL=xxx&r=&bc='' | 
-| Peru          | Bitel       | 2017     | Tedel on #opennic          | http://xor.meo.ws/paste/1498255178451615185/cd64eb34-eac1-4eeb-bcc8-50c5a756b866.txt |
-| United States | Comcast     | 2009     | //news//                   | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/ |
-| Canada        | Rogers      | 2007     | //news//                   | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
+^ Country       ^ ISP          ^ Reported ^ Reporter                   ^ 53/udp interception ^ Level                         ^ Notes ^
+| -             | Vultr/Choopa | 2017     | [[user:fusl]]              | yes                 | blocking of selective domains | [[https://en.wikipedia.org/wiki/Deep_packet_inspection|DPI]] on UDP/53, blocks any DNS request containing the text ''minexmr.com.'' in the query name ({{:abusive_isps:vultr.png?linkonly|proof}}) |
+| United States | AT&T         | 2017     | //news//                   | no                  | NXDOMAIN search engine redir  | http://www.att.net/dnserrorassist/about/ ({{:abusive_isps:att1.png?linkonly|screenshot}}), https://forums.att.com/t5/AT-T-Internet-Features/ATT-DNS-Assist-Page/td-p/5108480 ({{:abusive_isps:att2.png?linkonly|screenshot}}) |
+| United States | CenturyLink  | 2017     | //some user// on #opennic  | no                  | NXDOMAIN search engine redir  | Reproduced by [[:user:fusl]] - NXDOOMAIN redirect to ''198.105.244.23'' and ''198.105.245.23'' which redirects to ''http://webhelper.centurylink.com/index.php?origURL=xxx&r=&bc='' | 
+| Peru          | Bitel        | 2017     | Tedel on #opennic          | unknown FIXME       | unknown FIXME                 | {{:abusive_isps:bitel.txt|IRC conversation log}} |
+| United States | Comcast      | 2009     | //news//                   | no                  | NXDOMAIN search engine redir  | http://www.theregister.co.uk/2009/07/28/comcast_dns_hijacker/, [[http://corporate.comcast.com/comcast-voices/comcast-domain-helper-shuts-down|disabled in August 2009]] |
+| Canada        | Rogers       | 2007     | //news//                   | no                  | HTML ad content injection     | http://www.dslreports.com/shownews/Rogers-Uses-Deep-Packet-Inspection-for-DNS-Redirection-96239 |
