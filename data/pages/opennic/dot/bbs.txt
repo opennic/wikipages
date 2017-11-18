@@ -9,4 +9,4 @@ The .BBS TLD is aimed toward Bulletin Board System servers, and BBS affiliated/r
 Of course, sending unsolicited (commercial) email, promoting cracking/warez, or purposefully disrupting the network (such as a ping flood or trying to kill a machine) from a .bbs TLD should be grounds for removing the domain. If a site is no longer providing BBS type services, that should also be grounds for removal of the domain.
 
 ===== Links =====
-http://register.bbs/ - To register
+http://ferni.bbs/ - To register
