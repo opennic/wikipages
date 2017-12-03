@@ -1,15 +1,25 @@
 ====== Setting up a Tier 1 Server ======
 
-[[tier1|Tier 1]] servers are the core DNS servers that host the actual authoritative zones for all OpenNIC TLDs and the root (''.'') zone.
+[[tier1|Tier 1]] servers are the core DNS servers hosting authoritative zones for all OpenNIC TLDs and the OpenNIC root (''.'') zone.
 
-FIXME This legacy wiki article has been copied from http://web.archive.org/web/20161228061854/wiki.opennicproject.org/RunningT1. It is outdated and should not be blindly used for copy-pasting but it should give an idea on how to get started.
+FIXME This legacy wiki article has been copied from http://web.archive.org/web/20161228061854/wiki.opennicproject.org/RunningT1. It is outdated and should not be blindly used for copy-pasting.  Use this information as a starting point to further researching current methods.
 
 ===== BIND9 setup =====
-Setting up a OpenNIC ready Tier 1 server requires your DNS to slave all the TLDs within the OpenNIC name-space. We will go through each zone below (this document will be updated as more zones are created). Alternatively, this page will show how to configure bind9 to automatically update available TLDs and their master servers.
+Setting up a OpenNIC Tier 1 server, requires creating slave zones for all the TLDs within the OpenNIC name-space.
 
-As you can see below, all my zones reside in ''/etc/bind/zones'' and ''/etc/bind/zones/slaves''. You will have to change that to suit your style of setup. It is also recommended you run bind in a chroot jail, and that additional Tier 1 servers are listed as masters in each zone for redundancy. Below is the root zone, add this into your ''named.conf''.
+Each zone is presented below. This document will be updated as new zones are created.
 
-== named.conf ==
+This page will show how to configure BIND9 to automatically update available TLDs and their master servers.
+
+In this example BIND9 configuration, zones are stored in directories "/etc/bind/zones" and "/etc/bind/zones/slaves".  A Tier 1 BIND9 server may be deployed using other directories.  BIND9 directories are different in different computer operating systems.
+
+Run BIND9 in a chroot jail.
+
+Tier 1 servers are listed as 'master' in each zone for redundancy.
+
+Begin with the '.' root zone; add the following directive statement, to the BIND9 ("named") configuration file "named.conf".
+
+== named.conf: ==
 <code>
 zone "." {
 	type slave;
@@ -20,7 +30,7 @@ zone "." {
 };
 </code>
 
-Below are the zones for each OpenNIC TLD, place these in your ''named.conf''.
+Below are the zones for each OpenNIC TLD.  Add these to the //named// configuration file; "named.conf".
 
 == opennic.glue ==
 <code>

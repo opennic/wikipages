@@ -2,24 +2,24 @@
 ====== Welcome to the OpenNIC Wiki ======
 <columns 100% 50% 50%>
 ===== About OpenNIC =====
-OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled top-level Network Information Center that offers a non-national alternative to traditional Top-Level Domain (TLD) registries such as ICANN.
+OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled top-level Network Information Center offering a non-national alternative to traditional Top-Level Domain (TLD) registries; such as ICANN.
 
-Use of OpenNIC DNS servers will allow host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and those namespaces with which the OpenNIC has peering agreements.
+Use of OpenNIC DNS servers, enables host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and namespaces the OpenNIC has peering agreements with.
 
 ===== This Wiki =====
-This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy all notes and documents are world-readable. Write access is restricted however to participants relevant for this specific project to provide quality content and have cross-verification by other members.
+This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy, all notes and documents are world-readable. Write access is restricted to participants relevant for this specific project; to provide quality content and have cross-verification by other members.
 
-If you would like to register an account, please follow the sign-up page [[/start?do=register|here]].
+To become a registered user, follow the sign-up page [[/start?do=register|here]].
 ===== How you can help =====
-The main thing anyone can do to help is to **become a member**. Sign up [[http://www.opennicproject.org/members/|here]] and **join our [[opennic:mailinglist|mailing list]]**! The other great thing you can do to help is to **spread the word**, even if you don't use our TLDs, our DNS network is still the quickest around!
+The main thing anyone can do to help, is to **become a member**. Sign up [[http://www.opennicproject.org/members/|here]] and **join our [[opennic:mailinglist|mailing list]]**! The other great thing you can do to help, is to **spread the word**, even if you do not use our TLDs, our DNS network is still the quickest around!
 
-**Contributions to the OpenNIC Wiki** are more than welcome. There is a lot to do: missing information needs to be added, articles need to be cleaned and rewritten, and other things. If you're willing to donate some of your free time as contributions to the OpenNIC Wiki, you can do this with just four simple steps:
+**Contributions to the OpenNIC Wiki** are welcomed. There is a lot to do: missing information needs to be added, articles need to be cleaned and rewritten, and other things. If you are willing to donate your time, as contributions to the OpenNIC Wiki, you can do this with four simple steps:
   - Sign up at http://www.opennicproject.org/members/
   - Log in (with the username and password you chose during sign up) at https://wiki.opennic.org/start?do=login&sectok=
-  - Start writing articles or update existing articles. At the time of writing, there aren't any guidelines in place, so feel free to design the pages in a way you think makes sense.
+  - Start writing articles or update existing articles. Currently, there are no guidelines in place for writing articles.  Feel free to design effective pages, conveying information clearly.
   - Happy editing and a big thank you from the OpenNIC team!
 ===== Need help getting started? =====
-There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, setup to resolve OpenNIC TLDs, volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
+There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, [[setup|setup to resolve OpenNIC TLDs]], volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
 <newcolumn>
 ===== Useful resources =====
 ==== Domain Registration ====
@@ -38,10 +38,10 @@ A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.openni
 Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
   * Android - [[https://play.google.com/store/apps/details?id=com.burakgon.dnschanger|DNS Changer (no root 3G/WiFi)]] Please consider supporting the developer of this app by downloading the SetDNS Pro version!
   * iOS - [[https://itunes.apple.com/us/app/dns-override/id1060830093|DNS Override]]
-  * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]]
+  * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]] and [[https://github.com/kewlfft/nm-opennic|nm-opennic]]
   * Windows - [[https://github.com/8bitgeek/OpenNIC-Wizard/|OpenNIC Wizard]]
 
-We are always looking for more wizards on other platforms - if interested in developing one, please contact us.
+We are always looking for more wizards on other platforms - if interested in developing one, please [[help|contact us]].
 
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).

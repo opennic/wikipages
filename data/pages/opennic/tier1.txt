@@ -4,7 +4,7 @@ Tier 1 server information and FAQs.
 
 ===== What is a "Tier 1" Server? =====
 
-Tier 1 servers are the core DNS servers that host the actual authoritative zones for all [[dot|OpenNIC TLDs]] and the root (''.'') zone. For all zones in OpenNIC's aggregate root, these hosts, in accordance with the OpenNIC DNS Specification, provide authoritative response or referral to non-recursive queries from other domain name servers, such as the Tier 2 servers.
+Tier 1 servers, are the core DNS servers hosting authoritative zones, for all [[dot|OpenNIC TLDs]] and the root (''.'') zone. For all zones in OpenNIC's aggregate root, these hosts, in accordance with the OpenNIC DNS Specification, provide authoritative response or referral, to non-recursive queries from other domain name servers; such as Tier 2 servers.
 
   * They are also available as slave servers for OpenNIC SponsoredTLDs.
   * They are not appropriate for general public use.
