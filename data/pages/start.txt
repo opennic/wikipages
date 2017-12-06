@@ -43,6 +43,13 @@ Interested in (automatically) modifying your DNS settings to access OpenNIC serv
 
 We are always looking for more wizards on other platforms - if interested in developing one, please [[help|contact us]].
 
+==== Browser Addons ====
+An easy access to OpenNIC TLDs is provided by BDNS addon for:
+  * [[https://chrome.google.com/webstore/detail/blockchain-dns/hlnmiaddfabbklljanmdilbngnookdgn|Chrome]]
+  * [[https://addons.mozilla.org/en-US/firefox/addon/b-dns/|Firefox]]
+No configuration or extra software is required. 
+See [[https://blockchain-dns.info/|BDNS webpage]] for more information.
+
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
   * http://proxy.opennicproject.org/
