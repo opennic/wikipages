@@ -218,7 +218,7 @@ allow-recursion { any; };
 
 To finish your new configuration, restart BIND. If you have logging enabled, you should see BIND attempting to transfer the various zones to your server. If you look in the directory specified in the options file (or in the directory you specified if full path names were used), you should see the zone files being added.
 
-If you are creating a public Tier 2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting http://opennicproject.org/t2log/test.php and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
+If you are creating a public Tier 2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting http://report.opennicproject.org/t2log/t2.php and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
 
 ===== Alternate Configurations =====
 
