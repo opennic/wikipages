@@ -6,6 +6,8 @@ The official OpenNIC mailing lists are served by Sympa at [[https://lists.openni
 ==== Discuss ====
 This low-volume list is for folks discussing the organization and operation of the OpenNIC project. All are welcome to subscribe. Subscribe using the [[https://lists.opennicproject.org/sympa/subscribe/discuss|mailing list website]] or by sending an email to [[discuss-subscribe@lists.opennicproject.org]] with 'subscribe' in the body of the message.
 
+:!: Update: As of November 15th, 2017, this list is subject to some minor [[opennic:mailinglistpolicies|formatting policies]], which should be reviewed prior to posting an official proposal or vote.
+
 Archives of this list can be found on [[http://dir.gmane.org/gmane.network.opennic.general|Gmane]] or [[https://lists.opennicproject.org/info/discuss|here]].
 
 ==== DNS Operations ====

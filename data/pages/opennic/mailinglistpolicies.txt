@@ -1,0 +1,27 @@
+====== Mailing List Policies ======
+
+===== Message Prefixes =====
+
+For the sake of clarity, formal Mailing List threads MUST begin with the following prefixes, depending on the content of the message:
+
+  * “[DISCUSSION]”, or “[PROPOSAL]” — For formal discussions or proposals of official policies or changes that will eventually lead to a vote.
+  * “[VOTE]” — Indicates an official voting thread.
+
+===== Voting Thread Formatting =====
+
+Voting threads MUST include the following information:
+
+  * A deadline, at least 7 days following the post date of the voting thread. It must include a clear date and time (in UTC). Acceptable formats include, for example: “January 21st, 2018 at 8:00 PM UTC” or “2018-01-21, 20:00”.
+  * A link to the original discussion thread, in the form of an archive link, for example: https://lists.opennicproject.org/sympa/arc/discuss/2017-10/msg00021.html. These links are accessible at https://lists.opennicproject.org/
+  * A brief description of what the vote is on, and exactly what will happen depending on the outcome.
+
+They SHOULD also include the following:
+
+  * The subject line following [VOTE] should be the same as the subject line on your discussion thread.
+  * The community’s options for voting, if not a simple YES/NO.
+  * A timeline of when your vote will go into place, if not an immediate change. You may also wish to include reasoning why your proposal won’t enter into effect immediately, if applicable.
+
+Following the vote, the original author of the thread MUST summarize the results in a reply, signifying the vote has closed. The closing email SHOULD be sent as close as possible to the posted deadline, but never before. The closing email MUST include the following:
+
+  * A count of the votes, either briefly summarized or in a YES-NO format (for example: “The vote has ended with 9 YES votes and 12 NO votes”, or simply “9-12”).
+  * A description of when the community should expect the proposal to be completely implemented.

@@ -1,0 +1,30 @@
+====== Tier 1 and 2 Server Operator Policies ======
+
+As of November 15, 2017, server operators must adhere to the following policies.
+
+===== Tier 1 Operators =====
+
+Tier 1 Operators (the DNS Administrators for each TLD) are expected to maintain some key components of the infrastructure. Failure to meet the following minimum requirements may result in the appointment of a temporary maintainer for your DNS space, removal of your Tier 1 server, or removal of your TLD from the OpenNIC namespace. All action subject to a community discussion and vote.
+
+Tier 1 Operators:
+
+  * MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 1 Testing tool. 
+  * MUST be accessible for communication from both the public and private email address(es) listed on their community member profile.
+  * MUST be able to maintain reasonable uptime for their servers, unless they can explain exceptional circumstances on a Mailing List discussion thread and temporarily disable their server listing.
+  * MUST operate their server indefinitely.
+  * SHOULD be actively operating a TLD. Tier 1 servers without a corresponding TLD should immediately be considered for removal, unless they provide some other functionality or utility outside the operation of an independent zone.
+  * SHOULD be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
+
+===== Tier 2 Operators =====
+
+Tier 2 Operators (DNS Resolvers) are expected to maintain some minimum specifications for a long-term period of time to maintain stability. This section only applies to operators running public servers listed on servers.opennic.org.
+
+Tier 2 Operators:
+
+  * MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 2 Testing tool.
+  * MUST be able to receive automated alerts to the private email listed on their community member profile.
+  * MUST be willing to make every attempt to operate their servers in the long-term (1+ years), barring extraordinary circumstances.
+  * MUST NOT block any otherwise valid DNS requests, unless the Blacklisting flag is set on their public listing.
+  * SHOULD NOT log any personally identifiable data for users of their servers.
+  * SHOULD NOT operate from a country that censors web content.
+  * OPTIONALLY be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
