@@ -1,0 +1,2 @@
+====== OpenNIC Votings ======
+{{namespace>:votings&depth=0&order=created&rsort&link}}

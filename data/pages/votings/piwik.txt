@@ -1,0 +1,30 @@
+====== Piwik ======
+<columns 100% 30% 70%>
+<devote title="Implement Piwik for analytics on the home page and wiki?" close="2017-10-18">
+  * Yes
+  * No
+</devote>
+
+<newcolumn>
+<code>
+Hello!
+
+We were interested in adding web analytics to some of our key sites including opennic.org, the wiki, and possibly the servers page, and we wanted to get your opinions on that and the best way we could accomplish that. 
+
+We’d be using Piwik, which is a self-hosted analytics program similar to Google Analytics, but all the data would be within our control. Here’s a list of the data we could feasibly collect: https://piwik.org/faq/general/#faq_18254
+
+In particular, we would be collecting Visitor IP addresses, anonymized to the 2nd byte, for example 10.0.10.193 would appear as 10.0.xxx.xxx in our logs. Geolocation would likely be on a country level because of that obfuscation as well. 
+
+You’d be able to opt out of tracking by either setting a piwik_ignore cookie in your browser, and we’ll have a checkbox on a Privacy Policy page for you to do so easily, or by setting Do Not Track in your browser, as those requests will be respected. 
+
+You could also opt out by disabling JavaScript, but we might use image tracking in order to track bots and visitors with JavaScript disabled. So I’d like to get opinions on whether or not we should use that. You’d still be able to opt out with the aforementioned two choices. 
+
+Anyways feel free to look through Piwik’a Privacy options (https://piwik.org/docs/privacy/) and FAQ (https://piwik.org/faq/), and ask any other questions you have here. 
+
+The server hosting Piwik itself would probably be on Amazon EC2 on the OpenNIC account (Fusl operates), which hosts a lot of our other infrastructure as well. 
+
+Thanks, and looking forward to replies!
+
+Jonah
+</code>
+</columns>
