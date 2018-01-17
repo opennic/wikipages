@@ -14,11 +14,11 @@ FIXME We're still missing some information! If you can fill in some of the blank
 ^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | ns12   | [[albino@autistici.org|Al Beano]]\\ [[sy@zm.is|sy]] |[[http://opennic.cyb|opennic.cyb]], [[https://cyb.uptime.party|cyb.uptime.party]] (TLS) | A TLD for cyberpunk-related content|
 ^ [[opennic:dot:dyn|.dyn]]       | 2014-05-30   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Dynamic DNS pointers. |
 ^ [[opennic:dot:geek|.geek]]     | 2008-02-18   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Anything of a personal or hobbyist nature that would be considered "geeky" |
-^ [[opennic:dot:gopher|.gopher]] | FIXME        | ns2    | [[brian@opennicproject.org|Brian Koontz]]           | [[http://be.libre|be.libre]]               | Content delivery via the gopher protocol. |
+^ [[opennic:dot:gopher|.gopher]] | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]           | [[http://be.libre|be.libre]]               | Content delivery via the gopher protocol. |
 ^ [[opennic:dot:indy|.indy]]     | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Independent media and arts. |
 ^ [[opennic:dot:libre|.libre]]   | 2017-01-03   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Organizations that encourage the Non-Commercial use of the Free Internet. |
 ^ [[opennic:dot:neo|.neo]]       | FIXME        | ns3    | [[neo-domainreg@4195tech.com|Neo]]                  | [[http://register.neo|register.neo]]       | General purpose, leaning towards themes present in the 'emo subculture' |
-^ [[opennic:dot:null|.null]]     | FIXME        | ns10   | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Completely non-commercial and only natural persons. |
+^ [[opennic:dot:null|.null]]     | FIXME        | ns10   |                | [[http://reg.null|reg.null]]               | Completely non-commercial and only natural persons. |
 ^ [[opennic:dot:o|.o]]           | 2016-11-28   | ns11   | [[user:jonaharagon|Jonah Aragon]]                   | [[https://moderntld.com|moderntld.com]]    | General purpose. |
 ^ [[opennic:dot:oss|.oss]]       | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Exclusively for Open Source Software. |
 ^ [[opennic:dot:oz|.oz]]         | 2012-06-11   | ns10   |                                                     | [[http://opennic.oz/|opennic.oz]]          | Australian websites (alt-ccTLD) |
