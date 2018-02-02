@@ -1,12 +1,9 @@
 ====== Setting up OpenNIC on macOS ======
-FIXME Copied from http://osxdaily.com/2015/12/05/change-dns-server-settings-mac-os-x/, replace with own text and screenshots!
-
-  - Go to the Apple menu and select "System Preferences"
-  - Choose the "Network" control panel, select your network interface from the left side ("Wi-Fi" or “Ethernet” for example), then click the "Advanced" button in the lower right corner of the Network window \\ {{:setup:change-dns-mac-os-x.jpg?400|}}
-  - Choose the "DNS" tab at the top of the screen
-    * To add a new DNS server: click on the [+] plus button
-    * To edit an existing DNS server: click twice on the DNS IP address you wish to change
-    * To remove a DNS server: select a DNS server IP address and then click either the [-] minus button or hit the delete key \\ {{:setup:set-change-add-dns-servers-mac-os-x.jpg?400|}}
-  - When finished making changes to the DNS settings, click on the "OK" button
-  - Now click on "Apply" for the DNS changes to take effect, close out of System Preferences as usual
-  - 
+  - Click the **Apple Menu** and select **System Preferences** \\ {{:setup:setting_up_opennic_on_macos_1.png?nolink&200|}}
+  - Choose the **Network** panel item \\ {{:setup:setting_up_opennic_on_macos_2.png?nolink&400|}}
+  - Select your network interface from the left side (//e.g. "Wi-Fi" or "Ethernet"//), then click the **Advanced** button in the lower right corner of the window \\ {{:setup:setting_up_opennic_on_macos_3.png?nolink&400|}}
+  - Choose the **DNS** tab at the top of the screen
+    - To edit an existing DNS server, double click on the DNS address you wish to change
+    - To remove a DNS server, select a DNS address and then click either the minus [-] button or hit the **delete** key \\ {{:setup:setting_up_opennic_on_macos_4.png?nolink&400|}}
+    - To add a new DNS server, click plus [+] button, and enter the DNS address. Once you finished making changes to the DNS settings, click the **OK** button \\ {{:setup:setting_up_opennic_on_macos_5.png?nolink&400|}}
+  - Now click on **Apply** for the DNS changes to take effect. \\ {{:setup:setting_up_opennic_on_macos_6.png?nolink&400|}} 
