@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Ruben Schouten <mail@ruben.cc>
  * @author Mark C. Prins <mprins@users.sf.net>
  * @author Mark Prins <mprins@users.sf.net>

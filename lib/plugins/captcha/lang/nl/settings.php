@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Ruben Schouten <mail@ruben.cc>
  * @author Mark C. Prins <mprins@users.sf.net>
  * @author Mark Prins <mprins@users.sf.net>
@@ -15,6 +15,8 @@ $lang['mode_o_math']           = 'Wiskunde opgave (eenvoudige rekensom)';
 $lang['mode_o_question']       = 'Vaste vraag';
 $lang['mode_o_image']          = 'Afbeelding (slechte toegankelijkhied)';
 $lang['mode_o_audio']          = 'Afbeelding+Audio (betere toegankelijkheid)';
+$lang['mode_o_svg']            = 'SVG (slecht toegankelijk, leesbaar)';
+$lang['mode_o_svgaudio']       = 'SVG+Audio (beter toegankelijk, leesbaar)';
 $lang['mode_o_figlet']         = 'Figlet ASCII Art (slechte toegankelijkheid)';
 $lang['forusers']              = 'Ook CAPTCHA voor ingelogde gebruikers gebruiken?';
 $lang['loginprotect']          = 'Vereis een CAPTCHA om in te loggen?';

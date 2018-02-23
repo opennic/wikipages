@@ -345,7 +345,7 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
 
         // prepare result and task text
         $res  = $num[0] + ($num[1] * $op);
-        $task = $num[0].(($op < 0) ? '-' : '+').$num[1].'=?';
+        $task = $num[0].(($op < 0) ? '-' : '+').$num[1].'= ';
 
         return array($task, $res);
     }

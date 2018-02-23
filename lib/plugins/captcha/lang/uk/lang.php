@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Oleksandr Baranyuk <boffin@drivehq.com>
  */
 $lang['testfailed']            = 'Вибачте, ви дали неправильну CAPTCHA-відповідь. Може ви взагалі не людина?';

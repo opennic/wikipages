@@ -6,6 +6,7 @@
  * @author Thomas Templin <templin@gnuwhv.de>
  * @author Dana <dannax3@gmx.de>
  * @author Daniel Eiter <daniel@eiterfamily.com>
+ * @author F. Mueller-Donath <j.felix@mueller-donath.de>
  */
 $lang['mode']                  = 'Welcher CAPTCHA-Typ soll benutzt werden?';
 $lang['mode_o_js']             = 'Text (vorausgefüllt mit JavaScript)';
@@ -14,8 +15,8 @@ $lang['mode_o_math']           = 'Mathe-Aufgabe';
 $lang['mode_o_question']       = 'Feste Frage';
 $lang['mode_o_image']          = 'Bild (nicht barrierefrei)';
 $lang['mode_o_audio']          = 'Bild+Audio (barrierefrei)';
-$lang['mode_o_svg']            = 'SVG ( nicht barrierefrei, lesbar)';
-$lang['mode_o_svgaudio']       = 'SVG + Audio ( barrierefrei, lesbar)';
+$lang['mode_o_svg']            = 'SVG (nicht barrierefrei, lesbar)';
+$lang['mode_o_svgaudio']       = 'SVG + Audio (barrierefrei, lesbar)';
 $lang['mode_o_figlet']         = 'Figlet ASCII-Kunst (nicht barrierefrei)';
 $lang['forusers']              = 'CAPTCHA auch für  angemeldete Benutzer verwenden?';
 $lang['loginprotect']          = 'Vorraussetzen eines CAPTCHA zum Einloggen?';
