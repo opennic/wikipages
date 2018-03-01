@@ -1,5 +1,9 @@
 ====== .pirate TLD ======
-:!: Copied from http://dotpirate.org/
+:!: Update Feb 28, 2018: The Dot Pirate organization does not appear to be in operation at the moment. **Registrations are currently being handled by http://be.libre/.**
+
+FIXME This page needs an up-to-date charter.
+
+The following was copied from ''dotpirate.org'' ([[https://web.archive.org/web/20170127235946/http://dotpirate.org/|archive link]]).
 
 ===== Features =====
 .Pirate domains do more than just give you a sexy TLD they protect your freedom and your users ability to find you.
