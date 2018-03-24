@@ -3,5 +3,6 @@ OpenNIC maintains an API page as a gateway to various projects. The default page
 
 The following resources may be accessed through the API:
   * [[api:geoip]] - ([[https://api.opennicproject.org/geoip/|/geoip/]])
+  * [[api:blacklist]] - ([[https://api.opennicproject.org/acl/filter/|/acl/filter/]])
   * [[api:whitelist]] - ([[https://api.opennicproject.org/ip/update/|/ip/update/]])
   * [[api:bindacl]] - ([[https://api.opennicproject.org/acl/bind/|/acl/bind/]])
