@@ -69,4 +69,7 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
 ==== OpenNIC Search Engines ====
   * [[http://grep.geek/|grep.geek]]
+
+==== Compatible Webspace-Providers ====
+  * [[https://uberspace.de/|Uberspace.de]]
 </columns>
