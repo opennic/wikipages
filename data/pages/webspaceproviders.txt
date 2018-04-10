@@ -7,7 +7,7 @@
 ===== Known to be compatible =====
 ^ Provider ^ Revisited ^ Notes ^
 | [[https://uberspace.de/|Uberspace.de]] | [[https://wiki.uberspace.de/webserver:https#technische_hintergruende|2018-04-10]] by [[/user/fusl]] | Website and panel are only available in German language \\ [[https://uberspace.de/prices|Flexible pricing, minimum price is €1 per month]] |
-| [[https://pages.github.com|GitHub Pages]] | [[http://albino.cyb|2018-04-10]] by [[/user/albino]] | See 'A record' instructions [[https://help.github.com/articles/setting-up-an-apex-domain/ | here]] |
+| [[https://pages.github.com|GitHub Pages]] | [[http://albino.cyb|2018-04-10]] by [[/user/albino]] | See 'A record' instructions [[https://help.github.com/articles/setting-up-an-apex-domain/ | here]]. More info [[http://albino.cyb|here]]. |
 ===== Known to be incompatible =====
 ^ Provider ^ Revisited ^ Notes ^
 | [[https://www.lima-city.de/|lima-city]] | 2018-04-10 by [[/user/fusl]] | Website and panel are only available in German language |
