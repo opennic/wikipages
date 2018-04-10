@@ -72,4 +72,6 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
 ==== Compatible Webspace-Providers ====
   * [[https://uberspace.de/|Uberspace.de]]
+  * [[https://pages.github.com|GitHub Pages]]
+  * [[/webspaceproviders|Full list...]]
 </columns>

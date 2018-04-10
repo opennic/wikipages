@@ -1,0 +1,17 @@
+====== OpenNIC compatible webspace providers ======
+===== Requirements for listing =====
+  * Provider needs to accept free or paid sign-ups using an automated or semi-automated sign-up form, no closed/invite-only groups
+  * Paid-only providers need to have "paid-only" included in the notes section
+  * Providers should not require manual server-side setup, things should work "out of the box"
+
+===== Known to be compatible =====
+^ Provider ^ Revisited ^ Notes ^
+| [[https://uberspace.de/|Uberspace.de]] | [[https://wiki.uberspace.de/webserver:https#technische_hintergruende|2018-04-10]] by [[/user/fusl]] | Website and panel are only available in German language \\ [[https://uberspace.de/prices|Flexible pricing, minimum price is €1 per month]] |
+| [[https://pages.github.com|GitHub Pages]] | [[http://albino.cyb|2018-04-10]] by [[/user/albino]] | See 'A record' instructions [[https://help.github.com/articles/setting-up-an-apex-domain/ | here]] |
+===== Known to be incompatible =====
+^ Provider ^ Revisited ^ Notes ^
+| [[https://www.lima-city.de/|lima-city]] | 2018-04-10 by [[/user/fusl]] | Website and panel are only available in German language |
+| [[https://www.bplaced.net/|bplaced]] | 2018-04-10 by [[/user/fusl]] | |
+| [[https://www.square7.ch/|Square7]] | 2018-04-10 by [[/user/fusl]] | |
+===== Not tested yet =====
+^ Provider ^ Revisited ^ Notes ^
