@@ -1,0 +1,163 @@
+====== DNSSEC Validation ======
+
+DNSSEC is a mechanism that prevents DNS forgeries that could potentially redirect you or your Tier 2 users to malicious sites.
+
+===== Tier 2 Configuration =====
+
+FIXME We're looking for guides for other DNS software, contributions welcome!
+
+Tier 2 providers may enable DNSSEC validation by following the guide(s) below, corresponding to their DNS software. Please note that in each case, the keys need to be manually defined in your configuration, and **will need to be updated each time the root key changes**. Servers providing this service will need to stay up-to-date on the mailing list to ensure they remain in service.
+
+==== BIND9 ====
+
+The file paths in this guide are the defaults on many systems including Ubuntu and Debian, but may need to be modified to suit your configuration.
+
+1. Create the file ''/etc/bind/named.conf.keys'' with the following content:
+
+<file - named.conf.keys>
+trusted-keys {
+        . 257 3 8 "AwEAAaq+qqsdDHByq/DFR5/u23qcDNOQJzjYBcSfjrGN
+                                LdY2+vY+ubhuiz0hG1xk5D+dK78Eh58wZ3tQnsRr3bVN
+                                Vfcovlx/rdwuw5blez2TT0Et4IF/3b/RpMpCwSSOWTMG
+                                vi0EwIMNsjYWEZlRjcWku3cnAAvSD3YdaRW2JCKsbkK5
+                                OQp2YjuQgIOL7J6f8mN6nkfAWd9L2U9H+TSEnx8gqqkX
+                                IEIRWcbdWN1FiCdy3L8CaHbZcttzx5lLOGrjPW+raXn+
+                                KaQSU+WW9n2PPOZbNUrQnsW/DJ+b+soNQQbhwFlp/av5
+                                VzaxB7/57vEKqj71x+Xu8S0sGpLcXrkf5p3ri93ScLsJ
+                                OT11fIlMRIwcKsWZEIIyYzuQeq8MoVTenvN6re/y872V
+                                b6JBHbBMk0JmsRwkXltz9PINWyvVyqM3PA1bJ4fz8Qbq
+                                XnTnJiR/yylhcE8rjPUtnf29NyDN7Co9JzPwnwE74F3k
+                                3R18w45L8E5Dt5it2PIA9/rb6GDMrPAPsa1X82qNLzcb
+                                oosMj9vT7Ofg8M+x2/VYt6u4xX4glZRavyjTs6qGfzFS
+                                +Z44zrIP4CtNa0fL0AwJ/wsK4YJSX0xZ6/CJI/NNXeSg
+                                G5vfMw04kUDI9d9oO9jkAhYDmTaOI6C5nVTymAs3uje8
+                                /mZlo/pUSllB0DkpTgd5PTAwQsA1";
+};
+</file>
+
+> :!: Don't just blindly copy this wiki page, ensure the key matches the current root zone's ''DNSKEY'':
+>
+> <code>
+dig DNSKEY . @45.56.116.224 +short
+</code>
+> <code>
+256 3 8 AwEAAaZnbL4yf5OZKLi/tjNBLKUwLuxhyvhildx0Efb/nMlRrCgafhCD 8A8tZkQLMQjQDu5Uckk/M1wCY5U8A9yvOapWMHx3S9dnFSvp4CFWitvo QYDJIMMooNGdYpljzKtR52wPdUpcqvSRwpp9a4gsoEx/r4jY9vyrT/SO 7yQuhh4uVKtZeHcXl/w2V14zVNUBoDl3SlSYIkVBa2HzponOsDlqJN6V QbZQ4mbvpnvbWOq55E/1pzIIrwp0X2VxSunhU/sGKpfiW9c5O6mPwUGl 1NDeYzycNKGy2Nsx4p4nkN43rRwjDBtD4CSUiTwtsMFTF5xKAbuUgSds BAQMyTnokYs=
+257 3 8 AwEAAaq+qqsdDHByq/DFR5/u23qcDNOQJzjYBcSfjrGNLdY2+vY+ubhu iz0hG1xk5D+dK78Eh58wZ3tQnsRr3bVNVfcovlx/rdwuw5blez2TT0Et 4IF/3b/RpMpCwSSOWTMGvi0EwIMNsjYWEZlRjcWku3cnAAvSD3YdaRW2 JCKsbkK5OQp2YjuQgIOL7J6f8mN6nkfAWd9L2U9H+TSEnx8gqqkXIEIR WcbdWN1FiCdy3L8CaHbZcttzx5lLOGrjPW+raXn+KaQSU+WW9n2PPOZb NUrQnsW/DJ+b+soNQQbhwFlp/av5VzaxB7/57vEKqj71x+Xu8S0sGpLc Xrkf5p3ri93ScLsJOT11fIlMRIwcKsWZEIIyYzuQeq8MoVTenvN6re/y 872Vb6JBHbBMk0JmsRwkXltz9PINWyvVyqM3PA1bJ4fz8QbqXnTnJiR/ yylhcE8rjPUtnf29NyDN7Co9JzPwnwE74F3k3R18w45L8E5Dt5it2PIA 9/rb6GDMrPAPsa1X82qNLzcboosMj9vT7Ofg8M+x2/VYt6u4xX4glZRa vyjTs6qGfzFS+Z44zrIP4CtNa0fL0AwJ/wsK4YJSX0xZ6/CJI/NNXeSg G5vfMw04kUDI9d9oO9jkAhYDmTaOI6C5nVTymAs3uje8/mZlo/pUSllB 0DkpTgd5PTAwQsA1
+</code>
+
+2. Add ''dnssec-validation yes;'' to ''/etc/bind/named.conf.options'', replacing ''dnssec-validation auto;'' if it already exists:
+
+<code>
+options {
+        directory "/var/cache/bind";
+        dnssec-validation yes;
+        notify yes;
+        recursion yes;
+        allow-query { any; };
+        allow-transfer { any; };
+        auth-nxdomain no;    # conform to RFC1035
+        listen-on-v6 { any; };
+};
+</code>
+
+3. Add the line ''include "/etc/bind/named.conf.keys";'' to ''/etc/bind/named.conf'' **above** all other ''include'' lines. Your final ''named.conf'' file should look something like this:
+
+<code>
+include "/etc/bind/named.conf.keys";
+include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
+include "/etc/bind/named.conf.default-zones";
+include "/etc/bind/named.conf.opennic";
+</code>
+
+4. Restart BIND: ''systemctl restart bind9''
+
+==== dnsmasq ====
+
+Add the following lines to your ''dnsmasq.conf'' file:
+
+<code>
+dnssec
+trust-anchor=.,33750,8,2,ced6135102155c7a9c8a99945068ee0dcc21e2f70a5046b4e50ae98ad3ba9de2
+trust-anchor=.,47089,8,2,6d81988a88bd546e429486cc0a97518f90f9fc6c6c6b7e5bc2788469858c7324
+</code>
+
+===== Testing DNSSEC =====
+
+Queries to a DNSSEC validating server with the DO flag set should return an answer with the ''ad'' (Authenticated Data) flag set in the header:
+
+<code>
+root@nyc3:~# dig pir.org +dnssec +multi @167.99.153.82
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> pir.org +dnssec +multi @167.99.153.82
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3924
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;pir.org.               IN A
+
+;; ANSWER SECTION:
+pir.org.                241 IN A 97.107.141.235
+pir.org.                241 IN RRSIG A 5 2 300 (
+                                20180430162216 20180416162216 30795 pir.org.
+                                Al1OgzE47XZcgl2t9IysJROLgM2Z2/f7tJ6LDuDdTHOD
+                                itT5fJZjRypVJLfZrU73ng5J86dJCFEREk2k6I1lhmno
+                                lJHKH1/MZK+LRDjZWJWqo3F5+MJTFv8W0F8zXWu4AMJE
+                                RYyyhX4fl+mL02T4VLGqpjrH2AX9tH8wRT9TuJE= )
+
+;; Query time: 4 msec
+;; SERVER: 167.99.153.82#53(167.99.153.82)
+;; WHEN: Mon Apr 16 19:46:05 UTC 2018
+;; MSG SIZE  rcvd: 21
+</code>
+
+On these servers, attempting to resolve a domain with broken DNSSEC validation should return a ''SERVFAIL'', without any DNS data:
+
+<code>
+root@nyc3:~# dig dnssec-failed.org +dnssec +multi @167.99.153.82
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> dnssec-failed.org +dnssec +multi @167.99.153.82
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 10808
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;dnssec-failed.org.     IN A
+
+;; Query time: 1029 msec
+;; SERVER: 167.99.153.82#53(167.99.153.82)
+;; WHEN: Mon Apr 16 19:48:04 UTC 2018
+;; MSG SIZE  rcvd: 46
+</code>
+
+And finally, requesting a domain with no DNSSEC data should just return a normal response, with no ''ad'' flag:
+
+<code>
+root@nyc3:~# dig google.com +dnssec +multi @167.99.153.82
+
+; <<>> DiG 9.10.3-P4-Ubuntu <<>> google.com +dnssec +multi @167.99.153.82
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51509
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags: do; udp: 4096
+;; QUESTION SECTION:
+;google.com.            IN A
+
+;; ANSWER SECTION:
+google.com.             40 IN A 172.217.12.206
+
+;; Query time: 2 msec
+;; SERVER: 167.99.153.82#53(167.99.153.82)
+;; WHEN: Mon Apr 16 19:48:56 UTC 2018
+;; MSG SIZE  rcvd: 55
+</code>
