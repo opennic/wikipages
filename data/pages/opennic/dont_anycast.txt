@@ -14,4 +14,4 @@ Due to the reliability and the usually very good latency of anycast servers, man
 Manually picking a server from the [[https://servers.opennicproject.org/|servers.]] list ensures that the network stays decentralized and well balanced.
 
 ===== You decide =====
-Reliability or decentralization? Which ever is more important to you, you decide in the end.
+Reliability or decentralization? Whichever is more important to you - you decide in the end.
