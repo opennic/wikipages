@@ -72,6 +72,25 @@ include "/etc/bind/named.conf.opennic";
 
 4. Restart BIND: ''systemctl restart bind9''
 
+==== PowerDNS Recursor ====
+
+Create ''/etc/powerdns/config.lua'' with the following content:
+
+<file lua config.lua>
+addDS('.', "47089 8 2 6D81988A88BD546E429486CC0A97518F90F9FC6C6C6B7E5BC2788469858C7324")
+</file>
+
+Add the following lines to ''/etc/powerdns/recursor.conf'':
+
+<code>
+lua-config-file=/etc/powerdns/config.lua
+dnssec=log-fail
+</code>
+
+Note that this will validate correctly, but will only log bogus domains instead of returning ''SERVFAIL''. This is fine in the DNSSEC testing period, but for full DNSSEC compliance, ''dnssec'' should be changed from ''log-fail'' to ''validate''.
+
+Restart PowerDNS: ''systemctl restart pdns-recursor''
+
 ==== dnsmasq ====
 
 Add the following lines to your ''dnsmasq.conf'' file:
