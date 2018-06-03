@@ -12,7 +12,7 @@ Domains registered in .dyn serve as dynamic DNS pointers. These domains are rest
   * IRC - #opennic @ freenode (Shdwdrgn)
 
 ===== Domain Registration =====
-  * Web Site - http://BURGIO.dyn/
+  * Web Site - http://reg.dyn/
 
 ===== Configuring DynDNS =====
 The principle behind dynamic DNS is to give you a fixed domain name that you can use to follow a system which does not have a static IP address. In order for your address to remain valid, you must periodically refresh your information.
