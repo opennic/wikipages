@@ -1,6 +1,6 @@
 ====== OpenNIC Voting Rules ======
 <columns 100% 33% 33% 33%>
-SECTION II: Proposing a TLD
+=== Proposing a TLD ===
 
 BEFORE you begin a proposal, you MUST meet the following requirements:
 
@@ -48,7 +48,7 @@ The email MUST include the following:
 - A deadline for votes, at least 7 days following the post date of your thread. This should be a clear date and time (in UTC).
 - A linked or attached final copy of the charter.
 <newcolumn>
-Section III: Voting Thread Formatting
+=== Voting Thread Formatting ===
 
 For the sake of clarity, formal Mailing List threads MUST begin with the following prefixes, depending on the content of the message:
 
@@ -72,7 +72,7 @@ Following the vote, the original author of the thread MUST summarize the results
 - A count of the votes, either briefly summarized or in a YES-NO format (for example: “The vote has ended with 9 YES votes and 12 NO votes”, or simply “9-12”).
 - A description of when the community should expect the proposal to be completely implemented.
 <newcolumn>
-Section V: DNS Server Operator Requirements
+=== DNS Server Operator Requirements ===
 
 Tier 1 Operators (the DNS Administrators for each TLD) are expected to maintain some key components of the infrastructure. Failure to meet the following minimum requirements may result in the appointment of a temporary maintainer for your DNS space, removal of your Tier 1 server, or removal of your TLD from the OpenNIC namespace. All action subject to a community discussion and vote.
 
