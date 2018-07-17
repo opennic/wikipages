@@ -3,7 +3,7 @@ if(!defined("DOKU_INC")) define("DOKU_INC",realpath(dirname(__FILE__)."/../../")
 if(!defined("DOKU_PLUGIN")) define("DOKU_PLUGIN",DOKU_INC."lib/plugins/");
 require_once(DOKU_PLUGIN."syntax.php");
 class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
-	function getInfo() {
+	public function getInfo() {
 		return array(
 			"author" => "Katie Holly",
 			"email"  => "fusl@meo.ws",
@@ -13,13 +13,13 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			"url"    => "https://opennic.org/",
 		);
 	}
-	function getType()  { return "substition";}
-	function getPType() { return "block";}
-	function getSort()  { return 168; }
-	function connectTo($mode) {
+	public function getType()  { return "substition";}
+	public function getPType() { return "block";}
+	public function getSort()  { return 168; }
+	public function connectTo($mode) {
 		$this->Lexer->addSpecialPattern("<devote\b.*?>.+?</devote>", $mode, "plugin_devote");
 	}
-	function handle($match, $state, $pos, Doku_Handler $handler) {
+	public function handle($match, $state, $pos, Doku_Handler $handler) {
 		$match = substr($match, 8, -9);
 		list($parameterStr, $choiceStr) = preg_split("/>/u", $match, 2);
 		preg_match_all("/(\w+?)=\"(.*?)\"/", $parameterStr, $regexMatches, PREG_SET_ORDER);
@@ -37,10 +37,10 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		$choices = array();
 		preg_match_all("/^\s{0,3}\* (.*?)$/m", $choiceStr, $matches, PREG_PATTERN_ORDER);
 		foreach ($matches[1] as $choice) {
-			$choice = preg_replace("#\\\\\\\\#", "<br />", $choice); # two(!) backslashes for a newline
-			$choice = preg_replace("#\*\*(.*?)\*\*#", "<b>\1</b>", $choice); # bold
-			$choice = preg_replace("#__(.*?)__#", "<u>\1</u>", $choice);     # underscore
-			$choice = preg_replace("#//(.*?)//#", "<i>\1</i>", $choice);     # italic
+			$choice = preg_replace("#\\\\\\\\#", "<br />", $choice);         // two(!) backslashes for a newline
+			$choice = preg_replace("#\*\*(.*?)\*\*#", "<b>\1</b>", $choice); // bold
+			$choice = preg_replace("#__(.*?)__#", "<u>\1</u>", $choice);     // underscore
+			$choice = preg_replace("#//(.*?)//#", "<i>\1</i>", $choice);     // italic
 			$choice = trim($choice);
 			if (!empty($choice)) {
 				array_push($choices, $choice);
@@ -52,7 +52,17 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			"closed" => $closed
 		);
 	}
-	function render($mode, Doku_Renderer $renderer, $data) {
+	private function resubmit_form($renderer, $formid, $selection, $cast_vote, $resubmit_timer) {
+		$renderer->doc = '';
+		$renderer->doc .= '<form name="devote_resubmit" action="" method="post" accept-charset="utf-8" >';
+		$renderer->doc .= '<input type="hidden" name="devote_formid" value="' . hsc($formid) . '">';
+		$renderer->doc .= '<input type="hidden" name="devote_selection" value="' . hsc($selection) . '">';
+		$renderer->doc .= '<input type="hidden" name="devote_cast_vote" value="' . hsc($cast_vote) . '">';
+		$renderer->doc .= '<input type="hidden" name="devote_resubmit_timer" value="' . hsc($resubmit_timer + 1) . '">';
+		$renderer->doc .= '</form>';
+		$renderer->doc .= '<script type="text/javascript">setTimeout(function () { document.devote_resubmit.submit() }, ' . $resubmit_timer . ' * 1000);</script>';
+	}
+	public function render($mode, Doku_Renderer $renderer, $data) {
 		if ($mode != "xhtml" || !sizeof($data["choices"])) return false;
 		$renderer->info["cache"] = false;
 		//global $conf;
@@ -69,6 +79,10 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$votes = json_decode(file_get_contents($filename), true);
 		}
 		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $_REQUEST["devote_formid"] === $votehash && $REV === 0 && !empty($_REQUEST["devote_cast_vote"]) && in_array($_REQUEST["devote_selection"], $choices)) {
+			$fp = fopen($filename, "r+");
+			if (!flock($fp, LOCK_EX | LOCK_NB, $flock_locked) || $flock_locked) {
+				return $this->resubmit_form($renderer, $_REQUEST["devote_formid"], $_REQUEST["devote_selection"], $_REQUEST["devote_cast_vote"], is_numeric($_REQUEST["devote_resubmit_timer"]) ? $_REQUEST["devote_resubmit_timer"] : 0);
+			}
 			$votes[$INFO["client"]] = array(
 				"c" => $_REQUEST["devote_selection"],
 				"t" => time()
