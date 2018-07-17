@@ -8,6 +8,7 @@ conf/users.auth.php
 conf/local.protected.php
 data/meta/*
 !data/meta/_dummy
+!data/meta/*.devote
 data/media_meta/*
 !data/media_meta/_dummy
 .gitsync.lock

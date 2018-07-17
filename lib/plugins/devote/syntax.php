@@ -53,14 +53,16 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		);
 	}
 	private function resubmit_form($renderer, $formid, $selection, $cast_vote, $resubmit_timer) {
-		$renderer->doc = '';
-		$renderer->doc .= '<form name="devote_resubmit" action="" method="post" accept-charset="utf-8" >';
-		$renderer->doc .= '<input type="hidden" name="devote_formid" value="' . hsc($formid) . '">';
-		$renderer->doc .= '<input type="hidden" name="devote_selection" value="' . hsc($selection) . '">';
-		$renderer->doc .= '<input type="hidden" name="devote_cast_vote" value="' . hsc($cast_vote) . '">';
-		$renderer->doc .= '<input type="hidden" name="devote_resubmit_timer" value="' . hsc($resubmit_timer + 1) . '">';
-		$renderer->doc .= '</form>';
-		$renderer->doc .= '<script type="text/javascript">setTimeout(function () { document.devote_resubmit.submit() }, ' . $resubmit_timer . ' * 1000);</script>';
+		$doc = '';
+		$doc .= '<div id="dw__msgarea" class="small"><div class="alert alert-warning">Please wait, your vote is being casted. Please do NOT close or leave this site while this is in progress.</div></div>';
+		$doc .= '<form name="devote_resubmit" action="" method="post" accept-charset="utf-8" >';
+		$doc .= '<input type="hidden" name="devote_formid" value="' . hsc($formid) . '">';
+		$doc .= '<input type="hidden" name="devote_selection" value="' . hsc($selection) . '">';
+		$doc .= '<input type="hidden" name="devote_cast_vote" value="' . hsc($cast_vote) . '">';
+		$doc .= '<input type="hidden" name="devote_resubmit_timer" value="' . hsc($resubmit_timer + 1) . '">';
+		$doc .= '</form>';
+		$doc .= '<script type="text/javascript">setTimeout(function () { document.devote_resubmit.submit() }, ' . $resubmit_timer . ' * 1000);</script>';
+		$renderer->doc = $doc . $renderer->doc;
 	}
 	public function render($mode, Doku_Renderer $renderer, $data) {
 		if ($mode != "xhtml" || !sizeof($data["choices"])) return false;
@@ -88,7 +90,8 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 				"t" => time()
 			);
 			ksort($votes, SORT_STRING | SORT_FLAG_CASE);
-			file_put_contents($filename, json_encode($votes));
+			file_put_contents($filename, json_encode($votes, JSON_PRETTY_PRINT));
+			$renderer->doc = '<div id="dw__msgarea" class="small"><div class="alert alert-success">Your vote was successfully casted.</div></div>' . $renderer->doc;
 		}
 		$votestats = array();
 		$votetotal = 0;
