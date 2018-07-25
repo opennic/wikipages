@@ -1,0 +1,8 @@
+====== OpenNIC Infrastructure Project Owners ======
+^ Project/Service ^ Description ^ Owner/Group ^ Internal documentation ^
+| wiki.opennic.org | The wiki | [[/user/fusl]] | [[/opennic/infra/wiki]] |
+| mail.opennic.org | Internet-facing OpenNIC mail server | [[/user/fusl]] |  |
+| lists.opennicproject.org | Mailing list | purrdeta |  |
+| servers.opennic.org | Server list | [[/user/shdwdrgn]] |  |
+| api.opennic.org proxy cache | Caching frontend proxy for the actual api. server | [[/user/fusl]] |  |
+| api.opennic.org query backend | The backend server, everything behind the scenes, etc. | [[/user/shdwdrgn]] |  |
