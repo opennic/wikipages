@@ -1,101 +1,16 @@
 Admin:
   * ns11.opennic.glue (.o TLD)
-  * ns10.ny.us.dns.opennic.glue
-  * ns3.ia.us.dns.opennic.glue
-  * ns5.nh.nl.dns.opennic.glue
-  * ns6.sg.dns.opennic.glue
+  * ns9.opennic.glue (.bit TLD)
 
 Contact:
-  * jonah@moderntld.com
-  * ''jonaharagon'' on [[:help|IRC]]
+  * jonah@opennic.org
+  * ''jonah[b]'' on [[:help|IRC]]
 
 Websites:
   * moderntld.com
-  * moderntld.geek
-  * modern.o
 
 Bitcoin: 16HiDkcj8oYLv5LnfjMa5qzWmY1xEVcuog
 
-PGP: https://keybase.io/jonaharagon or https://github.com/JonahAragon/JonahAragon.github.io/blob/master/keys/jonah-master.asc
+PGP: https://keybase.io/jonaharagon (https://keybase.io/jonaharagon/pgp_keys.asc?fingerprint=9bd822880e2784ee5c929cd6db49bb255b868219)
 
-Keybase will verify I am the verified owner of moderntld.com, jonaharagon.com, my PGP key, the Bitcoin address for ModernTLD, and the various email addresses I use. If you wish to contact me my PGP key can be found at the link above or pasted below.
-
-<file - jonah-master.asc>
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v2
-
-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
-msHRA7IbDuAmeGg=
-=YV/v
------END PGP PUBLIC KEY BLOCK-----
-</file>
+Keybase will verify I am the verified owner of moderntld.com, opennic.org, jonaharagon.com, my PGP key, the Bitcoin address for ModernTLD, and the various email addresses I use. If you wish to contact me my PGP key can be found at the links above.
