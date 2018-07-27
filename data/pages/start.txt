@@ -11,10 +11,10 @@ This wiki is a limited access work area for OpenNIC documentation and other rela
 
 To become a registered user, follow the sign-up page [[/start?do=register|here]].
 ===== How you can help =====
-The main thing anyone can do to help, is to **become a member**. Sign up [[http://www.opennicproject.org/members/|here]] and **join our [[opennic:mailinglist|mailing list]]**! The other great thing you can do to help, is to **spread the word**, even if you do not use our TLDs, our DNS network is still the quickest around!
+The main thing anyone can do to help, is to **become a member**. Sign up [[https://members.opennicproject.org/|here]] and **join our [[opennic:mailinglist|mailing list]]**! The other great thing you can do to help, is to **spread the word**, even if you do not use our TLDs, our DNS network is still the quickest around!
 
 **Contributions to the OpenNIC Wiki** are welcomed. There is a lot to do: missing information needs to be added, articles need to be cleaned and rewritten, and other things. If you are willing to donate your time, as contributions to the OpenNIC Wiki, you can do this with four simple steps:
-  - Sign up at http://www.opennicproject.org/members/
+  - Sign up at https://members.opennicproject.org/
   - Log in (with the username and password you chose during sign up) at https://wiki.opennic.org/start?do=login&sectok=
   - Start writing articles or update existing articles. Currently, there are no guidelines in place for writing articles.  Feel free to design effective pages, conveying information clearly.
   - Happy editing and a big thank you from the OpenNIC team!
@@ -32,7 +32,7 @@ Our Top-Level Domains are managed by independent members of the community. Check
   * 2a05:dfc7:5::53
   * 2a05:dfc7:5::5353
 
-A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennicproject.org/|here]] - we highly recommend you to pick the nearest servers from the server list instead of anycast servers. [[:opennic:dont_anycast|Why?]]
+A list of all OpenNIC Tier 2 DNS Resolvers can be found [[https://servers.opennic.org/|here]] - we highly recommend you to pick the nearest servers from the server list instead of anycast servers. [[:opennic:dont_anycast|Why?]]
 
 ==== DNS Wizards ====
 Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!
@@ -52,7 +52,7 @@ See [[https://blockchain-dns.info/|BDNS webpage]] for more information.
 
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
-  * http://proxy.opennicproject.org/
+  * http://proxy.opennic.org/
 
 ==== Infrastructure Setup ====
 
@@ -60,12 +60,12 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
   * [[opennic:tier1setup|Tier 1 Server Setup]] and [[opennic:tier1|Info]]
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
-    * [[http://opennicproject.org/report/log_.php?tier=1|Status]]
-    * [[https://servers.opennicproject.org/?tier=1|List]]
+    * [[http://report.opennic.org/log_.php?tier=1|Status]]
+    * [[https://servers.opennic.org/?tier=1|List]]
   * Public Access (Tier 2) Servers
-    * [[http://opennicproject.org/report/log_.php?tier=2|Status]]
-    * [[https://servers.opennicproject.org/?tier=2|List]]
-  * [[http://report.opennicproject.org/t2log/t2.php|Tier 1 and Tier 2 testing tool]]
+    * [[http://report.opennic.org/log_.php?tier=2|Status]]
+    * [[https://servers.opennic.org/?tier=2|List]]
+  * [[http://report.opennic.org/t2log/t2.php|Tier 1 and Tier 2 testing tool]]
 
 ==== OpenNIC Search Engines ====
   * [[http://grep.geek/|grep.geek]]
