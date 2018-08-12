@@ -91,6 +91,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			);
 			ksort($votes, SORT_STRING | SORT_FLAG_CASE);
 			file_put_contents($filename, json_encode($votes, JSON_PRETTY_PRINT));
+			fclose($fp);
 			$renderer->doc = '<div id="dw__msgarea" class="small"><div class="alert alert-success">Your vote was successfully casted.</div></div>' . $renderer->doc;
 		}
 		$votestats = array();
@@ -121,6 +122,18 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$renderer->doc .= '<th class="centeralign">' . hsc($choice) . '</th>';
 		}
 		$renderer->doc .= '</tr>';
+		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $REV === 0) {
+			$renderer->doc .= '<tr>';
+			$renderer->doc .= '<th class="rightalign"><input type="submit" value="Your vote:" name="devote_cast_vote" class="btn btn-default btn-xs"></th>';
+			foreach ($choices as $choice) {
+				$checked = "";
+				if (isset($votes[$INFO["client"]]) && $votes[$INFO["client"]]["c"] === $choice) {
+					$checked = ' checked="checked"';
+				}
+				$renderer->doc .= '<td class="centeralign"><input type="radio" name="devote_selection" value="' . hsc($choice) . '"' . $checked . '></td>';
+			}
+			$renderer->doc .= '</tr>';
+		}
 		$renderer->doc .= '<tr>';
 		$renderer->doc .= '<th class="rightalign">Result:</th>';
 		if (!$votetotal) {
@@ -142,20 +155,6 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 				}
 			}
 			$renderer->doc .= '</tr>';
-		}
-		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $REV === 0) {
-			$renderer->doc .= '<tr>';
-			$renderer->doc .= '<th class="rightalign">Your vote:</th>';
-			foreach ($choices as $choice) {
-				$checked = "";
-				if (isset($votes[$INFO["client"]]) && $votes[$INFO["client"]]["c"] === $choice) {
-					$checked = ' checked="checked"';
-				}
-				$renderer->doc .= '<td class="centeralign"><input type="radio" name="devote_selection" value="' . hsc($choice) . '"' . $checked . '></td>';
-			}
-			$renderer->doc .= '</tr>';
-			$renderer->doc .= '<tr><td class="centeralign" colspan="' . (sizeof($choices) + 1) . '"><input type="submit" value="Vote" name="devote_cast_vote" class="button"></td></tr>';
-			$renderer->doc .= '<tr><td colspan="' . (sizeof($choices) + 1) . '" style="font-size: 0.8em;">Note: Votes and names are public</td></tr>';
 		}
 		$renderer->doc .= '</table>';
 		$renderer->doc .= '</form>';
