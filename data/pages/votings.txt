@@ -1,4 +1,4 @@
-====== OpenNIC Voting Rules ======
+====== OpenNIC Voting Rules & Currently Ongoing Votings ======
 <columns 100% 33% 33% 33%>
 === Proposing a TLD ===
 
