@@ -135,7 +135,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$renderer->doc .= '</tr>';
 		}
 		$renderer->doc .= '<tr>';
-		$renderer->doc .= '<th class="rightalign">Result:</th>';
+		$renderer->doc .= '<th class="rightalign"><a href="https://github.com/opennic/wikipages/blob/master/data/meta/' . $votehash . '.devote">Result</a>:</th>';
 		if (!$votetotal) {
 			$renderer->doc  .= '<td class="centeralign" colspan="' . sizeof($choices) . '">No votes</td>';
 		} else {
