@@ -4,7 +4,6 @@
   * Test
   * Asdf
   * Moo
-  * Foo
 </devote>
 
 <newcolumn>

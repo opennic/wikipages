@@ -42,10 +42,11 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$choice = preg_replace("#__(.*?)__#", "<u>\1</u>", $choice);     // underscore
 			$choice = preg_replace("#//(.*?)//#", "<i>\1</i>", $choice);     // italic
 			$choice = trim($choice);
-			if (!empty($choice)) {
+			if (!empty($choice) && $choice != "Invalid" && !in_array($choice, $choices, true)) {
 				array_push($choices, $choice);
 			}
 		}
+		array_push($choices, "Invalid");
 		return array(
 			"choices" => $choices,
 			"title" => $title,
