@@ -101,6 +101,9 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$votestats[$choice] = 0;
 		}
 		foreach ($votes as $voteuser => $votedata) {
+			if (isset($votedata["c"]) && !in_array($choices, $votedata["c"])) {
+				$votedata["c"] = "Invalid";
+			}
 			if (isset($votestats[$votedata["c"]])) {
 				$votestats[$votedata["c"]]++;
 				$votetotal++;
@@ -126,6 +129,9 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $REV === 0) {
 			$renderer->doc .= '<tr>';
 			$renderer->doc .= '<th class="rightalign"><input type="submit" value="Your vote:" name="devote_cast_vote" class="btn btn-default btn-xs"></th>';
+			if (isset($votes[$INFO["client"]]["c"]) && !in_array($choices, $votes[$INFO["client"]]["c"])) {
+				$votes[$INFO["client"]]["c"] = "Invalid";
+			}
 			foreach ($choices as $choice) {
 				$checked = "";
 				if (isset($votes[$INFO["client"]]) && $votes[$INFO["client"]]["c"] === $choice) {
@@ -148,6 +154,9 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		foreach ($votes as $voteuser => $votedata) {
 			$renderer->doc .= '<tr>';
 			$renderer->doc .= '<td class="rightalign">' . $voteuser . '</td>';
+			if (!in_array($choices, $votedata["c"])) {
+				$votedata["c"] = "Invalid";
+			}
 			foreach ($choices as $choice) {
 				if ($choice === $votedata["c"]) {
 					$renderer->doc .= '<td class="centeralign" style="background-color: #afa;"><img src="' . DOKU_BASE . 'lib/images/success.png" alt="X" title="' . strftime($conf["dformat"], $votedata["t"]) . '"></td>';
