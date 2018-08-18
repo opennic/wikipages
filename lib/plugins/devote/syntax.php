@@ -55,7 +55,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 	}
 	private function resubmit_form($renderer, $formid, $selection, $cast_vote, $resubmit_timer) {
 		$doc = '';
-		$doc .= '<div id="dw__msgarea" class="small"><div class="alert alert-warning">Please wait, your vote is being casted. Please do NOT close or leave this site while this is in progress.</div></div>';
+		$doc .= '<div id="dw__msgarea" class="small"><div class="alert alert-warning">Please wait, your vote is being casted. Please do NOT close or leave this site while this is in progress (resubmitting in ' . hsc($resubmit_timer + 1) . ' seconds).</div></div>';
 		$doc .= '<form name="devote_resubmit" action="" method="post" accept-charset="utf-8" >';
 		$doc .= '<input type="hidden" name="devote_formid" value="' . hsc($formid) . '">';
 		$doc .= '<input type="hidden" name="devote_selection" value="' . hsc($selection) . '">';
@@ -68,7 +68,6 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 	public function render($mode, Doku_Renderer $renderer, $data) {
 		if ($mode != "xhtml" || !sizeof($data["choices"])) return false;
 		$renderer->info["cache"] = false;
-		//global $conf;
 		global $INFO;
 		global $ACT;
 		global $REV;
@@ -82,7 +81,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$votes = json_decode(file_get_contents($filename), true);
 		}
 		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $_REQUEST["devote_formid"] === $votehash && $REV === 0 && !empty($_REQUEST["devote_cast_vote"]) && in_array($_REQUEST["devote_selection"], $choices)) {
-			$fp = fopen($filename, "r+");
+			$fp = fopen($filename, "c+");
 			if (!flock($fp, LOCK_EX | LOCK_NB, $flock_locked) || $flock_locked) {
 				return $this->resubmit_form($renderer, $_REQUEST["devote_formid"], $_REQUEST["devote_selection"], $_REQUEST["devote_cast_vote"], is_numeric($_REQUEST["devote_resubmit_timer"]) ? $_REQUEST["devote_resubmit_timer"] : 0);
 			}
@@ -140,6 +139,13 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 				$renderer->doc .= '<td class="centeralign"><input type="radio" name="devote_selection" value="' . hsc($choice) . '"' . $checked . '></td>';
 			}
 			$renderer->doc .= '</tr>';
+			if (!isset($votes[$INFO["client"]]["c"])) {
+				$renderer->doc .= '<tr>';
+				$renderer->doc .= '<td colspan="' . (sizeof($choices)+1) . '">';
+				$renderer->doc .= '<small>All votes are public visible. Other users are therefore able to tell what you voted on!</small>';
+				$renderer->doc .= '</td>';
+				$renderer->doc .= '</tr>';
+			}
 		}
 		$renderer->doc .= '<tr>';
 		$renderer->doc .= '<th class="rightalign"><a href="https://github.com/opennic/wikipages/blob/master/data/meta/' . $votehash . '.devote">Result</a>:</th>';
@@ -153,7 +159,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		$renderer->doc .= '</tr>';
 		foreach ($votes as $voteuser => $votedata) {
 			$renderer->doc .= '<tr>';
-			$renderer->doc .= '<td class="rightalign">' . $voteuser . '</td>';
+			$renderer->doc .= '<td class="rightalign"><a href="/user/' . $voteuser . '">' . $voteuser . '</a></td>';
 			if (!in_array($choices, $votedata["c"])) {
 				$votedata["c"] = "Invalid";
 			}
