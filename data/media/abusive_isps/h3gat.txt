@@ -1,0 +1,41 @@
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @213.94.78.16
+
+; <<>> DiG 9.10.4-P5 <<>> +all +auth +answer A www.f033e94a-de96-4a8a-9274-2ad5f23009fc.com. @213.94.78.16
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33950
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;www.f033e94a-de96-4a8a-9274-2ad5f23009fc.com. IN A
+
+;; ANSWER SECTION:
+www.f033e94a-de96-4a8a-9274-2ad5f23009fc.com. 60 IN A 213.94.80.190
+
+;; Query time: 127 msec
+;; SERVER: 213.94.78.16#53(213.94.78.16)
+;; WHEN: Sun Jan 28 14:20:39 CET 2018
+;; MSG SIZE  rcvd: 89
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @213.94.78.17
+
+; <<>> DiG 9.10.4-P5 <<>> +all +auth +answer A www.2a5ad3ee-57a4-4d6b-874b-777b170b5081.com. @213.94.78.17
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 47327
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.2a5ad3ee-57a4-4d6b-874b-777b170b5081.com. IN A
+
+;; ANSWER SECTION:
+www.2a5ad3ee-57a4-4d6b-874b-777b170b5081.com. 60 IN A 213.94.80.190
+
+;; Query time: 118 msec
+;; SERVER: 213.94.78.17#53(213.94.78.17)
+;; WHEN: Sun Jan 28 14:20:43 CET 2018
+;; MSG SIZE  rcvd: 78
+
+fusl@linux-0lcz:~>
