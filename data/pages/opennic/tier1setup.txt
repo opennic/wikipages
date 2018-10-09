@@ -4,6 +4,7 @@
 
 FIXME This legacy wiki article has been copied from http://web.archive.org/web/20161228061854/wiki.opennicproject.org/RunningT1. It is outdated and should not be blindly used for copy-pasting.  Use this information as a starting point to further researching current methods.
 
+But where, if not here, are those settings documented?
 ===== BIND9 setup =====
 Setting up a OpenNIC Tier 1 server, requires creating slave zones for all the TLDs within the OpenNIC name-space.
 
@@ -304,4 +305,6 @@ I now use the logrotate method to clean my log files. I use syslog-ng, so I adde
 }
 </code>
 
-I hope that this guide has assisted getting your Tier 1 server ready for your new TLD. Remember to follow the insturctions on creating a new TLD if you have not already had your TLD approved for use within OpenNIC by vote of the membership. [[opennic:creating_new_tlds]]
+I hope (likely in vain) that this guide has assisted (even though the the preface states that it is totally outdated) getting your Tier 1 server ready for your new TLD. 
+
+Remember to follow the instructions on creating a new TLD in case you have not yet had your TLD approved for use within OpenNIC by vote of the membership. [[opennic:creating_new_tlds]]
