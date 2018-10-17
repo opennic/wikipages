@@ -9,6 +9,7 @@ FIXME We're still missing some information! If you can fill in some of the blank
 ===== Current Top-Level Domains =====
 
 ^ Name                           ^ Introduction ^ Master ^ Contacts                                            ^ Website                                    ^ Intended Usage ^
+^ [[opennic:dot:anonymous|.anonymous]]       | 2018-10-17   | ns1    | [[anonymousdirekt@gmail.com|Anonymous]] | [[http://anonymous.nameserver.eu.org/|nic.anonymous]]      | Anonymous Domain Registry. |
 ^ [[opennic:dot:bbs|.bbs]]       | 2000-12-29   | ns6    | [[texnofobix@gmail.com|Dustin Souers (texnofobix)]] | [[http://register.bbs/|register.bbs]]      | Bulletin Board System servers, and related BBS websites and services. |
 ^ [[opennic:dot:chan|.chan]]     | 2015-10-21   | ns5    |                                                     | [[http://opennic.chan/|opennic.chan]]      | A Top Level Domain "for imageboards and communities related to imageboard culture." |
 ^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | ns12   | [[albino@autistici.org|Al Beano]]\\ [[sy@zm.is|sy]] |[[http://opennic.cyb|opennic.cyb]], [[https://cyb.uptime.party|cyb.uptime.party]] (TLS) | A TLD for cyberpunk-related content|
@@ -34,6 +35,7 @@ FIXME We're still missing some information! If you can fill in some of the blank
 These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, instead you should contact their respective organization.
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^
+^ [[http://anonymous.nameserver.eu.org/|Anonymous]]      | .anonymous                        | Anonymous Domain Registry | ns1.anonymous.nameserver.eu.org\\ ns2.anonymous.nameserver.eu.org\\ ns3.anonymous.nameserver.eu.org\\ ns4.anonymous.nameserver.eu.org |
 ^ [[https://emercoin.com/|Emercoin]]      | .bazar                            | Free marketplace | seed1.emercoin.com\\ seed2.emercoin.com |
 ^ :::                                     | .coin                             | Digital currency and commerce websites | seed1.emercoin.com\\ seed2.emercoin.com |
 ^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com |
