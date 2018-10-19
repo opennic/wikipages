@@ -1,9 +1,8 @@
 ====== .bit TLD ======
 ===== Updating time =====
-OpenNIC resolves .bit ([[https://namecoin.org/|Namecoin]]) domains through the use of a centralized server which generates a DNS zone from the Namecoin blockchain. A new zone is generated from the blockchain every 15 minutes, however it may take several hours for all of the public resolvers to receive the update. If, after several hours, you are still not able to resolve your domain, please contact me using the information [[https://mcalinden.me.uk/contact.html|here]].
-
+OpenNIC resolves .bit ([[https://namecoin.org/|Namecoin]]) domains through the use of a centralized server which generates a DNS zone from the Namecoin blockchain. A new zone is generated from the blockchain every 15 minutes, however it may take several hours for all of the public resolvers to receive the update.
 ===== Important – This is centralized =====
 It should be noted that Namecoin domains are resolved through OpenNIC in an entirely centralized manner. Any of the OpenNIC DNS servers, your ISP, or anyone else on your network could maliciously modify the result of a query (as they could with any other DNS traffic). By using .bit/Namecoin through OpenNIC, you are not benefiting from Namecoin's decentralized and secure nature. OpenNIC's service resolving these domains is only intended to be used for testing purposes with non-sensitive data if you do not have the knowledge, time, or resources to set up a local resolver.
 
 ===== Contact =====
-If you have any concerns or issues with .bit on OpenNIC, please contact me using the information [[https://mcalinden.me.uk/contact.html|here]].
+If you have any concerns or issues with .bit on OpenNIC, please contact the operator of the zone.
