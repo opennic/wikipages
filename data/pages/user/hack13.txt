@@ -1,0 +1,9 @@
+====== HACK13 ======
+**Name:** Timothy Rogers
+
+**Status:** Tier 2 Operator
+
+**Certifications:**
+  * [[https://www.ciwcertified.com/ciw-certifications|CIW]]
+  * [[https://www.redhat.com/rhtapps/services/certifications/badge/verify/DI5DGQPGPRY4QF5KR5WXZVCF6UAEQU3CUPSQX2KSDXT6RW46LQ3T7ULZ55KZZ56SKO7EQ3ETTLYZQ4U5NQYTCNA62RUWOCM34WWBUYQ=|RHCSA(Red Hat Certified System Administrator)]]
+  * [[https://certification.comptia.org/certifications/a|CompTia A+ 901 & 902]]

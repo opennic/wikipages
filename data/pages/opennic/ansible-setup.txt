@@ -1,0 +1,45 @@
+====== Ansible Setup ======
+Ansible is an open source project for automating the deployment and management of systems with yaml scripts, much like Puppet. This is a guide how to use the Ansible Playbook written for OpenNIC, to setup and run a Tier 2 server within just a few minutes. This guide assumes you know that you know that Ansible just needs to be installed on your local machine or the machine you use to control your other servers, and that the other servers just need to have python installed.
+
+GitHub: https://github.com/hack13/ansible-opennic-setup
+
+===== Requirements =====
+  * CentOS 7, Fedora 28, or Ubuntu 18.04 LTS
+  * Python
+  * Ansible (installed on just the machine you access your machines from)
+
+===== Setting Up Your Ansible Hosts File =====
+  - Open '/etc/ansible/hosts'
+  - Create a new section like below, replacing the X's with the IPs or hostnames of your machines you want to make OpenNIC Tier 2 servers.
+<code>
+[opennic]
+xxx.xxx.xxx.xxx
+xxx.xxx.xxx.xxx
+</code>
+
+===== Executing Ansible Playbook =====
+**Note:** This section assumes you have setup SSH Key authentication with your machines already, and have already loaded the key into the key-ring.
+
+If you are logging in as root, the playbook can be ran with no edits needed.
+<code>
+ansible-playbook opennic-setup.yml
+</code>
+
+If you are logging in as another user, then elevating to elevate for privileges you will need to modify the **opennic-setup.yml** slightly to look this:
+<code>
+- name: First time setup of OpenNIC on server
+  hosts: opennic
+  remote_user: timothy # update if using become
+  ## Use become by uncommenting the lines below to elevate once reaching the server
+  become: yes
+  become_user: root
+  become_method: sudo
+</code>
+With what you see above, replace 'timothy' with the user you are logging into the server with. Then you can run the playbook with the command below, with '-K' if you use password to use SUDO, if you do not use password to escalate to sudo you can leave it out:
+<code>
+ansible-playbook -K opennic-setup.yml
+</code>
+
+After it runs, you should get back a PLAY RECAP. If you have any fails then something went wrong and please feel free to open an issue on the GitHub page, else you should see no fails and then your done. The server is setup, all you need to do now is test and confirm it working with the opennic testing tool. 
+
+**Testing Tool:** http://report.opennicproject.org/t2log/t2.php

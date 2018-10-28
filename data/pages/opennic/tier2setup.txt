@@ -51,6 +51,7 @@ There are some automated scripts that allow you to keep your slave BIND server a
 
   * [[opennic:srvzone|Srvzone method]]: Automated script for BIND9 by Jeff Taylor.
   * [[opennic:t2digitalocean|DigitalOcean User Data]]: Automated installation for DigitalOcean Droplets (modified Srvzone with DigitalOcean Metadata) by [[user:jonaharagon|Jonah Aragon]]
+  * [[opennic:ansible-setup|Ansible Method]]: Automated using method setting up slave zones using Ansible by [[user:hack13|Timothy Rogers]]
 
 ==== DJBDNS ====
 
