@@ -40,6 +40,6 @@ With what you see above, replace 'timothy' with the user you are logging into th
 ansible-playbook -K opennic-setup.yml
 </code>
 
-After it runs, you should get back a PLAY RECAP. If you have any fails then something went wrong and please feel free to open an issue on the GitHub page, else you should see no fails and then your done. The server is setup, all you need to do now is test and confirm it working with the opennic testing tool. 
+After it runs, you should get back a PLAY RECAP. If you have any fails then something went wrong and please feel free to open an issue on the GitHub page, else you should see no fails and then your done. The server is setup, all you need to do now is test and confirm it working with the opennic testing tool at http://report.opennic.org 
 
 **Testing Tool:** http://report.opennicproject.org/t2log/t2.php
