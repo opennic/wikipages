@@ -1,0 +1,11 @@
+dotdyntld  :-x
+
+another broken dead link FIXME
+
+you probably thought, some helpful text would show up here, right? :?:
+
+Well... this is all you've got.  m(
+
+that being said, the link in the box simply returns your IP which you can use in an A-record for your domain.
+
+The A-record returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host, but it is also used for DNSBLs, storing subnet masks in RFC 1101, etc..
