@@ -1,0 +1,14 @@
+  ==  Now seriously, why would one bother to use an OpenNIC domain ?  ==
+
+Reading this wiki you probably thought: "What a waste of time!"
+
+And of course you are right: You get free domains with professional reliability in the ICANN net, so why go anywhere where there is no audience and sometimes poor reliability or funny rules made by funny individuals ?
+
+:-D  #1  you may want next to no audience for some reason.
+
+:-P  #2  you just want to goof around with your BIND nameserver daemon and just want free services.  
+
+;-)  #3  you are a privacy stickler and have quit planet ICANN a long time ago.
+  
+  
+There you have it ! 3 perfectly legit reasons to use OpenNIC ! :-D   :-P   ;-)
