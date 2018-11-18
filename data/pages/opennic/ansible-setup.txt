@@ -1,5 +1,5 @@
 ====== Ansible Setup ======
-Ansible is an open source project for automating the deployment and management of systems with yaml scripts, much like Puppet. This is a guide how to use the Ansible Playbook written for OpenNIC, to setup and run a Tier 2 server within just a few minutes. This guide assumes you know that you know that Ansible just needs to be installed on your local machine or the machine you use to control your other servers, and that the other servers just need to have python installed.
+Ansible is an open source project for automating the deployment and management of systems with yaml scripts, much like Puppet (of course, no one has ever heard of puppet. That's why it is thrown in here. m( ). This is a guide how to use the Ansible Playbook written for OpenNIC, to setup and run a Tier 2 server within just a few minutes. This guide assumes you know that you know that Ansible just needs to be installed on your local machine or the machine you use to control your other servers, and that the other servers just need to have python installed.
 
 GitHub: https://github.com/hack13/ansible-opennic-setup
 
