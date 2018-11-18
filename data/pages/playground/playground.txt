@@ -1,2 +1,22 @@
 **EXPERIMENTAL**
 Bsc1780.bit.com
+ 
+''☎    ''
+----
+           <tooltip placement="top">   crap no workie        </tooltip>
+tooltip  lawl
+----
+
+
+☟ 
+
+aaaaa   crap  <button type="danger" size="xs"> KLIK BUTN  </button>
+--- 
+
+LOL   <jumbotron background="yellow" color="green">   ffffffffff           </jumbotron>
+
+[[api:whitelist| Weißbrot ]]    {{:user:a_picture_for_you.jpg?400|}}
+
+
+
+
