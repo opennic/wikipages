@@ -10,7 +10,7 @@ OpenNIC domains such as http://grep.geek can be visited with little effort by in
 
 
 ===== This Wiki =====
-This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy, all notes and documents are world-readable. Write access is restricted to participants relevant for this specific project; to provide quality content and have cross-verification by other members.
+This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy, all notes and documents are world-readable. Write access is restricted to participants relevant for this specific project; to provide quality content and have cross-verification by other members. **Too long, don't wanna read?** Click the [[cheat sheet]].
 
 To become a registered user, follow the sign-up page [[/start?do=register|here]].
 ===== How you can help =====
