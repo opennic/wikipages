@@ -1,4 +1,22 @@
-The link in the box returns your current IP which is then set as the A-record for your *.dyn domain.
+.dyn main page:  [[dot/dyn]]  https://wiki.opennic.org/opennic/dot/dyn
+
+
+The link in the box on http://be.libre (domain management) returns your current IP which is then set as the A-record for your *.dyn domain.
+
+.dyn does not support  RFC-2136   but instead uses some URL-scheme: a single bash line will update the address:
+
+    python3 -c 'import urllib.request ; err=urllib.request.urlopen("http://api.opennicproject.org/ddns/web.dyn?user=XXX&auth=YYY").read().decode("utf8")'
+ 
+with XXX replaced with user  YYY with the real secret
+
+
+
+Other features which RFC-2136 offers are impossible on a *.dyn domain.
+
+
+
+.dyn is controlled by the nameserver  **161.97.219.84**  called  **ns2.opennic.glue** 
+
 
 So if you run a webserver like Apache on your local machine, the .dyn domain should be served without much fuss.
 
