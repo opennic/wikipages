@@ -5,7 +5,7 @@ The link in the box on http://be.libre (domain management) returns your current 
 
 .dyn does not support  RFC-2136   but instead uses some URL-scheme: a single bash line will update the address:
 
-    python3 -c 'import urllib.request ; err=urllib.request.urlopen("http://api.opennicproject.org/ddns/web.dyn?user=XXX&auth=YYY").read().decode("utf8")'
+  python3 -c 'import urllib.request ; err=urllib.request.urlopen("http://api.opennicproject.org/ddns/web.dyn?user=XXX&auth=YYY").read().decode("utf8")'
  
 with XXX replaced with user  YYY with the real secret
 
