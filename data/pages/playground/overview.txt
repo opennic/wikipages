@@ -1,0 +1,60 @@
+
+
+[[Category:Domain Name System]]
+[[Category:Lists]]
+{{Archive|Recently [[Wikipedia:Public recursive name server#List of public DNS service operators]] has been significantly improved, we cannot compete with it anymore.|section=Future of the page}}
+
+This article lists [[Wikipedia:Domain name system|domain name system]] (DNS) services that may replace an internet service provider's DNS service.
+To use one of these servers, see [[Domain name resolution]].
+
+A reason for using an internet service provider's DNS service is convenience for the ISP customer. 
+
+Reasons for not doing it are: 
+
+  * privacy concerns, 
+  * need for speed, 
+  * want of additional domains such as ''.libre'' , 
+  * thwart censorship , 
+  * avoid injected advertising by ISP  or 
+  * intended automatic blocking of SPAM or virus-emitting IPs among others.
+
+
+== OpenNIC ==
+{{Tip|The tool {{App|opennic-up|automates the renewal of the DNS servers with the most responsive OpenNIC servers|https://github.com/kewlfft/opennic-up|{{AUR|opennic-up}}}}}}
+
+[https://www.opennic.org/ OpenNIC] provides free, essentially uncensored nameservers, a complementing [[DynDNS]] service and free domain-[http://reg.libre/ registrations] such as '''''has-cost-me-nothing.libre'''''  located in multiple countries. It is non-commercial and invites more participants to list their newly created nameservers into the network.
+
+All that is needed to reach OpenNIC domains and some more is the firefox-plugin [https://blockchain-dns.info/ b-dns] at ''blockchain-dns.info'' .
+
+Short of doing that, a proxy offers access to all extra domains: http://proxy.opennicproject.org giving access to e.g.  '''end.chan'''
+
+Though uncensored, some servers do occasionally resort to blocking bona-fide attacking IPs which intentionally cause technical disruption of service.
+
+Guides to add own nameservers are provided in a wiki with procedures how to serve new Topleveldomains besides the ca. 15 available in 2018: '''.dyn .geek .libre .pirate .chan'''  and more. '''.chan''' offers the largest number of DNS record-types to utilize via a [http://register.opennic.chan/registrar web]-GUI at ''register.opennic.chan/registrar'' , while naturally all records are available when serving from e.g. a local [[BIND]] by the domain-owner himself.
+
+{{Note|The use of OpenNIC DNS servers will allow host name resolution '''both''' in the traditional Top-Level Domain (TLD) registries '''as well as''' in OpenNIC or afiliated operated namespaces: ''.o'', ''.libre'', ''.dyn'' , ''.ti'' , ''.ku''  and more.}}
+
+Affiliated with OpenNIC are some nameservers, such as the one by [https://www.new-nations.net/en/about/showpage new nations] with domains for Tibet, Kurdistan and others.
+
+The full list of public servers is available at [https://servers.opennic.org/ servers.opennic.org] and a shortlist of nearest nameservers for optimal performance is generated on their [https://www.opennic.org/ home page].
+
+To retrieve a list of nearest nameservers, an [https://wiki.opennic.org/api/geoip API] is also available and returns, based on the [https://wiki.opennic.org/api/geoip#url_parameters URL parameters] provided, a list of nameservers in the desired format. For example to get the 200 nearest IPv4 servers, one can use https://api.opennicproject.org/geoip/?list&ipv=4&res=200&adm=0&bl&wl.
+
+Alternatively, the anycast servers below can be used; while reliable their latency [https://wiki.opennic.org/opennic/dont_anycast fluctuates a lot].
+
+Worldwide Anycast:
+
+  *  185.121.177.177
+  *  169.239.202.202
+  *  2a05:dfc7:5::53
+  *  2a05:dfc7:5::5353
+
+To avoid responsiveness problems, follow RFC-7706: [https://www.heise.de/netze/rfc/rfcs/rfc7706.shtml#page-9  root zone transfer made simple - serve root@home] edit an appropriate /etc/named.conf with ''.libre'' domains etc. being transferred (see OpenNIC [https://wiki.opennic.org/start wiki] for details) , restart [[BIND]] and no longer suffer unresponsive OpenNIC servers during [[Domain name resolution]]. Do a zone transfer just like the full tier 2 servers do as [https://wiki.opennic.org/opennic/tier2setup described] in the OpenNIC wiki.
+
+
+== **See also** ==
+
+  * * [[Wikipedia:Public recursive name server#List of public DNS service operators]]
+  * * [https://www.new-nations.net/en/discussion/show/id/357 new nations nameserver guestbook]
+  * * [http://www.open-root.eu/about-us/ open root DNS]  RINA based, enable multiple roots
+  * * [https://en.wikipedia.org/wiki/Recursive_InterNetwork_Architecture RINA]
