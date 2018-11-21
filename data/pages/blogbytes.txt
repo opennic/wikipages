@@ -1,5 +1,5 @@
 ====== Blog Bytes ======
-These are comments about OpenNIC from blogs and other sources. Please feel free to add you own. Be prepared to find the links dead / pointing nowhere.
+These are comments about OpenNIC from blogs and other sources. Please feel free to add you own.
 
 ^ Blog URL ^ Date ^ Quote ^
 | [[https://web.archive.org/web/20150212063127/http://falkhusemann.de/blog/2012/05/alternativer-dns-server/|Falk Husemann Blog]] | 2012-05-15 | OpenNIC ist ein nicht-kommerzielles Projekt, dass alternative DNS Server zur Verfügung stellt. |

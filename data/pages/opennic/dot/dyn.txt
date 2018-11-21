@@ -1,9 +1,5 @@
 ====== .dyn TLD ======
-see also  https://wiki.opennic.org/dotdyntld
 ===== Charter =====
-
-controlled by nameserver:  **161.97.219.84    ns2.opennic.glue** 
-
 Domains registered in .dyn serve as dynamic DNS pointers. These domains are restricted in functionality and require frequent validation to remain active. Unused domains will be removed after 28 days.
 
 .dyn is a TLD that is designed to resolve host names to dynamic Internet Protocol addresses, which usually are a result of the respective Internet Service Provider. Non-dynamic IP addresses also known as static IP addresses may be used.
@@ -16,7 +12,7 @@ Domains registered in .dyn serve as dynamic DNS pointers. These domains are rest
   * IRC - #opennic @ freenode (Shdwdrgn)
 
 ===== Domain Registration =====
-  * Web Site - http://reg.dyn/   rather:  http://be.libre
+  * Web Site - http://reg.dyn/
 
 ===== Configuring DynDNS =====
 The principle behind dynamic DNS is to give you a fixed domain name that you can use to follow a system which does not have a static IP address. In order for your address to remain valid, you must periodically refresh your information.

@@ -27,10 +27,4 @@ Thanks, and looking forward to replies!
 
 Jonah
 </code>
-
-
-----
-
-This was suggested in 2017-10-05. The analytics are quite intrusive and I wonder what you actually get out of it. Frankly, this wiki has enough problems keeping links non-dead, so who is going to throw in hours to even do extra work? Really large sites may have a benefit, if they then improve their web stuff but I don't see that here. It also may drive quite some users away who are sensitive to privacy issues. If it slows down the wiki further, users will run like hostages away from this wiki. https://matomo.org/privacy-policy/#rights is acurally quite underwhelming too.
-
 </columns>

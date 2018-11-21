@@ -1,5 +1,5 @@
 ====== Ansible Setup ======
-Ansible is an open source project for automating the deployment and management of systems with yaml scripts, much like Puppet (of course, no one has ever heard of puppet. That's why it is thrown in here. m( ). This is a guide how to use the Ansible Playbook written for OpenNIC, to setup and run a Tier 2 server within just a few minutes. This guide assumes you know that you know that Ansible just needs to be installed on your local machine or the machine you use to control your other servers, and that the other servers just need to have python installed.
+Ansible is an open source project for automating the deployment and management of systems with yaml scripts, much like Puppet. This is a guide how to use the Ansible Playbook written for OpenNIC, to setup and run a Tier 2 server within just a few minutes. This guide assumes you know that you know that Ansible just needs to be installed on your local machine or the machine you use to control your other servers, and that the other servers just need to have python installed.
 
 GitHub: https://github.com/hack13/ansible-opennic-setup
 
@@ -40,6 +40,6 @@ With what you see above, replace 'timothy' with the user you are logging into th
 ansible-playbook -K opennic-setup.yml
 </code>
 
-After it runs, you should get back a PLAY RECAP. If you have any fails then something went wrong and please feel free to open an issue on the GitHub page, else you should see no fails and then your done. The server is setup, all you need to do now is test and confirm it working with the opennic testing tool at http://report.opennic.org 
+After it runs, you should get back a PLAY RECAP. If you have any fails then something went wrong and please feel free to open an issue on the GitHub page, else you should see no fails and then your done. The server is setup, all you need to do now is test and confirm it working with the opennic testing tool. 
 
 **Testing Tool:** http://report.opennicproject.org/t2log/t2.php
