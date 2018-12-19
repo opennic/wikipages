@@ -21,7 +21,7 @@ The main thing anyone can do to help, is to **become a member**. Sign up [[https
 ===== Need help getting started? =====
 There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, [[setup|setup to resolve OpenNIC TLDs]], volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
 <newcolumn>
-===== Useful resources =====
+===== Useful resources =====opennic.oz
 ==== Domain Registration ====
 Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:namespaces|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
 
