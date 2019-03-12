@@ -1,0 +1,85 @@
+This simple config excerpt should be used as a basis for a Tier 2 Unbound installation:
+
+<code>
+server:
+    access-control: 0.0.0.0/0 allow
+    hide-identity: yes
+    hide-trustanchor: yes
+    hide-version: yes
+    interface: x.x.x.x
+    minimal-responses: yes
+    log-queries: no
+    root-hints: "/usr/local/etc/unbound/opennic.cache"
+    
+    # ratelimiting examples
+    ip-ratelimit-factor: 0
+    ip-ratelimit: 20
+    ratelimit-below-domain: gov 30
+    ratelimit: 100
+
+    # See https://nlnetlabs.nl/documentation/unbound/howto-optimise/
+    num-threads: 1
+    infra-cache-slabs: 1
+    key-cache-slabs: 1
+    msg-cache-slabs: 1
+    rrset-cache-slabs: 1
+    key-cache-size: 8m # default 4m
+    msg-cache-size: 8m # default 4m
+    neg-cache-size: 8m # default 1m
+    rrset-cache-size: 16m # rrset=msg*2 # default 4m
+    outgoing-range: 8192
+    num-queries-per-thread: 4096 # outgoing-range/2
+
+    local-zone: example. static
+    local-zone: local. static
+    local-zone: i2p. static
+    local-zone: home. static
+    local-zone: zghjccbob3n0. static
+    local-zone: dhcp. static
+    local-zone: lan. static
+    # etc...
+</code>
+
+The above is by no means complete as there are many other options available. The important part for OpenNIC is the reference to the root-hints file which can be populated like this:
+
+<code>
+/usr/local/bin/dig . NS @75.127.96.89 > /usr/local/etc/unbound/opennic.cache
+</code>
+
+and should look something like this:
+
+<code>
+
+; <<>> DiG 9.12.4 <<>> . NS @75.127.96.89
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65204
+;; flags: qr aa rd; QUERY: 1, ANSWER: 4, AUTHORITY: 0, ADDITIONAL: 8
+;; WARNING: recursion requested but not available
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;.                              IN      NS
+
+;; ANSWER SECTION:
+.                       86400   IN      NS      ns2.opennic.glue.
+.                       86400   IN      NS      ns5.opennic.glue.
+.                       86400   IN      NS      ns8.opennic.glue.
+.                       86400   IN      NS      ns6.opennic.glue.
+
+;; ADDITIONAL SECTION:
+ns2.opennic.glue.       7200    IN      A       161.97.219.84
+ns2.opennic.glue.       7200    IN      AAAA    2001:470:4212:10:0:100:53:10
+ns5.opennic.glue.       7200    IN      A       94.103.153.176
+ns5.opennic.glue.       7200    IN      AAAA    2a02:990:219:1:ba:1337:cafe:3
+ns6.opennic.glue.       7200    IN      A       207.192.71.13
+ns8.opennic.glue.       7200    IN      A       178.63.116.152
+ns8.opennic.glue.       7200    IN      AAAA    2a01:4f8:141:4281::999
+
+;; Query time: 231 msec
+;; SERVER: 75.127.96.89#53(75.127.96.89)
+;; WHEN: Tue Mar 12 23:00:00 UTC 2019
+;; MSG SIZE  rcvd: 256
+
+</code>
