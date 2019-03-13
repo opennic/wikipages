@@ -59,7 +59,7 @@ For those of you who prefer DJBDNS, an updated guide will be posted soon. [[http
 
 ==== Unbound ====
 
-For those of you who prefer Unbound, an updated guide will be posted soon. [[http://web.archive.org/web/20160904020628/http://wiki.opennicproject.org:80/Tier2ConfigUnbound|Archived guide]].
+For those of you who prefer Unbound, this is a [[:tier_2_unbound|sample Unbound setup]]. [[http://web.archive.org/web/20160904020628/http://wiki.opennicproject.org:80/Tier2ConfigUnbound|Archived guide]].
 
 ==== Windows Server ====
 
