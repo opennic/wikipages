@@ -53,6 +53,7 @@ See [[https://blockchain-dns.info/|BDNS webpage]] for more information.
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
   * http://proxy.opennic.org/
+  * https://proxy.dnslibre.com.mx/    (only TLD inside OpenNIC network are accesed)
 
 ==== Infrastructure Setup ====
 
