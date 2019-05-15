@@ -2,7 +2,7 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
  * @author Antonio Castilla <antoniocastilla@trazoide.com>
  */
 $lang['testfailed']            = 'Lo sentimos, pero el CAPTCHA no fue respondido correctamente. Tal vez no eres una persona.';

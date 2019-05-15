@@ -3,8 +3,8 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
- * @author soer9648 <soer9648@eucl.dk>
  * @author Jacob Palm <mail@jacobpalm.dk>
+ * @author soer9648 <soer9648@eucl.dk>
  */
 $lang['mode']                  = 'Hvilken type CAPTCHA skal benyttes?';
 $lang['mode_o_js']             = 'Tekst (præudfyldt af JavaScript)';
@@ -13,6 +13,8 @@ $lang['mode_o_math']           = 'Matematikproblem';
 $lang['mode_o_question']       = 'Løsning';
 $lang['mode_o_image']          = 'Billede (dårlig tilgængelighed)';
 $lang['mode_o_audio']          = 'Billede+Audio (bedre tilgængelighed)';
+$lang['mode_o_svg']            = 'SVG (skalerbar vektorgrafik - læsbar, men ikke handicapvenlig)';
+$lang['mode_o_svgaudio']       = 'SVG+lyd (læsbar, mere handicapvenlig)';
 $lang['mode_o_figlet']         = 'Figlet ASCII Art (dårlig tilgængelighed)';
 $lang['forusers']              = 'Benyt også CAPTCHA til brugere der er logget ind?';
 $lang['loginprotect']          = 'Kræv CAPTCHA ved login?';
