@@ -1,7 +1,7 @@
 ====== BIND9 Access Control Lists  API ======
 Administrators running open Tier 1 and Tier 2 servers may wish to make use of the automatically-generated ACL file. This file is a BIND-formatted ACL which has listings for Tier 1 addresses, Tier 2 addresses, and whitelisted user IP addresses. Each list may be combined as desired to control access to your server. ACL lists have been supported since BIND 8.2.1.
 
-If you are a Tier 1 or Tier 2 administrator and need access to this feature, please contact Shdwdrgn on the mailing list or IRC. Once you have access, you may log in to the [[https://web.archive.org/web/20160913110201/http://www.opennicproject.org/members/|members page]] and you will be shown a wget command with your username and a hash key for authentication:
+If you are a Tier 1 or Tier 2 administrator and need access to this feature, please contact Shdwdrgn on the mailing list or IRC. Once you have access, you may log in to the [[https://members.opennic.org/|members page]] and you will be shown a wget command with your username and a hash key for authentication:
   wget -qO- "https://api.opennicproject.org/acl/bind/?user=myUser&auth=myHash"
   curl "https://api.opennicproject.org/acl/bind/?user=myUser&auth=myHash"
 
