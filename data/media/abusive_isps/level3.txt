@@ -1,0 +1,121 @@
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.1
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.3aede570-946c-47c2-a5e3-d573ad20fbd4.com. @4.2.2.1
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56737
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.3aede570-946c-47c2-a5e3-d573ad20fbd4.com. IN A
+
+;; ANSWER SECTION:
+www.3aede570-946c-47c2-a5e3-d573ad20fbd4.com. 10 IN A 23.202.231.167
+www.3aede570-946c-47c2-a5e3-d573ad20fbd4.com. 10 IN A 23.217.138.108
+
+;; Query time: 31 msec
+;; SERVER: 4.2.2.1#53(4.2.2.1)
+;; WHEN: Sun Jun 09 23:02:22 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.2
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.f650ac3f-bf19-4201-b74e-03cfb1ae79e1.com. @4.2.2.2
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 36123
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.f650ac3f-bf19-4201-b74e-03cfb1ae79e1.com. IN A
+
+;; ANSWER SECTION:
+www.f650ac3f-bf19-4201-b74e-03cfb1ae79e1.com. 10 IN A 23.217.138.108
+www.f650ac3f-bf19-4201-b74e-03cfb1ae79e1.com. 10 IN A 23.202.231.167
+
+;; Query time: 27 msec
+;; SERVER: 4.2.2.2#53(4.2.2.2)
+;; WHEN: Sun Jun 09 23:02:32 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.3
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.c7c0ca0c-b738-46a3-ac16-f4c1c2984c07.com. @4.2.2.3
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51614
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.c7c0ca0c-b738-46a3-ac16-f4c1c2984c07.com. IN A
+
+;; ANSWER SECTION:
+www.c7c0ca0c-b738-46a3-ac16-f4c1c2984c07.com. 10 IN A 23.202.231.167
+www.c7c0ca0c-b738-46a3-ac16-f4c1c2984c07.com. 10 IN A 23.217.138.108
+
+;; Query time: 22 msec
+;; SERVER: 4.2.2.3#53(4.2.2.3)
+;; WHEN: Sun Jun 09 23:02:33 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.4
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.6a17192a-8ab8-4415-8634-821c206af86d.com. @4.2.2.4
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 63343
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.6a17192a-8ab8-4415-8634-821c206af86d.com. IN A
+
+;; ANSWER SECTION:
+www.6a17192a-8ab8-4415-8634-821c206af86d.com. 10 IN A 23.217.138.108
+www.6a17192a-8ab8-4415-8634-821c206af86d.com. 10 IN A 23.202.231.167
+
+;; Query time: 32 msec
+;; SERVER: 4.2.2.4#53(4.2.2.4)
+;; WHEN: Sun Jun 09 23:02:33 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.5
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.55aed023-bc90-4f08-8458-7792d0ca2cf4.com. @4.2.2.5
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 65274
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.55aed023-bc90-4f08-8458-7792d0ca2cf4.com. IN A
+
+;; ANSWER SECTION:
+www.55aed023-bc90-4f08-8458-7792d0ca2cf4.com. 10 IN A 23.217.138.108
+www.55aed023-bc90-4f08-8458-7792d0ca2cf4.com. 10 IN A 23.202.231.167
+
+;; Query time: 61 msec
+;; SERVER: 4.2.2.5#53(4.2.2.5)
+;; WHEN: Sun Jun 09 23:02:34 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~> dig +all +auth +answer A www.$(uuidgen -r).com. @4.2.2.6
+
+; <<>> DiG 9.11.2 <<>> +noall +auth +answer +all +auth +answer A www.fbd76e0d-c26a-470d-98b3-fc382bfb4dff.com. @4.2.2.6
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1823
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.fbd76e0d-c26a-470d-98b3-fc382bfb4dff.com. IN A
+
+;; ANSWER SECTION:
+www.fbd76e0d-c26a-470d-98b3-fc382bfb4dff.com. 10 IN A 23.217.138.108
+www.fbd76e0d-c26a-470d-98b3-fc382bfb4dff.com. 10 IN A 23.202.231.167
+
+;; Query time: 37 msec
+;; SERVER: 4.2.2.6#53(4.2.2.6)
+;; WHEN: Sun Jun 09 23:02:35 CEST 2019
+;; MSG SIZE  rcvd: 94
+
+fusl@linux-0lcz:~>
