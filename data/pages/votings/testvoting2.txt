@@ -1,0 +1,13 @@
+====== Test Voting 2 ======
+<columns 100% 30% 70%>
+<devote title="Test Voting 2" close="2029-06-10">
+* Option 1
+* Option B
+* Other Option
+* etc.
+</devote>
+<newcolumn>
+<code>
+Long, detailed text of what is being voted on.
+</code>
+</columns>

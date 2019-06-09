@@ -101,6 +101,7 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		}
 		foreach ($votes as $voteuser => $votedata) {
 			if (isset($votedata["c"]) && !in_array($choices, $votedata["c"])) {
+				var_dump($votedata);
 				$votedata["c"] = "Invalid";
 			}
 			if (isset($votestats[$votedata["c"]])) {
