@@ -1,4 +1,8 @@
 {
+    "deep42thought": {
+        "c": "Keep .bit",
+        "t": 1560235896
+    },
     "DilutedSalt": {
         "c": "Drop .bit",
         "t": 1560223103
@@ -26,5 +30,9 @@
     "Shdwdrgn": {
         "c": "Drop .bit",
         "t": 1560221163
+    },
+    "TWSICommunity": {
+        "c": "Drop .bit",
+        "t": 1560234038
     }
 }
