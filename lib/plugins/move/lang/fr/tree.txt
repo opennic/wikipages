@@ -1,0 +1,3 @@
+====== Gestionnaire déplacement =====
+
+Cette interface vous permet de réorganiser catégories, pages et médias de votre wiki par glisser-déposer.

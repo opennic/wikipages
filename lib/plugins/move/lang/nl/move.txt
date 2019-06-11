@@ -1,0 +1,10 @@
+====== Pagina's verplaatsen ======
+
+Deze plugin stelt je in staat pagina's te verplaatsen en/of te hernoemen binnen volgende beperkingen:
+
+  * Je moet edit-permissie hebben voor de huidige pagina/alle pagina's in de huidige namespace.
+  * De te verplaatsen pagina's mogen niet geblokkeerd zijn vanwege aanpassing.
+  * Om pagina's te verplaatsen heb je ook schrijfrechten nodig in de doelfolder.
+  * Je kunt een pagina niet plaatsen naar een namespace waar al een pagina bestaat met dezelfde naam
+
+Alle links van en naar de pagina zullen geupdated worden naar de nieuwe naam/locatie.

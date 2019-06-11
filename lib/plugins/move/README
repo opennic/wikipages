@@ -1,0 +1,53 @@
+move Plugin for DokuWiki
+
+Move and rename pages and media files while maintaining the links.
+
+All documentation for this plugin can be found at
+http://www.dokuwiki.org/plugin:move
+
+If you install this plugin manually, make sure it is installed in
+lib/plugins/move/ - if the folder is called different it
+will not work!
+
+Please refer to http://www.dokuwiki.org/plugins for additional info
+on how to install plugins in DokuWiki.
+
+----
+Copyright (C) Michael Hamann <michael@content-space.de>,
+              Andreas Gohr <gohr@cosmocode.de>,
+              and others
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See the COPYING file in your DokuWiki folder for details
+
+Sources of the icons contained in images/:
+
+disk.png
+folder_add.png
+page.png
+page_link.png
+
+Silk icon set 1.3
+
+_________________________________________
+Mark James
+http://www.famfamfam.com/lab/icons/silk/
+_________________________________________
+
+Licensed under a
+Creative Commons Attribution 2.5 License.
+[ http://creativecommons.org/licenses/by/2.5/ ]
+
+
+rename.png
+
+SEMLabs Free Web Design Icon Set,
+http://semlabs.co.uk/blog/free-web-design-icon-set/

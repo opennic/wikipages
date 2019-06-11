@@ -1,0 +1,3 @@
+====== Move-Manager =====
+
+Diese Ansicht ermöglicht die Restrukturierung von Namensräumen, Seiten und Mediendateien des Wikis per Drag'n'Drop.

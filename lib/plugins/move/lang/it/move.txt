@@ -1,0 +1,10 @@
+====== Move ======
+
+Questo plugin ti permette di spostare e/o rinominare la pagina corrente o muovere e/o rinominare il namespace corrente, con le seguenti restrizioni:
+
+ * Devi avere i permessi di modificare la pagina corrente/tutte le pagine nel namespace corrente.
+ * Le pagine che verranno mosse non devono essere bloccate per un richiesta di modifica.
+ * Per muovere un pagina hai anche bisogno di creare i permessi nel namespace di destinazione.
+ * Non puoi muovere una pagina verso un namespace dove una pagina con lo stesso nome già esiste.
+
+Tutti i collegamenti verso e dalle pagine che verranno mosse saranno aggiornate in coerenza con la nuova posizione e/o nome.

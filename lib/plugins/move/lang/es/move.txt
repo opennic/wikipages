@@ -1,0 +1,10 @@
+====== Mover ======
+
+Esta extensión le permite mover y/o renombrar el documento actual respetando las siguientes restricciones.
+
+  * Debe tener permisos de edición sobre la página actual.
+  * La página actual no puede ser bloqueada para la edición.
+  * Para mover una página también necesita permiso de creación sobre el directorio de destino.
+  * No puede mover la página a un espacio de nombres donde ya existe una página con el mismo nombre.
+
+Todos los enlaces desde y hacia esta página serán actualizados para reflejar la nueva ubicación y/o nombre.

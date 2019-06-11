@@ -1,0 +1,33 @@
+# This is a list of files that were present in previous plugin releases
+# but were removed later. An up to date plugin should not have any of
+# the files installed
+_action.php
+action.php
+admin.php
+helper.php
+rename.png
+sprite.png
+
+_test/plugin_move_cache_handling.test.php
+_test/mediaindex.test.php
+helper/general.php
+admin/simple.php
+script/move.js
+
+lang/cs/pagemove.txt
+lang/de/pagemove.txt
+lang/en/pagemove.txt
+lang/es/pagemove.txt
+lang/fr/pagemove.txt
+lang/lv/pagemove.txt
+lang/nl/pagemove.txt
+lang/pl/pagemove.txt
+lang/ru/pagemove.txt
+lang/sl/pagemove.txt
+lang/cs/lang.php.txt
+lang/cs/pagemove.txt.txt
+lang/es/lang.php.txt
+lang/es/pagemove.txt.txt
+lang/pl/lang.php.txt
+lang/pl/pagemove.txt.txt
+lang/zh/pagemove.txt

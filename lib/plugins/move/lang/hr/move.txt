@@ -1,0 +1,10 @@
+====== Premjesti ======
+
+Ovaj dodatak omogućava premještanje i/ili preimenovanje trenutne stranice ili imenskog prostora unutar slijedećih ograničenja:
+
+  * Morate imate dopuštenje za izmjenu trenutne ili svih stranicau trenutnom imenskom prostoru.
+  * Stranice koje se premještaju ne smiju biti zaključane.
+  * Za premještanje stranice također morate imati ovlaštenje za kreiranje u odredišnom imenskom prostoru.
+  * Na možete premjestiti stranicu u imenski prostor gdje stranica s istim imenom već postoji.
+
+Sve poveznice na ili sa stranice koja se premješta biti će preusmjerene da pokazuju na novu lokaciju i/ili ime.                  

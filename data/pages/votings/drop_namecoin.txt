@@ -1,0 +1,27 @@
+====== Should OpenNIC drop support for NameCoin ======
+<columns 100% 30% 70%>
+<devote title="NameCoin vote" close="2019-06-25">
+* Drop .bit
+* Keep .bit
+</devote>
+<newcolumn>
+<code>
+Due to numerous problems with support of NameCoin domains, along with their recent article blasting OpenNIC for supporting the .bit TLD, should we the members of OpenNIC continue to provide peering with the NameCoin group or resolve .bit domain names?
+
+
+-- Previous voting proposal from 2018-12-04 --
+
+Over the past year .bit domains have started being used as malware hubs due to their anonymous nature.  Since there is no way to contact the owner of those domains, it creates a backscatter effect and a number of people running public T2 servers have seen domains blacklisted, emails blocked, and shutdown notices from their providers.
+
+As an example I've recently been trying to track today why one of my domains was being blacklisted by malwarebytes, and was provided this link:
+https://www.hybrid-analysis.com/sample/9226d08158c1536dfa7c4f15bbed9fd6b0d6e59880eeaae2143e9025436123a0?environmentId=100
+
+If you scroll down near the bottom to the memory forensics, you'll see a list of what I believe are DNS servers that this virus was using.  I also recognize several other entries in there, including some from .fur.
+
+We know that spamhaus is also blocking IP addresses based on resolving certain .bit domains, and there is no telling how many others may also be blocking based on this sort of information.  The one common thing about all of these malware scanners is that none of them have the courtesy to so much as send an email to abuse@domain to let you know that a problem was detected (one of my own pet peeves, that they claim to be trying to protect the internet but don't give the victims a chance to fix the problems).
+
+We've already seen plenty of malware spread across .bit domains, but there is one other possible scenario to consider... What if law enforcement were to take up the same stance as the malware scanners?  There is the possibility of child pornography also being spread across .bit domains, and since the owners of that content cannot be found it could come back to us (opennic) as the responsible party for making that content more easily available on the internet.  I'm not saying this HAS happened, just that it is worth considering as a worst-case scenario.
+
+So I want to ask if anyone else feels a need to call a vote on dropping .bit specifically, and/or consider a resolution to not peer with groups which have no ability to hold a specific party responsible for the content of their domains.  Yes Opennic is supposed to be an open platform, but keep in mind that by providing .bit domains we are directly responsible for the creation of a whole new class of malware. 
+</code>
+</columns>

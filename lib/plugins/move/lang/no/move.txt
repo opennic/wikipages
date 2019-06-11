@@ -1,0 +1,10 @@
+====== Flytt ====== 
+
+Denne programutvidelse lar deg flytte og/eller endre navn på siden og/eller endre navn må navnerom med følgende restriksjoner: 
+
+ * Du må ha redigeringsrettigheter til siden/sidene i navnerommet. 
+ * Sidene som flyttes må ikke være låst for redigering.
+ * Du må også ha redigeringsrettigheter til navnerommet siden/sidene flyttes til. 
+ * Du kan ikke flytte en side til et navnerom som inneholder en side med samme navn. 
+
+Alle lenker til og fra siden vil bli oppdatert ved flytting.

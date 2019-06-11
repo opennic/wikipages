@@ -1,0 +1,3 @@
+====== Move Manager =====
+
+Met dit interface kun je de namespaces, pagina's en mediabestanden verplaatsen door te slepen.

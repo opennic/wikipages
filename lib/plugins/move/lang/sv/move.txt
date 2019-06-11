@@ -1,0 +1,10 @@
+====== Flytta och byt namn ======
+
+Den här pluginen gör det möjligt att flytta och/eller byta namn på den aktuella sidan och/eller namnrymden. Följande begränsningar gäller:
+
+  * Du måste ha behörighet att redigera nuvarande/alla sidor i aktuell namnrymd.
+  * Sidan/sidorna som flyttas får inte vara låsta.
+  * Om du vill flytta en sida måste du också ha behörighet att skapa dokument in den nya namnrymden.
+  * Det går inte att flytta en sida till en namnrymd där det redan finns en sida med det namn du vill ge sidan.
+
+Alla länkar från alla sidor till sidor som flyttas uppdateras så att de pekar på det nya namnet eller den nya platsen.
