@@ -1,11 +1,27 @@
 {
+    "DilutedSalt": {
+        "c": "Drop .bit",
+        "t": 1560223103
+    },
+    "Eleix": {
+        "c": "Drop .bit",
+        "t": 1560223863
+    },
     "fusl": {
         "c": "Drop .bit",
-        "t": 1560221304
+        "t": 1560224764
+    },
+    "jonaharagon": {
+        "c": "Drop .bit",
+        "t": 1560225252
     },
     "redblade7": {
         "c": "Keep .bit",
-        "t": 1560221566
+        "t": 1560223047
+    },
+    "rouben": {
+        "c": "Drop .bit",
+        "t": 1560225487
     },
     "Shdwdrgn": {
         "c": "Drop .bit",
