@@ -11,11 +11,11 @@
         "c": "Keep .bit",
         "t": 1560235896
     },
-    "DilutedSalt": {
+    "dilutedsalt": {
         "c": "Drop .bit",
         "t": 1560223103
     },
-    "Eleix": {
+    "eleix": {
         "c": "Drop .bit",
         "t": 1560223863
     },
@@ -27,7 +27,7 @@
         "c": "Drop .bit",
         "t": 1560224764
     },
-    "HarukiGrande": {
+    "harukigrande": {
         "c": "Drop .bit",
         "t": 1560254268
     },
@@ -43,7 +43,7 @@
         "c": "Drop .bit",
         "t": 1560225487
     },
-    "Shdwdrgn": {
+    "shdwdrgn": {
         "c": "Drop .bit",
         "t": 1560221163
     },
@@ -51,7 +51,7 @@
         "c": "Drop .bit",
         "t": 1560435821
     },
-    "TWSICommunity": {
+    "twsicommunity": {
         "c": "Drop .bit",
         "t": 1560234038
     }

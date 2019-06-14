@@ -71,6 +71,9 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		global $INFO;
 		global $ACT;
 		global $REV;
+		if (isset($INFO["client"])) {
+			$username = strtolower($INFO["client"]);
+		}
 		$choices = $data["choices"];
 		$title = $data["title"];
 		$closed = $data["closed"];
@@ -80,12 +83,12 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		if (file_exists($filename)) {
 			$votes = json_decode(file_get_contents($filename), true);
 		}
-		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $_REQUEST["devote_formid"] === $votehash && $REV === 0 && !empty($_REQUEST["devote_cast_vote"]) && in_array($_REQUEST["devote_selection"], $choices, true)) {
+		if (!$closed && isset($INFO["client"]) && isset($INFO["userinfo"]) && $ACT === "show" && $_REQUEST["devote_formid"] === $votehash && $REV === 0 && !empty($_REQUEST["devote_cast_vote"]) && in_array($_REQUEST["devote_selection"], $choices, true)) {
 			$fp = fopen($filename, "c+");
 			if (!flock($fp, LOCK_EX | LOCK_NB, $flock_locked) || $flock_locked) {
 				return $this->resubmit_form($renderer, $_REQUEST["devote_formid"], $_REQUEST["devote_selection"], $_REQUEST["devote_cast_vote"], is_numeric($_REQUEST["devote_resubmit_timer"]) ? $_REQUEST["devote_resubmit_timer"] : 0);
 			}
-			$votes[$INFO["client"]] = array(
+			$votes[$username] = array(
 				"c" => $_REQUEST["devote_selection"],
 				"t" => time()
 			);
@@ -125,21 +128,21 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 			$renderer->doc .= '<th class="centeralign">' . hsc($choice) . '</th>';
 		}
 		$renderer->doc .= '</tr>';
-		if (!$closed && isset($INFO["userinfo"]) && $ACT === "show" && $REV === 0) {
+		if (!$closed && isset($INFO["client"]) && isset($INFO["userinfo"]) && $ACT === "show" && $REV === 0) {
 			$renderer->doc .= '<tr>';
 			$renderer->doc .= '<th class="rightalign"><input type="submit" value="Your vote:" name="devote_cast_vote" class="btn btn-default btn-xs"></th>';
-			if (isset($votes[$INFO["client"]]["c"]) && !in_array($votes[$INFO["client"]]["c"], $choices, true)) {
-				$votes[$INFO["client"]]["c"] = "Invalid";
+			if (isset($votes[$username]["c"]) && !in_array($votes[$username]["c"], $choices, true)) {
+				$votes[$username]["c"] = "Invalid";
 			}
 			foreach ($choices as $choice) {
 				$checked = "";
-				if (isset($votes[$INFO["client"]]) && $votes[$INFO["client"]]["c"] === $choice) {
+				if (isset($votes[$username]) && $votes[$username]["c"] === $choice) {
 					$checked = ' checked="checked"';
 				}
 				$renderer->doc .= '<td class="centeralign"><input type="radio" name="devote_selection" value="' . hsc($choice) . '"' . $checked . '></td>';
 			}
 			$renderer->doc .= '</tr>';
-			if (!isset($votes[$INFO["client"]]["c"])) {
+			if (!isset($votes[$username]["c"])) {
 				$renderer->doc .= '<tr>';
 				$renderer->doc .= '<td colspan="' . (sizeof($choices)+1) . '">';
 				$renderer->doc .= '<small>All votes are public visible. Other users are therefore able to tell what you voted on!</small>';
