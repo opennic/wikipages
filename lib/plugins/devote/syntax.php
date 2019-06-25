@@ -25,13 +25,17 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		preg_match_all("/(\w+?)=\"(.*?)\"/", $parameterStr, $regexMatches, PREG_SET_ORDER);
 		$title = "";
 		$closed = false;
+		$closets = false;
 		for ($i = 0; $i < sizeof($regexMatches); $i++) {
 			$name  = strtoupper($regexMatches[$i][1]);
 			$value = $regexMatches[$i][2];
 			if ($name === "TITLE") {
 				$title = trim($value);
-			} elseif ($name === "CLOSE" && ($timestamp = strtotime($value)) !== false && time() > $timestamp) {
+			} elseif ($name === "CLOSE" && ($timestamp = strtotime($value)) && time() >= $timestamp) {
 				$closed = true;
+			}
+			if ($name === "CLOSE") {
+				$closets = strtotime($value);
 			}
 		}
 		$choices = array();
@@ -50,7 +54,8 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		return array(
 			"choices" => $choices,
 			"title" => $title,
-			"closed" => $closed
+			"closed" => $closed,
+			"closets" => $closets
 		);
 	}
 	private function resubmit_form($renderer, $formid, $selection, $cast_vote, $resubmit_timer) {
@@ -77,6 +82,10 @@ class syntax_plugin_devote extends DokuWiki_Syntax_Plugin {
 		$choices = $data["choices"];
 		$title = $data["title"];
 		$closed = $data["closed"];
+		$closets = $data["closets"];
+		if (!$closed && $closets && time() >= $closets) {
+			$closed = true;
+		}
 		$votehash = md5("devote_" . $title);
 		$votes = array();
 		$filename = metaFN($votehash, ".devote");
