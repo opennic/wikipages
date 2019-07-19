@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+exit 0
+
+cur_ts=$(date +%s)
+TZ=Etc/UTC date -Is
+
+# mountpoint /wiki > /dev/null 2> /dev/null || exit 0
+
+if test -f /wiki/.gitsync.lock; then
+	lock_ts=$(cat /wiki/.gitsync.lock)
+	if [ "$((${lock_ts}+7200))" -lt "${cur_ts}" ]; then
+		rm -f /wiki/.gitsync.lock
+	else
+		exit 0
+	fi
+fi
+
+if ( set -o noclobber; echo "${cur_ts}" > /wiki/.gitsync.lock ) 2> /dev/null; then
+	trap 'rm -f /wiki/.gitsync.lock' INT TERM EXIT
+	cd /wiki
+	rm -f /wiki/.git/index.lock
+	git add -A
+	if test "${1}" == "force" || git commit -m "$(TZ=Etc/UTC date -Is)"; then
+		for remote in $(git remote); do
+			GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" git push --force "${remote}" master
+		done
+	fi
+	rm -f /wiki/.gitsync.lock
+	trap - INT TERM EXIT
+	exit 0
+else
+	exit 0
+fi
