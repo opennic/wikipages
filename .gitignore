@@ -1,9 +1,13 @@
 data/index/*.idx
 data/cache/*
+!data/cache/_dummy
 data/locks/*.lock
 data/tmp/*
+!data/tmp/_dummy
 data/attic/*
+!data/attic/_dummy
 data/media_attic/*
+!data/media_attic/_dummy
 conf/users.auth.php
 conf/local.protected.php
 data/meta/*
