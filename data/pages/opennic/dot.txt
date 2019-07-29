@@ -39,7 +39,6 @@ These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, i
 ^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com |
 ^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com |
 ^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns11.nic.fur |
-^ [[https://namecoin.org/|Namecoin]]      | .bit                              | Namecoin systems, websites and services | ns9 |
 ^ [[http://new-nations.net/|New Nations]] | .ku                               | Kurdish people | ns1.new-nations.ku\\ ns2.new-nations.ku |
 ^ :::                                     | .te                               | Tamil Eelam | ns1.new-nations.ku\\ ns2.new-nations.ku |
 ^ :::                                     | .ti                               | Tibet | ns1.new-nations.ku\\ ns2.new-nations.ku |
