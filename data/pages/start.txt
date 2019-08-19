@@ -4,7 +4,7 @@
 ===== About OpenNIC =====
 OpenNIC (also referred to as the OpenNIC Project) is a user owned and controlled top-level Network Information Center offering a non-national alternative to traditional Top-Level Domain (TLD) registries; such as ICANN.
 
-Use of OpenNIC DNS servers, enables host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and namespaces the OpenNIC has peering agreements with.
+Use of OpenNIC DNS servers, enables host name resolution in the Legacy U.S. Government DNS, OpenNIC operated namespaces, and namespaces that OpenNIC has peering agreements with.
 
 ===== This Wiki =====
 This wiki is a limited access work area for OpenNIC documentation and other related content. In accordance with OpenNICs philosophy, all notes and documents are world-readable. Write access is restricted to participants relevant for this specific project; to provide quality content and have cross-verification by other members.
