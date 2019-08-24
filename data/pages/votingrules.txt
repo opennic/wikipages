@@ -5,40 +5,40 @@
 
 BEFORE you begin a proposal, you MUST meet the following requirements:
 
-- You MUST have an operational Tier 1 DNS server. This server must mirror the root data of the root “.” zone and all the zone data for each OpenNIC TLD. This server MUST pass the Tier 1 server test: http://report.opennicproject.org/t2log/t1.php
-- You MUST have a website accessible at www.opennic.[TLD] with the following information:
-- A copy of your charter (detailed below in this document)
-- Information on how to register a new domain
-- Administrative contacts
-- You MUST accept and process emails to the following addresses, and they must be listed on your website detailed above.
-- hostmaster@opennic.[TLD] — SHOULD be delivered to the DNS administration team for your TLD.
-- abuse@opennic.[TLD] — SHOULD be delivered to your abuse handling team (dealing with spam, malware, or other charter violators)
-- webmaster@opennic.[TLD] — SHOULD be delivered to the web presence team for your TLD.
-- You MUST publish and enforce a charter, which satisfies the following requirements:
-- Your charter MUST clearly explain the purpose of your TLD (possibly including a brief description and/or examples of domains and content to be hosted)
-- It MUST include a description of content that will not be allowed on your domain (for example: trademarked names, malware hosts)
-- It SHOULD NOT conflict with existing OpenNIC policies.
-- It SHOULD include descriptions on how amendments to your charter will be handled. If no amendment clauses are included, changes will be handled in accordance to the current OpenNIC voting policies.
+  * You MUST have an operational Tier 1 DNS server. This server must mirror the root data of the root “.” zone and all the zone data for each OpenNIC TLD. This server MUST pass the Tier 1 server test: http://report.opennicproject.org/t2log/t1.php
+  * You MUST have a website accessible at www.opennic.[TLD] with the following information:
+  * A copy of your charter (detailed below in this document)
+  * Information on how to register a new domain
+  * Administrative contacts
+  * You MUST accept and process emails to the following addresses, and they must be listed on your website detailed above.
+  * hostmaster@opennic.[TLD] — SHOULD be delivered to the DNS administration team for your TLD.
+  * abuse@opennic.[TLD] — SHOULD be delivered to your abuse handling team (dealing with spam, malware, or other charter violators)
+  * webmaster@opennic.[TLD] — SHOULD be delivered to the web presence team for your TLD.
+  * You MUST publish and enforce a charter, which satisfies the following requirements:
+  * Your charter MUST clearly explain the purpose of your TLD (possibly including a brief description and/or examples of domains and content to be hosted)
+  * It MUST include a description of content that will not be allowed on your domain (for example: trademarked names, malware hosts)
+  * It SHOULD NOT conflict with existing OpenNIC policies.
+  * It SHOULD include descriptions on how amendments to your charter will be handled. If no amendment clauses are included, changes will be handled in accordance to the current OpenNIC voting policies.
 
 Additionally, you MUST meet the following requirements before proposing your TLD to the community:
 
-- You MUST have operated a Tier 2 DNS server continuously for at least 3 months, and said DNS server MUST be in operation while your TLD is being considered.
-- You should keep this DNS server in operation following the approval of your TLD.
-- You MUST have a process for users to register domains. Domain registrations SHOULD be provided free of charge, and an automated domain registration system is RECOMMENDED.
-- You SHOULD have an administration team gathered. Your team can consist of as many people as needed, or a single person, but it MUST be able to handle DNS Administration, Webmaster Related, and Abuse Report requests effectively.
+  * You MUST have operated a Tier 2 DNS server continuously for at least 3 months, and said DNS server MUST be in operation while your TLD is being considered.
+  * You should keep this DNS server in operation following the approval of your TLD.
+  * You MUST have a process for users to register domains. Domain registrations SHOULD be provided free of charge, and an automated domain registration system is RECOMMENDED.
+  * You SHOULD have an administration team gathered. Your team can consist of as many people as needed, or a single person, but it MUST be able to handle DNS Administration, Webmaster Related, and Abuse Report requests effectively.
 
 OPTIONALLY: You may wish to informally request feedback from the community and experienced members before pushing your TLD proposal to a formal discussion. While not required, it can help you prepare for your TLD proposal by satisfying some requests the community has before official judging.
 
-- Consider starting a discussion on the #opennic IRC channel on Freenode to get faster feedback from some experienced members of the community. Make sure you stick around on the channel throughout the discussion to answer any questions some may have.
-- You can also start a new thread on the Mailing List with a brief description of your TLD, ensuring it is clear this is just an informal discussion on the matter. Make sure you are available to answer questions and take advice from the community, which you may be able to implement either technically or in your charter before a formal discussion.
+  * Consider starting a discussion on the #opennic IRC channel on Freenode to get faster feedback from some experienced members of the community. Make sure you stick around on the channel throughout the discussion to answer any questions some may have.
+  * You can also start a new thread on the Mailing List with a brief description of your TLD, ensuring it is clear this is just an informal discussion on the matter. Make sure you are available to answer questions and take advice from the community, which you may be able to implement either technically or in your charter before a formal discussion.
 
 After you have satisfied ALL of the above requirements, you may proceed to submit your TLD for formal discussion and a vote.
 
 Start a discussion by sending an email to the Mailing List, with the subject line: “[DISCUSSION] ‘.{TLD}’ Proposal” (replacing {TLD} with your namespace). This email MUST include the following:
 
-- A copy of the charter, which may be pasted in-line, linked to, or attached as a PDF. If you choose to link to your charter, it MUST be accessible from a location other than your www.opennic.tld homepage, as no community members will be able to access that site prior to your TLD being approved.
-- The IP address(es) of your Tier 1 server(s) that will be added following the approval of your TLD.
-- Your OpenNIC Member username.
+  * A copy of the charter, which may be pasted in-line, linked to, or attached as a PDF. If you choose to link to your charter, it MUST be accessible from a location other than your www.opennic.tld homepage, as no community members will be able to access that site prior to your TLD being approved.
+  * The IP address(es) of your Tier 1 server(s) that will be added following the approval of your TLD.
+  * Your OpenNIC Member username.
 
 NOTE: DO NOT send this email as a reply to another thread. You MUST start a discussion thread by sending a new message to discuss AT lists.opennicproject.org.
 
@@ -46,32 +46,32 @@ After a minimum of 7 days following your discussion thread, you may begin a vote
 
 The email MUST include the following:
 
-- A deadline for votes, at least 7 days following the post date of your thread. This should be a clear date and time (in UTC).
-- A linked or attached final copy of the charter.
+  * A deadline for votes, at least 7 days following the post date of your thread. This should be a clear date and time (in UTC).
+  * A linked or attached final copy of the charter.
 <newcolumn>
 === Voting Thread Formatting ===
 
 For the sake of clarity, formal Mailing List threads MUST begin with the following prefixes, depending on the content of the message:
 
-- “[DISCUSSION]”, or “[PROPOSAL]” — For formal discussions or proposals of official policies or changes that will eventually lead to a vote.
-- “[VOTE]” — Indicates an official voting thread.
+  * “[DISCUSSION]”, or “[PROPOSAL]” — For formal discussions or proposals of official policies or changes that will eventually lead to a vote.
+  * “[VOTE]” — Indicates an official voting thread.
 
 Voting threads MUST include the following information:
 
-- A deadline, at least 7 days following the post date of the voting thread. It must include a clear date and time (in UTC). Acceptable formats include, for example: “January 21st, 2018 at 8:00 PM UTC” or “2018-01-21, 20:00”.
-- A link to the original discussion thread, in the form of an archive link, for example: https://lists.opennicproject.org/sympa/arc/discuss/2017-10/msg00021.html. These links are accessible at https://lists.opennicproject.org/
-- A brief description of what the vote is on, and exactly what will happen depending on the outcome.
+  * A deadline, at least 7 days following the post date of the voting thread. It must include a clear date and time (in UTC). Acceptable formats include, for example: “January 21st, 2018 at 8:00 PM UTC” or “2018-01-21, 20:00”.
+  * A link to the original discussion thread, in the form of an archive link, for example: https://lists.opennicproject.org/sympa/arc/discuss/2017-10/msg00021.html. These links are accessible at https://lists.opennicproject.org/
+  * A brief description of what the vote is on, and exactly what will happen depending on the outcome.
 
 They SHOULD also include the following:
 
-- The subject line following [VOTE] should be the same as the subject line on your discussion thread.
-- The community’s options for voting, if not a simple YES/NO.
-- A timeline of when your vote will go into place, if not an immediate change. You may also wish to include reasoning why your proposal won’t enter into effect immediately, if applicable.
+  * The subject line following [VOTE] should be the same as the subject line on your discussion thread.
+  * The community’s options for voting, if not a simple YES/NO.
+  * A timeline of when your vote will go into place, if not an immediate change. You may also wish to include reasoning why your proposal won’t enter into effect immediately, if applicable.
 
 Following the vote, the original author of the thread MUST summarize the results in a reply, signifying the vote has closed. The closing email SHOULD be sent as close as possible to the posted deadline, but never before. The closing email MUST include the following:
 
-- A count of the votes, either briefly summarized or in a YES-NO format (for example: “The vote has ended with 9 YES votes and 12 NO votes”, or simply “9-12”).
-- A description of when the community should expect the proposal to be completely implemented.
+  * A count of the votes, either briefly summarized or in a YES-NO format (for example: “The vote has ended with 9 YES votes and 12 NO votes”, or simply “9-12”).
+  * A description of when the community should expect the proposal to be completely implemented.
 <newcolumn>
 === DNS Server Operator Requirements ===
 
@@ -79,22 +79,22 @@ Tier 1 Operators (the DNS Administrators for each TLD) are expected to maintain 
 
 Tier 1 Operators:
 
-- MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 1 Testing tool. 
-- MUST be accessible for communication from both the public and private email address(es) listed on their community member profile.
-- MUST be able to maintain reasonable uptime for their servers, unless they can explain exceptional circumstances on a Mailing List discussion thread and temporarily disable their server listing.
-- MUST operate their server indefinitely.
-- SHOULD be actively operating a TLD. Tier 1 servers without a corresponding TLD should immediately be considered for removal, unless they provide some other functionality or utility outside the operation of an independent zone.
-- SHOULD be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
+  * MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 1 Testing tool. 
+  * MUST be accessible for communication from both the public and private email address(es) listed on their community member profile.
+  * MUST be able to maintain reasonable uptime for their servers, unless they can explain exceptional circumstances on a Mailing List discussion thread and temporarily disable their server listing.
+  * MUST operate their server indefinitely.
+  * SHOULD be actively operating a TLD. Tier 1 servers without a corresponding TLD should immediately be considered for removal, unless they provide some other functionality or utility outside the operation of an independent zone.
+  * SHOULD be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
 
 Tier 2 Operators (DNS Resolvers) are expected to maintain some minimum specifications for a long-term period of time to maintain stability. This section only applies to operators running public servers listed on servers.opennic.org.
 
 Tier 2 Operators:
 
-- MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 2 Testing tool.
-- MUST be able to receive automated alerts to the private email listed on their community member profile.
-- MUST be willing to make every attempt to operate their servers in the long-term (1+ years), barring extraordinary circumstances.
-- MUST NOT block any otherwise valid DNS requests, unless the Blacklisting flag is set on their public listing.
-- SHOULD NOT log any personally identifiable data for users of their servers.
-- SHOULD NOT operate from a country that censors web content.
-- OPTIONALLY be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
+  * MUST be able to keep their server up-to-date and compliant with the OpenNIC infrastructure specification, as defined by the official Tier 2 Testing tool.
+  * MUST be able to receive automated alerts to the private email listed on their community member profile.
+  * MUST be willing to make every attempt to operate their servers in the long-term (1+ years), barring extraordinary circumstances.
+  * MUST NOT block any otherwise valid DNS requests, unless the Blacklisting flag is set on their public listing.
+  * SHOULD NOT log any personally identifiable data for users of their servers.
+  * SHOULD NOT operate from a country that censors web content.
+  * OPTIONALLY be available on the #opennic IRC channel on Freenode, for immediate alerts to issues that may be time-sensitive.
 </columns>
