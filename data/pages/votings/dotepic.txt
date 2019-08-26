@@ -1,0 +1,15 @@
+====== Should OpenNIC add .epic as a new zone? ======
+<columns 100% 30% 70%>  * Unordered List Item
+<devote title=".epic vote" close="2019-09-03">
+* Add .epic
+* Don't add .epic
+</devote>
+<newcolumn>
+<code>
+.epic is a new TLD proposal for OpenNIC.
+
+A link to the charter can be found here: https://epic.okashi.me/charter.html
+
+Voting ends at Tuesday, September 3, 2019, at 00:00 UTC.
+</code>
+</columns>
