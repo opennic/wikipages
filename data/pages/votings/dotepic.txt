@@ -1,5 +1,5 @@
 ====== Should OpenNIC add .epic as a new zone? ======
-<columns 100% 30% 70%>  * Unordered List Item
+<columns 100% 30% 70%>
 <devote title=".epic vote" close="2019-09-03">
 * Add .epic
 * Don't add .epic
