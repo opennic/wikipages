@@ -3,6 +3,10 @@
         "c": "Add .epic",
         "t": 1566853207
     },
+    "flewkey": {
+        "c": "Add .epic",
+        "t": 1566864538
+    },
     "fusl": {
         "c": "Don't add .epic",
         "t": 1566853234
@@ -14,5 +18,9 @@
     "redblade7": {
         "c": "Add .epic",
         "t": 1566853195
+    },
+    "vvande": {
+        "c": "Add .epic",
+        "t": 1566861892
     }
 }
