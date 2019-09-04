@@ -1,0 +1,25 @@
+======.epic TLD======
+.epic is a general purpose TLD for whatever you might find, as the name suggests, epic.
+
+
+=====Registration=====
+Registrations are currently manual, so to register a domain, email okashi@okashi.me or okashi@opennic.epic the following:
+    * Email address
+    * Desired domain
+    * The records you want to add to the domain, OR a nameserver you can use as a DNS server.
+=====Charter=====
+====Policies====
+The following things are not accepted and will result in revocation of your domain:
+    * Squatting
+    * Distribution of child pornography
+    * Running a spam/CnC site, or otherwise distributing malware.
+    * Any other violation of US or German law, or means to facilitate such.
+
+In addition, domains in serious violation of US or German law (such as those distribtuing child pornography) WILL be reported to the appropriate federal authorities.
+If you see any violation of the rules, please report it to the 'abuse' address below.
+
+=====Contacts=====
+     * Abuse: abuse@opennic.epic
+     * Hostmaster: hostmaster@opennic.epic
+     * Webmaster: webmaster@opennic.epic
+     * Registration/General inquiries: okashi@opennic.epic or okashi@okashi.me
