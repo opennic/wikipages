@@ -3,10 +3,9 @@
 
 
 =====Registration=====
-Registrations are currently manual, so to register a domain, email okashi@okashi.me or okashi@opennic.epic the following:
-    * Email address
-    * Desired domain
-    * The records you want to add to the domain, OR a nameserver you can use as a DNS server.
+Registrations are via http://opennic.epic or https://epic.okashi.me. Register for an account and register for a domain via the web interface.
+
+
 =====Charter=====
 ====Policies====
 The following things are not accepted and will result in revocation of your domain:
