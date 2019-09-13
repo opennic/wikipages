@@ -50,7 +50,8 @@ $conf['plugin']['captcha']['mode'] = 'image';
 $conf['plugin']['captcha']['lettercount'] = 4;
 $conf['plugin']['captcha']['width'] = 250;
 $conf['plugin']['captcha']['height'] = 50;
-$conf['plugin']['authldap']['server'] = 'ldaps://onic-ldap.meo.ws';
+//$conf['plugin']['authldap']['server'] = 'ldaps://onic-ldap.meo.ws';
+$conf['plugin']['authldap']['server'] = 'ldaps://ldap.sourpuss.net';
 $conf['plugin']['authldap']['port'] = 636;
 $conf['plugin']['authldap']['usertree'] = 'o=users, dc=opennic,dc=glue';
 $conf['plugin']['authldap']['grouptree'] = 'o=groups, dc=opennic,dc=glue';
@@ -73,3 +74,4 @@ $conf['tpl']['bootstrap3']['showPageIcons'] = 1;
 $conf['plugin']['fastwiki']['fastshow'] = '1';
 
 // end auto-generated content
+$conf['allowdebug'] = 0;
