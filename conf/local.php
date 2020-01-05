@@ -75,4 +75,3 @@ $conf['plugin']['fastwiki']['fastshow'] = '1';
 
 // end auto-generated content
 $conf['allowdebug'] = 0;
-$conf['plugin']['authldap']['debug'] = 1;
