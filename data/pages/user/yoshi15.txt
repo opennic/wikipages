@@ -1,1 +1,3 @@
-<button type="primary" size="sm" icon="fa fa-lock"></button>
+<button type="success" size="sm" icon="fa spinner-pulse"></button>
+{{fa>spinner?pulse}}
+<callout type="tip" color="green" icon="fa fa-arrow-right"></callout>
