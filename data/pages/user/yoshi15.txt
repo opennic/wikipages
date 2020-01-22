@@ -1,3 +1,15 @@
-<button type="success" size="sm" icon="fa spinner-pulse"></button>
-{{fa>spinner?pulse}}
+<page-header>
+<label type="success" icon="fa fa-gears"></label>
+</page-header>
+
+
+<panel type="default" title="yoshi15" footer="home" subtitle="openNIC" icon="fa fa-info">
+
+<panel-body>
+
 <callout type="tip" color="green" icon="fa fa-arrow-right"></callout>
+<button type="link" size="xs" icon="fa fa-terminal" modal="true"></button>
+
+</panel-body>
+
+</panel>
