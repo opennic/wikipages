@@ -41,9 +41,11 @@ These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, i
 ^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com |
 ^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns11.nic.fur |
 ^ [[http://new-nations.net/|New Nations]] | .ku                               | Kurdish people | ns1.new-nations.ku\\ ns2.new-nations.ku |
-^ :::                                     | .te                               | Tamil Eelam | ns1.new-nations.ku\\ ns2.new-nations.ku |
-^ :::                                     | .ti                               | Tibet | ns1.new-nations.ku\\ ns2.new-nations.ku |
-^ :::                                     | .uu                               | Uyghur people | ns1.new-nations.ku\\ ns2.new-nations.ku |
+^ :::                                     | .te                               | Tamil Eelam | ns1.new-nations.te\\ ns2.new-nations.te |
+^ :::                                     | .ti                               | Tibet | ns1.new-nations.ti\\ ns2.new-nations.ti |
+^ :::                                     | .uu                               | Uyghur people | ns1.new-nations.uu\\ ns2.new-nations.uu |
+^ :::                                     | .ko                               | Internal use | ns1.new-nations.ko\\ ns2.new-nations.ko |
+^ :::                                     | .rm                               | Internal use | ns1.new-nations.rm\\ ns2.new-nations.rm |
 
 ===== Technical Zones =====
 
