@@ -1,0 +1,7 @@
+====== RootWyrm ======
+
+**Please for the love of all that is holy, write my name correctly.**
+  * OK: RootWyrm, rootwyrm
+  * Not OK: Rootwyrm, rootWyrm, root wyrm, Root Wyrm
+
+I'm a 30+ year veteran of DNS infrastructure, with expertise in NSD and Bind, primarily at large to very large scale.
