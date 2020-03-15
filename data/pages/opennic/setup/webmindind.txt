@@ -1,2 +1,10 @@
-===== Using Webmin =====
+===== Installing using Webmin =====
+Webmin provides more than just some webforms, it is part of a fully rounded virtualization and cloud platform. Virtualmin and Cloudmin are used to create complex networks, and they install on top of a brand new BIND instance. Webmin is the glue holding the networks together by installing its own perl-based web services and the standard GNU/Linux technology stack. Webmin is libre as most frameworks are, while Virtualmin and Cloudmin are the support-subscriptions keeping www.virtualmin.com in business.
+
+==== Requirements ====
+
+  * Internet Standards (RFCs) require 2 but recommend 3 BIND instances, on 2 independent networks (I use and recommend Linode and OVH).
+  * Both IP4 and IP6 must be configured, Reverse DNS hostnames recommended. Port 53 for both TCP and UDP must be open (also TCP 22, 10000 for ssh and Webmin).
+
+Start from a recent Debian release, ssh into the VPS and make sure locale are set:
 
