@@ -6,14 +6,42 @@ Webmin provides more than just some webforms, it is part of a fully rounded virt
   * Internet Standards (RFCs) require 2 but recommend 3 BIND instances, on 2 independent networks (I use and recommend Linode and OVH).
   * Both IP4 and IP6 must be configured, Reverse DNS hostnames recommended. Port 53 for both TCP and UDP must be open (also TCP 22, 10000 for ssh and Webmin).
 
-The following describes the required state of the VPS - before installing DNS. You may use other than Linode for this but be be advised that GCE, AWS, DigitalOcean are not NOT going to allow for one or the other (GCE does not provide  IP6 rDNS, for example).
+The following describes the required state of the VPS - before installing DNS. You may use other than Linode for this but be advised that most provider like GCE, AWS, DigitalOcean are not NOT going to allow for one or the other (GCE does not provide  IP6 rDNS, for example).
 
-Linode Start from a recent Debian release, ssh into the VPS and make sure locale are set:
+Here we start from a recent Debian release by Linode. At the time of writing that is Debian 9, and we recommend you  install the smallest "Nanode 1GB RAM" instance.
+  * Do not use ssh keys for now, install with a strong root password.
+  * Buy the backup for this Linode, and use the snapshot before each Debian upgrade.
+  * Review the values in the "Notification Thresholds" to be alerted during attacks.
+
+This is not a tutorial on mitigating attacks against your instance, and secure configuration is not going to alter the requirements: you may later replace the root login with another, configure ssh keys, install a different firewall, change default ports, filter for login source IP, limit the number of attempts, etc... Here we create a functional node and leave the rest for a different wiki.
 <code>
 apt-get -y update
-apt-get -y install nano apt-transport-https tzdata
+apt-get -y install nano apt-transport-https tzdata dnsutils
 apt-get -y install locales
 locale-gen "en_US.UTF-8"
 dpkg-reconfigure tzdata
+apt-get install firewalld
+
+firewall-cmd --permanent --add-service={https} --permanent
+firewall-cmd --add-port=22/tcp --permanent
+firewall-cmd --add-port=10000-10100/tcp --permanent
+firewall-cmd --add-port=53/tcp --permanent
+firewall-cmd --add-port=53/udp --permanent
+firewall-cmd  --add-service=dns --permanent
+firewall-cmd --reload
 </code>
+
+At this point it is a good idea to reboot, to make sure you are still able to ssh into the instance. Then install webmin.
+<code>
+echo “deb https://download.webmin.com/download/repository sarge contrib” | sudo tee -a /etc/apt/sources.list.d/sources.list
+wget http://www.webmin.com/jcameron-key.asc
+apt-key add jcameron-key.asc
+apt-get update
+apt-get -y install webmin
+</code>
+
+Access your instance from the browser, by the IP4 address, at the default port 10000. I would recommend to continue all other installation and configuration from Webmin, for several reasons. Also, this is a good time to take your first snapshot.
+  * If something breaks lets allow Webmin to break it, that was the fix is going to benefit everyone
+  * If something is not fully functional make a note of it NOW - document your own progress
+  * If something is not available make a note of it NOW - and ask to be implemented
 
