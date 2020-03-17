@@ -6,5 +6,14 @@ Webmin provides more than just some webforms, it is part of a fully rounded virt
   * Internet Standards (RFCs) require 2 but recommend 3 BIND instances, on 2 independent networks (I use and recommend Linode and OVH).
   * Both IP4 and IP6 must be configured, Reverse DNS hostnames recommended. Port 53 for both TCP and UDP must be open (also TCP 22, 10000 for ssh and Webmin).
 
-Start from a recent Debian release, ssh into the VPS and make sure locale are set:
+The following describes the required state of the VPS - before installing DNS. You may use other than Linode for this but be be advised that GCE, AWS, DigitalOcean are not NOT going to allow for one or the other (GCE does not provide  IP6 rDNS, for example).
+
+Linode Start from a recent Debian release, ssh into the VPS and make sure locale are set:
+<code>
+apt-get -y update
+apt-get -y install nano apt-transport-https tzdata
+apt-get -y install locales
+locale-gen "en_US.UTF-8"
+dpkg-reconfigure tzdata
+</code>
 
