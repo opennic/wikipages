@@ -44,3 +44,5 @@ This is a good time to take your first snapshot. Access your instance from the b
   * If something breaks lets allow Webmin to break it, that was the fix is going to benefit everyone
   * If something is not fully functional make a note of it NOW - document your own progress
   * If something is not available make a note of it NOW - and ask to be implemented
+
+==== Anchoring the Host ====
