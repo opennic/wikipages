@@ -40,7 +40,7 @@ apt-get update
 apt-get -y install webmin
 </code>
 
-Access your instance from the browser, by the IP4 address, at the default port 10000. I would recommend to continue all other installation and configuration from Webmin, for several reasons. Also, this is a good time to take your first snapshot.
+This is a good time to take your first snapshot. Access your instance from the browser, by the IP4 address, at the default port 10000. I would recommend to continue all other installation and configuration from Webmin, for several reasons. 
   * If something breaks lets allow Webmin to break it, that was the fix is going to benefit everyone
   * If something is not fully functional make a note of it NOW - document your own progress
   * If something is not available make a note of it NOW - and ask to be implemented
