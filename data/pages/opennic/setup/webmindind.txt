@@ -22,7 +22,7 @@ locale-gen "en_US.UTF-8"
 dpkg-reconfigure tzdata
 apt-get install firewalld
 
-firewall-cmd --permanent --add-service={https} --permanent
+firewall-cmd --add-service=https --permanent
 firewall-cmd --add-port=22/tcp --permanent
 firewall-cmd --add-port=10000-10100/tcp --permanent
 firewall-cmd --add-port=53/tcp --permanent
@@ -33,7 +33,7 @@ firewall-cmd --reload
 
 At this point it is a good idea to reboot, to make sure you are still able to ssh into the instance. Then install webmin.
 <code>
-echo “deb https://download.webmin.com/download/repository sarge contrib” | sudo tee -a /etc/apt/sources.list.d/sources.list
+echo 'deb https://download.webmin.com/download/repository sarge contrib' | sudo tee -a /etc/apt/sources.list.d/sources.list
 wget http://www.webmin.com/jcameron-key.asc
 apt-key add jcameron-key.asc
 apt-get update
@@ -44,4 +44,3 @@ This is a good time to take your first snapshot. Access your instance from the b
   * If something breaks lets allow Webmin to break it, that was the fix is going to benefit everyone
   * If something is not fully functional make a note of it NOW - document your own progress
   * If something is not available make a note of it NOW - and ask to be implemented
-
