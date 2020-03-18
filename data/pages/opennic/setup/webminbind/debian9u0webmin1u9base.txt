@@ -45,7 +45,7 @@ NS13.OPENNIC.GLUE.      3600000      A     144.76.103.143
 NS13.OPENNIC.GLUE.      3600000      AAAA  2a01:4f8:192:43a5::2
 </code>
 
-==== named.con.default-zones ====
+==== named.conf.default-zones ====
 The content of this file not supposed to be changed by hand, and a new BIND instance has it as: 
 <code>
 // prime the server with knowledge of the root servers
@@ -79,3 +79,33 @@ zone "255.in-addr.arpa" {
 </code>
 
 As you see, the db.root file is included here, and the rest of the file content has to do with proper networking setup on the host. Later while adding / removing name servers the two most common directives added by Webmin going to be "also-notify" and "allow-transfer".
+
+==== named.conf ====
+This file should not be edited by hand, and it is not edited by Webmin:
+<code>
+// This is the primary configuration file for the BIND DNS server named.
+//
+// Please read /usr/share/doc/bind9/README.Debian.gz for information on the 
+// structure of BIND configuration files in Debian, *BEFORE* you customize 
+// this configuration file.
+//
+// If you are just adding zones, please do that in /etc/bind/named.conf.local
+
+include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
+include "/etc/bind/named.conf.default-zones";
+</code>
+
+The file //named.conf.default-zones// includes //db.root//, and the file //named.conf.options// holds the BIND daemon's operating parameters.
+
+The file //named.conf.local// going to hold our primary and slave zones (called domains). Before we start up lets archive /etc/bind to save the original configuration.
+
+==== Backup and Archive====
+The difference between backup and archive is the location where they are stored - one is on-line, but going to be lost when the host is lost. The other is off-line, but remains available. Linode provides a manual snapshot and three automated backups which are rotated - for the entire VPS. Webmin provides manual and scheduled backup on select part of the file system, which you may also download / push off-line. The screenshot shows the Webmin //tar// and //cron// interface.
+{{:opennic:setup:webminbind:base-003.png|Webmin Filesystem Backup with scheduling}}
+
+DNS is all about redundancy, so configuring email notification about backup - or any other status - is rather pointless. If your instance goes down for any reason it may stay down until you come around to visit and check on it (once a week, maybe).
+
+==== Start BIND  ====
+Once you create and RESTORE the backup, and manage to download the tar file next replace the content in db.root as shown above. Then hit "play" on the upper right to start BIND.
+
