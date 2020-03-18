@@ -1,3 +1,11 @@
 ===== Debian 9 with Webmin 1.9xx Fresh Install =====
 Again, please make sure you install from within Webmin (Unused Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
 {{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
+
+In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a play button starts the service. Before we start, however, lets look at the //home// of bind9.
+{{:opennic:setup:webminbind:base-002.png|The location and content of BIND's home}}
+
+Those which are going to be our concern are discussed below, the rest shall be ignored.
+
+==== db.root ====
+This file has a single-button Webmin interface control, with the only function to re-download the root servers list from the InterNIC-side ftp server. OpenNIC have the same list, and Tier-1 servers need to replace the content of this file with the content from . . . 
