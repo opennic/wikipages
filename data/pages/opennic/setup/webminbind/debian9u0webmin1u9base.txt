@@ -98,7 +98,7 @@ include "/etc/bind/named.conf.default-zones";
 
 The file //named.conf.default-zones// includes //db.root//, and the file //named.conf.options// holds the BIND daemon's operating parameters.
 
-The file //named.conf.local// going to hold our primary and slave zones (called domains). Before we start up lets archive /etc/bind to save the original configuration.
+The file //named.conf.local// going to hold our master and slave zones (called domains). Before we start up lets archive /etc/bind to save the original configuration.
 
 ==== Backup and Archive====
 The difference between backup and archive is the location where they are stored - one is on-line, but going to be lost when the host is lost. The other is off-line, but remains available. Linode provides a manual snapshot and three automated backups which are rotated - for the entire VPS. Webmin provides manual and scheduled backup on select part of the file system, which you may also download / push off-line. The screenshot shows the Webmin //tar// and //cron// interface.
@@ -107,5 +107,41 @@ The difference between backup and archive is the location where they are stored 
 DNS is all about redundancy, so configuring email notification about backup - or any other status - is rather pointless. If your instance goes down for any reason it may stay down until you come around to visit and check on it (once a week, maybe).
 
 ==== Start BIND  ====
-Once you create and RESTORE the backup, and manage to download the tar file next replace the content in db.root as shown above. Then hit "play" on the upper right to start BIND.
+Once you create and RESTORE the backup, and manage to download the tar file, replace the content in db.root as shown above. Then hit "play" on the upper right to start BIND.
+
+=== Setup RNDC ===
+This is going to fail if, for any reason, the loop-back interface (127.0.0.1) is blocked by the provider. There might be other reasons, but in most cases you are going to see a success message if you visit the same screen the second time. On the //DNS Keys// screen you should see the //rndc-key// as well. The file named.conf now contains the RNDC setup:
+<code>
+include "/etc/bind/named.conf.options";
+include "/etc/bind/named.conf.local";
+include "/etc/bind/named.conf.default-zones";
+key rndc-key {
+	algorithm hmac-md5;
+	secret "abcdefghifklmnopqrstuv==";
+	};
+controls {
+	inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { rndc-key; };
+	};
+</code>
+
+=== Zone Defaults ===
+This configures the default options for master zones, and some of the defaults should be set as shown:
+{{:opennic:setup:webminbind:base-004.png|Default for Master Zones}}
+
+What is not shown depends on your installation. The screenshot shows the current host name - which you should ignore. Instead enter the FQDN of your name server, NSx.YOURDOMAIN.TLD or NSx.SUBDOMAIN.YOURDOMAIN.TLD. Consequently the //Default email address// should correspond the same way (admin@yourdomain.tld), although this is not a standards requirement by RFCs.
+
+The DNSSEC settings are set to the largest-size keys as all other are very much discounted these days. You may set it higher, but only if OpenNIC recommends it.
+
+I leave the transfer and query settings to be managed by each zone and leave them here blank / default.
+
+=== Forwarding and Trasfers ===
+These should be the IP4 addresses of the OpenNIC Tier-2s. Normally you use Google's 8.8.8.8 here, but if you enter only that your DNS is NOT going to function. Also note - this is different from the settings of your VPS network.
+=== DNSSEC Initialization ===
+Access both screens, and set as you wish.
+
+=== Module Config ===
+Finally, click on the gear in the upper left corner, and change from the defaults:
+
+
+
 
