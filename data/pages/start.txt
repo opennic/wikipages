@@ -59,7 +59,7 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
   * [[opennic:tier2setup|Tier 2 Server Setup]] and [[opennic:tier2|Info]]
   * [[opennic:tier1setup|Tier 1 Server Setup]] and [[opennic:tier1|Info]]
-  * [[opennic:setup:webmindind|Installing using Webmin]]
+  * [[opennic:setup:webminbind|Installing using Webmin]]
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
     * [[http://report.opennic.org/log_.php?tier=1|Status]]

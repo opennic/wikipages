@@ -1,0 +1,3 @@
+===== Debian 9 with Webmin 1.9xx Fresh Install =====
+Again, please make sure you install from within Webmin (Unused Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
+{{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
