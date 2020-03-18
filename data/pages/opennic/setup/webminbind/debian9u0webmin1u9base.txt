@@ -1,11 +1,11 @@
 ===== Debian 9 with Webmin 1.9xx Fresh Install =====
-Again, please make sure you install from within Webmin (Unused Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
+Again, please make sure you install from within Webmin (Un-used Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
 {{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
 
 In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a play button starts the service. Before we start, however, lets look at the //home// of bind9.
 {{:opennic:setup:webminbind:base-002.png|The location and content of BIND's home}}
 
-Those which are going to be our concern are discussed below. The db.root file is a special case, where the change from the InterNIC TLDs to the OpenNIC TLDS actually happen. For the record, the content of the db.root file, at the time of writing this, is listed [[db_root_file-content|here]]. On OpenNIC Tier-1 servers the file should read something like below:
+The files which are going to be our concern are discussed below. The db.root file is a special case, where the change from the InterNIC TLDs to the OpenNIC TLDS actually happens. For the record, the content of the db.root file, at the time of writing this, is listed [[db_root_file-content|here]]. On OpenNIC Tier-1 servers the file should read something like below:
 <code>
 ;       This file holds the information ... 
 ;
@@ -81,7 +81,7 @@ zone "255.in-addr.arpa" {
 As you see, the db.root file is included here, and the rest of the file content has to do with proper networking setup on the host. Later while adding / removing name servers the two most common directives added by Webmin going to be "also-notify" and "allow-transfer".
 
 ==== named.conf ====
-This file should not be edited by hand, and it is not edited by Webmin:
+This file should not be edited by hand, but edited by Webmin:
 <code>
 // This is the primary configuration file for the BIND DNS server named.
 //
@@ -134,14 +134,24 @@ The DNSSEC settings are set to the largest-size keys as all other are very much 
 
 I leave the transfer and query settings to be managed by each zone and leave them here blank / default.
 
-=== Forwarding and Trasfers ===
-These should be the IP4 addresses of the OpenNIC Tier-2s. Normally you use Google's 8.8.8.8 here, but if you enter only that your DNS is NOT going to function. Also note - this is different from the settings of your VPS network.
+=== Forwarding and Transfers ===
+These should be the IP4 addresses of the OpenNIC Tier-2s. Normally you use Google's 8.8.8.8 here, but if you enter only that this name-server is NOT going to function. Also note - this is different from the settings of your VPS network, which SHOULD use Google's.
 === DNSSEC Initialization ===
-Access both screens, and set as you wish.
+Access both screens, and set as you wish. Webmin fully automates the re-signing process, and the default 21 days is acceptable.
 
 === Module Config ===
 Finally, click on the gear in the upper left corner, and change from the defaults:
 
+{{:opennic:setup:webminbind:base-005.png|Module Configuration - Part 1}}
+If you want to run under chroot set it here.\\ 
+If reverse zone is REQUIRED leave it, otherwise set to NO.\\ 
+More to come later
 
+{{:opennic:setup:webminbind:base-006.png|Module Configuration - Part 2}}
+More to come later
 
+{{:opennic:setup:webminbind:base-007.png|Module Configuration - Part 3}}
+More to come later
+
+//NOTE: Editing of this page is suspended until information for a production server becomes available.//
 

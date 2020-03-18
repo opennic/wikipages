@@ -6,7 +6,7 @@ Webmin provides more than just some webforms, it is part of a fully rounded virt
   * Internet Standards (RFCs) require 2 but recommend 3 BIND instances, on 2 independent networks (I use and recommend Linode and OVH).
   * Both IP4 and IP6 must be configured, Reverse DNS hostnames recommended. Port 53 for both TCP and UDP must be open (also TCP 22, 10000 for ssh and Webmin).
 
-The following describes the required state of the VPS - before installing DNS. You may use other than Linode for this but be advised that other providers such as GCE, AWS, DigitalOcean might not NOT going to allow for all necessary criteria (GCE does not provide IP6 with rDNS, for example).
+The following describes the required state of the VPS - before installing DNS. You may use other than Linode for this but be advised that other providers such as GCE, AWS, DigitalOcean might NOT going to allow for all necessary criteria (GCE does not provide IP6 with rDNS, for example).
 
 Here we start from a recent Debian release by Linode. At the time of writing that is Debian 9, and we recommend you  install the smallest "Nanode 1GB RAM" instance.
   * Do not use ssh keys for now, install with a strong root password.
@@ -41,7 +41,7 @@ apt-get -y install webmin
 </code>
 
 This is a good time to take your first snapshot. Access your instance from the browser, by the IP4 address, at the default port 10000. I would recommend to continue all other installation and configuration from Webmin, for several reasons. 
-  * If something breaks lets allow Webmin to break it, that was the fix is going to benefit everyone
+  * If something breaks allow Webmin to break it, and fixing it is going to be documented.
   * If something is not fully functional make a note of it NOW - document your own progress
   * If something is not available make a note of it NOW - and ask to be implemented
 
