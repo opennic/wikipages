@@ -1,2 +1,13 @@
 ===== Factory 4.0 Open Initiative, LLC. =====
-I am the Founder and the first Technology Evangelist of FourOh-LLC, a Linux User Group purposed to be used in Manufacturing and the Warehouse. 
+I am the Founder and the first Technology Evangelist of Factory 4.0 Open Initiative, LLC. (or FourOh-LLC for short), a Linux User Group purposed to be relevant in the  Manufacturing and Warehousing Sectors. The project is being documented at https://welcome.factoryfouroh.net/dokuwiki
+
+FourOh-LLC is based on the concept of Linux User Groups, with focus on Manufacturing and the Warehouse, and with the purpose to stay self-sufficient. The current cost of the technology stack is about 160 USD / year, spent on Domain Registration, VPS rental and backup service fees. Self-sufficient means that when you build and use FourOh-LLC the owner-operator, who is part of the FourOh-LLC network, is able to visit your shop to help with Information Technology and Support (production machines and databases, environmental scrubbing, data collection, factory heat-maps, etc.) The 160.00 USD / year is earned this way, within a few hours each year. All profit above the 160 USD maybe used to install additional FourOh-LLC nodes, or taken as profit.
+
+FourOh-LLC operates the same way LUGs did in the past: with local focus, where the participants are able to meet face to face. This also ensures that FourOh-LLC does not grow into corporate-like entities: as soon as you spend more than 160 USD on any instance you are NO LONGER FourOh-LLC but something else. That is, you shall not hire technicians, create server farms, operate a fleet of vehicles - and still call yourself FourOh-LLC. This is to ensure FourOh-LLC remains dedicated to the small or home business owners, affordable to be owned or contracted by anyone.
+
+OpenNIC is something FourOh-LLC is considering for a core feature: a FourOh-LLC network is a secure, owner operated email, wiki, chat and web forms stack. Routing traffic going to happen through a network identical or similar to OpenNIC. Using services, resources and regulations by entities controlling the Internet today is going to be kept to the minimum.
+
+Thank you for reading,
+Mr. Sandor Kunyik
+Factory 4.0 Open Initiative, LLC.
+Founder, Technology Evangelist
