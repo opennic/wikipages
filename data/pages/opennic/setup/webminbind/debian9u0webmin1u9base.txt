@@ -1,4 +1,4 @@
-===== Debian 9 with Webmin 1.9xx Fresh Install =====
+===== Fresh Install =====
 Again, please make sure you install from within Webmin (Un-used Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
 {{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
 In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a "Play" button starts the service. When you configure RDC a "Refresh" button is added. Do not yet start it, but lets look at its home directory.
@@ -21,34 +21,36 @@ The Webmin screen to schedule and create compressed archives of the filesystem.
 {{:opennic:setup:webminbind:base-004.png|Save and restore copies of your on-line backup}}
 Recover from off-line backup in case of sustained attack going back for weeks or months.
 
-=== User Management ===
+==== User Management ====
 User management from the shell is expanded by Webmin several ways. The most advanced is Usermin via LDAP, which is not really necessary on single instances. However, using the Webmin Users and Groups modules is necessary to allow login via Webmin - otherwise the user is limited to ssh login only. Also - on production servers Webmin shall not be installed to reduce the number of software exploits. 
 
 {{:opennic:setup:webminbind:base-005.png|Extended functionally for UNIX Users and Groups by Webmin}}
 Webmin Users and Groups control access to Modules - but the UNIX user must also exist.
 
-=== Module Management ===
+==== Module Management ====
 These should be the IP4 addresses of the OpenNIC Tier-2s. Normally you use Google's 8.8.8.8 here, but if you enter only that this name-server is NOT going to function. Also note - this is different from the settings of your VPS network, which SHOULD use Google's.
 
 {{:opennic:setup:webminbind:base-006.png|The DNS Administrator login}}
 The DNS administrator has full access to the DNS module and a few others like backup/restore and download/upload.
 
-=== DNSSEC Initialization ===
-Access both screens, and set as you wish. Webmin fully automates the re-signing process, and the default 21 days is acceptable.
+==== Network Security ====
+Debian does not assume anything about the purpose of the system, it does not install or configure additional software, and it does not start services by default. //iptables// is an exception to this, it is installed by default. However, it is not configured and it is not started. If you have installed a firewall software such as FirewallD - iptables is going to be started and managed by that software.
 
-=== Module Config ===
-Finally, click on the gear in the upper left corner, and change from the defaults:
+{{:opennic:setup:webminbind:base-007.png|Firewall is not configured by default}}
+If you start iptables with a wrong configuration you might lose access to your instance!
 
-{{:opennic:setup:webminbind:base-005.png|Module Configuration - Part 1}}
-If you want to run under chroot set it here.\\ 
-If reverse zone is REQUIRED leave it, otherwise set to NO.\\ 
-More to come later
+==== Webmin Modules ====
+Some modules in Webmin are matured and well-rounded - the BIND module, for example. Some are obsolete, no longer maintained, and these days they are only included for backwards compatibility - such as the Jabber IM Server. Some are mature and install from within Webmin, some needs to be installed from the shell and tell Webmin to look for them "Refresh Modules". 
 
-{{:opennic:setup:webminbind:base-006.png|Module Configuration - Part 2}}
-More to come later
+{{:opennic:setup:webminbind:base-008.png|Module installation}}
+Webmin has good support for FirewallD - but it must be installed from the shell.
 
-{{:opennic:setup:webminbind:base-007.png|Module Configuration - Part 3}}
-More to come later
+==== Logging ====
+Webmin provides access to several logging facilities, with management for logging added for BIND and for Webmin.
 
-//NOTE: Editing of this page is suspended until information for a production server becomes available.//
+{{:opennic:setup:webminbind:base-009.png|The standard UNIX logs }}
+Security starts with these logs, as nearly all attacks leave some clues in these logs.
+
+
+
 
