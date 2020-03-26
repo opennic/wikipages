@@ -20,6 +20,10 @@ apt-get -y install nano apt-transport-https tzdata dnsutils
 apt-get -y install locales
 locale-gen "en_US.UTF-8"
 dpkg-reconfigure tzdata
+</code>
+
+Setting up a firewall at this point is optional, it might be a better idea to delay this. If you decide to do so, here is a quick way to do it - but this is not yet tested and verified to be working.
+<code>
 apt-get install firewalld
 
 firewall-cmd --add-service=https --permanent
@@ -31,7 +35,7 @@ firewall-cmd  --add-service=dns --permanent
 firewall-cmd --reload
 </code>
 
-At this point it is a good idea to reboot, to make sure you are still able to ssh into the instance. Then install webmin.
+Next install webmin.
 <code>
 echo 'deb https://download.webmin.com/download/repository sarge contrib' | sudo tee -a /etc/apt/sources.list.d/sources.list
 wget http://www.webmin.com/jcameron-key.asc
