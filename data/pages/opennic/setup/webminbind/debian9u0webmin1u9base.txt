@@ -1,5 +1,6 @@
 ===== Fresh Install =====
-Again, please make sure you install from within Webmin (Un-used Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
+This page includes a very brief overview of Webmin module screens, before turning the instance into a Tier-2 service stack. The page is going to grow and expand as feedback comes in for better, more detailed explanations. If you are already familiar with Webmin, or you do not wish to use it you may skip this page entirely.
+
 {{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
 In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a "Play" button starts the service. When you configure RDC a "Refresh" button is added. Do not yet start it, but lets look at its home directory.
 
@@ -15,8 +16,11 @@ The difference between backup and archive is the location where they are stored 
 
 Use the listed above to plan and test your capacity to recover from errors, attacks or even from ransomware. These are very basic, simple measures to keep your service stacks functional.
 
+{{:opennic:setup:webminbind:base-010.png|Webmin Filesystem Backup with scheduling}}
+Linode backups and restores never fail, but they replace your ENTIRE instance.
+
 {{:opennic:setup:webminbind:base-003.png|Webmin Filesystem Backup with scheduling}}
-The Webmin screen to schedule and create compressed archives of the filesystem.
+Webmin allows scheduling and creating compressed archives of targeted part of your instance.
 
 {{:opennic:setup:webminbind:base-004.png|Save and restore copies of your on-line backup}}
 Recover from off-line backup in case of sustained attack going back for weeks or months.
@@ -51,6 +55,8 @@ Webmin provides access to several logging facilities, with management for loggin
 {{:opennic:setup:webminbind:base-009.png|The standard UNIX logs }}
 Security starts with these logs, as nearly all attacks leave some clues in these logs.
 
+==== Conclusion ====
+You may write your own scripts and use a tool such as Ansible to do more, better than what Webmin does. However, Webmin makes your instances much friendlier inside an environment without Information Technology professionals expert with GNU/Linux. On a factory floor, for example, Webmin is able to serve engineers, managers, production workers with much less training than full-featured but more complex tools.
 
 
 
