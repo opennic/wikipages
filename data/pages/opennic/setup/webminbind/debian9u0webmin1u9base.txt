@@ -18,19 +18,21 @@ Use the listed above to plan and test your capacity to recover from errors, atta
 {{:opennic:setup:webminbind:base-003.png|Webmin Filesystem Backup with scheduling}}
 The Webmin screen to schedule and create compressed archives of the filesystem.
 
+{{:opennic:setup:webminbind:base-004.png|Save and restore copies of your on-line backup}}
+Recover from off-line backup in case of sustained attack going back for weeks or months.
 
-=== Zone Defaults ===
-This configures the default options for master zones, and some of the defaults should be set as shown:
-Deleted
+=== User Management ===
+User management from the shell is expanded by Webmin several ways. The most advanced is Usermin via LDAP, which is not really necessary on single instances. However, using the Webmin Users and Groups modules is necessary to allow login via Webmin - otherwise the user is limited to ssh login only. Also - on production servers Webmin shall not be installed to reduce the number of software exploits. 
 
-What is not shown depends on your installation. The screenshot shows the current host name - which you should ignore. Instead enter the FQDN of your name server, NSx.YOURDOMAIN.TLD or NSx.SUBDOMAIN.YOURDOMAIN.TLD. Consequently the //Default email address// should correspond the same way (admin@yourdomain.tld), although this is not a standards requirement by RFCs.
+{{:opennic:setup:webminbind:base-005.png|Extended functionally for UNIX Users and Groups by Webmin}}
+Webmin Users and Groups control access to Modules - but the UNIX user must also exist.
 
-The DNSSEC settings are set to the largest-size keys as all other are very much discounted these days. You may set it higher, but only if OpenNIC recommends it.
-
-I leave the transfer and query settings to be managed by each zone and leave them here blank / default.
-
-=== Forwarding and Transfers ===
+=== Module Management ===
 These should be the IP4 addresses of the OpenNIC Tier-2s. Normally you use Google's 8.8.8.8 here, but if you enter only that this name-server is NOT going to function. Also note - this is different from the settings of your VPS network, which SHOULD use Google's.
+
+{{:opennic:setup:webminbind:base-006.png|The DNS Administrator login}}
+The DNS administrator has full access to the DNS module and a few others like backup/restore and download/upload.
+
 === DNSSEC Initialization ===
 Access both screens, and set as you wish. Webmin fully automates the re-signing process, and the default 21 days is acceptable.
 
