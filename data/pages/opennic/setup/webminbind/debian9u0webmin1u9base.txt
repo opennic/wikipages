@@ -1,3 +1,8 @@
+Configuration, recursion error: when I run the report tool I get no recursion:\\ 
+http://report.opennicproject.org/t2log/t2.php?ip_addr=45.79.193.205\\ 
+Yet from the shell it seems to work fine.
+{{:opennic:setup:webminbind:base-011.png|No Recursion Error}}
+
 ===== Fresh Install =====
 This page includes a very brief overview of Webmin module screens, before turning the instance into a Tier-2 service stack. The page is going to grow and expand as feedback comes in for better, more detailed explanations. If you are already familiar with Webmin, or you do not wish to use it you may skip this page entirely.
 
