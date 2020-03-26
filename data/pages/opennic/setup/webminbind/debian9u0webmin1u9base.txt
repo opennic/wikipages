@@ -1,132 +1,27 @@
 ===== Debian 9 with Webmin 1.9xx Fresh Install =====
 Again, please make sure you install from within Webmin (Un-used Modules) then Refresh Modules to move the BIND link under Servers. This is the default screen.
 {{:opennic:setup:webminbind:base-001.png|The newly installed Webmin BIND module}}
+In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a "Play" button starts the service. When you configure RDC a "Refresh" button is added. Do not yet start it, but lets look at its home directory.
 
-In the upper left corner the icon that looks like a gear is the Module Config. In the upper right corner the icon looks like a play button starts the service. Before we start, however, lets look at the //home// of bind9.
 {{:opennic:setup:webminbind:base-002.png|The location and content of BIND's home}}
-
-The files which are going to be our concern are discussed below. The db.root file is a special case, where the change from the InterNIC TLDs to the OpenNIC TLDS actually happens. For the record, the content of the db.root file, at the time of writing this, is listed [[db_root_file-content|here]]. On OpenNIC Tier-1 servers the file should read something like below:
-<code>
-;       This file holds the information ... 
-;
-.                      3600000      NS    NS2.OPENNIC.GLUE.
-NS2.OPENNIC.GLUE.      3600000      A     161.97.219.84
-NS2.OPENNIC.GLUE.      3600000      AAAA  2001:470:4212:10:0:100:53:10
-;
-.                      3600000      NS    NS4.OPENNIC.GLUE.
-NS4.OPENNIC.GLUE.      3600000      A     163.172.168.171
-;
-.                      3600000      NS    NS5.OPENNIC.GLUE.
-NS5.OPENNIC.GLUE.      3600000      A     94.103.153.176
-NS5.OPENNIC.GLUE.      3600000      AAAA  2a02:990:219:1:ba:1337:cafe:3
-;
-.                      3600000      NS    NS6.OPENNIC.GLUE.
-NS6.OPENNIC.GLUE.      3600000      A     207.192.71.13
-;
-.                      3600000      NS    NS8.OPENNIC.GLUE.
-NS8.OPENNIC.GLUE.      3600000      A     178.63.116.152
-NS8.OPENNIC.GLUE.      3600000      AAAA  2a01:4f8:141:4281::999
-;
-.                      3600000      NS    NS9.OPENNIC.GLUE.
-NS9.OPENNIC.GLUE.      3600000      A     51.77.227.84
-;
-.                       3600000      NS    NS10.OPENNIC.GLUE.
-NS10.OPENNIC.GLUE.      3600000      A     188.226.146.136
-NS10.OPENNIC.GLUE.      3600000      AAAA  2001:470:1f04:ebf::2
-;
-.                       3600000      NS    NS11.OPENNIC.GLUE.
-NS11.OPENNIC.GLUE.      3600000      A     51.75.173.177
-;
-.                       3600000      NS    NS12.OPENNIC.GLUE.
-NS12.OPENNIC.GLUE.      3600000      A     79.124.7.81
-;
-.                       3600000      NS    NS13.OPENNIC.GLUE.
-NS13.OPENNIC.GLUE.      3600000      A     144.76.103.143
-NS13.OPENNIC.GLUE.      3600000      AAAA  2a01:4f8:192:43a5::2
-</code>
-
-==== named.conf.default-zones ====
-The content of this file not supposed to be changed by hand, and a new BIND instance has it as: 
-<code>
-// prime the server with knowledge of the root servers
-zone "." {
-	type hint;
-	file "/etc/bind/db.root";
-};
-
-// be authoritative for the localhost forward and reverse zones, and for
-// broadcast zones as per RFC 1912
-
-zone "localhost" {
-	type master;
-	file "/etc/bind/db.local";
-};
-
-zone "127.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.127";
-};
-
-zone "0.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.0";
-};
-
-zone "255.in-addr.arpa" {
-	type master;
-	file "/etc/bind/db.255";
-};
-</code>
-
-As you see, the db.root file is included here, and the rest of the file content has to do with proper networking setup on the host. Later while adding / removing name servers the two most common directives added by Webmin going to be "also-notify" and "allow-transfer".
-
-==== named.conf ====
-This file should not be edited by hand, but edited by Webmin:
-<code>
-// This is the primary configuration file for the BIND DNS server named.
-//
-// Please read /usr/share/doc/bind9/README.Debian.gz for information on the 
-// structure of BIND configuration files in Debian, *BEFORE* you customize 
-// this configuration file.
-//
-// If you are just adding zones, please do that in /etc/bind/named.conf.local
-
-include "/etc/bind/named.conf.options";
-include "/etc/bind/named.conf.local";
-include "/etc/bind/named.conf.default-zones";
-</code>
-
-The file //named.conf.default-zones// includes //db.root//, and the file //named.conf.options// holds the BIND daemon's operating parameters.
-
-The file //named.conf.local// going to hold our master and slave zones (called domains). Before we start up lets archive /etc/bind to save the original configuration.
+The location and the list of files might be different on a different distribution (Red-Hat, Slackware, or from Enterprises like Oracle).
 
 ==== Backup and Archive====
-The difference between backup and archive is the location where they are stored - one is on-line, but going to be lost when the host is lost. The other is off-line, but remains available. Linode provides a manual snapshot and three automated backups which are rotated - for the entire VPS. Webmin provides manual and scheduled backup on select part of the file system, which you may also download / push off-line. The screenshot shows the Webmin //tar// and //cron// interface.
+The difference between backup and archive is the location where they are stored - one is on-line, but going to be lost when the host is lost. The other is off-line, but remains available. These are your choices for backup:
+  * A manual snapshot by Linode, which you should use for milestones such as before distribution upgrades.
+  * Three automated backups by Linode, which you should use to recover from errors or attacks.
+  * A compressed archive by Webmin, which you should use to save parts of the filesystem
+  * A download / upload utility by Webmin, to keep off-line copies of your archives.
+
+Use the listed above to plan and test your capacity to recover from errors, attacks or even from ransomware. These are very basic, simple measures to keep your service stacks functional.
+
 {{:opennic:setup:webminbind:base-003.png|Webmin Filesystem Backup with scheduling}}
+The Webmin screen to schedule and create compressed archives of the filesystem.
 
-DNS is all about redundancy, so configuring email notification about backup - or any other status - is rather pointless. If your instance goes down for any reason it may stay down until you come around to visit and check on it (once a week, maybe).
-
-==== Start BIND  ====
-Once you create and RESTORE the backup, and manage to download the tar file, replace the content in db.root as shown above. Then hit "play" on the upper right to start BIND.
-
-=== Setup RNDC ===
-This is going to fail if, for any reason, the loop-back interface (127.0.0.1) is blocked by the provider. There might be other reasons, but in most cases you are going to see a success message if you visit the same screen the second time. On the //DNS Keys// screen you should see the //rndc-key// as well. The file named.conf now contains the RNDC setup:
-<code>
-include "/etc/bind/named.conf.options";
-include "/etc/bind/named.conf.local";
-include "/etc/bind/named.conf.default-zones";
-key rndc-key {
-	algorithm hmac-md5;
-	secret "abcdefghifklmnopqrstuv==";
-	};
-controls {
-	inet 127.0.0.1 port 953 allow { 127.0.0.1; } keys { rndc-key; };
-	};
-</code>
 
 === Zone Defaults ===
 This configures the default options for master zones, and some of the defaults should be set as shown:
-{{:opennic:setup:webminbind:base-004.png|Default for Master Zones}}
+Deleted
 
 What is not shown depends on your installation. The screenshot shows the current host name - which you should ignore. Instead enter the FQDN of your name server, NSx.YOURDOMAIN.TLD or NSx.SUBDOMAIN.YOURDOMAIN.TLD. Consequently the //Default email address// should correspond the same way (admin@yourdomain.tld), although this is not a standards requirement by RFCs.
 

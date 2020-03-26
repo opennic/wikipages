@@ -1,5 +1,5 @@
 ===== Installing using Webmin =====
-Webmin provides more than just some webforms, it is part of a fully rounded virtualization and cloud platform. Virtualmin and Cloudmin are used to create complex networks, and they install on top of a brand new BIND instance. Webmin is the glue holding the networks together by installing its own perl-based web services and the standard GNU/Linux technology stack. Webmin is libre as most frameworks are, while Virtualmin and Cloudmin are the support-subscriptions keeping www.virtualmin.com in business.
+Webmin provides more than just some webforms, it is part of a fully rounded virtualization and cloud platform. Virtualmin and Cloudmin are used to create complex networks, and they install on top of a brand new BIND instance. Webmin is the glue holding the networks together by installing its own perl-based web services, the standard GNU/Linux technology stack, using ssh and making remote procedure calls (RPC). By adding its own schema to OpenLDAP it supports fine-grained privileges, it has build in support for file-based virtualization and more. Webmin is libre while Virtualmin and Cloudmin are the support-subscriptions keeping www.virtualmin.com in business.
 
 ==== Requirements ====
 
