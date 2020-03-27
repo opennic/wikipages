@@ -24,4 +24,4 @@ Depending on your bind setup(we always recommend chroot), the log directory can 
   touch named.log
   chown bind:bind named.log
   touch misc.log
-  chown misc.log
+  chown bind:bind misc.log
