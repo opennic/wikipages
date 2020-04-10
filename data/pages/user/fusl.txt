@@ -10,17 +10,19 @@
 Hi, I'm Katie (nickname Fusl)
 
 [root@fusl ~]# whereis fusl
-fusl: /universe/observable_universe/laniakea_supercluster/virgo_supercluster/local_sheet/local_group/milky_way_subgroup/milky_way/orion_arm/gould_belt/local_bubble/local_interstellar_cloud/solar_system/earth/europe/switzerland/zurich/
+fusl: /universe/observable_universe/laniakea_supercluster/virgo_supercluster/local_sheet/local_group/milky_way_subgroup/milky_way/orion_arm/gould_belt/local_bubble/local_interstellar_cloud/solar_system/earth/europe/austria/vienna/
 
 [root@fusl ~]# last | tail -1
 wtmp begins Thu Nov 9 2018
 
 [root@fusl ~]# fgrep -i "telnet irc." .zsh_history | sort -u
 : 0:0;telnet irc.canternet.org 6667
+: 0:0;telnet irc.dal.net 6667
 : 0:0;telnet irc.efnet.org 6667
 : 0:0;telnet irc.esper.net 6667
 : 0:0;telnet irc.freenode.net 6667
 : 0:0;telnet irc.furnet.org 6667
+: 0:0;telnet irc.hackint.org 6667
 : 0:0;telnet irc.mozilla.org 6667
 : 0:0;telnet irc.oftc.net 6667
 : 0:0;telnet irc.ponychat.net 6667
@@ -29,16 +31,19 @@ wtmp begins Thu Nov 9 2018
 : 0:0;telnet irc.terahertz.net 6667
 
 [root@fusl ~]# cat .aliases
-github: fusl                               # https://github.com/Fusl
-twitter: ohnoitsfusl                       # https://twitter.com/OhNoItsFusl
+github:   fusl                             # https://github.com/Fusl
+twitter:  ohnoitsfusl                      # https://twitter.com/OhNoItsFusl
 mixcloud: fusl                             # https://www.mixcloud.com/Fusl/
-irc: fusl                                  # 
-keybase: fusl                              # https://keybase.io/fusl
+irc:      fusl                             # 
+keybase:  fusl                             # https://keybase.io/fusl
 telegram: Fuslllllllllllllllllllllllllllll # https://t.me/Fuslllllllllllllllllllllllllllll
-discord: Fusl#1337                         # 
+discord:  Fusl#0001                        # 
+twitch:   fusl                             # https://www.twitch.tv/fusl
+vrchat:   Fusl                             # https://vrchat.com/home/user/usr_ef614fba-dc73-40d6-8877-237d6efb82dd
+steam:    Fusl                             # https://steamcommunity.com/id/Fusl
 
 [root@fusl ~]# readlink /etc/localtime
-/usr/share/zoneinfo/Europe/Zurich
+/usr/share/zoneinfo/Europe/Vienna
 
 [root@fusl ~]# cat /etc/locale.gen
 en_US.UTF-8 UTF-8
