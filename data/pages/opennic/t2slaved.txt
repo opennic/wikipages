@@ -33,7 +33,7 @@ masters opennicNS {
     104.168.144.17;               # ns3.opennic.glue
     2001:470:8269::53;            # ns3.opennic.glue
     163.172.168.171;              # ns4.opennic.glue
-    2001:bc8:4400:2100::17:213    # ns4.opennic.glue
+    2001:bc8:4400:2100::17:213;    # ns4.opennic.glue
     94.103.153.176;               # ns5.opennic.glue
     2001:bc8:4400:2100::17:213;   # ns5.opennic.glue
     207.192.71.13;                # ns6.opennic.glue
