@@ -1,0 +1,15 @@
+====== Setup ======
+
+This namespace contains tutorials, guides and tips on how to setup an OpenNIC DNS server.
+
+===== Tutorials =====
+
+  * [[webminbind]] by [[user>fouroh-llc]]
+
+===== Topics =====
+
+  * [[listserver]]
+
+----
+
+**INFO:** Most of the relevant wiki pages are still in the '':opennic'' namespace such as [[:opennic:tier2setup]]

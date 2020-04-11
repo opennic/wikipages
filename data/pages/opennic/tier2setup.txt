@@ -75,3 +75,5 @@ Make sure you read the following guides to ensure your server is setup in the be
   * [[:bindlogconfig|BIND Logging Configuration]]
   * [[:bindloganon|BIND Logging Obfuscation]]
   * [[opennic:tier2security|Tier 2 Security Measures]]
+
+After checking all that, you can [[opennic:setup:listserver|list your server on servers.opennic.org]].
