@@ -28,25 +28,25 @@ Add the following lines to your named.conf in place of the above 'hint' section:
 <file>
 # check to make sure these are still correct!
 masters opennicNS {
-    161.97.219.84;                # ns2.opennic.glue
-    2001:470:4212:10:0:100:53:10; # ns2.opennic.glue
-    104.168.144.17;               # ns3.opennic.glue
-    2001:470:8269::53;            # ns3.opennic.glue
-    163.172.168.171;              # ns4.opennic.glue
-    2001:bc8:4400:2100::17:213;    # ns4.opennic.glue
-    94.103.153.176;               # ns5.opennic.glue
-    2001:bc8:4400:2100::17:213;   # ns5.opennic.glue
-    207.192.71.13;                # ns6.opennic.glue
-    178.63.116.152;               # ns8.opennic.glue
-    2a01:4f8:141:4281::999;       # ns8.opennic.glud
-    138.68.128.160;               # ns9.opennic.glue
-    2a03:b0c0:1:a1::46b:a001;     # ns9.opennic.glue
-    188.226.146.136;              # ns10.opennic.glue
-    2001:470:1f04:ebf::2;         # ns10.opennic.glue
-    45.55.97.204;                 # ns11.opennic.glue
-    2604:a880:800:a1::14c1:1;     # ns11.opennic.glue
-    79.124.7.81;                  # ns12.opennic.glue
-    2a01:8740:1:ff13::ae67;       # ns12.opennic.glue
+        161.97.219.84;                  # ns2.opennic.glue
+        2001:470:4212:10:0:100:53:10;   # ns2.opennic.glue
+        104.168.144.17;                 # ns3.opennic.glue
+        2001:470:8269::53;              # ns3.opennic.glue
+        163.172.168.171;                # ns4.opennic.glue
+        2001:bc8:4400:2100::17:213;     # ns4.opennic.glue
+        94.103.153.176;                 # ns5.opennic.glue
+        2001:bc8:4400:2100::17:213;     # ns5.opennic.glue
+        207.192.71.13;                  # ns6.opennic.glue
+        178.63.116.152;                 # ns8.opennic.glue
+        2a01:4f8:141:4281::999;         # ns8.opennic.glud
+        138.68.128.160;                 # ns9.opennic.glue
+        2a03:b0c0:1:a1::46b:a001;       # ns9.opennic.glue
+        188.226.146.136;                # ns10.opennic.glue
+        2001:470:1f04:ebf::2;           # ns10.opennic.glue
+        45.55.97.204;                   # ns11.opennic.glue
+        2604:a880:800:a1::14c1:1;       # ns11.opennic.glue
+        79.124.7.81;                    # ns12.opennic.glue
+        2a01:8740:1:ff13::ae67;         # ns12.opennic.glue
 };
 masters opennicPeers {
 };
