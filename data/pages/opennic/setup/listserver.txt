@@ -27,4 +27,4 @@ You can disable ((probably can, more information needed)) the server if you need
 Servers that fail to work properly will be automatically moved to the deletion queue after 48 hours. From the bottom-text on servers.opennic.org:
 > Servers which are offline or fail testing for more than 48 hours will be automatically moved to a "pending deletion" status. If you resolve the issue and wish to have your server re-listed, please ask a Tier-0 operator to update the status.
 
-Tier-0 operators can be found FIXME (who and where?)
+Tier 0 operators are the [[:opennic:teams:core|OpenNIC core team]].
