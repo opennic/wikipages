@@ -9,7 +9,6 @@
 
 <callout type="tip" color="green" icon="fa fa-arrow-right"></callout>
 <button type="link" size="xs" icon="fa fa-terminal" modal="true"></button>
-
+{{INLINETOC}}
 </panel-body>
-
 </panel>
