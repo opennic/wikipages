@@ -11,6 +11,13 @@ Note, that this is experimental in many regards:
 
 ===== Planned deployment =====
 
+The trust chain could look as follows:
+
   - root cert - private key on a restricted machine or the CA operator’s hardware token like a YubiKey. The public key/self-signed cert for this one is published on opennic site and is what we ask our users to trust when they deploy our DNS
-  - intermediate - valid for 6 months, needs to be semi-automatically renewed (resigned) by (a) - CA operator does this with their hardware token/Yubikey on a secure, dedicated, offline machine.
-  - client certs - valid for 1-3 months, requested and issued exclusively through ACME protocol, signed by (b). Private key for (b) lives on ACME server.
+  - intermediate - valid for 6 months, needs to be semi-automatically renewed (resigned) by 1 - CA operator does this with their hardware token/Yubikey on a secure, dedicated, offline machine.
+  - client certs - valid for 1-3 months, requested and issued exclusively through ACME protocol, signed by 2. Private key for 2 lives on ACME server.
+
+The following things might be desirable, too:
+  - Restrict validity of CA with [[https://security.stackexchange.com/questions/31376/can-i-restrict-a-certification-authority-to-signing-certain-domains-only|Name Constraints]]
+  - Distribute the Root CA key amongst multiple persons: either share copies, have multiple such keys, or have some Shamir-like secret sharing in place
+  - Deploy multiple intermediate CAs / ACME-server "parallely"
