@@ -1,0 +1,16 @@
+====== TLS Certificates ======
+
+===== Current deployment =====
+
+There is an experimental acme server in place at [[https://playground.acme.libre]] to automatically obtain TLS certificates for servers under all OpenNIC (and currently also all ICANN and all peered) top level domains.
+The trust anchor for these certificates can be downloaded [[https://playground.acme.libre/opennic_root_ca.crt|here]].
+
+Note, that this is experimental in many regards:
+  * The root CA is not yet 100% secured (the design is a work in progress).
+  * The acme server runs experimental software. If you have any problems getting a certificate, feel free to contact [[opennic@eckner.net|Erich Eckner]]
+
+===== Planned deployment =====
+
+  - root cert - private key on a restricted machine or the CA operator’s hardware token like a YubiKey. The public key/self-signed cert for this one is published on opennic site and is what we ask our users to trust when they deploy our DNS
+  - intermediate - valid for 6 months, needs to be semi-automatically renewed (resigned) by (a) - CA operator does this with their hardware token/Yubikey on a secure, dedicated, offline machine.
+  - client certs - valid for 1-3 months, requested and issued exclusively through ACME protocol, signed by (b). Private key for (b) lives on ACME server.

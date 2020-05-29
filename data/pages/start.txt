@@ -76,11 +76,6 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
   * [[/webspaceproviders|Full list...]]
 
 ==== TLS Certificates ====
-There is an experimental acme server in place at [[https://playground.acme.libre]] to automatically obtain TLS certificates for servers under all OpenNIC (and currently also all ICANN and all peered) top level domains.
-The trust anchor for these certificates can be downloaded [[https://playground.acme.libre/opennic_root_ca.crt|here]].
-
-Note, that this is experimental in many regards:
-  * The root CA is not yet 100% secured (the design is a work in progress).
-  * The acme server runs experimental software. If you have any problems getting a certificate, feel free to contact [[opennic@eckner.net|Erich Eckner]]
+The current and planned deployment of TLS certificates for services running on OpenNIC domains is described and worked out [[opennic/TLS|here]].
 
 </columns>
