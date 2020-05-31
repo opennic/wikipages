@@ -2,7 +2,7 @@
 
 ===== Current deployment =====
 
-There is an experimental acme server in place at [[https://playground.acme.libre]] to automatically obtain TLS certificates for servers under all OpenNIC top level domains.
+There is an experimental acme server in place at [[https://playground.acme.libre]] to automatically obtain TLS certificates for servers under all OpenNIC top level domains (Restricted by [[https://security.stackexchange.com/questions/31376/can-i-restrict-a-certification-authority-to-signing-certain-domains-only|Name Constraints]]).
 The trust anchor for these certificates can be downloaded [[https://playground.acme.libre/opennic_root_ca.crt|here]].
 
 Note, that this is experimental in many regards:
@@ -18,6 +18,5 @@ The trust chain could look as follows:
   - client certs - valid for 1-3 months, requested and issued exclusively through ACME protocol, signed by 2. Private key for 2 lives on ACME server.
 
 The following things might be desirable, too:
-  - Restrict validity of CA with [[https://security.stackexchange.com/questions/31376/can-i-restrict-a-certification-authority-to-signing-certain-domains-only|Name Constraints]]
   - Distribute the Root CA key amongst multiple persons: either share copies, have multiple such keys, or have some Shamir-like secret sharing in place
   - Deploy multiple intermediate CAs / ACME-server "parallely"
