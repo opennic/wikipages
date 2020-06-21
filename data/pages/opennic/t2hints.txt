@@ -17,7 +17,7 @@ Most systems will install BIND either in /etc/bind/ or /var/named/. Within named
 
 Make note of the filename, in this case "/etc/bind/db.root". This is your root hints file, which instructs BIND where to go to find 'hints' about the location of each TLD. The default file will direct you to the standard ICANN root servers. We want to replace this with a hints file that instead queries OpenNIC servers:
 
-  dig . NS @75.127.96.89 > /etc/bind/db.root
+  dig . NS @45.56.115.189 > /etc/bind/db.root
 
 If you wish to ensure this file stays up to date, you could set up a cron job to perform the above command periodically. Note that the servers listed in this file are not expected to change frequently.
 
@@ -33,4 +33,4 @@ You should now be able to access OpenNIC domains. To verify BIND is working, fro
 
   ping opennic.glue
 
-This should resolve to 75.127.96.89, the same as opennicproject.org. If you cannot resolve opennic.glue, verify that BIND has been started successfully.
+This should resolve to 45.56.115.189 or 45.56.116.224. If you cannot resolve opennic.glue, verify that BIND has been started successfully.
