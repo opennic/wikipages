@@ -1,0 +1,18 @@
+**Eleix**
+
+PGP Fingerprint: 337bbed7052979f31917319afde753bbf811730d
+
+
+__Associated Accounts__
+  Discord: Rix Yrmori#0001
+  IRC: eleix
+  Mailing Lists: boothf
+
+__Servers__
+  ns8.ca.dns.opennic.glue     IPv4: 198.100.148.224     IPv6: 2607:5300:60:be0::1
+  ns3.de.dns.opennic.glue     IPv4: 176.9.37.132        IPv6: 2a01:4f8:161:3441::1
+  ICANN Root Mirror           IPv4: 198.100.148.36      IPv6: 2607:5300:60:b24::1
+
+__DN42__
+  TAILSNET                    AS: 4242423621            IPv4: 172.20.59.64/27           IPv6: fdd8:da7b:92f5::/48
+  
