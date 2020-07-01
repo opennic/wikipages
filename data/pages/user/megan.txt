@@ -1,0 +1,17 @@
+====== Megan ======
+
+I usually complain about stuff.
+
+Homepage: [[http://kawa.tf/]]
+
+===== Miscellaneous =====
+
+Wiki requests:
+
+  [2020-05-19 09:36] aolko: btw, I kinda want some detailed step by step guides covering all of the popular/modern DNS servers in the wiki
+
+A logo idea:
+
+{{:user:megan:opennic_firefly_logo.png}}
+
+cf [[https://web.archive.org/web/20160915032012/http://wiki.opennicproject.org/Logos|Logos wiki page]]
