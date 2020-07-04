@@ -1,3 +1,4 @@
+lib/plugins/authorstats/authorstats.json
 data/index/*.idx
 data/cache/*
 !data/cache/_dummy
