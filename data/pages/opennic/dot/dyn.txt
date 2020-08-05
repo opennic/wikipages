@@ -21,7 +21,7 @@ After registering a .dyn domain, you will be provided with a URI for updating th
 
 === Example Script ===
   #!/bin/sh
-  wget -qO- "http://api.opennicproject.org/ddns/example.dyn?user=myUserName&auth=myAuthCode" > /dev/null
+  wget -qO- "https://api.opennicproject.org/ddns/example.dyn?user=myUserName&auth=myAuthCode" > /dev/null
 
 Replace the URI with the exact line you are given for your domain. This script loads the URI but does not save any output.
 
