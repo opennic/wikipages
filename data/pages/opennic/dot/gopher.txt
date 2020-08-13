@@ -16,4 +16,3 @@ The following decisions may require a vote of the .gopher TLD membership (one vo
   * other matters that might arise from time to time regarding the operation and administration of the .gopher TLD and related resources
 
 ==== Contacts ====
-FIXME
