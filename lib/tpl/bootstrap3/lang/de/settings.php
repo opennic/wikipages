@@ -6,6 +6,8 @@
  * @author   Dominik Soeldner <soeldner@yteam.de>
  * @author   Marko Šeremet
  * @author   Torsten Widmann
+ * @author   Dino Trappenberg
+ * @author   kaktux
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
@@ -19,12 +21,12 @@ $lang['browserTitle']                 = 'DokuWiki Browser Titel (Standard ist <c
 $lang['browserTitleCharSepNS']        = 'Trennzeichen der Namensräume im Browser Titel';
 $lang['browserTitleOrderNS']          = 'Legt die Reihenfolge der Namensräume fest';
 $lang['browserTitleShowNS']           = 'Zeigt den vorherigen Seitennamen der aktuellen Seite im Browser Titel';
-$lang['collapsibleSections']          = 'Collapse 2nd section level (useful in mobile/tablet devices)';
+$lang['collapsibleSections']          = 'Zweite Ebene zusammenklappen (nützlich für mobile Endgeräte)';
 $lang['cookieLawBannerPage']          = 'Name der Cookie-Gesetz Seite';
 $lang['cookieLawPolicyPage']          = 'Seitenname der Cookie-Regeln.';
 $lang['customTheme']                  = 'Füge die URL des Individuellen Designs ein';
 $lang['discussionPage']               = 'Diskussions Seitenname (Standard ist <code>discussion:@ID@</code>, wobei <code>@ID@</code> als Platzhalter den Namen der aktuellen Seite ersetzt), ein leeres Feld deaktiviert den Link.';
-$lang['domParserMaxPageSize']         = 'Set the max size of the page content for DOM Parser. The optimal and default value is <code>600000</code> (600KB)';
+$lang['domParserMaxPageSize']         = 'Legt die maximale Größe des Seiteninhalts für den DOM Parser fest. Der optimale und Standardwert ist <code>600000</code> (600KB)';
 $lang['fixedTopNavbar']               = 'Fixiert die Navigationsleiste am oberen Bildschirmrand';
 $lang['fluidContainer']               = 'Aktiviert den "fluid container" (100% Seitenbreite)';
 $lang['fluidContainerBtn']            = 'Zeigt einen Button in der Navigationsleiste um die Seitenbreite zu erweitern (full-width)';
@@ -34,24 +36,24 @@ $lang['googleAnalyticsNoTrackPages']  = 'Deaktiviert das Tracking für bestimmte
 $lang['googleAnalyticsNoTrackUsers']  = 'Deaktiviert das Tracking für alle angemeldeten Benutzer';
 $lang['googleAnalyticsTrackActions']  = 'Verfolge DokuWiki Aktivitäten (Bearbeiten, suchen, etc)';
 $lang['googleAnalyticsTrackID']       = 'Tracking ID';
-$lang['gravatarURL']                  = 'Set Gravatar URL <br/> <strong>NOTE:</strong> <br/> - <code>http://www.gravatar.com/avatar</code> (http) <br/> - <code>https://secure.gravatar.com/avatar</code> (https) <br/> - <code>https://www.gravatar.com/avatar</code> (alternative https)';
+$lang['gravatarURL']                  = 'Legt die Gravatar-URL fest <br/> <strong>HINWEIS:</strong> <br/> - <code>http://www.gravatar.com/avatar</code> (http) <br/> - <code>https://secure.gravatar.com/avatar</code> (https) <br/> - <code>https://www.gravatar.com/avatar</code> (alternative https)';
 $lang['hideInThemeSwitcher']          = 'Verstecke Designs im Design Umschalter';
 $lang['hideLoginLink']                = 'Versteckt den Login-Link in der Navigationsleiste. Diese Option ist nützlich bei "read-only" Installationen (zum Beispiel Blog, Persönliches Wiki).';
-$lang['homePageURL']                  = 'Use custom URL for home-page links';
+$lang['homePageURL']                  = 'Verwendet eine benutzerdefinierte URL für den Startseiten-Link';
 $lang['individualTools']              = 'Teilt die Werkzeuge in einzelne Menüs in der Navigationsleiste.';
 $lang['inverseNavbar']                = 'Umgekehrte Navigationsleiste';
 $lang['landingPages']                 = 'Landingpage Name (benutze einen Regulären Ausdruck)';
 $lang['leftSidebarGrid']              = 'Linke Seitenleiste Raster Klasse <code>col-{xs,sm,md,lg}-x</code> (siehe <a href="http://holdirbootstrap.de/css/#grid" target="_blank">Bootstrap Raster-System</a> Dokumentation)';
-$lang['libravatarURL']                = 'Set Libravatar (or compatible API) URL <br/> <strong>NOTE:</strong> <br/> - <code>https://seccdn.libravatar.org/avatar</code> (https) <br/> - <code>http://cdn.libravatar.org/avatar</code> (http)';
+$lang['libravatarURL']                = 'Legt die URL für Libravatar (oder eine kompatible API) fest <br/> <strong>HINWEIS:</strong> <br/> - <code>https://seccdn.libravatar.org/avatar</code> (https) <br/> - <code>http://cdn.libravatar.org/avatar</code> (http)';
 $lang['navbarLabels']                 = 'Zeige/verberge Labels';
-$lang['office365URL']                 = 'Set Microsoft Office 365 (or EWS) URL <br/> <strong>NOTE:</strong> This service requires login, so this use case is most useful in a corporate installation, where all users have access to Office 365.';
+$lang['notifyExtensionsUpdate']       = 'Benachrichtigung über Erweiterungsupdates (für Administratorenbenutzer)';
+$lang['office365URL']                 = 'Legt die Microsoft Office 365- (oder EWS) URL fest <br/> <strong>HINWEIS:</strong> Für diesen Dienst ist eine Anmeldung erforderlich. Daher ist dieser Fall in einer Unternehmensinstallation am nützlichsten, in der alle Benutzer Zugriff auf Office 365 haben';
 $lang['pageIcons']                    = 'Wähle die Icons die angezeigt werden solle';
 $lang['pageInfo']                     = 'Zeige/Verberge Seiten Info Elemente';
 $lang['pageInfoDateFormat']           = 'Datum Format';
 $lang['pageInfoDateFormat_o_dformat'] = 'DokuWiki Format';
 $lang['pageInfoDateFormat_o_human']   = 'Menschenlesbares Format';
 $lang['pageOnPanel']                  = 'Aktiviert einen Rahmen um die Seite';
-$lang['pageToolsAnimation']           = 'Aktiviert die Animation für die Seiten-Werkzeuge';
 $lang['rightSidebar']                 = 'Seitenname der rechten Sidebar, ein leeres Feld deaktiviert die Sidebar.<br/>Die rechte Sidebar wird nur angezeigt wenn die Standard DokuWiki <a class="interwiki iw_doku" href="#config___sidebar">Sidebar</a> aktiviert ist und sich auf der <code>linken</code> Seite befindet (Siehe <a class="interwiki iw_doku" href="#config___tpl____bootstrap3____sidebarPosition">sidebarPosition</a> Einstellung). Wenn nur die Sidebar auf der rechten Seite aktiv sein soll, setze die <a class="interwiki iw_doku" href="#config___tpl____bootstrap3____sidebarPosition">sidebarPosition</a> Einstellung auf den Wert <code>rechts</code>';
 $lang['rightSidebarGrid']             = 'Rechte Seitenleiste Raster Klasse <code>col-{xs,sm,md,lg}-x</code> (siehe <a href="http://holdirbootstrap.de/css/#grid" target="_blank">Bootstrap Raster-System</a> Dokumentation)';
 $lang['schemaOrgType']                = 'Schema.org Typ (<code>Article</code>, <code>NewsArticle</code>, <code>TechArticle</code>, <code>BlogPosting</code>, <code>Recipe</code>)';
@@ -82,15 +84,11 @@ $lang['showPageTools']                = 'Aktiviere die Seiten Werkzeuge im DokuW
 $lang['showPageTools_o_always']       = 'Immer';
 $lang['showPageTools_o_logged']       = 'Wenn angemeldet';
 $lang['showPageTools_o_never']        = 'Nie';
-$lang['showPurgePageCache']           = 'Display the "Purge Cache Page" button in Page Tools';
-$lang['showPurgePageCache_o_always']  = 'Always';
-$lang['showPurgePageCache_o_logged']  = 'When logged in';
-$lang['showPurgePageCache_o_never']   = 'Never';
 $lang['showSearchForm']               = 'Zeigt das Suchformular in der Navigationsleiste';
 $lang['showSearchForm_o_always']      = 'Immer';
 $lang['showSearchForm_o_logged']      = 'Wenn angemeldet';
 $lang['showSearchForm_o_never']       = 'Nie';
-$lang['showSemanticPopup']            = 'Display a popup with an extract of the page when the user hover on wikilink (require <em>Semantic Plugin</em>)';
+$lang['showSemanticPopup']            = 'Zeigt ein Popup mit einem Auszug der Seite an, wenn der Benutzer mit der Maus über einen Wikilink fährt. (benötigt das <em>Semantic Plugin</em>)';
 $lang['showThemeSwitcher']            = 'Zeigt den Bootswatch.com Design Umschalter in der Navigationsleiste';
 $lang['showTools']                    = 'Zeigt die Werkzeuge in der Navigationsleiste';
 $lang['showTools_o_always']           = 'Immer';
@@ -98,10 +96,10 @@ $lang['showTools_o_logged']           = 'Wenn angemeldet';
 $lang['showTools_o_never']            = 'Nie';
 $lang['showTranslation']              = 'Zeige die Übersetzungstoolbar (benötigt das <em>Translation Plugin</em>)';
 $lang['showUserHomeLink']             = 'Zeigt den Link zur Benutzerseite in der Navigationsleiste.';
-$lang['showWikiInfo']                 = 'Display DokuWiki <a class="interwiki iw_doku" href="#config___title">name</a>, logo and <a class="interwiki iw_doku" href="#config___tagline">tagline</a> on footer';
-$lang['sidebarOnNavbar']              = 'Display the sidebar contents inside the navbar (useful on mobile/tablet devices)';
+$lang['showWikiInfo']                 = 'Zeige DokuWiki <a class="interwiki iw_doku" href="#config___title">Namen</a>, Logo und <a class="interwiki iw_doku" href="#config___tagline">Slogan</a> im Fußbereich der Seite';
+$lang['sidebarOnNavbar']              = 'Zeige die Inhalte der Seitenleiste in der Navigationsleiste. (Nützlich für kleine Endgeräte wie Telefon oder Tablet)';
 $lang['sidebarPosition']              = 'Position der DokuWiki Seitenleiste (<code>links</code> oder <code>rechts</code>)';
-$lang['sidebarShowPageTitle']         = 'Display Sidebar page title';
+$lang['sidebarShowPageTitle']         = 'Seitentitel anzeigen';
 $lang['socialShareProviders']         = 'Wähle die Social Media Icons die angezeigt werden sollen';
 $lang['tableFullWidth']               = 'Aktiviere 100% Tabellenbreite (Bootstrap Standard)';
 $lang['tableStyle']                   = 'Tabellendesign';
@@ -110,18 +108,18 @@ $lang['themeByNamespace']             = 'Use a namespaced theme';
 $lang['tocAffix']                     = 'Zeigt das Inhaltsverzeichnis (TOC) während des scrollens';
 $lang['tocCollapseOnScroll']          = 'Öffne/schliesse das Inhaltsverzeichnis (TOC) beim Scrollen der Seite.';
 $lang['tocCollapseSubSections']       = 'Schließt alle Unterpunkte in TOC um Platz zu sparen';
-$lang['tocCollapsed']                 = 'Collapse TOC on every pages';
+$lang['tocCollapsed']                 = 'Inhaltsverzeichnis auf allen Seiten schließen';
 $lang['tocPosition']                  = 'Position des Inhaltsverzeichnisses (TOC)';
-$lang['tocLayout']                    = 'TOC layout';
-$lang['useACL']                       = 'Use ACL for sidebars (left and right) and for all DokuWiki hooks (eg. <code>:footer</code>, <code>:navbar</code>, etc.) <br/> <strong>NOTE:</strong> Available since "Elenor of Tsort" DokuWiki release';
+$lang['tocLayout']                    = 'Layout des Inhaltsverzeichnisses';
+$lang['useACL']                       = 'Benutze die ACL für die Sidebar (links oder rechts) und für alle DokuWiki Bereiche (wie <code>:footer</code>, <code>:navbar</code>, usw.) <br/> <strong>Hinweis:</strong> Verfügbar ab DokuWiki Version "Elenor of Tsort"';
+$lang['useAlternativeToolbarIcons']   = 'Verwendet die alternativen "Material Design" Icons für die DokuWiki-Symbolleiste';
 $lang['useAnchorJS']                  = 'Benutze AnchorJS';
-$lang['useAvatar']                    = 'Load the avatar image from Gravatar, Libravatar, Microsoft Office365 or local DokuWiki <code>:user</code> namespace';
+$lang['useAvatar']                    = 'Läd das Avatar-Bild aus Gravatar, Libravatar, Microsoft Office365 oder dem lokalen DokuWiki <code>:user</code> Namensraum';
 $lang['useAvatar_o_gravatar']         = 'Gravatar';
 $lang['useAvatar_o_libravatar']       = 'Libravatar';
-$lang['useAvatar_o_local']            = 'DokuWiki :user namespace';
-$lang['useAvatar_o_off']              = 'Off';
-$lang['useAvatar_o_office365']        = 'Office365 (or EWS)';
+$lang['useAvatar_o_local']            = 'DokuWiki :user Namensraum';
+$lang['useAvatar_o_off']              = 'Aus';
+$lang['useAvatar_o_office365']        = 'Office365 (oder EWS)';
+$lang['useAvatar_o_activedirectory']  = 'Active Directory';
 $lang['useGoogleAnalytics']           = 'Aktiviere Google Analytics';
 $lang['useLegacyNavbar']              = 'Verwende die veraltete <code>navbar.html</code> Methode (Denke daran, in Zukunft die <code>:navbar</code> Methode zu verwenden).';
-$lang['useLocalBootswatch']           = 'Benutze das lokale Bootswatch Verzeichnis. Diese Option ist hilfreich bei Installationen im "Intranet".';
-

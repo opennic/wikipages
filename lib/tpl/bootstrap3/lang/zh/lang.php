@@ -19,11 +19,15 @@ $lang['themes']                  = '主题';
 $lang['expand_container']        = '拓展/减少';
 $lang['administrative_tasks']    = '管理任务';
 $lang['additional_plugins']      = '额外插件';
-$lang['share_on']                = '分享';
-$lang['send_mail']               = '发送 e-Mail';
+$lang['share_on']                = 'Share via';
+$lang['send_mail']               = 'Send via e-Mail';
 $lang['print']                   = '打印';
 $lang['permalink']               = 'Permalink';
 $lang['add_new_page']            = '添加新页面';
+$lang['extensions_update']       = 'Extensions update';
+$lang['user_groups']             = 'Groups';
+$lang['preview_size']            = 'Size of this preview';
+$lang['other_resolutions']       = 'Other resolutions';
 
 // Configuration Manager Template Sections
 $lang['config_theme']            = '主题';

@@ -15,11 +15,15 @@ $lang['themes']                  = 'پوسته‌ها';
 $lang['expand_container']        = 'گشودن/بستن';
 $lang['administrative_tasks']    = 'وظایف مدیریتی';
 $lang['additional_plugins']      = 'افزونه‌های اضافی';
-$lang['share_on']                = 'اشتراک گذاری در';
-$lang['send_mail']               = 'فرستادن ایمیل';
+$lang['share_on']                = 'Share via';
+$lang['send_mail']               = 'Send via e-Mail';
 $lang['print']                   = 'چاپ';
 $lang['permalink']               = 'Permalink';
 $lang['add_new_page']            = 'افزودن صفحه جدید';
+$lang['extensions_update']       = 'Extensions update';
+$lang['user_groups']             = 'Groups';
+$lang['preview_size']            = 'Size of this preview';
+$lang['other_resolutions']       = 'Other resolutions';
 
 // Configuration Manager Template Sections
 $lang['config_theme']            = 'پوسته';

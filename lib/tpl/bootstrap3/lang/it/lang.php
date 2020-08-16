@@ -14,11 +14,15 @@ $lang['themes']                  = 'Temi';
 $lang['expand_container']        = 'Espandi/Riduci';
 $lang['administrative_tasks']    = 'Operazioni di Amministrazione';
 $lang['additional_plugins']      = 'Plugin Aggiuntivi';
-$lang['share_on']                = 'Condividi su';
-$lang['send_mail']               = 'Invia e-Mail';
+$lang['share_on']                = 'Share via';
+$lang['send_mail']               = 'Send via e-Mail';
 $lang['print']                   = 'Stampa';
 $lang['permalink']               = 'Permalink';
 $lang['add_new_page']            = 'Aggiungi una nuova pagina';
+$lang['extensions_update']       = 'Extensions update';
+$lang['user_groups']             = 'Groups';
+$lang['preview_size']            = 'Size of this preview';
+$lang['other_resolutions']       = 'Other resolutions';
 
 // Configuration Manager Template Sections
 $lang['config_theme']            = 'Tema';

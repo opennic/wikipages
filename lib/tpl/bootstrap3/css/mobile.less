@@ -29,6 +29,11 @@
       text-align: left;
     }
 
+    .dw-container.mx-5 {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
     #config__manager {
       td {
         display: block;
@@ -50,11 +55,16 @@
       z-index: 9999;
 
       &::before {
-        .fa-icon(@fa-close);
+        content: 'x';
         right: 5px;
         position: absolute;
         top: 5px;
         cursor: pointer;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background: #ddd;
+        text-align: center;
       }
     }
 

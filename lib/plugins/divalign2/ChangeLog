@@ -1,5 +1,18 @@
 ==== Divalign2 for DokuWiki Changelog ====
 
+2020-06-11  Luis Machuca Bezzaza <lambalicious [at] tuta [dot] io>
+
+    * Migrated over from Github to Notabug.
+    * Experimental: fix action component signatures for PHP >= 7.4 / DW >= Hogfather.
+    * Experimental: support Renderer plugins: plugin:s5, plugin:purplenumbers .
+
+2019-11-22  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
+
+    * Pre-release version 4.0rc1.
+    * Updated with PR #2 by LarsGit223 (ODT support).
+    * Updated with PR #3 by wigyori (PHP 7.x conformance).
+    
+
 2013-08-12  Luis Machuca Bezzaza <luis [dot] machuca [at] gulix [dot] cl>
 
     * **BETA VERSION**.

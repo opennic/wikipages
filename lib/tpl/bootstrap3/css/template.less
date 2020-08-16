@@ -6,6 +6,9 @@
  * License  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
+@import url("css.php?f=bootstrap.css");
+
+
 html {
   -ms-overflow-style: scrollbar;
 }
@@ -18,6 +21,54 @@ body {
   }
 
 }
+
+/**
+ * Links and Interwiki icons
+ */
+a.urlextern {
+  background-image: url('iconify.php?icon=mdi-earth-arrow-right.svg&color=%23666666') !important;
+}
+
+a.mail {
+  background-image: url('iconify.php?icon=mdi-email.svg&color=%23666666') !important;
+}
+
+a.iw_user {
+  background-image: url('iconify.php?icon=mdi-account.svg');
+}
+
+a.iw_wp, a.iw_wpde, a.iw_wpes, a.iw_wpfr, a.iw_wpjp, a.iw_wpmeta, a.iw_wppl {
+  background-image: url('iconify.php?icon=mdi-wikipedia.svg');
+}
+
+a.iw_go {
+  background-image: url('iconify.php?icon=mdi-google.svg&color=%234285f4');
+}
+
+a.iw_skype {
+  background-image: url('iconify.php?icon=mdi-skype.svg&color=%2300aff0');
+}
+
+a.iw_phpfn {
+  background-image: url('iconify.php?icon=mdi-elephant.svg&color=%23858eb8');
+}
+
+a.iw_callto, a.iw_tel {
+  background-image: url('iconify.php?icon=mdi-phone.svg');
+}
+
+a.iw_amazon, a.iw_amazon_de, a.iw_amazon_uk {
+  background-image: url('iconify.php?icon=mdi-amazon.svg');
+}
+
+a.iw_man {
+  background-image: url('iconify.php?icon=mdi-book.svg');
+}
+
+a.iw_paypal {
+  background-image: url('iconify.php?icon=mdi-paypal.svg&color=%2324397c');
+}
+
 
 aside,
 .dw__dropdown_page {
@@ -94,40 +145,18 @@ header {
 
   nav {
 
-    #dw__logo {
-      margin-right: 10px;
-    }
-
-    #dw__title {
-      display: inline-block;
+    .navbar-brand {
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     #dw__tagline {
-      font-size: .6em;
-      display: block;
-      line-height: 1em;
+      font-size: 0.6em;
+      line-height: 0.6em;
       white-space: nowrap;
     }
 
     #dw__search {
-
-      input[type=search] {
-        padding-left: 30px;
-        display: inline-block;
-      }
-
-      button[type=submit] {
-       position:absolute;
-       left: 5px;
-       padding: 5px;
-       background: transparent;
-       border: 0px solid;
-      }
-
-      button[type=submit]:hover,
-      button[type=submit]:focus {
-        outline: 0;
-      }
 
       /* Typeahead plugin */
       .typeahead {
@@ -161,6 +190,15 @@ header {
   }
 
 }
+
+article .page-header:first-child {
+  margin-top: 10px;
+}
+
+/* Characters picker */
+div#picker2 {
+  z-index:1000;
+} 
 
 
 /* Message area (alerts, warnings, errors, etc.) */
@@ -206,6 +244,10 @@ header {
     padding: 5px;
   }
 
+  legend {
+    font-size: 1.8em;
+  }
+
   fieldset {
     background: initial !important;
     padding: 0 !important;
@@ -227,6 +269,10 @@ header {
 
   #tpl____bootstrap3____template_settings_name legend {
     padding-top: 25px;
+  }
+
+  span[title*="$meta"] {
+    font-family: monospace;
   }
 
 }
@@ -278,17 +324,17 @@ header {
 #dw__pagetools {
 
   position: absolute;
-  right: 27px;
-  top: 50px;
+  right: 30px;
+  padding-top: 50px;
   z-index: 999;
   text-align: center;
 
   ul li a {
-    padding: 2px;
+    padding: 2px 4px;
   }
 
   ul li:not(.active) a:hover {
-      background: transparent;
+    background: transparent;
   }
 
   .tools {
@@ -301,23 +347,15 @@ header {
 /* Footer Page */
 #dw__footer {
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  border-radius: 0px;
-  border-width: 1px 0 0 0;
-  margin: 50px 0 0 0;
   z-index: 995;
 
-  .navbar-text {
-    float: initial;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+  &.container-fluid {
+    margin: 0;
+    margin-bottom: -50px;
+    padding: 0;
   }
 
 }
-
 
 /* Extension Manager */
 #extension__manager {
@@ -395,8 +433,33 @@ header {
 }
 
 
-.pageId a.label {
+#dokuwiki__pageheader p a.label {
   white-space: initial;
+}
+
+/* Page ID */
+[data-img-id] .pageId {
+
+  &::after {
+    content: " }}";
+  }
+
+  &::before {
+    content: "{{ ";
+  }
+
+}
+
+[data-page-id] .pageId {
+
+  &::after {
+    content: " ]]";
+  }
+
+  &::before {
+    content: "[[ ";
+  }
+
 }
 
 
@@ -511,32 +574,33 @@ header {
 }
 
 
-.dw-content h1.page-header {
-  margin-top: 20px;
-}
-
-
 /* Page icons (email, print, social share, etc.) */
 .dw-page-icons {
 
-  ul.list-inline li {
-    padding: 0 0 0 2px;
+  a {
+    color: inherit;
   }
 
-  .dropdown {
-    padding: 0 8px 0 0;
+  span {
+    display: none;
   }
 
-  .share-google-plus i.fa { color: #DC4E41; }
-  .share-twitter     i.fa { color: #55ACEE; }
-  .share-linkedin    i.fa { color: #0077B5; }
-  .share-facebook    i.fa { color: #3B5998; }
-  .share-whatsapp    i.fa { color: #43D854; }
-  .share-pinterest   i.fa { color: #BD081C; }
-  .share-telegram    i.fa { color: #0088CC; }
+  svg {
+    width: 1.2em !important;
+    height: 1.2em !important;
+  }
+
+  .share-google-plus svg { color: #DC4E41; }
+  .share-twitter     svg { color: #55ACEE; }
+  .share-linkedin    svg { color: #0077B5; }
+  .share-facebook    svg { color: #3B5998; }
+  .share-whatsapp    svg { color: #43D854; }
+  .share-pinterest   svg { color: #BD081C; }
+  .share-telegram    svg { color: #0088CC; }
+  .share-yammer      svg { color: #5AA8BF; }
+  .share-reddit      svg { color: #FF4500; }
 
 }
-
 
 /* Override Bootstrap3 style */
 
@@ -604,6 +668,26 @@ ul.btn-group {
     font-weight: bold;
   }
 
+  .diff.diff_sidebyside {
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    td.diff-context {
+      width: 50%;
+    }
+
+  }
+
+  table.diff {
+    select {
+      font-size: 1em !important;
+    }
+    td {
+      font-size: 1em !important; 
+    }
+  }
+
 }
 
 /* Custom DropDown menu with multiple columns */
@@ -625,20 +709,6 @@ ul.btn-group {
 
 
 /* Custom DropDown Menu Large (see http://bootsnipp.com/snippets/featured/large-dropdown-menu) */
-
-.dropdown-large {
-  position: static !important;
-}
-
-.dropdown-menu-large {
-  margin-left: 16px;
-  margin-right: 16px;
-  padding: 20px 0px;
-}
-
-#dw__user_menu .dropdown-menu-large {
-  width: 400px;
-}
 
 #dw__admin .dropdown-menu-large {
   width: 600px;
@@ -688,6 +758,17 @@ body {
     #config__manager .outkey {
       color: #fff !important;
     }
+    #extension__list {
+      ul.extensionList li {
+        color: inherit;
+      }
+      .legend {
+        color: inherit;
+      }
+      p {
+        color: inherit;
+      }
+    }
   }
 
 }
@@ -702,4 +783,107 @@ body {
     width: 100%;
   }
 
+}
+
+
+body.yeti #dw__user_menu dl {
+  color: white;
+}
+
+/* SVG icon for DokuWiki */
+
+svg.icon {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.menuitem svg {
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+#dw__pagetools .menuitem svg {
+  fill: initial !important;
+}
+
+.dropdown-menu .menuitem svg {
+  padding-right: 4px;
+}
+
+#dw__pagetools .active .menuitem svg {
+  fill: #fff !important;
+}
+
+#dw__pagetools .menuitem span {
+  display: none;
+}
+
+/* Fixes for Bootswatch theme and DokuWiki actions */
+
+body {
+
+  &.cyborg,
+  &.darkly,
+  &.slate,
+  &.superhero,
+  &.solar {
+    #dw__pagetools .menuitem svg {
+      fill: #fff !important;
+    }
+    .iw_user {
+      background-image: url('iconify.php?icon=mdi-account.svg&color=%23ffffff');
+    }
+    a.urlextern {
+      background-image: url('iconify.php?icon=mdi-earth-arrow-right.svg&color=%23ffffff') !important;
+    }
+
+    a.mail {
+      background-image: url('iconify.php?icon=mdi-email.svg&color=%23ffffff') !important;
+    }
+    a.iw_callto, a.iw_tel {
+      background-image: url('iconify.php?icon=mdi-phone.svg&color=%23ffffff');
+    }
+
+    a.iw_amazon, a.iw_amazon_de, a.iw_amazon_uk {
+      background-image: url('iconify.php?icon=mdi-amazon.svg&color=%23ffffff');
+    }
+
+    a.iw_man {
+      background-image: url('iconify.php?icon=mdi-book.svg&color=%23ffffff');
+    }
+    a.iw_wp, a.iw_wpde, a.iw_wpes, a.iw_wpfr, a.iw_wpjp, a.iw_wpmeta, a.iw_wppl {
+      background-image: url('iconify.php?icon=mdi-wikipedia.svg&color=%23ffffff');
+    }
+  }
+
+  &.yeti .dropdown-menu .menuitem svg {
+    fill: #fff;
+  }
+
+  &.solar .dropdown-menu .menuitem svg {
+    fill: #839496;
+  }
+
+  &.sandstone .menuitem svg {
+    fill: #98978b;
+  }
+
+  &.lumen .menuitem svg {
+    fill: #555555;
+  }
+
+  &.flatly .menuitem svg {
+    fill: #7b8a8b;
+  }
+
+}
+
+.alert {
+  overflow: hidden;
 }

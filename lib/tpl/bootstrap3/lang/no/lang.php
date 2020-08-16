@@ -10,16 +10,20 @@
 $lang['discussion']              = 'Diskusjon';
 $lang['back_to_article']         = 'Tilbake til artikkelen';
 $lang['userpage']                = 'Brukerside';
-$lang['purge_cache_page']        = 'Purge page cache';
+$lang['purge_cache_page']        = 'Rens page cache';
 $lang['themes']                  = 'Temaer';
 $lang['expand_container']        = 'Utvid/Reduser';
 $lang['administrative_tasks']    = 'Administrative oppgaver';
 $lang['additional_plugins']      = 'Ytterligere plugins';
-$lang['share_on']                = 'Del på';
-$lang['send_mail']               = 'Send e-post';
+$lang['share_on']                = 'Share via';
+$lang['send_mail']               = 'Send via e-Mail';
 $lang['print']                   = 'Skriv ut';
-$lang['permalink']               = 'Permalink';
+$lang['permalink']               = 'Permalenke';
 $lang['add_new_page']            = 'Legg til ny side';
+$lang['extensions_update']       = 'Extensions update';
+$lang['user_groups']             = 'Groups';
+$lang['preview_size']            = 'Size of this preview';
+$lang['other_resolutions']       = 'Other resolutions';
 
 // Configuration Manager Template Sections
 $lang['config_theme']            = 'Tema';

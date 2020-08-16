@@ -76,7 +76,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         $flags = $this->defaults;
         foreach ($setflags as $flag) {
             $value = '';
-            if (strpos($flag, '=') !== -1) {
+            if (strpos($flag, '=') !== false) {
                 list($flag, $value) = explode('=', $flag, 2);
             }
             switch ($flag) {
@@ -224,6 +224,9 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                 case 'noreadmore':
                     $flags['readmore'] = 0;
                     break;
+                case 'exclude':
+                    $flags['exclude'] = $value;
+                    break;
             }
         }
         // the include_content URL parameter overrides flags
@@ -303,9 +306,9 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         }
 
         if($flags['firstsec']) {
-            $this->_get_firstsec($ins, $page, $flags);  // only first section 
+            $this->_get_firstsec($ins, $page, $flags);  // only first section
         }
-        
+
         $ns  = getNS($page);
         $num = count($ins);
 
@@ -452,7 +455,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                     } else {
                         $footer_lvl = $lvl_max;
                     }
-                } 
+                }
             }
         }
 
@@ -530,7 +533,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
 
     /**
      * Convert instruction item for a permalink header
-     * 
+     *
      * @author Michael Klier <chi@chimeric.de>
      */
     function _permalink(&$ins, $page, $sect, $flags) {
@@ -555,7 +558,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                 // resolve relative ids, but without cleaning in order to preserve the name
                 $media_id = resolve_id($ns, $ins[$i][1][1]['src']);
                 // make sure that after resolving the link again it will be the same link
-                if ($media_id{0} != ':') $media_id = ':'.$media_id;
+                if ($media_id[0] != ':') $media_id = ':'.$media_id;
                 $ins[$i][1][1]['src'] = $media_id;
             }
             switch($ins[$i][0]) {
@@ -572,7 +575,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                     // resolve the id without cleaning it
                     $link_id = resolve_id($ns, $link_id, false);
                     // this id is internal (i.e. absolute) now, add ':' to make resolve_id work again
-                    if ($link_id{0} != ':') $link_id = ':'.$link_id;
+                    if ($link_id[0] != ':') $link_id = ':'.$link_id;
                     // restore parameters
                     $ins[$i][1][0] = ($link_params != '') ? $link_id.'?'.$link_params : $link_id;
 
@@ -616,11 +619,11 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         }
     }
 
-    /** 
-     * Get a section including its subsections 
+    /**
+     * Get a section including its subsections
      *
      * @author Michael Klier <chi@chimeric.de>
-     */ 
+     */
     function _get_section(&$ins, $sect) {
         $num = count($ins);
         $offset = false;
@@ -631,12 +634,12 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         $check = array(); // used for sectionID() in order to get the same ids as the xhtml renderer
 
         for($i=0; $i<$num; $i++) {
-            if ($ins[$i][0] == 'header') { 
+            if ($ins[$i][0] == 'header') {
 
-                // found the right header 
+                // found the right header
                 if (sectionID($ins[$i][1][0], $check) == $sect) {
                     $offset = $i;
-                    $lvl    = $ins[$i][1][1]; 
+                    $lvl    = $ins[$i][1][1];
                 } elseif ($offset && $lvl && ($ins[$i][1][1] <= $lvl)) {
                     $end = $i - $offset;
                     $endpos = $ins[$i][1][2]; // the position directly after the found section, needed for the section edit button
@@ -651,7 +654,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
             // store the end position in the include_closelastsecedit instruction so it can generate a matching button
             $ins[] = array('plugin', array('include_closelastsecedit', array($endpos)));
         }
-    } 
+    }
 
     /**
      * Only display the first section of a page and a readmore link
@@ -732,6 +735,13 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
             if (auth_quickaclcheck($page) >= AUTH_READ)
                 $pages[] = $page;
         }
+
+        if (isset($flags['exclude']))
+            $pages = array_filter($pages, function ($page) use ($flags) {
+                if (@preg_match($flags['exclude'], $page))
+                    return FALSE;
+                return TRUE;
+            });
 
         if (count($pages) > 1) {
             if ($flags['order'] === 'id') {
@@ -816,7 +826,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         }
         return $pages;
     }
-    
+
     /**
      *  Get wiki language from "HTTP_ACCEPT_LANGUAGE"
      *  We allow the pattern e.g. "ja,en-US;q=0.7,en;q=0.3"
@@ -845,18 +855,18 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
                        break;
                    }
                }
-           }                                                                                   
-       }                                                                                       
-       return cleanID($result);                                                                
+           }
+       }
+       return cleanID($result);
     }
-    
+
     /**
      * Makes user or date dependent includes possible
      */
     function _apply_macro($id, $parent_id) {
         global $INFO;
         global $auth;
-        
+
         // if we don't have an auth object, do nothing
         if (!$auth) return $id;
 

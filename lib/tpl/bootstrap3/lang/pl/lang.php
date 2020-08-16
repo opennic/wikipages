@@ -15,11 +15,15 @@ $lang['themes']                  = 'Motywy';
 $lang['expand_container']        = 'Rozwiń/Zwiń';
 $lang['administrative_tasks']    = 'Zadania administracyjne';
 $lang['additional_plugins']      = 'Dodatkowe wtyczki';
-$lang['share_on']                = 'Podziel się';
-$lang['send_mail']               = 'Wyślij e-Mail';
+$lang['share_on']                = 'Share via';
+$lang['send_mail']               = 'Send via e-Mail';
 $lang['print']                   = 'Drukuj';
 $lang['permalink']               = 'Permalink';
 $lang['add_new_page']            = 'Dodaj nową stronę';
+$lang['extensions_update']       = 'Extensions update';
+$lang['user_groups']             = 'Groups';
+$lang['preview_size']            = 'Size of this preview';
+$lang['other_resolutions']       = 'Other resolutions';
 
 // Configuration Manager Template Sections
 $lang['config_theme']            = 'Motyw';

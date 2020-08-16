@@ -13,7 +13,6 @@ $meta['bootswatchTheme']     = array('multichoice', '_choices' => array('cerulea
 $meta['customTheme']         = array('string');
 $meta['showThemeSwitcher']   = array('onoff');
 $meta['hideInThemeSwitcher'] = array('multicheckbox', '_choices' => $meta['bootswatchTheme']['_choices']);
-$meta['useLocalBootswatch']  = array('onoff');
 $meta['themeByNamespace']    = array('onoff');
 
 // Sidebar
@@ -25,39 +24,37 @@ $meta['sidebarOnNavbar']      = array('onoff');
 $meta['sidebarShowPageTitle'] = array('onoff');
 
 // Navbar
-$meta['inverseNavbar']       = array('onoff');
-$meta['fixedTopNavbar']      = array('onoff');
-$meta['showTranslation']     = array('onoff');
-$meta['showTools']           = array('multichoice', '_choices' => array('never', 'logged', 'always'));
-$meta['showHomePageLink']    = array('onoff');
-$meta['homePageURL']         = array('string', '_caution' => 'warning');
-$meta['showUserHomeLink']    = array('onoff');
-$meta['hideLoginLink']       = array('onoff');
-$meta['showEditBtn']         = array('multichoice', '_choices' => array('never', 'logged', 'always'));
-$meta['individualTools']     = array('onoff');
-$meta['showIndividualTool']  = array('multicheckbox', '_choices' => array('user', 'site', 'page'));
-$meta['showSearchForm']      = array('multichoice', '_choices' => array('never', 'logged', 'always'));
-$meta['showAdminMenu']       = array('onoff');
-$meta['useLegacyNavbar']     = array('onoff');
-$meta['showNavbar']          = array('multichoice', '_choices' => array('logged', 'always'));
-$meta['navbarLabels']        = array('multicheckbox', '_choices' => array('login', 'register', 'admin', 'tools', 'user', 'site', 'page', 'themes', 'expand', 'profile'));
-$meta['showAddNewPage']      = array('multichoice', '_choices' => array('never', 'logged', 'always'));
+$meta['inverseNavbar']          = array('onoff');
+$meta['fixedTopNavbar']         = array('onoff');
+$meta['showTranslation']        = array('onoff');
+$meta['showTools']              = array('multichoice', '_choices' => array('never', 'logged', 'always'));
+$meta['showHomePageLink']       = array('onoff');
+$meta['homePageURL']            = array('string', '_caution' => 'warning');
+$meta['showUserHomeLink']       = array('onoff');
+$meta['hideLoginLink']          = array('onoff');
+$meta['showEditBtn']            = array('multichoice', '_choices' => array('never', 'logged', 'always'));
+$meta['individualTools']        = array('onoff');
+$meta['showIndividualTool']     = array('multicheckbox', '_choices' => array('user', 'site', 'page'));
+$meta['showSearchForm']         = array('multichoice', '_choices' => array('never', 'logged', 'always'));
+$meta['showAdminMenu']          = array('onoff');
+$meta['useLegacyNavbar']        = array('onoff');
+$meta['showNavbar']             = array('multichoice', '_choices' => array('logged', 'always'));
+$meta['navbarLabels']           = array('multicheckbox', '_choices' => array('login', 'register', 'admin', 'tools', 'user', 'site', 'page', 'themes', 'expand', 'profile'));
+$meta['showAddNewPage']         = array('multichoice', '_choices' => array('never', 'logged', 'always'));
+$meta['notifyExtensionsUpdate'] = array('onoff');
 
 // Semantic
-$meta['semantic']            = array('onoff');
 $meta['schemaOrgType']       = array('multichoice', '_choices' => array('Article', 'NewsArticle', 'TechArticle', 'BlogPosting', 'Recipe'));
 $meta['showSemanticPopup']   = array('onoff');
 
 // Layout
 $meta['fluidContainer']         = array('onoff');
-$meta['fluidContainerBtn']      = array('onoff');
 $meta['pageOnPanel']            = array('onoff');
 $meta['tableFullWidth']         = array('onoff');
 $meta['tableStyle']             = array('multicheckbox', '_choices' => array('striped', 'bordered', 'hover', 'condensed', 'responsive'));
 $meta['showLandingPage']        = array('onoff');
 $meta['landingPages']           = array('regex');
 $meta['showPageTools']          = array('multichoice', '_choices' => array('never', 'logged', 'always'));
-$meta['pageToolsAnimation']     = array('onoff');
 $meta['showPageId']             = array('onoff');
 $meta['showBadges']             = array('onoff');
 $meta['showLoginOnFooter']      = array('onoff');
@@ -75,7 +72,7 @@ $meta['showDiscussion']      = array('onoff');
 $meta['discussionPage']      = array('string');
 
 // Avatar
-$meta['useAvatar']           = array('multichoice', '_choices' => array('off', 'gravatar', 'libravatar', 'office365', 'local'));
+$meta['useAvatar']           = array('multichoice', '_choices' => array('off', 'gravatar', 'libravatar', 'office365', 'activedirectory', 'local'));
 $meta['gravatarURL']         = array('string');
 $meta['libravatarURL']       = array('string');
 $meta['office365URL']        = array('string');
@@ -101,15 +98,15 @@ $meta['browserTitleCharSepNS'] = array('multichoice', '_choices' => array('-', '
 $meta['browserTitleOrderNS']   = array('multichoice', '_choices' => array('normal', 'reverse'));
 
 // Page
-$meta['showPageInfo']         = array('onoff');
-$meta['useACL']               = array('onoff', '_caution' => 'warning');
-$meta['showPurgePageCache']   = array('multichoice', '_choices' => array('never', 'logged', 'always'));
-$meta['pageInfo']             = array('multicheckbox', '_choices' => array('filename', 'extension', 'date', 'editor', 'locked'));
-$meta['pageInfoDateFormat']   = array('multichoice', '_choices'   => array('dformat', 'human'));
-$meta['showPageIcons']        = array('onoff');
-$meta['pageIcons']            = array('multicheckbox', '_choices' => array('social-share', 'feed', 'send-mail', 'permalink', 'print', 'help'));
-$meta['socialShareProviders'] = array('multicheckbox', '_choices' => array('facebook', 'google-plus', 'linkedin', 'pinterest', 'whatsapp', 'twitter', 'telegram'));
-$meta['tagsOnTop']            = array('onoff');
-$meta['useAnchorJS']          = array('onoff');
-$meta['collapsibleSections']  = array('onoff');
-$meta['domParserMaxPageSize'] = array('numeric', '_min' => 0);
+$meta['showPageInfo']               = array('onoff');
+$meta['useACL']                     = array('onoff', '_caution' => 'warning');
+$meta['pageInfo']                   = array('multicheckbox', '_choices' => array('filename', 'extension', 'date', 'editor', 'locked'));
+$meta['pageInfoDateFormat']         = array('multichoice', '_choices'   => array('dformat', 'human'));
+$meta['showPageIcons']              = array('onoff');
+$meta['pageIcons']                  = array('multicheckbox', '_choices' => array('social-share', 'feed', 'send-mail', 'permalink', 'print', 'help'));
+$meta['socialShareProviders']       = array('multicheckbox', '_choices' => array('facebook', 'linkedin', 'pinterest', 'whatsapp', 'reddit', 'twitter', 'telegram', 'yammer'));
+$meta['useAlternativeToolbarIcons'] = array('onoff');
+$meta['tagsOnTop']                  = array('onoff');
+$meta['useAnchorJS']                = array('onoff');
+$meta['collapsibleSections']        = array('onoff');
+$meta['domParserMaxPageSize']       = array('numeric', '_min' => 0);
