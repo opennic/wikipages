@@ -2,7 +2,7 @@
 
 FIXME This guide was copied directly from the old wiki. It likely needs some updates for the latest BIND software and OpenNIC configuration. If this guide doesn't work, try using the [[opennic:srvzone|srvzone script]].
 
-For those wishing to set up a more robust local nameserver, or if you plan on running a public [[tier1|Tier 1]] or [[tier2|Tier 2]] server for OpenNIC, configuring BIND with slave zones is the preferred method. Please read the policies before running a public T2 server. You should also join the appropriate [[mailinglist|MailingLists]] so you'll be notified of changing situations which may affect your operation.
+For those wishing to set up a more robust local nameserver, or if you plan on running a public [[tier1|Tier 1]] or [[tier2|Tier 2]] server for OpenNIC, configuring BIND with slave zones is the preferred method. Please read [[opennic:operatorpolicies|the policies]] before running a public T2 server. You should also join the appropriate [[mailinglist|MailingLists]] so you'll be notified of changing situations which may affect your operation.
 
 Slave zones contain the full record of domain names for each OpenNIC TLD. When a query is made for an OpenNIC domain, you have the exact information needed to proceed directly to that domain, thus eliminating several hops in processing a query. Note that the only difference between a Tier 1 and Tier 2 server is that Tier 1 servers do not process public queries for ICANN domains - they ONLY process OpenNIC TLD requests.
 
