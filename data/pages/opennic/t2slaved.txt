@@ -83,13 +83,6 @@ zone "bbs" in {
 	notify yes;
 	masters { opennicNS; opennicPeers; };
 };
-zone "bit" in {
-	type slave;
-	file "bit.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
 zone "chan" in {
 	type slave;
 	file "chan.zone";
