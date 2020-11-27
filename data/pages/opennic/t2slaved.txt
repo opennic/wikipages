@@ -202,6 +202,13 @@ zone "o" in {
 	notify yes;
 	masters { opennicNS; opennicPeers; };
 };
+zone "epic" in {
+	type slave;
+	file "epic.zone";
+	allow-transfer { any; };
+	notify yes;
+	masters { opennicNS; opennicPeers; };
+};
 </file>
 
 Finally, you will want to consider WHO is allowed to query your server and add an appropriate line to your options file. The default behavior (if you have not specified otherwise) is to only allow your local network to query, and the line for your options file would look like this:
@@ -218,8 +225,17 @@ allow-recursion { any; };
 
 To finish your new configuration, restart BIND. If you have logging enabled, you should see BIND attempting to transfer the various zones to your server. If you look in the directory specified in the options file (or in the directory you specified if full path names were used), you should see the zone files being added.
 
-If you are creating a public Tier 2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting http://report.opennicproject.org/t2log/t2.php and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
+**TESTING T2 Public Server**
 
+If you are creating a public Tier 2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting the test link  [[https://servers.opennicproject.org/srvtest3/]] and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
+
+
+
+
+
+----------------Historical Note----------------------
+
+ // The old test link http://report.opennicproject.org/t2log/t2.php does not always produce favorable results//
 ===== Alternate Configurations =====
 
 A standard configuration will provide full nameserver capabilities, however in certain cases you may wish to modify the configuration below. As an example, if you are setting up a server within a company or school campus which already has their own nameservers providing DNS information for locating on-site computers. To allow both on-site and OpenNIC name resolution, try the following:
