@@ -1,0 +1,8 @@
+====== RogueScholar ======
+
+PGP Fingerprint: [[https://keybase.pub/rscholar/keys/openpgp-rscholar.txt|DD3F 5DEC 271F AA1D 2F11 82D1 AC77 588D 3F3B CA1E]]
+
+^  Associated Accounts  ^^
+|  Keybase: | [[https://rscholar.keybase.pub/|rscholar]]  |
+|  GitHub: | [[https://github.com/RogueScholar|RogueScholar]]  |
+|  Twitter: | [[https://twitter.com/SingularErgoSum|SingularErgoSum]]  |
