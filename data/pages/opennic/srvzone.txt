@@ -68,7 +68,7 @@ And finally we'll issue a command to test lookups:
 
 This should produce a list of several nameservers that can be used to query the .geek zone. At the bottom you should see an entry for SERVER which shows your IP address -- if not, check troubleshooting below.
 
-If you are setting up a public server and wish to confirm it is responding properly to queries from the internet, visit http://report.opennicproject.org/t2log/t2.php and enter your IP address. If you are using a firewall or port-forwarding, make sure that you are allowing port 53 on both UDP and TCP. If the testing passes for everything but dns.opennic.glue, you are almost certainly not allowing traffic over TCP.
+If you are setting up a public server and wish to confirm it is responding properly to queries from the internet, visit https://servers.opennicproject.org/srvtest3/ and enter your IP address. If you are using a firewall or port-forwarding, make sure that you are allowing port 53 on both UDP and TCP. If the testing passes for everything but dns.opennic.glue, you are almost certainly not allowing traffic over TCP.
 
 ===== Automating Everything =====
 
