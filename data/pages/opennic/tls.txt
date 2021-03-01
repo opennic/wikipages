@@ -9,6 +9,25 @@ Note, that this is experimental in many regards:
   * The root CA is not yet 100% secured (the design is a work in progress).
   * The acme server runs experimental software. If you have any problems getting a certificate, feel free to contact [[opennic@eckner.net|Erich Eckner]]
 
+===== How to get started =====
+
+The acme server runs on a domain which must be validated by the same root certificate which is used for other opennic domains.
+Thus, one must download the root certificate (and ignore the certificate error on the https connection) and install it as a trusted root certificate.
+If you like to avoid possible MITM attacks on the download, you can verify the [[https://eckner.net/certs/sha512sums|sha512sum]] of the certificate, too (this file also contains checksums for older and for an unrelated ca). On arch linux, one would run:
+<code>
+cd /usr/share/ca-certificates/trust-source/anchors
+curl --insecure -o opennic_root_ca.crt https://playground.acme.libre/opennic_root_ca.crt
+curl https://eckner.net/certs/sha512sums | sed 's/  \S\+\(opennic_root_ca\.crt\)$/  \1/;t;d' | sha512sum -c
+trust extract-compat
+</code>
+Check, that the certificate was installed correctly:
+<code>
+curl https://playground.acme.libre/
+</code>
+Then, certbot can query new certificates from the acme server.
+<code>
+certbot --server https://playground.acme.libre
+</code>
 ===== Planned deployment =====
 
 The trust chain could look as follows:
