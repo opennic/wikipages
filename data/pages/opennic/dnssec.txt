@@ -38,7 +38,7 @@ trusted-keys {
 > :!: Don't just blindly copy this wiki page, ensure the key matches the current root zone's ''DNSKEY'':
 >
 > <code>
-dig DNSKEY . @45.56.116.224 +short
+dig DNSKEY . @195.201.99.61 +short
 </code>
 > <code>
 256 3 8 AwEAAaZnbL4yf5OZKLi/tjNBLKUwLuxhyvhildx0Efb/nMlRrCgafhCD 8A8tZkQLMQjQDu5Uckk/M1wCY5U8A9yvOapWMHx3S9dnFSvp4CFWitvo QYDJIMMooNGdYpljzKtR52wPdUpcqvSRwpp9a4gsoEx/r4jY9vyrT/SO 7yQuhh4uVKtZeHcXl/w2V14zVNUBoDl3SlSYIkVBa2HzponOsDlqJN6V QbZQ4mbvpnvbWOq55E/1pzIIrwp0X2VxSunhU/sGKpfiW9c5O6mPwUGl 1NDeYzycNKGy2Nsx4p4nkN43rRwjDBtD4CSUiTwtsMFTF5xKAbuUgSds BAQMyTnokYs=
