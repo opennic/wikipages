@@ -39,7 +39,8 @@ Interested in (automatically) modifying your DNS settings to access OpenNIC serv
   * Android - [[https://github.com/iTXTech/Daedalus|Daedalus (open source)  (no root 3G/WiFi)]] ([[https://play.google.com/store/apps/details?id=org.itxtech.daedalus|Play Store]])
   * Android - [[https://play.google.com/store/apps/details?id=com.burakgon.dnschanger|DNS Changer (no root 3G/WiFi)]] (proprietary)
   * iOS - [[https://itunes.apple.com/us/app/dns-override/id1060830093|DNS Override]]
-  * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]] and [[https://github.com/kewlfft/nm-opennic|opennic-up]]
+  * Linux - [[https://github.com/kewlfft/opennic-up|opennic-up]] (Arch Linux and Gentoo packages available)
+  * Linux - [[https://github.com/Fusl/opennic-resolvconf-update|opennic-resolvconf-update]]
   * Windows - [[https://github.com/8bitgeek/OpenNIC-Wizard/|OpenNIC Wizard]]
 
 We are always looking for more wizards on other platforms - if interested in developing one, please [[help|contact us]].
