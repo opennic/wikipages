@@ -22,7 +22,7 @@ trust extract-compat
 </code>
 On debian, the commands are rather:
 <code>
-cd /usr/share/local/ca-certificates/trust-source/anchors
+cd /usr/local/share/ca-certificates/trust-source/anchors
 curl --insecure -o opennic_root_ca.crt https://playground.acme.libre/opennic_root_ca.crt
 curl https://eckner.net/certs/sha512sums | sed 's/  \S\+\(opennic_root_ca\.crt\)$/  \1/;t;d' | sha512sum -c
 update-ca-certificates
