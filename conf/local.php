@@ -60,7 +60,7 @@ $conf['plugin']['authldap']['groupfilter'] = '(&(cn=wikiAdmin)(member=%{dn}))';
 $conf['plugin']['authldap']['version'] = 3;
 $conf['plugin']['authldap']['binddn'] = 'uid=dokuwiki,o=users,dc=opennic,dc=glue';
 $conf['plugin']['authldap']['modPass'] = 0;
-$conf['plugin']['authldap']['debug'] = 0;
+$conf['plugin']['authldap']['debug'] = 1;
 $conf['plugin']['bootswrapper']['loadBootstrap'] = 1;
 $conf['tpl']['bootstrap3']['bootstrapTheme'] = 'bootswatch';
 $conf['tpl']['bootstrap3']['bootswatchTheme'] = 'flatly';
@@ -75,4 +75,4 @@ $conf['tpl']['bootstrap3']['showPageIcons'] = 1;
 $conf['plugin']['fastwiki']['fastshow'] = '1';
 
 // end auto-generated content
-$conf['allowdebug'] = 0;
+$conf['allowdebug'] = 1;
