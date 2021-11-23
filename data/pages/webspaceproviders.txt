@@ -19,8 +19,8 @@
 | [[https://www.bplaced.net/|bplaced]] | 2018-04-10 by [[/user/fusl]] | |
 | [[https://www.freewebhostingarea.com/|FreeWHA]] | 2018-04-13 by [[/user/albino]] | |
 | [[https://www.lima-city.de/|lima-city]] | 2018-04-10 by [[/user/fusl]] | Website and panel are only available in German language |
+| [[https://replit.com/|Replit]] | 2021-11-23 by [[/user/luqaska]] | |
 | [[https://www.square7.ch/|Square7]] | 2018-04-10 by [[/user/fusl]] | |
 | [[https://x10hosting.com/|x10hosting]] | 2018-04-13 by [[/user/albino]] | |
-
 ===== Not tested yet =====
 ^ Provider ^ Notes ^
