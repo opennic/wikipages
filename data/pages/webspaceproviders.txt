@@ -28,5 +28,6 @@
 | [[https://aws.amazon.com/|Amazon Web Services]] | |
 | [[https://docs.gitlab.com/ee/user/project/pages/|GitLab Pages]] | |
 | [[https://cloud.google.com/|Google Cloud]] | |
+| [[https://www.pythonanywhere.com/|PythonAnywhere]] | Only works with Python apps |
 | [[https://www.hostinger.com/|Hostinger]] | |
 | [[https://wiroos.com/|Wiroos]] | Website only available in Spanish |
