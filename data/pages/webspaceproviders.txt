@@ -13,9 +13,11 @@
 | Tested at [[https://interserver.net| Interserver.net]], should work as well with any CPanel hosting | [[http://libre.libre|2019-04-29]] by [[/user/antihierarchic]] | Interserver.net itself doesn't allow to create non-ICANN domains through its own DNS manager, but: log into CPanel - add Domain (A record is created, check CPanel Zone editor), then add this A record for the domain in OpenNic registration panel - tested and works with be.libre (.dyn, .geek, .gopher, .indy, .libre, .oss, .parody -all exept .pirate - don't know why) |
 ===== Known to be incompatible =====
 ^ Provider ^ Tested/Revisited ^ Notes ^
+| [[https://aternos.org/|Aternos]] | 2021-11-26 by [[/user/luqaska]] | Minecraft server hosting |
 | [[https://www.bplaced.net/|bplaced]] | 2018-04-10 by [[/user/fusl]] | |
-| [[https://freeflarum.com/|FreeFlarum]] | 2021-11-25 by [[/user/luqaska]] | |
+| [[https://freeflarum.com/|FreeFlarum]] | 2021-11-25 by [[/user/luqaska]] | Flarum forum hosting \\ [[https://github.com/gwillem/freeflarum.com/issues/298|They're not planning adding support to OpenNIC domains]] |
 | [[https://www.freewebhostingarea.com/|FreeWHA]] | 2018-04-13 by [[/user/albino]] | |
+| [[https://infinityfree.net/|InfinityFree]] | 2021-11-26 by [[/user/luqaska]] | |
 | [[https://www.lima-city.de/|lima-city]] | 2018-04-10 by [[/user/fusl]] | Website and panel are only available in German language |
 | [[https://replit.com/|Replit]] | 2021-11-23 by [[/user/luqaska]] | |
 | [[https://www.square7.ch/|Square7]] | 2018-04-10 by [[/user/fusl]] | |
