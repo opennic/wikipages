@@ -29,7 +29,7 @@
 ^ Provider ^ Notes ^
 | [[https://000webhost.com/|000webhost]] | |
 | [[https://aws.amazon.com/|Amazon Web Services]] | Services necesary for running a webserver are paid-only |
-[[https://codesandbox.io/|CodeSandbox]] | |
+| [[https://codesandbox.io/|CodeSandbox]] | |
 | [[https://docs.gitlab.com/ee/user/project/pages/|GitLab Pages]] | You can only start using it, after linking your credit card to your account |
 | [[https://firebase.google.com/|Firebase]] | |
 | [[https://cloud.google.com/|Google Cloud]] | |
