@@ -101,6 +101,22 @@ trust-anchor=.,33750,8,2,ced6135102155c7a9c8a99945068ee0dcc21e2f70a5046b4e50ae98
 trust-anchor=.,47089,8,2,6d81988a88bd546e429486cc0a97518f90f9fc6c6c6b7e5bc2788469858c7324
 </code>
 
+==== Unbound ====
+
+1. Generate the ''/etc/unbound/opennic.dnskey'' file:
+
+<code>
+dig @195.201.99.61 . DNSKEY | dnssec-dsfromkey -2 -f - . > /etc/unbound/opennic.dnskey
+</code>
+
+2. Edit ''/etc/unbound/unbound.conf'' and set the attribute ''auto-trust-anchor-file'' with the ''opennic.dnskey'' file:
+
+<code>
+auto-trust-anchor-file: "opennic.dnskey"
+</code>
+
+3. Restart Unbound: ''systemctl restart unbound''
+
 ===== Testing DNSSEC =====
 
 Queries to a DNSSEC validating server with the DO flag set should return an answer with the ''ad'' (Authenticated Data) flag set in the header:
