@@ -1,7 +1,7 @@
 
 ****Eddie The Alien****
 ----
-**###DewBoy.db###**
+###DewBoy.db###
 ----
 a fake persona maker and db 
 --
@@ -11,3 +11,20 @@ a fake persona maker and db
   * Use these personas for various purposes
 ---- 
 Current project ****dwby_gntr****
+  * Generate sex name age and other base info 
+  * Starts or assits on email and site (fb, LinkedIn, Twitter,etc) registration 
+  * Find the best most stable and economic solution to the phone validation issue
+
+----
+== Keep in Mind ==
+  * Trying to develop a system try and keep everything as streamlined and consistent as possible
+  * To this effect anyone joining this project so close to the start we need to adopt a system of calling methods and naming tables/fields that's consistent and easy to remember usability is key 
+  * portability should also be considered I'm an American and will probably keep the main trunk using common American sites names and such but if your in or working in say Iceland I want it to be as simple a transaction as possible 
+  * MOSTLY IM NOT SAYING IM THE MOST CAPABLE PERSON FOR ANY OF THIS I'M HOPPING ON OTHER RESEARCHERS HOBBYISTS AND FUTURE USERS TO HELP AND ADVICE IN THIS PROJECT AND BEYOND
+  *To that note lastly I'm not sure where to host the code base for this I have used git and since bitbucket I guessed switched over leaves plenty of open free options I'm bad at choices and github I have a suspension of that may be complete lunacy but if that ends up the consensus I'll live.
+  *One more thing I have thought for a while on what lisence to use and I have no idea so any insite would be awesome cus I'm bad at decision making and longer I think more likely I end up just being like idc anymore no lisence and ya can like it until someone else  takes charge (or I lose my mind) and starts stamping proprietary on everything 
+
+----
+Someone help my overly ambitious self,
+  _E_T_A_ 
+
