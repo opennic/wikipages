@@ -1,5 +1,13 @@
+
 ****Eddie The Alien****
-**###
-DewBoy.db
-###
-**
+----
+**###DewBoy.db###**
+----
+a fake persona maker and db 
+--
+''GOALS''
+  * Automate the creation of fake personas
+  * Make the management of fake personas easier
+  * Use these personas for various purposes
+---- 
+Current project ****dwby_gntr****
