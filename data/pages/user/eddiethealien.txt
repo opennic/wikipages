@@ -1,7 +1,7 @@
 
 ****Eddie The Alien****
 ----
-###DewBoy.db###
+### DewBoy System ###
 ----
 a fake persona maker and db 
 --
@@ -9,6 +9,11 @@ a fake persona maker and db
   * Automate the creation of fake personas
   * Make the management of fake personas easier
   * Use these personas for various purposes
+  - osnit
+  - social engineering
+  - research
+  - scraping social media
+
 ---- 
 Current project ****dwby_gntr****
   * Generate sex name age and other base info 
