@@ -1,0 +1,278 @@
+===== Bind Zone Configuration =====
+==== Tier 1 Server ====
+
+==== Tier 2 Server ====
+
+=== /etc/bind/named.conf.local === 
+((or any other custom configuration file))
+<code>
+view "opennic" {
+        allow-query { any; };
+        match-clients { any; };
+        recursion yes;
+        max-cache-size 30%;
+
+######################################## ROOT OPENNIC
+        zone "." {
+                type secondary;
+                file "/etc/bind/zones/slaves/db.root";
+                masters { 195.201.99.61; 168.119.153.26; };
+                allow-transfer { any; };
+                notify no;
+        };      
+######################################## OPENNIC
+
+        include "/etc/bind/db.opennic";
+
+######################################## END
+};
+</code>
+=== /etc/bind/db.opennic ===
+((or any other custom zone file))
+<code>
+#
+# OPENNIC Zones
+#
+        zone "opennic.glue" {
+                type secondary;
+                file "/etc/bind/zones/slaves/glue.zone";
+                masters { 195.201.99.61; 168.119.153.26; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "dns.opennic.glue" {
+                type secondary;
+                file "/etc/bind/zones/slaves/dns.glue.zone";
+                masters { 195.201.99.61; 168.119.153.26; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "cyb" {
+                type secondary;
+                file "/etc/bind/zones/slaves/cyb.zone";
+                masters { 79.124.7.81; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "geek" {
+                type secondary;
+                file "/etc/bind/zones/slaves/geek.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "free" {
+                type secondary;
+                file "/etc/bind/zones/slaves/free.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "indy" {
+                type secondary;
+                file "/etc/bind/zones/slaves/indy.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "parody" {
+                type secondary;
+                file "/etc/bind/zones/slaves/parody.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "bbs" {
+                type secondary;
+                file "/etc/bind/zones/slaves/bbs.zone";
+                masters { 207.192.71.13; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "null" {
+                type secondary;
+                file "/etc/bind/zones/slaves/null.zone";
+                masters { 188.226.146.136; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "oss" {
+                type secondary;
+                file "/etc/bind/zones/slaves/oss.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "ing" {
+                type secondary;
+                file "/etc/bind/zones/slaves/ing.zone";
+                masters { 161.97.219.84; };
+                #ns2 (may not be master)
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "dyn" {
+                type secondary;
+                file "/etc/bind/zones/slaves/dyn.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "gopher" {
+                type secondary;
+                file "/etc/bind/zones/slaves/gopher.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "micro" {
+                type secondary;
+                file "/etc/bind/zones/slaves/micro.zone";
+                masters { 161.97.219.84; };
+                #ns2 (may not be master)
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "neo" {
+                type secondary;
+                file "/etc/bind/zones/slaves/neo.zone";
+                masters { 104.168.144.17; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "pirate" {
+                type secondary;
+                file "/etc/bind/zones/slaves/pirate.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "oz" {
+                type secondary;
+                file "/etc/bind/zones/slaves/oz.zone";
+                masters { 188.226.146.136; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "epic" {
+                type secondary;
+                file "/etc/bind/zones/slaves/epic.zone";
+                masters { 144.76.103.143; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "o" {
+                type secondary;
+                file "/etc/bind/zones/slaves/o.zone";
+                masters { 198.98.51.33; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "chan" {
+                type secondary;
+                file "/etc/bind/zones/slaves/chan.zone";
+                masters { 94.103.153.176; };
+                allow-transfer { any; };
+                notify no;
+        };
+#
+# PEERED Zones
+#
+        zone "fur" {
+                type secondary;
+                file "/etc/bind/zones/slaves/fur.zone";
+                masters { 178.63.116.152; 161.97.219.84; 163.172.168.171; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "bazar" {
+                type secondary;
+                file "/etc/bind/zones/slaves/bazar.zone";
+                masters { 208.87.98.37; 172.106.88.242; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "coin" {
+                type secondary;
+                file "/etc/bind/zones/slaves/coin.zone";
+                masters { 208.87.98.37; 172.106.88.242; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "emc" {
+                type secondary;
+                file "/etc/bind/zones/slaves/emc.zone";
+                masters { 208.87.98.37; 172.106.88.242; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "lib" {
+                type secondary;
+                file "/etc/bind/zones/slaves/lib.zone";
+                masters { 208.87.98.37; 172.106.88.242; };
+                allow-transfer { any; };
+                notify no;
+        };
+</code>
+Please refer to [[opennic:dot|OpenNic TLDs]] for information on why the masters are changed in the following:
+<code>
+        zone "ku" {
+                type secondary;
+                file "/etc/bind/zones/slaves/ku.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "te" {
+                type secondary;
+                file "/etc/bind/zones/slaves/te.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "ti" {
+                type secondary;
+                file "/etc/bind/zones/slaves/ti.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "uu" {
+                type secondary;
+                file "/etc/bind/zones/slaves/uu.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "ko" {
+                type secondary;
+                file "/etc/bind/zones/slaves/ko.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+        zone "rm" {
+                type secondary;
+                file "/etc/bind/zones/slaves/rm.zone";
+                masters { 161.97.219.84; };
+# 5.45.96.220; 185.82.22.133; };
+                allow-transfer { any; };
+                notify no;
+        };
+</code>
+=== Tier 2 Server Configuration Explained ===
+In the **zone file** the ''masters'' of a ''zone'' should always be masters of the zone you are serving.\\
+For ease of use the **slave zones files** are stored in a ''file'' within the ''/etc/bind/zones/slaves/'' directory. Make sure bind can **access** this **directory** or change the directory to something else (like // /etc/bind/name.zone //).\\
+Tier 2 Servers can only be configured to be of ''type'' ''secondary''/''slave''.\\
+===Things to consider before starting the named service: ===
+In the ''view'' ''"opennic"'' 4 settings are made before reading the zone data.\\
+If you don't like to provide open name resolution services to the internet consider changing ''allow-query'' and ''match-clients'' to fit your needs. ((to your local nets))\\
+Refer to the [[https://bind9.readthedocs.io/en/v9_16_10/reference.html|BIND9 Configuration Documentation]] for instructions on how to set up ''acl''s and other security measures.\\
+The cache size to be used for OpenNic Domains can be changed by setting a different ''max-cache-size'' value in ''%''.\\
+If clients allowed to query the ''view "opennic"'' request **recursion**, your server will do the lookups required for **any** domain and reply with an answer. If you would like to change this,\\
+set ''recursion'' to ''no''. The server will only reply with an answer to zone data served by the server - by configuration in a zone file.
