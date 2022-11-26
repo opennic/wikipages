@@ -1,4 +1,4 @@
-===== Bind Zone Configuration =====
+===== BIND9 Zone Configuration =====
 ==== Tier 1 Server ====
 
 ==== Tier 2 Server ====
@@ -175,6 +175,13 @@ view "opennic" {
                 allow-transfer { any; };
                 notify no;
         };
+        zone "libre" {
+                type secondary;
+                file "/etc/bind/zones/slaves/libre.zone";
+                masters { 161.97.219.84; };
+                allow-transfer { any; };
+                notify no;
+        };
 #
 # PEERED Zones
 #
@@ -273,6 +280,6 @@ Tier 2 Servers can only be configured to be of ''type'' ''secondary''/''slave''.
 In the ''view'' ''"opennic"'' 4 settings are made before reading the zone data.\\
 If you don't like to provide open name resolution services to the internet consider changing ''allow-query'' and ''match-clients'' to fit your needs. ((to your local nets))\\
 Refer to the [[https://bind9.readthedocs.io/en/v9_16_10/reference.html|BIND9 Configuration Documentation]] for instructions on how to set up ''acl''s and other security measures.\\
-The cache size to be used for OpenNic Domains can be changed by setting a different ''max-cache-size'' value in ''%''.\\
+The cache size to be used for OpenNIC Domains can be changed by setting a different ''max-cache-size'' value in ''%''.\\
 If clients allowed to query the ''view "opennic"'' request **recursion**, your server will do the lookups required for **any** domain and reply with an answer. If you would like to change this,\\
 set ''recursion'' to ''no''. The server will only reply with an answer to zone data served by the server - by configuration in a zone file.

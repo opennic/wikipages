@@ -1,6 +1,6 @@
 ====== Slaved Zones with BIND9 ======
 
-Also refer to [[opennic:t2slaved:zonefile|Bind Zone Configuration]] for ready to copy zone file **examples** of [[opennic:t2slaved:zonefile#tier_1_server|Tier 1]] and [[opennic:t2slaved:zonefile#tier_2_server|Tier 2]] Servers.
+Also refer to [[opennic:t2slaved:zonefile|BIND9 Zone Configuration]] for ready to use zone file **examples** of [[opennic:t2slaved:zonefile#tier_1_server|Tier 1]] and [[opennic:t2slaved:zonefile#tier_2_server|Tier 2]] Servers.
 
 FIXME This guide was copied directly from the old wiki. It likely needs some updates for the latest BIND software and OpenNIC configuration. If this guide doesn't work, try using the [[opennic:srvzone|srvzone script]].
 
