@@ -1,6 +1,6 @@
 ====== New OpenNIC TLDs ======
 
-:!: As of November 15th, 2017, a new set of requirements for the creation of top-level domains has been issued. Please ensure you have read through this new page before proposing a new top-level domain.
+How to get yourself a new TLD with OpenNIC.
 
 ===== Prerequisites =====
 

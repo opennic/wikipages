@@ -2,7 +2,7 @@
 
 Also refer to [[opennic:t2slaved:zonefile|BIND9 Zone Configuration]] for ready to use zone file **examples** of [[opennic:t2slaved:zonefile#tier_1_server|Tier 1]] and [[opennic:t2slaved:zonefile#tier_2_server|Tier 2]] Servers.
 
-FIXME This guide was copied directly from the old wiki. It likely needs some updates for the latest BIND software and OpenNIC configuration. If this guide doesn't work, try using the [[opennic:srvzone|srvzone script]].
+Consider using the [[opennic:srvzone|srvzone script]].
 
 For those wishing to set up a more robust local nameserver, or if you plan on running a public [[tier1|Tier 1]] or [[tier2|Tier 2]] server for OpenNIC, configuring BIND with slave zones is the preferred method. Please read [[opennic:operatorpolicies|the policies]] before running a public T2 server. You should also join the appropriate [[mailinglist|MailingLists]] so you'll be notified of changing situations which may affect your operation.
 
@@ -20,12 +20,12 @@ zone "." {
 };
 </code>
 
-You need to comment or remove these lines. Instead of using a hints file, you will now be slaving the root zone plus another zone which contains a list of all OpenNIC public Tier 2 servers. Typically you will have an options file in your default BIND configuration. Within the options file will be a 'directory' parameter. This parameter tells BIND where you plan on storing your slave files. For example, under debian/ubuntu systems, you may find something like this:
-directory "/var/named";
-Grab
-This line tells us that BIND will save your slave files under /var/named/. If you cannot find this parameter, or you are uncertain, you should use full path names in the 'file' parameters specified for each zone. However if you do have a directory specified, you can simply give filenames, as below.
+You need to comment or remove these lines. Instead of using a hints file, you will now be slaving the root zone plus another zone which contains a list of all OpenNIC public Tier 2 servers. Typically you will have a 'named.conf.options' file in your default BIND configuration. Within the options file will be a ''directory'' parameter/statement. This parameter tells BIND where you plan on storing your slave files. For example, under debian/ubuntu systems, you may find something like this:
+''directory "/var/named";''
+This line tells us that BIND will save your slave files under /var/named/. If you cannot find this parameter, or you are uncertain, you should use full path names in the ''file'' parameter specified for each zone. However if you do have a directory specified, you can simply give filenames, as short as 'example1.zone', 'example2.zone', and so on. Make sure you name the zone files according to the zone name, for identifying them later, as well as not having two identical names, as it will give an error.
 
-Add the following lines to your named.conf in place of the above 'hint' section:
+It is common practice to only include the actual authoritative nameservers of a zone in the ''masters'' statement. However, for ease of use and setup, you may
+add the following lines to your named.conf in place of the above 'hint' section:
 
 <file>
 # check to make sure these are still correct!
@@ -69,143 +69,17 @@ zone "dns.opennic.glue" in {
 };
 </file>
 
-Note the 'masters' sections which allows you to specify all of the available Tier 1 servers in a single block. This simplifies making updates when needed. OpenNIC peers will typically carry their own root zone, but otherwise provides all other OpenNIC zones.
+Note the ''masters'' sections which allows you to specify all of the available Tier 1 servers in a single block. This simplifies making updates when needed. OpenNIC peers will typically carry their own root zone, but otherwise provides all other OpenNIC zones.
 
-If you have a firewall or port-forwarding configured to direct DNS traffic to your server, please ensure that port 53 for both UDP and TCP are enabled. The most common failure for a public Tier 2 server is that port 53 TCP is blocked, which will cause you to fail testing of the 'dns.opennic.glue' zone.
+If you have a firewall or port-forwarding configured to direct DNS traffic to your server, please ensure that port 53 for both UDP and TCP are enabled. The **most common failure** for a public Tier 2 server is that port 53 TCP is blocked, which will cause you to fail testing of the 'dns.opennic.glue' zone.
 
 This completes the most basic slave zone configuration, and will be suitable for any private or public nameserver. However you can take this a step further and slave ALL of the OpenNIC zones, which further improves the efficiency of the queries your server performs. The caveat of this setup is that you must be aware of TLDs being added or removed, as noted on the mailing lists.
 
-To slave all of the OpenNIC zones, add the following below the 'dns' zone.
+To slave all of the OpenNIC zones, visit [[opennic:t2slaved:zonefile|BIND9 Example Files]] and add the zones to a zone file.\\
+:!: Make sure they are still up to date! (([[opennic:dot|TLDs]]))\\
+:!: If you decided to use the ''masters'' block containing all T1 servers, make sure to change all ''masters'' statements in the example file to ''masters { opennicNS; };''. Your configuration will still be valid and working if you don't, but it decreases maintainability.
 
-<file>
-zone "bbs" in {
-	type slave;
-	file "bbs.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "chan" in {
-	type slave;
-	file "chan.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "dyn" in {
-	type slave;
-	file "dyn.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "free" in {
-	type slave;
-	file "free.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "fur" in {
-	type slave;
-	file "fur.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "geek" in {
-	type slave;
-	file "geek.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "gopher" in {
-	type slave;
-	file "gopher.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "indy" in {
-	type slave;
-	file "indy.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "libre" in {
-	type slave;
-	file "libre.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "neo" in {
-	type slave;
-	file "neo.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "null" in {
-	type slave;
-	file "null.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "opennic.glue" in {
-	type slave;
-	file "opennic.glue.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "oss" in {
-	type slave;
-	file "oss.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "oz" in {
-	type slave;
-	file "oz.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "parody" in {
-	type slave;
-	file "parody.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "pirate" in {
-	type slave;
-	file "pirate.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "o" in {
-	type slave;
-	file "o.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-zone "epic" in {
-	type slave;
-	file "epic.zone";
-	allow-transfer { any; };
-	notify yes;
-	masters { opennicNS; opennicPeers; };
-};
-</file>
-
+==== Security Considerations ====
 Finally, you will want to consider WHO is allowed to query your server and add an appropriate line to your options file. The default behavior (if you have not specified otherwise) is to only allow your local network to query, and the line for your options file would look like this:
 
 <code>
@@ -220,7 +94,7 @@ allow-recursion { any; };
 
 To finish your new configuration, restart BIND. If you have logging enabled, you should see BIND attempting to transfer the various zones to your server. If you look in the directory specified in the options file (or in the directory you specified if full path names were used), you should see the zone files being added.
 
-**TESTING T2 Public Server**
+====TESTING T2 Public Server====
 
 If you are creating a public Tier 2, and have your firewall or port-forwarding configuration completed, you can test the public access of your service by visiting the test link  [[https://servers.opennicproject.org/srvtest3/]] and entering your IP address. If there are any failures you cannot resolve, please visit the mailing list or IRC to get help.
 

@@ -23,7 +23,7 @@ There are plenty of OpenNIC folks available to help with whatever problem you ma
 <newcolumn>
 ===== Useful resources =====
 ==== Domain Registration ====
-Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:namespaces|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
+Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:dot|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
 
 ==== DNS Wizards ====
 Interested in (automatically) modifying your DNS settings to access OpenNIC servers? Try one of the wizards!

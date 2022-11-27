@@ -31,6 +31,6 @@ Teaching
   * Internet Infrastructure
 === How did I contribute to this Wiki? ==
   * [[opennic:dot|TLDs List]]
-  * [[opennic:t2slaved|Tier 2 Server Setup]]
+  * [[opennic:t2slaved|Tier 2 Server BIND9 slave zone method]]
   * [[opennic:t2slaved:zonefile|BIND9 Documentation and examples]]
   * many more
