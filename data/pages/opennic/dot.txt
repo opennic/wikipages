@@ -10,19 +10,19 @@ FIXME We're still missing some information! If you can fill in some of the blank
 
 ^ Name                           ^ Introduction ^ Master ^ Contacts                                            ^ Website                                    ^ Intended Usage ^
 ^ [[opennic:dot:bbs|.bbs]]       | 2000-12-29   | ns6    | [[texnofobix@gmail.com|Dustin Souers (texnofobix)]] | [[http://register.bbs/|register.bbs]]      | Bulletin Board System servers, and related BBS websites and services. |
-^ [[opennic:dot:chan|.chan]]     | 2015-10-21   | ns5    |                                                     | [[http://opennic.chan/|opennic.chan]]      | A Top Level Domain "for imageboards and communities related to imageboard culture." |
-^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | ns12   | [[albino@autistici.org|Al Beano]]\\ [[sy@zm.is|sy]] |[[http://opennic.cyb|opennic.cyb]], [[https://cyb.uptime.party|cyb.uptime.party]] (TLS) | A TLD for cyberpunk-related content|
+^ [[opennic:dot:chan|.chan]]     | 2015-10-21   | ns5    | FIXME | [[http://opennic.chan/|opennic.chan]]      | A Top Level Domain "for imageboards and communities related to imageboard culture." |
+^ [[opennic:dot:cyb|.cyb]]       | 2017-08-14   | ns12   | [[albino@autistici.org|Al Beano]]\\ [[sy@zm.is|sy]] | FIXME | A TLD for cyberpunk-related content|
 ^ [[opennic:dot:dyn|.dyn]]       | 2014-05-30   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Dynamic DNS pointers. |
 ^ [[opennic:dot:epic|.epic]]     | 2019-09-03   | ns13   | [[okashi@okashi.me|Okashi]]                         | [[http://opennic.epic|opennic.epic]], [[https://epic.okashi.me|epic.okashi.me]] (TLS)       | A general purpose domain for anything "epic" |
 ^ [[opennic:dot:geek|.geek]]     | 2008-02-18   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Anything of a personal or hobbyist nature that would be considered "geeky" |
 ^ [[opennic:dot:gopher|.gopher]] | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]           | [[http://be.libre|be.libre]]               | Content delivery via the gopher protocol. |
 ^ [[opennic:dot:indy|.indy]]     | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Independent media and arts. |
 ^ [[opennic:dot:libre|.libre]]   | 2017-01-03   | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Organizations that encourage the Non-Commercial use of the Free Internet. |
-^ [[opennic:dot:neo|.neo]]       | FIXME        | ns3    | [[neo-domainreg@4195tech.com|Neo]]                  | [[http://register.neo|register.neo]]       | General purpose, leaning towards themes present in the 'emo subculture' |
+^ [[opennic:dot:neo|.neo]]       | FIXME        | ns3    | [[neo-domainreg@4195tech.com|Neo]]                  | FIXME       | General purpose, leaning towards themes present in the 'emo subculture' |
 ^ [[opennic:dot:null|.null]]     | FIXME        | ns10   | [[opennic@bambusoft.com|Mario Rodriguez]]               | [[http://reg.null|reg.null]]               | Completely non-commercial and only natural persons. |
 ^ [[opennic:dot:o|.o]]           | 2016-11-28   | ns11   | [[user:jonaharagon|Jonah Aragon]]                   | [[https://github.com/moderntld/.o|github.com/moderntld/.o]]    | General purpose. |
 ^ [[opennic:dot:oss|.oss]]       | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | Exclusively for Open Source Software. |
-^ [[opennic:dot:oz|.oz]]         | 2012-06-11   | ns10   |                                                     | [[http://opennic.oz/|opennic.oz]]          | Australian websites (alt-ccTLD) |
+^ [[opennic:dot:oz|.oz]]         | 2012-06-11   | ns10   | FIXME | [[http://opennic.oz/|opennic.oz]]          | Australian websites (alt-ccTLD) |
 ^ [[opennic:dot:parody|.parody]] | FIXME        | ns2    | [[shdwdrgn@sourpuss.net|Jeff Taylor]]               | [[http://be.libre|be.libre]]               | This domain is a venue for non-commercial parody work. |
 ^ [[opennic:dot:pirate|.pirate]] | FIXME        | ns2    | [[teamcoltra@gmail.com|Travis McCrea]]              | [[http://be.libre|be.libre]]               | Internet Freedom and sharing. |
 
@@ -35,17 +35,17 @@ FIXME We're still missing some information! If you can fill in some of the blank
 These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, instead you should contact their respective organization.
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
-^ [[https://emercoin.com/|Emercoin]]      | .bazar                            | Free marketplace | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | Nameserver response is NXDOMAIN\\ :!: |
-^ :::                                     | .coin                             | Digital currency and commerce websites | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | Nameserver response is NXDOMAIN\\ :!: |
-^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | Nameserver response is NXDOMAIN\\ :!: |
-^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | Nameserver response is NXDOMAIN\\ :!: |
-^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns8.nic.fur\\ ns10.nic.fur\\ ns12.nic.fur\\ ns13.nic.fur\\ ns15.nic.fur | 188.40.132.212\\ 178.63.26.172\\ 178.63.145.230\\ 151.236.24.112\\ 2a01:4f8:221:1e01::1f:12 | Operational |
-^ [[http://new-nations.net/|New Nations]] | .ku                               | Kurdish people | ns1.new-nations.ku\\ ns2.new-nations.ku | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
-^ :::                                     | .te                               | Tamil Eelam | ns1.new-nations.te\\ ns2.new-nations.te | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
-^ :::                                     | .ti                               | Tibet | ns1.new-nations.ti\\ ns2.new-nations.ti | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
-^ :::                                     | .uu                               | Uyghur people | ns1.new-nations.uu\\ ns2.new-nations.uu | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
-^ :::                                     | .ko                               | Internal use | ns1.new-nations.ko\\ ns2.new-nations.ko | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
-^ :::                                     | .rm                               | Internal use | ns1.new-nations.rm\\ ns2.new-nations.rm | 5.45.96.220\\ 185.82.22.133 | TimedOut, Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ [[https://emercoin.com/|Emercoin]]      | .bazar                            | Free marketplace | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
+^ :::                                     | .coin                             | Digital currency and commerce websites | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
+^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
+^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
+^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns8.nic.fur\\ ns10.nic.fur\\ ns12.nic.fur\\ ns13.nic.fur\\ ns15.nic.fur | 188.40.132.212\\ 178.63.26.172\\ 178.63.145.230\\ 151.236.24.112\\ 2a01:4f8:221:1e01::1f:12 | ''Operational'' |
+^ [[http://new-nations.net/|New Nations]] | .ku                               | Kurdish people | ns1.new-nations.ku\\ ns2.new-nations.ku | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ :::                                     | .te                               | Tamil Eelam | ns1.new-nations.te\\ ns2.new-nations.te | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ :::                                     | .ti                               | Tibet | ns1.new-nations.ti\\ ns2.new-nations.ti | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ :::                                     | .uu                               | Uyghur people | ns1.new-nations.uu\\ ns2.new-nations.uu | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ :::                                     | .ko                               | Internal use | ns1.new-nations.ko\\ ns2.new-nations.ko | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
+^ :::                                     | .rm                               | Internal use | ns1.new-nations.rm\\ ns2.new-nations.rm | 5.45.96.220\\ 185.82.22.133 | ''TimedOut'', Service Unreachable\\ :!:\\ Try: ns2.opennic.glue |
 For a complete zone set ready to use visit: [[opennic:t2slaved|Slaved Zones with BIND9]]
 
 ===== Technical Zones =====

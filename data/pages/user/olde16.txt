@@ -1,0 +1,36 @@
+===== Olde16 =====
+
+Hi there!
+
+=== What do I do here? ===
+I host Tier 2 servers for everyone to use!\\
+^ **OpenNIC Domain** ^ **ICANN Domain** ^ **Features** ^ **Ports** ^ **Info** ^
+^ ns5.de | dns2.dns-ga.de | ''DoT'',''DoH'' | ''53'',''443'',''853'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
+^ ns14.de | dns1.dns-ga.de | ''DoT'',''DoH'' | ''53'',''443'',''853'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
+In my free time I also work on the ''Wiki'' to make it a better place ^_^
+=== Find me on: ===
+Anywhere! Just look out for a guy called Olde16 and it's very likely to be me.\\
+Discord: @Olde16#0001
+=== What does he do? ===
+Programming with
+  * C#
+  * Java
+  * SQL
+  * HTML
+Network Admin for
+  * providing you with DNS services
+  * a hobby
+  * the IT guy
+Teaching
+  * Mathematics
+  * Physics
+  * Computer Science (IT)
+=== Specialized in ==
+  * DNS
+  * Server-Client Structures
+  * Internet Infrastructure
+=== How did I contribute to this Wiki? ==
+  * [[opennic:dot|TLDs List]]
+  * [[opennic:t2slaved|Tier 2 Server Setup]]
+  * [[opennic:t2slaved:zonefile|BIND9 Documentation and examples]]
+  * many more
