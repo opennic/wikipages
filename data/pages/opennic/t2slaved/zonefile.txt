@@ -50,14 +50,14 @@ view "opennic" {
         zone "cyb" {
                 type secondary;
                 file "/etc/bind/zones/slaves/cyb.zone";
-                masters { 79.124.7.81; };
+                masters { 161.97.219.84; 104.168.144.17; 163.172.168.171; 178.63.116.152; 209.141.36.19; 188.226.146.136; 198.98.51.33; 79.124.7.81; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "geek" {
                 type secondary;
                 file "/etc/bind/zones/slaves/geek.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
@@ -71,35 +71,35 @@ view "opennic" {
         zone "indy" {
                 type secondary;
                 file "/etc/bind/zones/slaves/indy.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "parody" {
                 type secondary;
                 file "/etc/bind/zones/slaves/parody.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "bbs" {
                 type secondary;
                 file "/etc/bind/zones/slaves/bbs.zone";
-                masters { 207.192.71.13; };
+                masters { 161.97.219.84; 104.168.144.17; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 188.226.146.136; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "null" {
                 type secondary;
                 file "/etc/bind/zones/slaves/null.zone";
-                masters { 188.226.146.136; };
+                masters { 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 188.226.146.136; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "oss" {
                 type secondary;
                 file "/etc/bind/zones/slaves/oss.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
@@ -107,21 +107,20 @@ view "opennic" {
                 type secondary;
                 file "/etc/bind/zones/slaves/ing.zone";
                 masters { 161.97.219.84; };
-                #ns2 (may not be master)
                 allow-transfer { any; };
                 notify no;
         };
         zone "dyn" {
                 type secondary;
                 file "/etc/bind/zones/slaves/dyn.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "gopher" {
                 type secondary;
                 file "/etc/bind/zones/slaves/gopher.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
@@ -129,56 +128,55 @@ view "opennic" {
                 type secondary;
                 file "/etc/bind/zones/slaves/micro.zone";
                 masters { 161.97.219.84; };
-                #ns2 (may not be master)
                 allow-transfer { any; };
                 notify no;
         };
         zone "neo" {
                 type secondary;
                 file "/etc/bind/zones/slaves/neo.zone";
-                masters { 104.168.144.17; };
+                masters { 161.97.219.84; 104.168.144.17; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 188.226.146.136; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "pirate" {
                 type secondary;
                 file "/etc/bind/zones/slaves/pirate.zone";
-                masters { 161.97.219.84; };
+                masters {  161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "oz" {
                 type secondary;
                 file "/etc/bind/zones/slaves/oz.zone";
-                masters { 188.226.146.136; };
+                masters { 161.97.219.84; 104.168.144.17; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 188.226.146.136; 198.98.51.33; 79.124.7.81; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "epic" {
                 type secondary;
                 file "/etc/bind/zones/slaves/epic.zone";
-                masters { 144.76.103.143; };
+                masters { 161.97.219.84; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "o" {
                 type secondary;
                 file "/etc/bind/zones/slaves/o.zone";
-                masters { 198.98.51.33; };
+                masters { 161.97.219.84; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "chan" {
                 type secondary;
                 file "/etc/bind/zones/slaves/chan.zone";
-                masters { 94.103.153.176; };
+                masters { 161.97.219.84; 163.172.168.171; 207.192.71.13; 178.63.116.152; 209.141.36.19; 188.226.146.136; };
                 allow-transfer { any; };
                 notify no;
         };
         zone "libre" {
                 type secondary;
                 file "/etc/bind/zones/slaves/libre.zone";
-                masters { 161.97.219.84; };
+                masters { 161.97.219.84; 163.172.168.171; 94.103.153.176; 207.192.71.13; 178.63.116.152; 209.141.36.19; 198.98.51.33; 79.124.7.81; 144.76.103.143; };
                 allow-transfer { any; };
                 notify no;
         };
