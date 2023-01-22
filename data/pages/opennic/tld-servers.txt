@@ -1,0 +1,29 @@
+====== OpenNIC TLD/Root Servers ======
+==== Root Servers ====
+Do not query this server directly. **Use the Tier 2 servers** instead. Root servers are not used for recursively resolving domain names.
+^  Server Name  ^  DNS Name  ^  IP Address  ^  TLD  ^  Status  ^  Info  ^
+^  0  |  ns0.opennic.glue.  |  195.201.99.61\\ 168.119.153.26  |  glue\\ opennic.glue  |  ''online''  |  Root  |
+==== Top Level Domain Servers ====
+Do not query the servers directly. **Use the Tier 2 servers** instead. TDL servers are not used for recursively resolving domain names.
+^  Server Name  ^  DNS Name  ^  IP Address  ^  TLD  ^  Status  ^  Info  ^
+^  1  |  ns1.opennic.glue.  |    |    |  ''offline''  |    |
+^  2  |  ns2.opennic.glue.  |  161.97.219.84  |  ICANN\\ dyn\\ libre\\ geek\\ gopher\\ indy\\ oss\\ parody\\ pirate\\ free  |  ''online''  |  OpenNIC Domains\\ ''free'' is inactive now.  |
+^  3  |  ns3.opennic.glue.  |  104.168.144.17  |  ICANN\\ neo  |  ''online''  |    |
+^  4  |  ns4.opennic.glue.  |  163.172.168.171  |  ICANN\\ ...  |  ''online''  |    |
+^  5  |  ns5.opennic.glue.  |  94.103.153.176  |  ICANN\\ chan  |  ''online''  |    |
+^  6  |  ns6.opennic.glue.  |  207.192.71.13  |  ICANN\\ bbs  |  ''online''  |    |
+^  7  |  ns7.opennic.glue.  |    |    |  ''offline''  |    |
+^  8  |  ns8.opennic.glue.  |  178.63.116.152  |  ICANN\\ ...  |  ''online''  |    |
+^  9  |  ns9.opennic.glue.  |  209.141.36.19  |  ICANN\\ ...  |  ''online''  |    |
+^  10  |  ns10.opennic.glue.  |  188.226.146.136  |  ICANN\\ oz\\ null  |  ''online''  |    |
+^  11  |  ns11.opennic.glue.  |  198.98.51.33  |  ICANN\\ o  |  ''online''  |    |
+^  12  |  ns12.opennic.glue.  |  79.124.7.81  |  ICANN\\ cyb  |  ''online''  |    |
+^  13  |  ns13.opennic.glue.  |  144.76.103.143  |  ICANN\\ epic  |  ''online''  |    |
+==== Zone Authoritative Servers ====
+
+==== Server Configurations ====
+=== What is DoH? ===
+
+=== DNSSEC Enabled? ===
+
+=== How to test the server configuration? ===
