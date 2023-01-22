@@ -21,7 +21,7 @@ Do not query the servers directly. **Use the Tier 2 servers** instead. TDL serve
 ^  12  |  ns12.opennic.glue.  |  79.124.7.81  |  ICANN\\ cyb  |  ''offline''  |  ''timed out''  |
 ^  13  |  ns13.opennic.glue.  |  144.76.103.143\\ 2a01:4f8:192:43a5::2  |  ICANN\\ epic  |  ''offline''  |  ''timed out''  |
 ==== Zone Authoritative Servers ====
-^ Zone Name ^ Authoritative Servers ^ IP Address ^ Info
+^  Zone Name  ^  Authoritative Servers  ^  IP Address  ^  Info  ^
 ^  opennic.glue\\ dns.opennic.glue  |  ns0.opennic.glue.  |  195.201.99.61\\ 168.119.153.26  |    |
 ^  dyn\\ libre\\ geek\\ gopher\\ indy\\ oss\\ parody\\ pirate\\ (free)  |  ns2.opennic.glue.\\ ns4.opennic.glue.\\ ns6.opennic.glue.\\ ns8.opennic.glue.\\ ns9.opennic.glue.\\ ns11.opennic.glue.\\ ns12.opennic.glue.\\ ns13.opennic.glue.  |  see above  |  Name servers ''11, 12, 13'' are ''offline''!  |
 ^  chan  |  ns2.opennic.glue.\\ ns4.opennic.glue.\\ ns6.opennic.glue.\\ ns8.opennic.glue.\\ ns9.opennic.glue.\\ ns10.opennic.glue.  |  see above  |    |
