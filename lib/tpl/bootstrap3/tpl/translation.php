@@ -7,33 +7,28 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-// must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
-
 global $ID;
-global $TEMPLATE;
+global $TPL;
+global $conf;
 
 $show_translation  = false;
 $translation_items = '';
 $translation_label = '';
 
-if ($TEMPLATE->getConf('showTranslation') && $translation = $TEMPLATE->getPlugin('translation')) {
+$translation = $TPL->getPlugin('translation');
 
-    global $conf;
-    $conf['plugin']['translation']['dropdown'] = 0;
+$conf['plugin']['translation']['dropdown'] = 0;
 
-    if ($translation->istranslatable($ID)) {
+if ($translation->istranslatable($ID)) {
 
-        $show_translation = true;
+    $show_translation = true;
 
-        list($lc, $idpart) = $translation->getTransParts($ID);
+    list($lc, $idpart) = $translation->getTransParts($ID);
 
-        $translation_label = $translation->getLang('translations');
+    $translation_label = $translation->getLang('translations');
 
-        foreach ($translation->translations as $t) {
-            $translation_items .= str_replace(array('<div class="li">', '</div>'), '', $translation->getTransItem($t, $idpart));
-        }
-
+    foreach ($translation->translations as $t) {
+        $translation_items .= str_replace(array('<div class="li">', '</div>'), '', $translation->getTransItem($t, $idpart));
     }
 
 }

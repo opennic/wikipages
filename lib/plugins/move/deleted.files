@@ -31,3 +31,4 @@ lang/es/pagemove.txt.txt
 lang/pl/lang.php.txt
 lang/pl/pagemove.txt.txt
 lang/zh/pagemove.txt
+.travis.yml

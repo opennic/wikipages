@@ -3,29 +3,25 @@
  * Include Plugin:  Display a wiki page within another wiki page
  *
  * Action plugin component, for cache validity determination
- * 
+ *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Christopher Smith <chris@jalakai.co.uk>  
+ * @author     Christopher Smith <chris@jalakai.co.uk>
  * @author     Michael Klier <chi@chimeric.de>
  */
-if(!defined('DOKU_INC')) die();  // no Dokuwiki, no go
- 
-if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN',DOKU_INC.'lib/plugins/');
-require_once(DOKU_PLUGIN.'action.php');
- 
+
 /**
  * All DokuWiki plugins to extend the parser/rendering mechanism
  * need to inherit from this class
  */
 class action_plugin_include extends DokuWiki_Action_Plugin {
- 
+
     /* @var helper_plugin_include $helper */
     var $helper = null;
 
     function __construct() {
         $this->helper = plugin_load('helper', 'include');
     }
- 
+
     /**
      * plugin should use this method to register its handlers with the dokuwiki's event controller
      */
@@ -33,14 +29,17 @@ class action_plugin_include extends DokuWiki_Action_Plugin {
         /* @var Doku_event_handler $controller */
         $controller->register_hook('INDEXER_PAGE_ADD', 'BEFORE', $this, 'handle_indexer');
         $controller->register_hook('INDEXER_VERSION_GET', 'BEFORE', $this, 'handle_indexer_version');
-      $controller->register_hook('PARSER_CACHE_USE','BEFORE', $this, '_cache_prepare');
-      $controller->register_hook('HTML_EDITFORM_OUTPUT', 'BEFORE', $this, 'handle_form');
-      $controller->register_hook('HTML_CONFLICTFORM_OUTPUT', 'BEFORE', $this, 'handle_form');
-      $controller->register_hook('HTML_DRAFTFORM_OUTPUT', 'BEFORE', $this, 'handle_form');
-      $controller->register_hook('ACTION_SHOW_REDIRECT', 'BEFORE', $this, 'handle_redirect');
-      $controller->register_hook('PARSER_HANDLER_DONE', 'BEFORE', $this, 'handle_parser');
-      $controller->register_hook('PARSER_METADATA_RENDER', 'AFTER', $this, 'handle_metadata');
-      $controller->register_hook('HTML_SECEDIT_BUTTON', 'BEFORE', $this, 'handle_secedit_button');
+        $controller->register_hook('PARSER_CACHE_USE','BEFORE', $this, '_cache_prepare');
+        $controller->register_hook('HTML_EDITFORM_OUTPUT', 'BEFORE', $this, 'handle_form'); // todo remove
+        $controller->register_hook('FORM_EDIT_OUTPUT', 'BEFORE', $this, 'handle_form');
+        $controller->register_hook('HTML_CONFLICTFORM_OUTPUT', 'BEFORE', $this, 'handle_form'); // todo remove
+        $controller->register_hook('FORM_CONFLICT_OUTPUT', 'BEFORE', $this, 'handle_form');
+        $controller->register_hook('HTML_DRAFTFORM_OUTPUT', 'BEFORE', $this, 'handle_form'); // todo remove
+        $controller->register_hook('FORM_DRAFT_OUTPUT', 'BEFORE', $this, 'handle_form');
+        $controller->register_hook('ACTION_SHOW_REDIRECT', 'BEFORE', $this, 'handle_redirect');
+        $controller->register_hook('PARSER_HANDLER_DONE', 'BEFORE', $this, 'handle_parser');
+        $controller->register_hook('PARSER_METADATA_RENDER', 'AFTER', $this, 'handle_metadata');
+        $controller->register_hook('HTML_SECEDIT_BUTTON', 'BEFORE', $this, 'handle_secedit_button');
         $controller->register_hook('PLUGIN_MOVE_HANDLERS_REGISTER', 'BEFORE', $this, 'handle_move_register');
     }
 
@@ -176,10 +175,16 @@ class action_plugin_include extends DokuWiki_Action_Plugin {
     /**
      * Add a hidden input to the form to preserve the redirect_id
      */
-    function handle_form(Doku_Event &$event, $param) {
-      if (array_key_exists('redirect_id', $_REQUEST)) {
-        $event->data->addHidden('redirect_id', cleanID($_REQUEST['redirect_id']));
-      }
+    function handle_form(Doku_Event $event, $param)
+    {
+        if (!array_key_exists('redirect_id', $_REQUEST)) return;
+
+        if(is_a($event->data, \dokuwiki\Form\Form::class)) {
+            $event->data->setHiddenField('redirect_id', cleanID($_REQUEST['redirect_id']));
+        } else {
+            // todo remove when old FORM events are no longer supported
+            $event->data->addHidden('redirect_id', cleanID($_REQUEST['redirect_id']));
+        }
     }
 
     /**
@@ -280,8 +285,10 @@ class action_plugin_include extends DokuWiki_Action_Plugin {
             if ($page_stack[0]['writable']) {
                 $params = array('do' => 'edit',
                     'id' => $page_stack[0]['id']);
-                if ($page_stack[0]['redirect'])
+                if ($page_stack[0]['redirect']) {
                     $params['redirect_id'] = $ID;
+                    $params['hid'] = $data['hid'];
+                }
                 $event->result = '<div class="secedit">' . DOKU_LF .
                     html_btn('incledit', $page_stack[0]['id'], '',
                         $params, 'post',
@@ -294,9 +301,9 @@ class action_plugin_include extends DokuWiki_Action_Plugin {
             // Special handling for the edittable plugin
             if ($data['target'] == 'table' && !plugin_isdisabled('edittable')) {
                 /* @var action_plugin_edittable_editor $edittable */
-                $edittable =& plugin_load('action', 'edittable_editor');
+                $edittable = plugin_load('action', 'edittable_editor');
                 if (is_null($edittable))
-                    $edittable =& plugin_load('action', 'edittable');
+                    $edittable = plugin_load('action', 'edittable');
                 $data['name'] = $edittable->getLang('secedit_name');
             }
 
@@ -336,10 +343,10 @@ class action_plugin_include extends DokuWiki_Action_Plugin {
         $syntax = substr($match, 2, -2); // strip markup
         $replacers = explode('|', $syntax);
         $syntax = array_shift($replacers);
-        list($syntax, $flags) = explode('&', $syntax, 2);
+        list($syntax, $flags) = array_pad(explode('&', $syntax, 2), 2, "");
 
         // break the pattern up into its parts
-        list($mode, $page, $sect) = preg_split('/>|#/u', $syntax, 3);
+        list($mode, $page, $sect) = array_pad(preg_split('/>|#/u', $syntax, 3), 3, "");
 
         if (method_exists($handler, 'adaptRelativeId')) { // move plugin before version 2015-05-16
             $newpage = $handler->adaptRelativeId($page);

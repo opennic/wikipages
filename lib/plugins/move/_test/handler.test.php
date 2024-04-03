@@ -12,7 +12,7 @@ require_once(__DIR__ . '/../helper/handler.php');
  */
 class plugin_move_handler_test extends DokuWikiTest {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->pluginsEnabled[] = 'move';
         parent::setUp();
     }

@@ -35,7 +35,6 @@
  *
  */
 
-
 class phpFiglet
 {
 
@@ -55,7 +54,6 @@ class phpFiglet
     var $codeTagCount;
     var $fontFile;
 
-
     /*
      *  Contructor
      */
@@ -64,7 +62,6 @@ class phpFiglet
     {
 
     }
-
 
     /*
      *  Load an flf font file. Return true on success, false on error.
@@ -77,8 +74,8 @@ class phpFiglet
 
         $hp = explode(" ", $this->fontFile[0]); // get header
 
-        $this->signature = substr($hp[0], 0, strlen($hp[0]) -1);
-        $this->hardblank = substr($hp[0], strlen($hp[0]) -1, 1);
+        $this->signature = substr($hp[0], 0, strlen($hp[0]) - 1);
+        $this->hardblank = substr($hp[0], strlen($hp[0]) - 1, 1);
         $this->height = $hp[1];
         $this->baseline = $hp[2];
         $this->maxLenght = $hp[3];
@@ -97,7 +94,6 @@ class phpFiglet
         }
     }
 
-
     /*
      *  Get a character as a string, or an array with one line
      *  for each font height.
@@ -109,8 +105,7 @@ class phpFiglet
         $start = $this->commentLines + ($asciValue - 32) * $this->height;
         $data = ($asarray) ? array() : "";
 
-        for ($a = 0; $a < $this->height; $a++)
-        {
+        for ($a = 0; $a < $this->height; $a++) {
             $tmp = $this->fontFile[$start + $a];
             $tmp = str_replace("@", "", $tmp);
             //$tmp = trim($tmp);
@@ -126,7 +121,6 @@ class phpFiglet
         return $data;
     }
 
-
     /*
      *  Returns a figletized line of characters.
      */
@@ -135,17 +129,14 @@ class phpFiglet
     {
         $ret = "";
 
-        for ($i = 0; $i < (strlen($line)); $i++)
-        {
+        for ($i = 0; $i < (strlen($line)); $i++) {
             $data[] = $this->getCharacter($line[$i], true);
         }
 
         @reset($data);
 
-        for ($i = 0; $i < $this->height; $i++)
-        {
-            while (list($k, $v) = each($data))
-            {
+        for ($i = 0; $i < $this->height; $i++) {
+            while (list($k, $v) = each($data)) {
                 $ret .= str_replace("\n", "", $v[$i]);
             }
             reset($data);
@@ -154,7 +145,6 @@ class phpFiglet
 
         return $ret;
     }
-
 
     /*
      *  Display (print) a figletized line of characters.
@@ -166,4 +156,5 @@ class phpFiglet
     }
 
 }
+
 ?>

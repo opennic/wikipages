@@ -193,12 +193,12 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
     }
 
     /**
-     * Check if this plan has been commited, yet
+     * Check if this plan has been committed, yet
      *
      * @return bool
      */
     public function isCommited() {
-        return $this->options['commited'];
+        return $this->options['committed'];
     }
 
     /**
@@ -251,7 +251,7 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
      * @throws Exception
      */
     protected function addMove($src, $dst, $class = self::CLASS_NS, $type = self::TYPE_PAGES) {
-        if($this->options['commited']) throw new Exception('plan is commited already, can not be added to');
+        if($this->options['committed']) throw new Exception('plan is committed already, can not be added to');
 
         $src = cleanID($src);
         $dst = cleanID($dst);
@@ -283,12 +283,12 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
      * list files
      *
      * @throws Exception if you try to commit a plan twice
-     * @return bool true if the plan was commited
+     * @return bool true if the plan was committed
      */
     public function commit() {
         global $conf;
 
-        if($this->options['commited']) throw new Exception('plan is commited already, can not be commited again');
+        if($this->options['committed']) throw new Exception('plan is committed already, can not be committed again');
 
         helper_plugin_move_rewrite::addLock();
 
@@ -346,7 +346,7 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
             return false;
         }
 
-        $this->options['commited'] = true;
+        $this->options['committed'] = true;
         $this->saveOptions();
 
         return true;
@@ -360,7 +360,7 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
      * @throws Exception
      */
     public function nextStep($skip = false) {
-        if(!$this->options['commited']) throw new Exception('plan is not committed yet!');
+        if(!$this->options['committed']) throw new Exception('plan is not committed yet!');
 
         // execution has started
         if(!$this->options['started']) $this->options['started'] = time();
@@ -623,6 +623,9 @@ class helper_plugin_move_plan extends DokuWiki_Plugin {
         $lines = explode("\n", $lines);
 
         foreach($lines as $line) {
+            // There is an empty line at the end of the list.
+            if ($line === '') continue;
+
             list($src, $dst) = explode("\t", trim($line));
             $FileMover->moveNamespaceSubscription($src, $dst);
         }

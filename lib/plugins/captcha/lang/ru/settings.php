@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Iliya <iliyabylich04@gmail.com>
  * @author Yuriy Skalko <yuriy.skalko@gmail.com>
  * @author Aleksandr Selivanov <alexgearbox@gmail.com>
  * @author Ilya Rozhkov <impeck@ya.ru>
@@ -19,9 +20,12 @@ $lang['mode_o_svg']            = 'SVG (плохая доступность, чи
 $lang['mode_o_svgaudio']       = 'SVG+звук (лучшая доступность, читаемый)';
 $lang['mode_o_figlet']         = 'Figlet ASCII Art (хорошая защита)';
 $lang['forusers']              = 'Использовать CAPTCHA для зарегистрированных пользователей?';
-$lang['loginprotect']          = 'Требовать ввод CAPTCHA для входа?';
 $lang['lettercount']           = 'Количество букв (3-16). Если вы увеличиваете количество букв, не забудьте также увеличить ширину изображения ниже.';
 $lang['width']                 = 'Ширина изображения CAPTCHA (пиксели)';
 $lang['height']                = 'Высота изображения CAPTCHA (пиксели)';
 $lang['question']              = 'Вопрос для режима конкретного вопроса';
 $lang['answer']                = 'Ответ для режима конкретного вопроса ';
+$lang['loginprotect']          = 'Требовать ввод CAPTCHA для входа?';
+$lang['loginprotect_o_0']      = 'Ничего';
+$lang['loginprotect_o_1']      = 'Всегда';
+$lang['loginprotect_o_2']      = 'После 3-х неверных попыток';

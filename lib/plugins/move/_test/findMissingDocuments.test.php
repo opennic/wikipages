@@ -32,7 +32,7 @@ class plugin_move_findMissingPages_test extends DokuWikiTest {
     /**
      * @coversNothing
      */
-    public function setUp() {
+    public function setUp(): void {
         parent::setUp();
         $this->plan = new helper_plugin_move_plan_findMissingDocuments_mock();
     }
@@ -41,7 +41,7 @@ class plugin_move_findMissingPages_test extends DokuWikiTest {
     /**
      * @coversNothing
      */
-    public function tearDown() {
+    public function tearDown(): void {
         global $conf;
 
         $dirs = array('indexdir','datadir','metadir', 'mediadir');

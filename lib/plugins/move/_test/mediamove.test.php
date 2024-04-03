@@ -11,7 +11,7 @@ if (!defined('DOKU_INC')) die();
  */
 class plugin_move_mediamove_test extends DokuWikiTest {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->pluginsEnabled[] = 'move';
         parent::setUp();
     }

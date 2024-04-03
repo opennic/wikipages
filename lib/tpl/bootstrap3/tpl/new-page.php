@@ -7,14 +7,8 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-// must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
-
 global $ID;
 global $INFO;
-global $TEMPLATE;
-
-if (! plugin_isdisabled('addnewpage') && $ACT == 'show' && $TEMPLATE->getConf('showAddNewPage')):
 
 ?>
 <ul class="nav navbar-nav" id="dw__addnewpage">
@@ -43,4 +37,3 @@ if (! plugin_isdisabled('addnewpage') && $ACT == 'show' && $TEMPLATE->getConf('s
         </ul>
     </li>
 </ul>
-<?php endif; ?>

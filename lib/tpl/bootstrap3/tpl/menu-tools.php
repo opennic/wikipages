@@ -7,15 +7,10 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-// must be run from within DokuWiki
-if (!defined('DOKU_INC')) die();
+global $TPL, $ID;
 
-global $TEMPLATE, $ID;
-
-if ($TEMPLATE->getConf('showTools')):
-
-    $navbar_labels = $TEMPLATE->getConf('navbarLabels');
-    $tools_menus   = $TEMPLATE->getToolsMenu();
+$navbar_labels = $TPL->getConf('navbarLabels');
+$tools_menus   = $TPL->getToolsMenu();
 
 ?>
 <!-- tools-menu -->
@@ -23,9 +18,9 @@ if ($TEMPLATE->getConf('showTools')):
 
     <?php
 
-        if ($TEMPLATE->getConf('individualTools')):
+        if ($TPL->getConf('individualTools')):
 
-            foreach ($TEMPLATE->getConf('showIndividualTool') as $tool):
+            foreach ($TPL->getConf('showIndividualTool') as $tool):
 
                 if (! isset($tools_menus[$tool])) continue;
 
@@ -63,15 +58,15 @@ if ($TEMPLATE->getConf('showTools')):
         </a>
 
         <ul class="dropdown-menu tools" role="menu">
-        <?php
+            <?php
 
-            $i   = 1;
-            $max = count(array_keys($tools_menus));
+                $i   = 1;
+                $max = count(array_keys($tools_menus));
 
-            foreach($tools_menus as $tool => $data):
+                foreach($tools_menus as $tool => $data):
 
-                if (! isset($data['menu'])) continue;
-        ?>
+                    if (! isset($data['menu'])) continue;
+            ?>
 
             <li class="dropdown-header">
                 <?php echo iconify($data['icon']); ?> <?php echo $lang[$tool.'_tools'] ?>
@@ -95,4 +90,3 @@ if ($TEMPLATE->getConf('showTools')):
 
 </ul>
 <!-- /tools-menu -->
-<?php endif; ?>

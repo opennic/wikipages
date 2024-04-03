@@ -25,6 +25,11 @@ class action_plugin_pageredirect extends DokuWiki_Action_Plugin {
         // This plugin goes first, PR#555, requires dokuwiki 2014-05-05 (Ponder Stibbons)
         /* @see action_plugin_pageredirect::handle_tpl_act_render() */
         $controller->register_hook('TPL_ACT_RENDER', 'BEFORE', $this, 'handle_tpl_act_render', null, PHP_INT_MIN);
+
+        $controller->register_hook('INDEXER_PAGE_ADD', 'BEFORE', $this, 'handle_indexer');
+
+        // Handle move plugin
+        $controller->register_hook('PLUGIN_MOVE_HANDLERS_REGISTER', 'BEFORE', $this, 'handle_move_register');
     }
 
     public function handle_dokuwiki_started(&$event, $param) {
@@ -42,6 +47,11 @@ class action_plugin_pageredirect extends DokuWiki_Action_Plugin {
             return;
         }
         list($page, $is_external) = $metadata;
+
+        // return if external redirect is not allowed
+        if($is_external && !$this->getConf('allow_external')) {
+            return;
+        }
 
         global $INPUT;
         $redirect = $INPUT->get->str('redirect', '0');
@@ -105,6 +115,29 @@ class action_plugin_pageredirect extends DokuWiki_Action_Plugin {
         }
     }
 
+    public function handle_indexer(Doku_Event $event, $param) {
+        $new_references = array();
+        foreach ($event->data['metadata']['relation_references'] as $target) {
+            $redirect_target = $this->get_metadata($target);
+
+            if ($redirect_target) {
+                list($page, $is_external) = $redirect_target;
+
+                if (!$is_external) {
+                    $new_references[] = $page;
+                }
+            }
+        }
+
+        if (count($new_references) > 0) {
+            $event->data['metadata']['relation_references'] = array_unique(array_merge($new_references, $event->data['metadata']['relation_references']));
+        }
+
+        // FIXME: if the currently indexed page contains a redirect, all pages pointing to it need a new backlink entry!
+        // Note that these entries need to be added for every source page separately.
+        // An alternative could be to force re-indexing of all source pages by removing their ".indexed" file but this will only happen when they are visited.
+    }
+
     /**
      * remember to show note about being redirected from another page
      * @param string $ID page id from where the redirect originated
@@ -149,7 +182,8 @@ class action_plugin_pageredirect extends DokuWiki_Action_Plugin {
     }
 
     private function get_metadata($ID) {
-        $metadata = p_get_metadata($ID, 'relation isreplacedby');
+        // make sure we always get current metadata, but simple cache logic (i.e. render when page is newer than metadata) is enough
+        $metadata = p_get_metadata($ID, 'relation isreplacedby', METADATA_RENDER_USING_SIMPLE_CACHE|METADATA_RENDER_UNLIMITED);
 
         // legacy compat
         if(is_string($metadata)) {
@@ -166,5 +200,64 @@ class action_plugin_pageredirect extends DokuWiki_Action_Plugin {
     private function redirect($url) {
         header("HTTP/1.1 301 Moved Permanently");
         send_redirect($url);
+    }
+
+    public function handle_move_register(Doku_Event $event, $params) {
+        $event->data['handlers']['pageredirect'] = array($this, 'rewrite_redirect');
+    }
+
+    public function rewrite_redirect($match, $state, $pos, $plugin, helper_plugin_move_handler $handler) {
+        $metadata = $this->get_metadata($ID);
+        if ($metadata[1]) return $match;  // Fail-safe for external redirection (Do not rewrite)
+
+        $match = trim($match);
+
+        if (substr($match, 0, 1) == "~") {
+            // "~~REDIRECT>pagename#anchor~~" pattern
+
+            // Strip syntax
+            $match = substr($match, 2, strlen($match) - 4);
+
+            list($syntax, $src, $anchor) = array_pad(preg_split("/>|#/", $match), 3, "");
+
+            // Resolve new source.
+            if (method_exists($handler, 'adaptRelativeId')) {
+                $new_src = $handler->adaptRelativeId($src);
+            } else {
+                $new_src = $handler->resolveMoves($src, 'page');
+                $new_src = $handler->relativeLink($src, $new_src, 'page');
+            }
+
+            $result = "~~".$syntax.">".$new_src;
+            if (!empty($anchor)) $result .= "#".$anchor;
+            $result .= "~~";
+
+            return $result;
+
+        } else if (substr($match, 0, 1) == "#") {
+            // "#REDIRECT pagename#anchor" pattern
+
+            // Strip syntax
+            $match = substr($match, 1);
+
+            list($syntax, $src, $anchor) = array_pad(preg_split("/ |#/", $match), 3, "");
+
+            // Resolve new source.
+            if (method_exists($handler, 'adaptRelativeId')) {
+                $new_src = $handler->adaptRelativeId($src);
+            } else {
+                $new_src = $handler->resolveMoves($src, 'page');
+                $new_src = $handler->relativeLink($src, $new_src, 'page');
+            }
+
+            $result = "\n#".$syntax." ".$new_src;
+            if (!empty($anchor)) $result .= "#".$anchor;
+
+            return $result;
+        }
+
+        // Fail-safe
+        return $match;
+
     }
 }

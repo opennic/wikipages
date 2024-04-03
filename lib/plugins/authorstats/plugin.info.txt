@@ -1,7 +1,7 @@
 base   authorstats
 author George Chatzisofroniou, Constantinos Xanthopoulos
 email  sophron@latthi.com, conx@xanthopoulos.info
-date   2016-06-21
+date   2022-3-12
 name   authorstats plugin
 desc   Plugin that outputs statistics about the wiki's authors.
 url    http://www.dokuwiki.org/plugin:authorstats

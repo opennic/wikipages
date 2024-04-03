@@ -2,7 +2,8 @@
 
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * 
+ *
+ * @author Good Gu <patrick2082002@gmail.com>
  * @author Aaron Wang <edb030@163.com>
  */
 $lang['menu']                  = '頁面移動/重新命名……';
@@ -10,7 +11,7 @@ $lang['inprogress']            = '(待移動）';
 $lang['treelink']              = '您還可以通過<a href="%s">樹形移動</a>.來為您的wiki條目結構做複雜調整';
 $lang['notexist']              = '頁面 %s 不存在';
 $lang['norights']              = '您沒有權限編輯%s.';
-$lang['filelocked']            = '此文件被鎖定 - 請稍後重試';
+$lang['filelocked']            = '文件 %s 被鎖定 - 請稍後重試';
 $lang['notchanged']            = '未為頁面%s指定新地址（位置未變）';
 $lang['exists']                = '頁面%s無法被移動至%s ，該目標已存在 ';
 $lang['notargetperms']         = '您沒有權限建立頁面%s.';
@@ -19,6 +20,12 @@ $lang['nomediarights']         = '您沒有權限刪除%s.';
 $lang['medianotchanged']       = '未為頁面%s指定新地址（位置未變）';
 $lang['mediaexists']           = '媒體文件%s無法被移動至%s，目標已存在。';
 $lang['nomediatargetperms']    = '您沒有權限建立媒體文件%s。';
+$lang['indexerror']            = '更新索引 %s 時發生錯誤';
+$lang['metamoveerror']         = '頁面 %s 的 meta 無法移動';
+$lang['atticmoveerror']        = '頁面 %s 的 attic 無法移動，請手動搬移';
+$lang['mediametamoveerror']    = '媒體 %s 的 meta 無法移動';
+$lang['mediamoveerror']        = '移動媒體 %s 的 attic 失敗';
+$lang['mediaatticmoveerror']   = '媒體 %s 的 attic 無法移動，請手動搬移';
 $lang['renamed']               = '頁面名由%s改為%s';
 $lang['moved']                 = '頁面%s被移動至%s';
 $lang['move_rename']           = '頁面%s被移動並更名為%s';
@@ -52,6 +59,7 @@ $lang['js']['newname']         = '新名字：';
 $lang['js']['inprogress']      = '重新命名頁面並修正有關鏈結：';
 $lang['js']['complete']        = '移動操作完畢。';
 $lang['js']['renameitem']      = '重新命名該項';
+$lang['js']['add']             = '產生新的目錄';
 $lang['js']['duplicate']       = '抱歉，"%s"在該目錄已存在';
 $lang['root']                  = '[根目錄]';
 $lang['noscript']              = '此功能需要JavaScript';

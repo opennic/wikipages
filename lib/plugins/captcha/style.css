@@ -25,9 +25,11 @@
     width: 100%;
     height: 100%;
 }
+
 .dokuwiki #plugin__captcha_wrapper svg path {
     fill: __text__;
 }
+
 .dokuwiki #plugin__captcha_wrapper .no {
     display: none;
 }

@@ -11,7 +11,7 @@ if (!defined('DOKU_INC')) die();
  */
 class plugin_move_cache_handling_test extends DokuWikiTest {
 
-    function setUp() {
+    function setUp(): void {
         parent::setUpBeforeClass();
         $this->pluginsEnabled[] = 'move';
         parent::setUp();

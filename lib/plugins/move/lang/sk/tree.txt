@@ -1,0 +1,8 @@
+====== Manažér presunov =====
+
+Tento interface vám umožňuje preskupiť menné priestory, stránky a médiá vo vašej wiki použitím metódy Drag'n'Drop.
+
+Na presun viacerých menných priestorov, stránok a médií do rovnakého cieľa môžete použiť zaškrtávacie políčka nasledujúcim spôsobom:
+  * zaškrtnite menné priestory, stránky alebo médiá, ktoré chcete presunúť;
+  * presuňte jeden zo zaškrtnutých objektov do žiadanej cieľovej lokality, presunuté budú všetky zaškrtnuté objekty.
+

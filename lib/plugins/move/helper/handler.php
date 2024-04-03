@@ -142,7 +142,7 @@ class helper_plugin_move_handler extends DokuWiki_Plugin {
         if($conf['useslash']) $relold = str_replace('/', ':', $relold);
 
         // check if the link was relative
-        if(strpos($relold, ':') === false ||$relold{0} == '.') {
+        if(strpos($relold, ':') === false ||$relold[0] == '.') {
             $wasrel = true;
         } else {
             $wasrel = false;
@@ -173,7 +173,7 @@ class helper_plugin_move_handler extends DokuWiki_Plugin {
         if($remainder) $newrel .= join(':', $remainder) . ':';
         $newrel .= noNS($new);
         $newrel = str_replace('::', ':', trim($newrel, ':'));
-        if($newrel{0} != '.' && $this->ns && getNS($newrel)) $newrel = '.' . $newrel;
+        if($newrel[0] != '.' && $this->ns && getNS($newrel)) $newrel = '.' . $newrel;
 
         // if the old link ended with a colon and the new one is a start page, adjust
         $newrel = $this->_nsStartCheck($relold,$newrel,$type);

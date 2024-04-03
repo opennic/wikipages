@@ -4,14 +4,11 @@
  * @author     Andreas Gohr <andi@splitbrain.org>
  */
 
-// must be run within Dokuwiki
-if(!defined('DOKU_INC')) die();
-if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC . 'lib/plugins/');
-
 /**
  * Class helper_plugin_captcha
  */
-class helper_plugin_captcha extends DokuWiki_Plugin {
+class helper_plugin_captcha extends DokuWiki_Plugin
+{
 
     protected $field_in = 'plugin__captcha';
     protected $field_sec = 'plugin__captcha_secret';
@@ -20,10 +17,11 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
     /**
      * Constructor. Initializes field names
      */
-    public function __construct() {
-        $this->field_in  = md5($this->_fixedIdent().$this->field_in);
-        $this->field_sec = md5($this->_fixedIdent().$this->field_sec);
-        $this->field_hp  = md5($this->_fixedIdent().$this->field_hp);
+    public function __construct()
+    {
+        $this->field_in = md5($this->_fixedIdent() . $this->field_in);
+        $this->field_sec = md5($this->_fixedIdent() . $this->field_sec);
+        $this->field_hp = md5($this->_fixedIdent() . $this->field_hp);
     }
 
     /**
@@ -31,25 +29,28 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      *
      * @return bool true when the CAPTCHA should be used
      */
-    public function isEnabled() {
-        if(!$this->getConf('forusers') && $_SERVER['REMOTE_USER']) return false;
+    public function isEnabled()
+    {
+        global $INPUT;
+        if (!$this->getConf('forusers') && $INPUT->server->str('REMOTE_USER')) return false;
         return true;
     }
 
     /**
      * Returns the HTML to display the CAPTCHA with the chosen method
      */
-    public function getHTML() {
+    public function getHTML()
+    {
         global $ID;
 
-        $rand = (float) (rand(0, 10000)) / 10000;
+        $rand = (float)(rand(0, 10000)) / 10000;
         $this->storeCaptchaCookie($this->_fixedIdent(), $rand);
 
-        if($this->getConf('mode') == 'math') {
+        if ($this->getConf('mode') == 'math') {
             $code = $this->_generateMATH($this->_fixedIdent(), $rand);
             $code = $code[0];
             $text = $this->getLang('fillmath');
-        } elseif($this->getConf('mode') == 'question') {
+        } elseif ($this->getConf('mode') == 'question') {
             $code = ''; // not used
             $text = $this->getConf('question');
         } else {
@@ -62,47 +63,47 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
 
         $out = '';
         $out .= '<div id="plugin__captcha_wrapper">';
-        $out .= '<input type="hidden" name="'.$this->field_sec.'" value="'.hsc($secret).'" />';
-        $out .= '<label for="plugin__captcha">'.$text.'</label> ';
+        $out .= '<input type="hidden" name="' . $this->field_sec . '" value="' . hsc($secret) . '" />';
+        $out .= '<label for="plugin__captcha">' . $text . '</label> ';
 
-        switch($this->getConf('mode')) {
+        switch ($this->getConf('mode')) {
             case 'math':
             case 'text':
                 $out .= $this->_obfuscateText($code);
                 break;
             case 'js':
-                $out .= '<span id="plugin__captcha_code">'.$this->_obfuscateText($code).'</span>';
+                $out .= '<span id="plugin__captcha_code">' . $this->_obfuscateText($code) . '</span>';
                 break;
             case 'svg':
-                $out .= '<span class="svg" style="width:'.$this->getConf('width').'px; height:'.$this->getConf('height').'px">';
+                $out .= '<span class="svg" style="width:' . $this->getConf('width') . 'px; height:' . $this->getConf('height') . 'px">';
                 $out .= $this->_svgCAPTCHA($code);
                 $out .= '</span>';
                 break;
             case 'svgaudio':
-                $out .= '<span class="svg" style="width:'.$this->getConf('width').'px; height:'.$this->getConf('height').'px">';
+                $out .= '<span class="svg" style="width:' . $this->getConf('width') . 'px; height:' . $this->getConf('height') . 'px">';
                 $out .= $this->_svgCAPTCHA($code);
                 $out .= '</span>';
-                $out .= '<a href="'.DOKU_BASE.'lib/plugins/captcha/wav.php?secret='.rawurlencode($secret).'&amp;id='.$ID.'"'.
-                    ' class="JSnocheck" title="'.$this->getLang('soundlink').'">';
-                $out .= '<img src="'.DOKU_BASE.'lib/plugins/captcha/sound.png" width="16" height="16"'.
-                    ' alt="'.$this->getLang('soundlink').'" /></a>';
+                $out .= '<a href="' . DOKU_BASE . 'lib/plugins/captcha/wav.php?secret=' . rawurlencode($secret) . '&amp;id=' . $ID . '"' .
+                    ' class="JSnocheck audiolink" title="' . $this->getLang('soundlink') . '">';
+                $out .= '<img src="' . DOKU_BASE . 'lib/plugins/captcha/sound.png" width="16" height="16"' .
+                    ' alt="' . $this->getLang('soundlink') . '" /></a>';
                 break;
             case 'image':
-                $out .= '<img src="'.DOKU_BASE.'lib/plugins/captcha/img.php?secret='.rawurlencode($secret).'&amp;id='.$ID.'" '.
-                    ' width="'.$this->getConf('width').'" height="'.$this->getConf('height').'" alt="" /> ';
+                $out .= '<img src="' . DOKU_BASE . 'lib/plugins/captcha/img.php?secret=' . rawurlencode($secret) . '&amp;id=' . $ID . '" ' .
+                    ' width="' . $this->getConf('width') . '" height="' . $this->getConf('height') . '" alt="" /> ';
                 break;
             case 'audio':
-                $out .= '<img src="'.DOKU_BASE.'lib/plugins/captcha/img.php?secret='.rawurlencode($secret).'&amp;id='.$ID.'" '.
-                    ' width="'.$this->getConf('width').'" height="'.$this->getConf('height').'" alt="" /> ';
-                $out .= '<a href="'.DOKU_BASE.'lib/plugins/captcha/wav.php?secret='.rawurlencode($secret).'&amp;id='.$ID.'"'.
-                    ' class="JSnocheck" title="'.$this->getLang('soundlink').'">';
-                $out .= '<img src="'.DOKU_BASE.'lib/plugins/captcha/sound.png" width="16" height="16"'.
-                    ' alt="'.$this->getLang('soundlink').'" /></a>';
+                $out .= '<img src="' . DOKU_BASE . 'lib/plugins/captcha/img.php?secret=' . rawurlencode($secret) . '&amp;id=' . $ID . '" ' .
+                    ' width="' . $this->getConf('width') . '" height="' . $this->getConf('height') . '" alt="" /> ';
+                $out .= '<a href="' . DOKU_BASE . 'lib/plugins/captcha/wav.php?secret=' . rawurlencode($secret) . '&amp;id=' . $ID . '"' .
+                    ' class="JSnocheck audiolink" title="' . $this->getLang('soundlink') . '">';
+                $out .= '<img src="' . DOKU_BASE . 'lib/plugins/captcha/sound.png" width="16" height="16"' .
+                    ' alt="' . $this->getLang('soundlink') . '" /></a>';
                 break;
             case 'figlet':
-                require_once(dirname(__FILE__).'/figlet.php');
+                require_once(dirname(__FILE__) . '/figlet.php');
                 $figlet = new phpFiglet();
-                if($figlet->loadfont(dirname(__FILE__).'/figlet.flf')) {
+                if ($figlet->loadfont(dirname(__FILE__) . '/figlet.flf')) {
                     $out .= '<pre>';
                     $out .= rtrim($figlet->fetch($code));
                     $out .= '</pre>';
@@ -111,48 +112,49 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
                 }
                 break;
         }
-        $out .= ' <input type="text" size="'.$txtlen.'" name="'.$this->field_in.'" class="edit" /> ';
+        $out .= ' <input type="text" size="' . $txtlen . '" name="' . $this->field_in . '" class="edit" /> ';
 
         // add honeypot field
-        $out .= '<label class="no">'.$this->getLang('honeypot').'<input type="text" name="'.$this->field_hp.'" /></label>';
+        $out .= '<label class="no">' . $this->getLang('honeypot') . '<input type="text" name="' . $this->field_hp . '" /></label>';
         $out .= '</div>';
         return $out;
     }
 
     /**
-     * Checks if the the CAPTCHA was solved correctly
+     * Checks if the CAPTCHA was solved correctly
      *
-     * @param  bool $msg when true, an error will be signalled through the msg() method
+     * @param bool $msg when true, an error will be signalled through the msg() method
      * @return bool true when the answer was correct, otherwise false
      */
-    public function check($msg = true) {
+    public function check($msg = true)
+    {
         global $INPUT;
 
         $field_sec = $INPUT->str($this->field_sec);
-        $field_in  = $INPUT->str($this->field_in);
-        $field_hp  = $INPUT->str($this->field_hp);
+        $field_in = $INPUT->str($this->field_in);
+        $field_hp = $INPUT->str($this->field_hp);
 
         // reconstruct captcha from provided $field_sec
         $rand = $this->decrypt($field_sec);
 
-        if($this->getConf('mode') == 'math') {
+        if ($this->getConf('mode') == 'math') {
             $code = $this->_generateMATH($this->_fixedIdent(), $rand);
             $code = $code[1];
-        } elseif($this->getConf('mode') == 'question') {
+        } elseif ($this->getConf('mode') == 'question') {
             $code = $this->getConf('answer');
         } else {
             $code = $this->_generateCAPTCHA($this->_fixedIdent(), $rand);
         }
 
         // compare values
-        if(!$field_sec ||
+        if (!$field_sec ||
             !$field_in ||
             $rand === false ||
             utf8_strtolower($field_in) != utf8_strtolower($code) ||
             trim($field_hp) !== '' ||
             !$this->retrieveCaptchaCookie($this->_fixedIdent(), $rand)
         ) {
-            if($msg) msg($this->getLang('testfailed'), -1);
+            if ($msg) msg($this->getLang('testfailed'), -1);
             return false;
         }
         return true;
@@ -167,7 +169,8 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $rand  float  some random number between 0 and 1
      * @return string the path to the cookie file
      */
-    protected function getCaptchaCookiePath($fixed, $rand) {
+    protected function getCaptchaCookiePath($fixed, $rand)
+    {
         global $conf;
         $path = $conf['tmpdir'] . '/captcha/' . date('Y-m-d') . '/' . md5($fixed . $rand) . '.cookie';
         io_makeFileDir($path);
@@ -177,14 +180,15 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
     /**
      * remove all outdated captcha cookies
      */
-    public function _cleanCaptchaCookies() {
+    public function _cleanCaptchaCookies()
+    {
         global $conf;
         $path = $conf['tmpdir'] . '/captcha/';
         $dirs = glob("$path/*", GLOB_ONLYDIR);
         $today = date('Y-m-d');
-        foreach($dirs as $dir) {
-            if(basename($dir) === $today) continue;
-            if(!preg_match('/\/captcha\//', $dir)) continue; // safety net
+        foreach ($dirs as $dir) {
+            if (basename($dir) === $today) continue;
+            if (!preg_match('/\/captcha\//', $dir)) continue; // safety net
             io_rmdir($dir, true);
         }
     }
@@ -203,7 +207,8 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $fixed string the fixed part, any string
      * @param $rand  float  some random number between 0 and 1
      */
-    protected function storeCaptchaCookie($fixed, $rand) {
+    protected function storeCaptchaCookie($fixed, $rand)
+    {
         $cache = $this->getCaptchaCookiePath($fixed, $rand);
         touch($cache);
     }
@@ -215,9 +220,10 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $rand  float  some random number between 0 and 1
      * @return bool true if the cookie existed
      */
-    protected function retrieveCaptchaCookie($fixed, $rand) {
+    protected function retrieveCaptchaCookie($fixed, $rand)
+    {
         $cache = $this->getCaptchaCookiePath($fixed, $rand);
-        if(file_exists($cache)) {
+        if (file_exists($cache)) {
             unlink($cache);
             return true;
         }
@@ -235,13 +241,15 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      *
      * @return string
      */
-    public function _fixedIdent() {
+    public function _fixedIdent()
+    {
         global $ID;
         $lm = @filemtime(wikiFN($ID));
         $td = date('Y-m-d');
-        return auth_browseruid() .
-            auth_cookiesalt() .
-            $ID . $lm . $td;
+        $ip = clientIP();
+        $salt = auth_cookiesalt();
+
+        return sha1(join("\n", [$ID, $lm, $td, $ip, $salt]));
     }
 
     /**
@@ -252,7 +260,8 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $text
      * @return string
      */
-    protected function _obfuscateText($text) {
+    protected function _obfuscateText($text)
+    {
         $new = '';
 
         $spaces = array(
@@ -281,14 +290,14 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
         );
 
         $len = strlen($text);
-        for($i = 0; $i < $len - 1; $i++) {
-            $new .= $text{$i};
+        for ($i = 0; $i < $len - 1; $i++) {
+            $new .= $text[$i];
 
-            if(!is_numeric($text{$i + 1})) {
+            if (!is_numeric($text[$i + 1])) {
                 $new .= $spaces[array_rand($spaces)];
             }
         }
-        $new .= $text{$len - 1};
+        $new .= $text[$len - 1];
         return $new;
     }
 
@@ -299,8 +308,9 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $rand  float  some random number between 0 and 1
      * @return string
      */
-    protected function _generateNumbers($fixed, $rand) {
-        $fixed   = hexdec(substr(md5($fixed), 5, 5)); // use part of the md5 to generate an int
+    protected function _generateNumbers($fixed, $rand)
+    {
+        $fixed = hexdec(substr(md5($fixed), 5, 5)); // use part of the md5 to generate an int
         $rand = $rand * 0xFFFFF; // bitmask from the random number
         return md5($rand ^ $fixed); // combine both values
     }
@@ -312,15 +322,16 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $rand  float  some random number between 0 and 1
      * @return string
      */
-    public function _generateCAPTCHA($fixed, $rand) {
+    public function _generateCAPTCHA($fixed, $rand)
+    {
         $numbers = $this->_generateNumbers($fixed, $rand);
 
         // now create the letters
         $code = '';
         $lettercount = $this->getConf('lettercount') * 2;
-        if($lettercount > strlen($numbers)) $lettercount = strlen($numbers);
-        for($i = 0; $i < $lettercount; $i += 2) {
-            $code .= chr(floor(hexdec($numbers[$i].$numbers[$i + 1]) / 10) + 65);
+        if ($lettercount > strlen($numbers)) $lettercount = strlen($numbers);
+        for ($i = 0; $i < $lettercount; $i += 2) {
+            $code .= chr(floor(hexdec($numbers[$i] . $numbers[$i + 1]) / 10) + 65);
         }
 
         return $code;
@@ -333,19 +344,20 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param $rand  float  some random number between 0 and 1
      * @return array taks, result
      */
-    protected function _generateMATH($fixed, $rand) {
+    protected function _generateMATH($fixed, $rand)
+    {
         $numbers = $this->_generateNumbers($fixed, $rand);
 
         // first letter is the operator (+/-)
-        $op  = (hexdec($numbers[0]) > 8) ? -1 : 1;
-        $num = array(hexdec($numbers[1].$numbers[2]), hexdec($numbers[3]));
+        $op = (hexdec($numbers[0]) > 8) ? -1 : 1;
+        $num = array(hexdec($numbers[1] . $numbers[2]), hexdec($numbers[3]));
 
         // we only want positive results
-        if(($op < 0) && ($num[0] < $num[1])) rsort($num);
+        if (($op < 0) && ($num[0] < $num[1])) rsort($num);
 
         // prepare result and task text
-        $res  = $num[0] + ($num[1] * $op);
-        $task = $num[0].(($op < 0) ? '-' : '+').$num[1].'= ';
+        $res = $num[0] + ($num[1] * $op);
+        $task = $num[0] . (($op < 0) ? '-' : '+') . $num[1] . '= ';
 
         return array($task, $res);
     }
@@ -355,34 +367,35 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      *
      * @param string $text the letters to display
      */
-    public function _imageCAPTCHA($text) {
+    public function _imageCAPTCHA($text)
+    {
         $w = $this->getConf('width');
         $h = $this->getConf('height');
 
-        $fonts = glob(dirname(__FILE__).'/fonts/*.ttf');
+        $fonts = glob(dirname(__FILE__) . '/fonts/*.ttf');
 
         // create a white image
-        $img   = imagecreatetruecolor($w, $h);
+        $img = imagecreatetruecolor($w, $h);
         $white = imagecolorallocate($img, 255, 255, 255);
         imagefill($img, 0, 0, $white);
 
         // add some lines as background noise
-        for($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $color = imagecolorallocate($img, rand(100, 250), rand(100, 250), rand(100, 250));
             imageline($img, rand(0, $w), rand(0, $h), rand(0, $w), rand(0, $h), $color);
         }
 
         // draw the letters
         $txtlen = strlen($text);
-        for($i = 0; $i < $txtlen; $i++) {
-            $font  = $fonts[array_rand($fonts)];
+        for ($i = 0; $i < $txtlen; $i++) {
+            $font = $fonts[array_rand($fonts)];
             $color = imagecolorallocate($img, rand(0, 100), rand(0, 100), rand(0, 100));
-            $size  = rand(floor($h / 1.8), floor($h * 0.7));
+            $size = rand(floor($h / 1.8), floor($h * 0.7));
             $angle = rand(-35, 35);
 
-            $x       = ($w * 0.05) + $i * floor($w * 0.9 / $txtlen);
+            $x = ($w * 0.05) + $i * floor($w * 0.9 / $txtlen);
             $cheight = $size + ($size * 0.5);
-            $y       = floor($h / 2 + $cheight / 3.8);
+            $y = floor($h / 2 + $cheight / 3.8);
 
             imagettftext($img, $size, $angle, $x, $y, $color, $font, $text[$i]);
         }
@@ -398,7 +411,8 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param string $text
      * @return string
      */
-    public function _svgCAPTCHA($text) {
+    public function _svgCAPTCHA($text)
+    {
         require_once(__DIR__ . '/EasySVG.php');
 
         $fonts = glob(__DIR__ . '/fonts/*.svg');
@@ -410,7 +424,7 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
 
         // draw the letters
         $txtlen = strlen($text);
-        for($i = 0; $i < $txtlen; $i++) {
+        for ($i = 0; $i < $txtlen; $i++) {
             $char = $text[$i];
             $size = rand($y / 2, $y - $y * 0.1); // 50-90%
             $svg->setFontSVG($fonts[array_rand($fonts)]);
@@ -430,13 +444,42 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
     }
 
     /**
+     * Generate an audio captcha
+     *
+     * @param string $text
+     */
+    public function _audioCAPTCHA($text){
+        global $conf;
+
+        $lc = __DIR__ . '/lang/' . $conf['lang'] . '/audio/';
+        $en = __DIR__ . '/lang/en/audio/';
+
+        $wavs = [];
+
+        $text = strtolower($text);
+        $txtlen = strlen($text);
+        for ($i = 0; $i < $txtlen; $i++) {
+            $char = $text[$i];
+            $file = $lc . $char . '.wav';
+            if (!@file_exists($file)) $file = $en . $char . '.wav';
+            $wavs[] = $file;
+        }
+
+        header('Content-type: audio/x-wav');
+        header('Content-Disposition: attachment;filename=captcha.wav');
+
+        echo $this->joinwavs($wavs);
+    }
+
+    /**
      * Encrypt the given string with the cookie salt
      *
      * @param string $data
      * @return string
      */
-    public function encrypt($data) {
-        if(function_exists('auth_encrypt')) {
+    public function encrypt($data)
+    {
+        if (function_exists('auth_encrypt')) {
             $data = auth_encrypt($data, auth_cookiesalt()); // since binky
         } else {
             $data = PMA_blowfish_encrypt($data, auth_cookiesalt()); // deprecated
@@ -451,14 +494,70 @@ class helper_plugin_captcha extends DokuWiki_Plugin {
      * @param string $data
      * @return string
      */
-    public function decrypt($data) {
+    public function decrypt($data)
+    {
         $data = base64_decode($data);
-        if($data === false || $data === '') return false;
+        if ($data === false || $data === '') return false;
 
-        if(function_exists('auth_decrypt')) {
+        if (function_exists('auth_decrypt')) {
             return auth_decrypt($data, auth_cookiesalt()); // since binky
         } else {
             return PMA_blowfish_decrypt($data, auth_cookiesalt()); // deprecated
         }
     }
+
+
+    /**
+     * Join multiple wav files
+     *
+     * All wave files need to have the same format and need to be uncompressed.
+     * The headers of the last file will be used (with recalculated datasize
+     * of course)
+     *
+     * @link http://ccrma.stanford.edu/CCRMA/Courses/422/projects/WaveFormat/
+     * @link http://www.thescripts.com/forum/thread3770.html
+     */
+    protected function joinwavs($wavs)
+    {
+        $fields = join(
+            '/', array(
+                'H8ChunkID',
+                'VChunkSize',
+                'H8Format',
+                'H8Subchunk1ID',
+                'VSubchunk1Size',
+                'vAudioFormat',
+                'vNumChannels',
+                'VSampleRate',
+                'VByteRate',
+                'vBlockAlign',
+                'vBitsPerSample',
+            )
+        );
+
+        $data = '';
+        foreach ($wavs as $wav) {
+            $fp = fopen($wav, 'rb');
+            $header = fread($fp, 36);
+            $info = unpack($fields, $header);
+
+            // read optional extra stuff
+            if ($info['Subchunk1Size'] > 16) {
+                $header .= fread($fp, ($info['Subchunk1Size'] - 16));
+            }
+
+            // read SubChunk2ID
+            $header .= fread($fp, 4);
+
+            // read Subchunk2Size
+            $size = unpack('vsize', fread($fp, 4));
+            $size = $size['size'];
+
+            // read data
+            $data .= fread($fp, $size);
+        }
+
+        return $header . pack('V', strlen($data)) . $data;
+    }
+
 }

@@ -11,7 +11,7 @@ class plugin_move_affectedPagesNS_test extends DokuWikiTest {
 
     protected $pluginsEnabled = array('move',);
 
-    public function setUp() {
+    public function setUp(): void {
         parent::setUp();
         global $USERINFO;
         global $conf;
@@ -24,7 +24,7 @@ class plugin_move_affectedPagesNS_test extends DokuWikiTest {
     /**
      * @coversNothing
      */
-    public function tearDown() {
+    public function tearDown(): void {
         /** @var helper_plugin_move_plan $plan  */
         $plan = plugin_load('helper', 'move_plan');
         $plan->abort();

@@ -11,7 +11,7 @@ if (!defined('DOKU_INC')) die();
  */
 class plugin_move_namespace_move_test extends DokuWikiTest {
 
-    public function setUp() {
+    public function setUp(): void {
         $this->pluginsEnabled[] = 'move';
         parent::setUp();
     }
@@ -19,7 +19,7 @@ class plugin_move_namespace_move_test extends DokuWikiTest {
     /**
      * @coversNothing
      */
-    public function tearDown() {
+    public function tearDown(): void {
         /** @var helper_plugin_move_plan $plan  */
         $plan = plugin_load('helper', 'move_plan');
         $plan->abort();

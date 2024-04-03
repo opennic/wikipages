@@ -1,0 +1,11 @@
+====== Move ======
+
+Tento plugin vám umožňuje presunúť alebo premenovať aktuálnu stránku alebo namespace, v rámci istých obmedzení: 
+
+  * Musíte mať právo editovať aktuálnu stránku / všetky stránky v aktuálnom mennom priestore.
+  * Stránky ktoré majú byť presunuté nesmú byť zamknuté pre úpravu.
+  * Na presun stránky potrebujete právo zápisu do cieľového menného priestoru.
+  * Nemôžte presunúť stránku do menného priestoru, v ktorom už stránka s rovnakým menom existuje.
+
+Všetky odkazy z a na presúvané stránky budú upravené podľa ich nového umiestnenia. 
+

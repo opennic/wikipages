@@ -1,0 +1,20 @@
+==== Resources ====
+
+This page should give you a head-start on what to do with the OpenNIC domain name system.
+
+=== Web Resources ===
+
+A more complete list can be found here: [[wiki/resources/web]]
+
+^ OpenNIC Domain Name ^ ICANN Domain Nmae ^ Category ^ Description ^
+| http://grep.geek | - | Search Engine | Search engine for web pages as part of the OpenNIC project |
+| https://cercle.libre | https://khoanh.loang.net | Web Ring | A project aimed to setup a web ring with the aim to encourage collaboration |
+
+
+Apart from this short set of pages there are plenty of personal websites, GitLab instances, redirects, parked domain names and other more or less interesting, but definitely some exotic stuff online.
+
+
+=== Mail Resources ===
+
+  TODO: No effort done to find any mail related resources
+

@@ -15,7 +15,7 @@ class plugin_move_plan_test extends DokuWikiTest {
     /**
      * Create some page namespace structure
      */
-    function setUp() {
+    function setUp():void {
         $pages = array(
             'animals:mammals:bear:brownbear',
             'animals:mammals:bear:blackbear',

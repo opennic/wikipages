@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author piano <linyixuan2019@hotmail.com>
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author lainme <lainme993@gmail.com>
  * @author 橙子狼 <2949384951@qq.com>
@@ -19,9 +20,12 @@ $lang['mode_o_svg']            = 'SVG(不好的无障碍环境,易读的)';
 $lang['mode_o_svgaudio']       = 'SVG +音频(更好的无障碍环境,易读的)';
 $lang['mode_o_figlet']         = 'Figlet ASCII 艺术 (无障碍性差)';
 $lang['forusers']              = '对已登入的用户也适用吗？';
-$lang['loginprotect']          = '请输入验证码';
 $lang['lettercount']           = '使用字母的数目 (3-16)。如果您增加数目，请确保同时增加图片的宽度。';
 $lang['width']                 = '验证码图片宽度 (像素)';
 $lang['height']                = '验证码图片高度 (像素)';
 $lang['question']              = '固定问题模式的问题';
 $lang['answer']                = '固定问题模式的答案';
+$lang['loginprotect']          = '请输入验证码';
+$lang['loginprotect_o_0']      = '永不';
+$lang['loginprotect_o_1']      = '总是';
+$lang['loginprotect_o_2']      = '错误三次后';

@@ -7,13 +7,6 @@
  * @author     Michael Hamann <michael@content-space.de>
  */
 
-// must be run within Dokuwiki
-if (!defined('DOKU_INC')) die();
-
-if (!defined('DOKU_LF')) define('DOKU_LF', "\n");
-if (!defined('DOKU_TAB')) define('DOKU_TAB', "\t");
-if (!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC.'lib/plugins/');
-
 /**
  * Helper functions for the include plugin and other plugins that want to include pages.
  */
@@ -464,9 +457,11 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
             array_push($ins, array('plugin', array('include_closelastsecedit', array($endpos))));
         }
 
+        $include_secid = (isset($flags['include_secid']) ? $flags['include_secid'] : NULL);
+
         // add edit button
         if($flags['editbtn']) {
-            $this->_editbtn($ins, $page, $sect, $sect_title, ($flags['redirect'] ? $root_id : false));
+            $this->_editbtn($ins, $page, $sect, $sect_title, ($flags['redirect'] ? $root_id : false), $include_secid);
         }
 
         // add footer
@@ -491,7 +486,6 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
         }
 
         // add instructions entry wrapper
-        $include_secid = (isset($flags['include_secid']) ? $flags['include_secid'] : NULL);
         array_unshift($ins, array('plugin', array('include_wrap', array('open', $page, $flags['redirect'], $include_secid))));
         if (isset($flags['beforeeach']))
             array_unshift($ins, array('entity', array($flags['beforeeach'])));
@@ -523,11 +517,11 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
      *
      * @author Michael Klier <chi@chimeric.de>
      */
-    function _editbtn(&$ins, $page, $sect, $sect_title, $root_id) {
+    function _editbtn(&$ins, $page, $sect, $sect_title, $root_id, $hid = '') {
         $title = ($sect) ? $sect_title : $page;
         $editbtn = array();
         $editbtn[0] = 'plugin';
-        $editbtn[1] = array('include_editbtn', array($title));
+        $editbtn[1] = array('include_editbtn', array($title, $hid));
         $ins[] = $editbtn;
     }
 
@@ -717,7 +711,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
             break;
         case 'tagtopic':
             if (!$this->taghelper)
-                $this->taghelper =& plugin_load('helper', 'tag');
+                $this->taghelper = plugin_load('helper', 'tag');
             if(!$this->taghelper) {
                 msg('You have to install the tag plugin to use this functionality!', -1);
                 return array();
@@ -864,17 +858,31 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
      * Makes user or date dependent includes possible
      */
     function _apply_macro($id, $parent_id) {
-        global $INFO;
-        global $auth;
+        global $USERINFO;
+        /* @var Input $INPUT */
+        global $INPUT;
 
-        // if we don't have an auth object, do nothing
-        if (!$auth) return $id;
+        // The following is basicaly copied from basicinfo() because
+        // this function can be called from within pageinfo() in
+        // p_get_metadata and thus we cannot rely on $INFO being set
+        if($INPUT->server->has('REMOTE_USER')) {
+            $user  = $INPUT->server->str('REMOTE_USER');
+        } else {
+            // no registered user - use IP
+            $user = clientIP(true);
+        }
 
-        $user     = $_SERVER['REMOTE_USER'];
-        $group    = $INFO['userinfo']['grps'][0];
+        // Take user's name if possible, login name otherwise
+        if (!empty($USERINFO['name'])) {
+            $name =  $USERINFO['name'];
+        } else {
+            $name = $user;
+        }
 
-        // set group for unregistered users
-        if (!isset($group)) {
+        // Take first group if possible
+        if (!empty($USERINFO['grps'])) {
+            $group = $USERINFO['grps'][0];
+        } else {
             $group = 'ALL';
         }
 
@@ -911,7 +919,7 @@ class helper_plugin_include extends DokuWiki_Plugin { // DokuWiki_Helper_Plugin
 
         $replace = array(
                 '@USER@'  => cleanID($user),
-                '@NAME@'  => cleanID($INFO['userinfo']['name']),
+                '@NAME@'  => cleanID($name),
                 '@GROUP@' => cleanID($group),
                 '@BROWSER_LANG@'  => $this->_get_language_of_wiki($id, $parent_id),
                 '@YEAR@'  => date('Y',$time_stamp),

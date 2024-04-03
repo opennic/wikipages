@@ -19,8 +19,10 @@ The main thing anyone can do to help, is to **become a member**. Sign up [[https
   - Start writing articles or update existing articles. Currently, there are no guidelines in place for writing articles.  Feel free to design effective pages, conveying information clearly.
   - Happy editing and a big thank you from the OpenNIC team!
 ===== Need help getting started? =====
-There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, [[setup|setup to resolve OpenNIC TLDs]], volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]
+There are plenty of OpenNIC folks available to help with whatever problem you may be having with an OpenNIC server, [[setup|setup to resolve OpenNIC TLDs]], volunteering to [[opennic:tier2setup|set up a Tier 2 server]], etc. Please use one of the contact methods listed [[help|here]]\\
+
 <newcolumn>
+
 ===== Useful resources =====
 ==== Domain Registration ====
 Our Top-Level Domains are managed by independent members of the community. Check out [[opennic:dot|this list of namespaces]] to find information and registration instructions for each TLD and contact information.
@@ -56,11 +58,11 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
   * [[opennic:t2slaved:zonefile|Example BIND9 Zones]]
 ==== Server Management/Status Reports ====
   * Master Pool (Tier 1) Servers
-    * [[http://report.opennic.org/log_.php?tier=1|Status]]
-    * [[https://servers.opennic.org/?tier=1|List]]
+    * [[https://report.opennicproject.org/log_.php?tier=1|Status]]
+    * [[https://servers.opennicproject.org/?tier=1|List]]
   * Public Access (Tier 2) Servers
-    * [[http://report.opennic.org/log_.php?tier=2|Status]]
-    * [[https://servers.opennic.org/?tier=2|List]]
+    * [[https://report.opennicproject.org/log_.php?tier=2|Status]]
+    * [[https://servers.opennicproject.org/?tier=2|List]]
   * [[https://servers.opennicproject.org/srvtest3/|Tier 1 and Tier 2 testing tool]]
 
 ==== OpenNIC Search Engines ====
@@ -74,3 +76,19 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 The current and planned deployment of TLS certificates for services running on OpenNIC domains is described and worked out [[opennic/TLS|here]].
 
 </columns>
+
+==== Offering to help ====
+Add yourself by joining the Wiki and editing this table!
+^  Name  ^  Profile Link  ^  Software  ^  OS  ^  Version  ^  Protocols  ^  Environment  ^  Server Class  ^  Languages  ^
+|  Olde16  |  [[:user:olde16:]]  |  __Bind9__  |  __Ubuntu__, Any Linux  |  Any  |  __DoH, DoT, DH, TSIG (Transfer), 53__  |  __Private, Public__  |  T1, __T2__  |  __DE__, EN  |
+|  .  |  .  |  .  |  .  |  .  |  .  |  .  |  .  |  .  |
+Preferences are __marked__.
+==== Protocols ====
+^  Name  ^  Full Name  ^  Port  ^  Required  ^
+|  DoH  |  DNS over HTTPS  |  443  |  No  |
+|  DoT  |  DNS over TLS  |  853  |  No  |
+|  DH  |  Diffi-Hellmann-Key-Exchange  |  --  |  No  |
+|  TSIG  |  Transaction Signature  |  --  |  No  |
+|  DNSCrypt  |  --  |  Any  |  No  |
+|  DoQ  |  DNS over QUIC  |  --  |  Not Implemented  |
+|  53  |  (Port) Domain Name System  |  53  |  Yes  |

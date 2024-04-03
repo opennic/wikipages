@@ -1,0 +1,7 @@
+====== Quản lý di chuyển =====
+
+Giao diện này cho phép bạn sắp xếp lại các không gian tên, trang và tập tin phương tiện wiki của bạn thông qua Kéo và Thả.
+
+Để di chuyển nhiều không gian tên, trang hoặc tập tin phương tiện đến cùng một đích đến, bạn có thể sử dụng các hộp kiểm như sau:
+  * kiểm tra các không gian tên, trang hoặc tập tin phương tiện bạn muốn di chuyển;
+  * di chuyển một trong các mục đã chọn đến đích đến mong muốn, tất cả các mục đã chọn sẽ được di chuyển đến đích đến này.

@@ -4,7 +4,7 @@
  * Instruction re-writer
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Mykola Ostrovskyy <spambox03@mail.ru>
+ * @author     Mykola Ostrovskyy <dwpforge@gmail.com>
  */
 
 if (!class_exists('instruction_rewriter', false)) {
@@ -80,7 +80,7 @@ class instruction_rewriter {
 
 class instruction_rewriter_correction {
 
-    private $index;
+    protected $index;
 
     /**
      * Constructor

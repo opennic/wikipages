@@ -10,7 +10,7 @@ This script will automatically generate a file for BIND9 that lists all of the O
 
   wget http://161.97.219.84/opennic.oss/files/scripts/srvzone
   wget http://161.97.219.84/opennic.oss/files/scripts/srvzone.conf
-  chown bind.bind srvzone
+  chown bind:bind srvzone
   chmod 700 srvzone
 
 Now edit srvzone.conf with your preferred editor. You will see a section with paths for several files, which can be changed to match your configuration. The first three entries dictate where BIND will store the zone files. Note that file_master does not apply to Tier 2 servers. In the example paths given, note that $TLD will be expanded to each zone name as it is created -- so for example the string "$TLD.zone" would save the .geek zone as "geek.zone". The destination variable indicated where you want the final zone configuration file to be stored, and tmp_dest is just a temporary location to create new files.

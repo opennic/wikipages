@@ -6,12 +6,6 @@
  * @author  Michael Klier <chi@chimeric.de>
  */
 
-if (!defined('DOKU_INC'))
-    define('DOKU_INC', realpath(dirname(__FILE__) . '/../../') . '/');
-if (!defined('DOKU_PLUGIN'))
-    define('DOKU_PLUGIN', DOKU_INC . 'lib/plugins/');
-require_once (DOKU_PLUGIN . 'syntax.php');
-
 class syntax_plugin_include_editbtn extends DokuWiki_Syntax_Plugin {
 
     function getType() {
@@ -32,10 +26,10 @@ class syntax_plugin_include_editbtn extends DokuWiki_Syntax_Plugin {
      * @author Michael Klier <chi@chimeric.de>
      */
     function render($mode, Doku_Renderer $renderer, $data) {
-        list($title) = $data;
+        list($title, $hid) = $data;
         if ($mode == 'xhtml') {
             if (defined('SEC_EDIT_PATTERN')) { // for DokuWiki Greebo and more recent versions
-                $renderer->startSectionEdit(0, array('target' => 'plugin_include_editbtn', 'name' => $title));
+                $renderer->startSectionEdit(0, array('target' => 'plugin_include_editbtn', 'name' => $title, 'hid' => $hid));
             } else {
                 $renderer->startSectionEdit(0, 'plugin_include_editbtn', $title);
             }

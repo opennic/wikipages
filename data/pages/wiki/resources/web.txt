@@ -1,0 +1,25 @@
+==== Web Resources ====
+
+  Work in progress
+
+We scraped the OpenNIC web space and found a total of `n*` active websites.
+
+This page should give you plenty of insights into the web part of OpenNIC. 
+
+^ OpenNIC Domain Name ^ ICANN Domain Name ^ Category ^ Description ^
+| http://be.libre | - | OpenNIC | Domain name registry for the OpenNIC TLDs `dyn., geek., gopher., indy., libre., oss., parody., pirate.`
+| https://bible.geek | - | Religion | An online version of the Bible |
+| https://bible.libre | - | Religion | An online version of the Bible |
+| https://bible.pirate | - | Religion | An online version of the Bible |
+| https://blahdns.oss | https://blahdns.com | DNS | Frontend for a group of DNS servers dubbed "BlahDNS" |
+| https://dogpatchpress.fur | - | News | 
+| https://kovac.bit | - | Other | A copy of RFC1925 |
+| https://kral.bit | - | Other | A copy of RFC1925 |
+| http://mx0.opennic.chan | - | OpenNIC | A TLD for imageboards and chan-like communities | 
+| http://opennic.bbs | - | OpenNIC | Information on how to register bbs. second-level domain names |
+| http://radio.geek | - | Streaming | Some Radio Streaming Platform |
+| http://radio.libre | - | Streaming | Some Radio Streaming Platform |
+| https://radvani.bit | - | Other | A copy of RFC1925 |
+| https://reports.opennic.glue | - | OpenNIC | Web-frontend to test OpenNIC configurations of tier 1 and tier 2 name server |
+
+

@@ -1,0 +1,10 @@
+====== Di chuyển ======
+
+Plugin này cho phép bạn di chuyển và/hoặc đổi tên trang hiện tại hoặc di chuyển và/hoặc đổi tên không gian tên hiện tại với các hạn chế sau:
+
+  * Bạn phải có quyền sửa đổi trang hiện tại/tất cả các trang trong không gian tên hiện tại.
+  * Không được khóa sửa đổi trang được di chuyển.
+  * Để di chuyển một trang, bạn cũng cần tạo quyền trong không gian tên đích.
+  * Bạn không thể di chuyển trang đến không gian tên mà nơi đó đã tồn tại một trang có cùng tên với trang bạn di chuyển.
+
+Tất cả các liên kết đến và từ các trang được di chuyển sẽ được cập nhật để phản ánh vị trí và/hoặc tên mới.

@@ -21,7 +21,7 @@ class plugin_move_pagemove_test  extends DokuWikiTest {
     // @todo Move page to an ID which already exists
     // @todo Check backlinks of a sub-namespace page (moving same, up, down, different)
 
-    function setUp() {
+    function setUp(): void {
         parent::setUpBeforeClass();
         $this->pluginsEnabled[] = 'move';
         global $ID;

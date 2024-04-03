@@ -1,4 +1,5 @@
 <?php
+
 /**
  * EasySVG - Generate SVG from PHP
  * @author Simon Tarchichi <kartsims@gmail.com>
@@ -8,12 +9,14 @@
  * @see http://stackoverflow.com/questions/14684846/flattening-svg-matrix-transforms-in-inkscape
  * @see http://stackoverflow.com/questions/7742148/how-to-convert-text-to-svg-paths
  */
-class EasySVG {
+class EasySVG
+{
 
     protected $font;
     protected $svg;
 
-    public function __construct() {
+    public function __construct()
+    {
         // default font data
         $this->font = new stdClass;
         $this->font->id = '';
@@ -30,30 +33,33 @@ class EasySVG {
         $this->clearSVG();
     }
 
-    public function clearSVG() {
+    public function clearSVG()
+    {
         $this->svg = new SimpleXMLElement('<svg></svg>');
     }
 
     /**
      * Function takes UTF-8 encoded string and returns unicode number for every character.
-     * @param  string $str
+     * @param string $str
      * @return string
      */
-    private function _utf8ToUnicode( $str ) {
+    private function _utf8ToUnicode($str)
+    {
         $unicode = array();
         $values = array();
         $lookingFor = 1;
 
-        for ($i = 0; $i < strlen( $str ); $i++ ) {
-            $thisValue = ord( $str[ $i ] );
-            if ( $thisValue < 128 ) $unicode[] = $thisValue;
-            else {
-                if ( count( $values ) == 0 ) $lookingFor = ( $thisValue < 224 ) ? 2 : 3;
+        for ($i = 0; $i < strlen($str); $i++) {
+            $thisValue = ord($str[$i]);
+            if ($thisValue < 128) {
+                $unicode[] = $thisValue;
+            } else {
+                if (count($values) == 0) $lookingFor = ($thisValue < 224) ? 2 : 3;
                 $values[] = $thisValue;
-                if ( count( $values ) == $lookingFor ) {
-                    $number = ( $lookingFor == 3 ) ?
-                        ( ( $values[0] % 16 ) * 4096 ) + ( ( $values[1] % 64 ) * 64 ) + ( $values[2] % 64 ):
-                        ( ( $values[0] % 32 ) * 64 ) + ( $values[1] % 64 );
+                if (count($values) == $lookingFor) {
+                    $number = ($lookingFor == 3) ?
+                        (($values[0] % 16) * 4096) + (($values[1] % 64) * 64) + ($values[2] % 64) :
+                        (($values[0] % 32) * 64) + ($values[1] % 64);
 
                     $unicode[] = $number;
                     $values = array();
@@ -71,7 +77,8 @@ class EasySVG {
      * @param integer $size
      * @param string $color
      */
-    public function setFont( $filepath, $size, $color ) {
+    public function setFont($filepath, $size, $color)
+    {
         $this->setFontSVG($filepath);
         $this->setFontSize($size);
         $this->setFontColor($color);
@@ -82,7 +89,8 @@ class EasySVG {
      * @param int $size
      * @return void
      */
-    public function setFontSize( $size ) {
+    public function setFontSize($size)
+    {
         $this->font->size = $size;
     }
 
@@ -91,25 +99,28 @@ class EasySVG {
      * @param string $color
      * @return void
      */
-    public function setFontColor( $color ) {
+    public function setFontColor($color)
+    {
         $this->font->color = $color;
     }
 
     /**
      * Set the line height from default (1) to custom value
-     * @param  float $value
+     * @param float $value
      * @return void
      */
-    public function setLineHeight( $value ) {
+    public function setLineHeight($value)
+    {
         $this->font->lineHeight = $value;
     }
 
     /**
      * Set the letter spacing from default (0) to custom value
-     * @param  float $value
+     * @param float $value
      * @return void
      */
-    public function setLetterSpacing( $value ) {
+    public function setLetterSpacing($value)
+    {
         $this->font->letterSpacing = $value;
     }
 
@@ -117,10 +128,11 @@ class EasySVG {
      * Function takes path to SVG font (local path) and processes its xml
      * to get path representation of every character and additional
      * font parameters
-     * @param  string $filepath
+     * @param string $filepath
      * @return void
      */
-    public function setFontSVG( $filepath ) {
+    public function setFontSVG($filepath)
+    {
         $this->font->glyphs = array();
         $z = new XMLReader;
         $z->open($filepath);
@@ -171,9 +183,10 @@ class EasySVG {
      * @param array $attributes
      * @return SimpleXMLElement
      */
-    public function addPath($def, $attributes=array()) {
+    public function addPath($def, $attributes = array())
+    {
         $path = $this->svg->addChild('path');
-        foreach($attributes as $key=>$value){
+        foreach ($attributes as $key => $value) {
             $path->addAttribute($key, $value);
         }
         $path->addAttribute('d', $def);
@@ -188,27 +201,28 @@ class EasySVG {
      * @param array $attributes
      * @return SimpleXMLElement
      */
-    public function addText($text, $x=0, $y=0, $attributes=array()) {
+    public function addText($text, $x = 0, $y = 0, $attributes = array())
+    {
         $def = $this->textDef($text);
 
-        if($x!=0 || $y!=0){
+        if ($x != 0 || $y != 0) {
             $def = $this->defTranslate($def, $x, $y);
         }
 
-        if($this->font->color) {
+        if ($this->font->color) {
             $attributes['fill'] = $this->font->color;
         }
 
         return $this->addPath($def, $attributes);
     }
 
-
     /**
      * Function takes UTF-8 encoded string and size, returns xml for SVG paths representing this string.
      * @param string $text UTF-8 encoded text
      * @return string xml for text converted into SVG paths
      */
-    public function textDef($text) {
+    public function textDef($text)
+    {
         $def = array();
 
         $horizAdvX = 0;
@@ -216,14 +230,14 @@ class EasySVG {
         $fontSize = floatval($this->font->size) / $this->font->unitsPerEm;
         $text = $this->_utf8ToUnicode($text);
 
-        for($i = 0; $i < count($text); $i++) {
+        for ($i = 0; $i < count($text); $i++) {
 
             $letter = $text[$i];
 
             // line break support (10 is unicode for linebreak)
-            if($letter==10){
+            if ($letter == 10) {
                 $horizAdvX = 0;
-                $horizAdvY += $this->font->lineHeight * ( $this->font->ascent + $this->font->descent );
+                $horizAdvY += $this->font->lineHeight * ($this->font->ascent + $this->font->descent);
                 continue;
             }
 
@@ -232,7 +246,7 @@ class EasySVG {
 
             // transform typo from original SVG format to straight display
             $d = $this->defScale($d, $fontSize, -$fontSize);
-            $d = $this->defTranslate($d, $horizAdvX, $horizAdvY*$fontSize*2);
+            $d = $this->defTranslate($d, $horizAdvX, $horizAdvY * $fontSize * 2);
 
             $def[] = $d;
 
@@ -242,31 +256,31 @@ class EasySVG {
         return implode(' ', $def);
     }
 
-
     /**
      * Function takes UTF-8 encoded string and size, returns width and height of the whole text
      * @param string $text UTF-8 encoded text
      * @return array ($width, $height)
      */
-    public function textDimensions($text) {
+    public function textDimensions($text)
+    {
         $def = array();
 
         $fontSize = floatval($this->font->size) / $this->font->unitsPerEm;
         $text = $this->_utf8ToUnicode($text);
 
         $lineWidth = 0;
-        $lineHeight = ( $this->font->ascent + $this->font->descent ) * $fontSize * 2;
+        $lineHeight = ($this->font->ascent + $this->font->descent) * $fontSize * 2;
 
         $width = 0;
         $height = $lineHeight;
 
-        for($i = 0; $i < count($text); $i++) {
+        for ($i = 0; $i < count($text); $i++) {
 
             $letter = $text[$i];
 
             // line break support (10 is unicode for linebreak)
-            if($letter==10){
-                $width = $lineWidth>$width ? $lineWidth : $width;
+            if ($letter == 10) {
+                $width = $lineWidth > $width ? $lineWidth : $width;
                 $height += $lineHeight * $this->font->lineHeight;
                 $lineWidth = 0;
                 continue;
@@ -276,75 +290,77 @@ class EasySVG {
         }
 
         // only keep the widest line's width
-        $width = $lineWidth>$width ? $lineWidth : $width;
+        $width = $lineWidth > $width ? $lineWidth : $width;
 
         return array($width, $height);
     }
 
-
     /**
      * Function takes unicode character and returns the UTF-8 equivalent
-     * @param  string $str
+     * @param string $str
      * @return string
      */
-    public function unicodeDef( $unicode ) {
+    public function unicodeDef($unicode)
+    {
 
         $horizAdvY = $this->font->ascent + $this->font->descent;
-        $fontSize =  floatval($this->font->size) / $this->font->unitsPerEm;
+        $fontSize = floatval($this->font->size) / $this->font->unitsPerEm;
 
         // extract character definition
         $d = $this->font->glyphs[hexdec($unicode)]->d;
 
         // transform typo from original SVG format to straight display
         $d = $this->defScale($d, $fontSize, -$fontSize);
-        $d = $this->defTranslate($d, 0, $horizAdvY*$fontSize*2);
+        $d = $this->defTranslate($d, 0, $horizAdvY * $fontSize * 2);
 
         return $d;
     }
 
     /**
      * Returns the character width, as set in the font file
-     * @param  string  $str
-     * @param  boolean $is_unicode
+     * @param string $str
+     * @param boolean $is_unicode
      * @return float
      */
-    public function characterWidth( $char, $is_unicode = false ) {
-        if ($is_unicode){
+    public function characterWidth($char, $is_unicode = false)
+    {
+        if ($is_unicode) {
             $letter = hexdec($char);
-        }
-        else {
+        } else {
             $letter = $this->_utf8ToUnicode($char);
         }
 
-        if (!isset($this->font->glyphs[$letter]))
-            return NULL;
+        if (!isset($this->font->glyphs[$letter])) {
+            return null;
+        }
 
         $fontSize = floatval($this->font->size) / $this->font->unitsPerEm;
         return $this->font->glyphs[$letter]->horizAdvX * $fontSize;
     }
 
-
     /**
      * Applies a translate transformation to definition
-     * @param  string  $def definition
-     * @param  float $x
-     * @param  float $y
+     * @param string $def definition
+     * @param float $x
+     * @param float $y
      * @return string
      */
-    public function defTranslate($def, $x=0, $y=0){
+    public function defTranslate($def, $x = 0, $y = 0)
+    {
         return $this->defApplyMatrix($def, array(1, 0, 0, 1, $x, $y));
     }
 
     /**
      * Applies a translate transformation to definition
-     * @param  string  $def    Definition
-     * @param  integer $angle  Rotation angle (degrees)
-     * @param  integer $x      X coordinate of rotation center
-     * @param  integer $y      Y coordinate of rotation center
+     * @param string $def Definition
+     * @param integer $angle Rotation angle (degrees)
+     * @param integer $x X coordinate of rotation center
+     * @param integer $y Y coordinate of rotation center
      * @return string
      */
-    public function defRotate($def, $angle, $x=0, $y=0){
-        if($x==0 && $y==0){
+    public function defRotate($def, $angle, $x = 0, $y = 0)
+    {
+        if ($x == 0 && $y == 0) {
             $angle = deg2rad($angle);
             return $this->defApplyMatrix($def, array(cos($angle), sin($angle), -sin($angle), cos($angle), 0, 0));
         }
@@ -358,29 +374,32 @@ class EasySVG {
 
     /**
      * Applies a scale transformation to definition
-     * @param  string  $def definition
-     * @param  integer $x
-     * @param  integer $y
+     * @param string $def definition
+     * @param integer $x
+     * @param integer $y
      * @return string
      */
-    public function defScale($def, $x=1, $y=1){
+    public function defScale($def, $x = 1, $y = 1)
+    {
         return $this->defApplyMatrix($def, array($x, 0, 0, $y, 0, 0));
     }
 
     /**
      * Calculates the new definition with the matrix applied
-     * @param  string $def
-     * @param  array  $matrix
+     * @param string $def
+     * @param array $matrix
      * @return string
      */
-    public function defApplyMatrix($def, $matrix){
+    public function defApplyMatrix($def, $matrix)
+    {
 
         // if there are several shapes in this definition, do the operation for each
         preg_match_all('/M[^zZ]*[zZ]/', $def, $shapes);
         $shapes = $shapes[0];
-        if(count($shapes)>1){
-            foreach($shapes as &$shape)
+        if (count($shapes) > 1) {
+            foreach ($shapes as &$shape) {
                 $shape = $this->defApplyMatrix($shape, $matrix);
+            }
             return implode(' ', $shapes);
         }
 
@@ -388,75 +407,71 @@ class EasySVG {
         $instructions = $instructions[0];
 
         $return = '';
-        foreach($instructions as &$instruction){
+        foreach ($instructions as &$instruction) {
             $i = preg_replace('/[^a-zA-Z]*/', '', $instruction);
             preg_match_all('/\-?[0-9\.]+/', $instruction, $coords);
             $coords = $coords[0];
 
-            if(empty($coords)){
+            if (empty($coords)) {
                 continue;
             }
 
             $new_coords = array();
-            while(count($coords)>0){
+            while (count($coords) > 0) {
 
                 // do the matrix calculation stuff
                 list($a, $b, $c, $d, $e, $f) = $matrix;
 
                 // exception for relative instruction
-                if( preg_match('/[a-z]/', $i) ){
+                if (preg_match('/[a-z]/', $i)) {
                     $e = 0;
                     $f = 0;
                 }
 
                 // convert horizontal lineto (relative)
-                if( $i=='h' ){
+                if ($i == 'h') {
                     $i = 'l';
-                    $x = floatval( array_shift($coords) );
+                    $x = floatval(array_shift($coords));
                     $y = 0;
 
                     // add new point's coordinates
                     $current_point = array(
-                        $a*$x + $c*$y + $e,
-                        $b*$x + $d*$y + $f,
+                        $a * $x + $c * $y + $e,
+                        $b * $x + $d * $y + $f,
                     );
                     $new_coords = array_merge($new_coords, $current_point);
-                }
-
-                // convert vertical lineto (relative)
-                elseif( $i=='v' ){
+                } // convert vertical lineto (relative)
+                elseif ($i == 'v') {
                     $i = 'l';
                     $x = 0;
-                    $y = floatval( array_shift($coords) );
+                    $y = floatval(array_shift($coords));
 
                     // add new point's coordinates
                     $current_point = array(
-                        $a*$x + $c*$y + $e,
-                        $b*$x + $d*$y + $f,
+                        $a * $x + $c * $y + $e,
+                        $b * $x + $d * $y + $f,
                     );
                     $new_coords = array_merge($new_coords, $current_point);
-                }
-
-                // convert quadratic bezier curve (relative)
-                elseif( $i=='q' ){
-                    $x = floatval( array_shift($coords) );
-                    $y = floatval( array_shift($coords) );
+                } // convert quadratic bezier curve (relative)
+                elseif ($i == 'q') {
+                    $x = floatval(array_shift($coords));
+                    $y = floatval(array_shift($coords));
 
                     // add new point's coordinates
                     $current_point = array(
-                        $a*$x + $c*$y + $e,
-                        $b*$x + $d*$y + $f,
+                        $a * $x + $c * $y + $e,
+                        $b * $x + $d * $y + $f,
                     );
                     $new_coords = array_merge($new_coords, $current_point);
 
                     // same for 2nd point
-                    $x = floatval( array_shift($coords) );
-                    $y = floatval( array_shift($coords) );
+                    $x = floatval(array_shift($coords));
+                    $y = floatval(array_shift($coords));
 
                     // add new point's coordinates
                     $current_point = array(
-                        $a*$x + $c*$y + $e,
-                        $b*$x + $d*$y + $f,
+                        $a * $x + $c * $y + $e,
+                        $b * $x + $d * $y + $f,
                     );
                     $new_coords = array_merge($new_coords, $current_point);
                 }
@@ -464,25 +479,24 @@ class EasySVG {
                 // every other commands
                 // @TODO: handle 'a,c,s' (elliptic arc curve) commands
                 // cf. http://www.w3.org/TR/SVG/paths.html#PathDataCurveCommands
-                else{
-                    $x = floatval( array_shift($coords) );
-                    $y = floatval( array_shift($coords) );
+                else {
+                    $x = floatval(array_shift($coords));
+                    $y = floatval(array_shift($coords));
 
                     // add new point's coordinates
                     $current_point = array(
-                        $a*$x + $c*$y + $e,
-                        $b*$x + $d*$y + $f,
+                        $a * $x + $c * $y + $e,
+                        $b * $x + $d * $y + $f,
                     );
                     $new_coords = array_merge($new_coords, $current_point);
                 }
-
 
             }
 
             $instruction = $i . implode(',', $new_coords);
 
             // remove useless commas
-            $instruction = preg_replace('/,\-/','-', $instruction);
+            $instruction = preg_replace('/,\-/', '-', $instruction);
         }
 
         return implode('', $instructions);
@@ -496,12 +510,12 @@ class EasySVG {
      *
      */
 
-
     /**
      * Return full SVG XML
      * @return string
      */
-    public function asXML(){
+    public function asXML()
+    {
         return $this->svg->asXML();
     }
 
@@ -510,7 +524,8 @@ class EasySVG {
      * @param string $key
      * @param string $value
      */
-    public function addAttribute($key, $value){
+    public function addAttribute($key, $value)
+    {
         return $this->svg->addAttribute($key, $value);
     }
 }

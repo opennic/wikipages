@@ -3,7 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
- * @author Oleksii <alexey.furashev@gmail.com>
+ * @author Olelsii <alexey.furashev@gmail.com>
  */
 $lang['menu']                  = 'Переміщення сторінок і просторів назв';
 $lang['inprogress']            = '(очікування переміщення)';
@@ -28,3 +28,19 @@ $lang['preview']               = 'Попередній перегляд майб
 $lang['inexecution']           = 'Попереднє перейменування не завершено -- нажміть кнопки нижче щоб продовжити або зупинити процес.';
 $lang['btn_start']             = 'Почати';
 $lang['btn_continue']          = 'Продовжити';
+$lang['btn_retry']             = 'Повторити';
+$lang['btn_skip']              = 'Пропустити';
+$lang['btn_abort']             = 'Зупинити';
+$lang['movepage']              = 'Перенести сторінку';
+$lang['movens']                = 'Перенести простір назв';
+$lang['dst']                   = 'Нова назва:';
+$lang['content_to_move']       = 'Перенести зміст:';
+$lang['move_pages']            = 'Сторінок';
+$lang['move_media']            = 'Медіа файли';
+$lang['move_media_and_pages']  = 'Сторінки та медіа файли';
+$lang['renamepage']            = 'Перейменована сторінка';
+$lang['js']['rename']          = 'Перейменувати';
+$lang['js']['cancel']          = 'Відмінити';
+$lang['js']['newname']         = 'Нова назва:';
+$lang['js']['complete']        = 'Операцію перенесення закінчено.';
+$lang['js']['renameitem']      = 'Перейменувати це ';

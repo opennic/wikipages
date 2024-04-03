@@ -24,19 +24,20 @@
 | [[https://www.lima-city.de/|lima-city]] | 2018-04-10 by [[/user/fusl]] | Website and panel are only available in German language |
 | [[https://replit.com/|Replit]] | 2021-11-23 by [[/user/luqaska]] | |
 | [[https://www.square7.ch/|Square7]] | 2018-04-10 by [[/user/fusl]] | |
-| [[https://x10hosting.com/|x10hosting]] | 2018-04-13 by [[/user/albino]] | Temporaly new users cannot register |
+| [[https://x10hosting.com/|x10hosting]] | 2018-04-13 by [[/user/albino]] | Temporally new users cannot register |
 ===== Not tested yet =====
 ^ Provider ^ Notes ^
 | [[https://000webhost.com/|000webhost]] | |
-| [[https://aws.amazon.com/|Amazon Web Services]] | Services necesary for running a webserver are paid-only |
+| [[https://aws.amazon.com/|Amazon Web Services]] | Services necessary for running a web server are paid-only |
 | [[https://codesandbox.io/|CodeSandbox]] | |
-| [[https://docs.gitlab.com/ee/user/project/pages/|GitLab Pages]] | You can only start using it, after linking your credit card to your account |
+| [[https://docs.gitlab.com/ee/user/project/pages/|GitLab Pages]] | Requires linking credit card to GitLab account for use |
 | [[https://firebase.google.com/|Firebase]] | |
 | [[https://cloud.google.com/|Google Cloud]] | |
-| [[https://heroku.com/|Heroku]] | You can only set up a custom domain after linking your credit card to your account |
-| [[https://www.pythonanywhere.com/|PythonAnywhere]] | Only works with Python apps and to set up one, you have to have a paid plan |
+| [[https://heroku.com/|Heroku]] | Paid-only |
 | [[https://www.hostinger.com/|Hostinger]] | Paid-only |
-| [[https://wiroos.com/|Wiroos]] | Website only available in Spanish |
+| [[https://www.netlify.com/|Netlify]] | |
+| [[https://www.pythonanywhere.com/|PythonAnywhere]] | Only works with Python apps and to set up one, you have to get a paid plan |
+| [[https://wiroos.com/|Wiroos]] | Paid-only and website only available in Spanish |
 
 
 ----

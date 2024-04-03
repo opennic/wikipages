@@ -65,7 +65,7 @@ class helper_plugin_move_op_mock extends helper_plugin_move_op {
  */
 class plugin_move_stepThroughDocuments_test extends DokuWikiTest {
 
-    public function setUp() {
+    public function setUp(): void {
         parent::setUp();
         $opts_file = dirname(DOKU_CONF) . '/data/meta/__move_opts';
         if(file_exists($opts_file)){

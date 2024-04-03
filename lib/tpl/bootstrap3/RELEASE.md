@@ -1,5 +1,76 @@
 # Bootstrap3 DokuWiki Template ChangeLog
 
+## [v2022-07-27]
+
+This release increase the compatibility with Hogfather and the upcoming Igor release and fix some regression.
+
+Enjoy!
+
+### Notable changes
+    * Created new class for manage DokuWiki events
+    * Display tag plugin only on "show" action
+    * Updated Material icons
+    * #552: Added initial support for new Form Events
+    * #545: Fix "Cannot declare class dokuwiki\Menu\Item\AbstractItem"
+    * #556: Fixed .svg could not be recognized as an icon file
+    * #530: Added tabbox plugin support
+    * #551: Fixed regression with tagalerts plugin
+
+
+## [v2021-03-11]
+
+This release increase the compatibility with Hogfather and fix some regression. Added support for Microsoft Teams and BS3 styles in jQueryUI.
+
+Dropped support for PHP < 5.4 and removed very old legacy stuff.
+
+Enjoy!
+
+### Added
+  * Added support for Microsoft Teams share
+  * Added BS3 styles in jQueryUI components
+
+### Changed
+  * #520: Revert .wikilink2 class in list context (@takuy)
+
+### Removed
+  * Dropped support for PHP < 5.4
+  * Removed deprecated `useLegacyNavbar` option
+  * #517: Removed `!important` in navbar height to prevent issue with `userall.css` style (@nurzu)
+
+### Fixed
+  * Fixed regression for Cookie Law for Hogfather release
+  * Fixed regression in AnchorJS and Sidebar
+  * #480: Fixed Google Search Errors: BreadcrumbList + ListItem (@willmcknight)
+  * #492: Fix "set_time_limit" warning with safe mode:ON (@DrakMrak)
+  * #499: Changed CSS load order for Bootstrap and DokuWiki styles when using `themeByNamespace` option (@Digitalin)
+  * #525: Fixed Configuration Settings TOC for Undefined Settings (@Skyridr)
+  * #529: Fixed tags extend beyond page limits (@tmo26)
+
+
+## [v2020-08-28]
+
+This release increase the compatibility with Hogfather and fix regressions, old bugs and a security vulnerability with Iconify (thanks to @issmirnov). Optimized all JS "hack" scripts, dropped support for very old DokuWiki releases and added support for upcoming [Icons](https://www.dokuwiki.org/plugin:icons) plugin release with Iconify.
+
+Enjoy!
+
+### Added
+  * Added support for upcoming release of Icons plugin with Iconify
+  * Added ``confirm`` dialog for revert action
+
+### Changed
+  * Updated all translations from Transifex
+  * Refactoring all JS scripts
+  * Changed column size of matching pagenames in search results
+  * #499: Changed CSS load order for Bootstrap and DokuWiki styles when using `themeByNamespace` option (@Digitalin)
+
+### Fixed
+  * Fixed very old bug for media manager
+  * #500: Fixed regression in the preview image size in detail page (@IanGoo)
+  * #501: Search matching pagenames overlapping (#rogerjames1994)
+  * #503: Fixed edit toolbar icons regression for Hogfather release (@FloMiLe)
+  * #506: Fixed XSS vulnerability in Iconify API (thanks to @issmirnov for reporting this security issue)z
+
+
 ## [v2020-07-29]
 
 This release introduce a support for Hogfather DokuWiki release and the support for Bitnami DokuWiki image (Docker), LinuxServer.io DokuWiki image (Docker), Debian/Ubuntu and Arch Linux. Changed the JS and CSS loading for increase the performance.
@@ -33,9 +104,6 @@ Enjoy!
   * #476: Fixed missing footer hook with particular configurations (thanks to @darren-henderson)
   * #481: Navbar Items Improperly Formatted on Hogfather (thanks to @TheZachh and @phy25)
 
-### Hotfix
-  * #480: Fixed Google Search Errors: BreadcrumbList + ListItem (@willmcknight)
-  * #499: Changed CSS load order for Bootstrap and DokuWiki styles when using `themeByNamespace` option (@Digitalin)
 
 ## [v2020-04-04]
 
@@ -546,6 +614,9 @@ In this release improved the user experience with new icons for Configuration Ma
 
 
 [Develop]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/master...develop
+[v2022-07-27]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2021-03-11...v2022-07-27
+[v2021-03-11]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2020-08-28...v2021-03-11
+[v2020-08-28]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2020-07-29...v2020-08-28
 [v2020-07-29]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2020-04-04...v2020-07-29
 [v2020-04-04]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2019-05-22...v2020-04-04
 [v2019-05-22]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2018-02-16...v2019-05-22

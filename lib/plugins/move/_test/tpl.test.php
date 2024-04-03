@@ -9,7 +9,7 @@
  */
 class move_tpl_test extends DokuWikiTest {
 
-    public function setUp() {
+    public function setUp(): void {
         parent::setUp();
     }
 

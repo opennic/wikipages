@@ -4,7 +4,7 @@
  * Plugin Columns: Layout parser
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
- * @author     Mykola Ostrovskyy <spambox03@mail.ru>
+ * @author     Mykola Ostrovskyy <dwpforge@gmail.com>
  */
 
 /* Must be run within Dokuwiki */
@@ -396,16 +396,16 @@ class columns_block {
      */
     private function parseAlignAttribute($syntax) {
         $result = array();
-        $align1 = $this->getAlignStyle($syntax{0});
+        $align1 = $this->getAlignStyle($syntax[0]);
         if (strlen($syntax) == 2) {
-            $align2 = $this->getAlignStyle($syntax{1});
+            $align2 = $this->getAlignStyle($syntax[1]);
             if ($align1 != $align2) {
-                $result[$align1] = $this->getAlignment($syntax{0});
-                $result[$align2] = $this->getAlignment($syntax{1});
+                $result[$align1] = $this->getAlignment($syntax[0]);
+                $result[$align2] = $this->getAlignment($syntax[1]);
             }
         }
-        else{
-            $result[$align1] = $this->getAlignment($syntax{0});
+        else {
+            $result[$align1] = $this->getAlignment($syntax[0]);
         }
         return $result;
     }

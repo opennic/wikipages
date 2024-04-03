@@ -5,12 +5,16 @@ Hi there!
 === What do I do here? ===
 I host Tier 2 servers for everyone to use!\\
 ^ **OpenNIC Domain** ^ **ICANN Domain** ^ **Features** ^ **Ports** ^ **Info** ^
-^ ns5.de | dns2.dns-ga.de | ''DoT'',''DoH'' | ''53'',''443'',''853'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
+^ ns33.de | dns3.dns-ga.de | ''DoT'' | ''53'',''853'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
+^ ns5.de | dns2.dns-ga.de | ''DoT'',''DoH'',''DNSCrypt'' | ''53'',''443'',''853'',''10053'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
 ^ ns14.de | dns1.dns-ga.de | ''DoT'',''DoH'' | ''53'',''443'',''853'' | Use ''DoH'' via ''https://secure-dns.dns-ga.de/dns-query'' |
+Visit [[https://www.dns-ga.de/|www.dns-ga.de]] for more info on the servers and how to set your devices up to use them.
+
 In my free time I also work on the ''Wiki'' to make it a better place ^_^
 === Find me on: ===
 Anywhere! Just look out for a guy called Olde16 and it's very likely to be me.\\
-Discord: @Olde16#0001
+Discord: @Olde16#0001\\
+Email: administrator@dns-ga.de
 === What does he do? ===
 Programming with
   * C#
