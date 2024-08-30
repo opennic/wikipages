@@ -1,0 +1,22 @@
+====== gp68 ======
+
+I prefer open solutions and open sources.
+That's why I like opennic.
+
+===== Contact: =====
+IRC! \\
+Just look out for a guy called the_old_p and it's very likely to be me.\\
+For those who know ..... GP40-RIPE ....
+
+=== What does he do? ===
+Programming with
+  * C
+  * rust
+  * perl
+Network Admin for
+  * providing you with DNS services
+  * a hobby
+  * the IT guy
+  * fun
+=== How did I contribute to this Wiki? ==
+  * -tbd.
