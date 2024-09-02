@@ -8,7 +8,7 @@ IRC! \\
 Just look out for a guy called the_old_p and it's very likely to be me.\\
 Email: the-old-p@proton.me
 
-=== What does he do? ===
+==== What does he do? ====
 
 Programming with
   * Assembler 
@@ -22,5 +22,15 @@ Network Admin for
   * the IT guy
   * fun
 
-=== How did I contribute to this Wiki? ==
-  * -tbd.
+System Admin for
+  * Debian
+  * Arch
+
+Real Live Meetings
+  * 38c3
+
+
+==== How did I contribute to this Wiki? ====
+  * [[user:gp68:unbound|]]
+
+

@@ -1,0 +1,373 @@
+====== Unbound Howto ======
+
+===== Base setup =====
+
+<file txt unbound.conf>
+server:
+	verbosity: 1
+	log-queries: no
+	port: 53
+	# ----------------------
+	# optimizations https://nlnetlabs.nl/documentation/unbound/howto-optimise/
+	# ----------------------
+	num-threads: 2
+	msg-cache-slabs: 2
+    	rrset-cache-slabs: 2
+    	infra-cache-slabs: 2
+    	key-cache-slabs: 2
+	so-reuseport: yes
+	key-cache-size: 8m # default 4m
+	neg-cache-size: 2m # default 1m
+	rrset-cache-size: 100m # rrset=msg*2 # default 4m
+	msg-cache-size: 50m # default 4m
+	# depends on number of cores: 1024/cores - 50
+	outgoing-range: 462
+	num-queries-per-thread: 231 # outgoing-range/2
+	so-rcvbuf: 4m
+	so-sndbuf: 4m
+	outgoing-num-tcp: 100 #default 10
+	incoming-num-tcp: 100 #default 10
+	stream-wait-size: 8m #default 4m
+	# ----------------------
+	statistics-interval: 1200
+	# ----------------------
+	port: 53
+	interface: 0.0.0.0
+	interface: ::0
+        #
+        # tls setup get ssl keys from letsencrypt
+        # 
+	interface: 0.0.0.0@853
+	interface: ::0@853
+	tls-service-key: /etc/unbound/privkey.pem
+	tls-service-pem: /etc/unbound/fullchain.pem
+        # 
+	use-syslog: yes
+        # first start
+	# drill . ns @161.97.219.84 > named.cache.opennic
+	# dig -t DNSKEY . @161.97.219.84 | dnssec-dsfromkey -1 -f - . > opennic.dnskey
+	# dig -t DNSKEY . @161.97.219.84 | dnssec-dsfromkey -2 -f - . > opennic.dnskey
+	root-hints: "/etc/unbound/named.cache.opennic"
+	trust-anchor-file: "/etc/unbound/opennic.dnskey"
+	# dnssec not working at the moment for all domains
+	harden-dnssec-stripped: no
+	harden-glue:  no
+	aggressive-nsec: no	
+	do-not-query-localhost: no
+	access-control: 0.0.0.0/0 allow
+	access-control: ::0/0 allow
+	#
+	hide-identity: yes
+	identity: "pope.vatican.va"
+	hide-version: yes
+	version:  "0.0"
+	tls-system-cert: yes
+	#ip-ratelimit-factor: 10
+    	#ip-ratelimit: 60
+    	ratelimit: 100
+	include: /etc/unbound/opennic_server.conf
+	
+local-zone: "168.192.in-addr.arpa." transparent
+local-zone: "10.in-addr.arpa." transparent
+local-zone: "16.172.in-addr.arpa." transparent
+local-zone: "17.172.in-addr.arpa." transparent
+local-zone: "18.172.in-addr.arpa." transparent
+local-zone: "19.172.in-addr.arpa." transparent
+local-zone: "20.172.in-addr.arpa." transparent
+local-zone: "21.172.in-addr.arpa." transparent
+local-zone: "22.172.in-addr.arpa." transparent
+local-zone: "23.172.in-addr.arpa." transparent
+local-zone: "24.172.in-addr.arpa." transparent
+local-zone: "25.172.in-addr.arpa." transparent
+local-zone: "26.172.in-addr.arpa." transparent
+local-zone: "27.172.in-addr.arpa." transparent
+local-zone: "28.172.in-addr.arpa." transparent
+local-zone: "29.172.in-addr.arpa." transparent
+local-zone: "30.172.in-addr.arpa." transparent
+local-zone: "31.172.in-addr.arpa." transparent
+local-zone: "0.in-addr.arpa." transparent
+local-zone: "127.in-addr.arpa." transparent
+local-zone: "254.169.in-addr.arpa." transparent
+local-zone: "2.0.192.in-addr.arpa." transparent
+local-zone: "100.51.198.in-addr.arpa." transparent
+local-zone: "113.0.203.in-addr.arpa." transparent
+local-zone: "255.255.255.255.in-addr.arpa." transparent
+local-zone: "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa." transparent
+local-zone: "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa." transparent
+local-zone: "d.f.ip6.arpa." transparent
+local-zone: "8.e.f.ip6.arpa." transparent
+local-zone: "9.e.f.ip6.arpa." transparent
+local-zone: "a.e.f.ip6.arpa." transparent
+local-zone: "b.e.f.ip6.arpa." transparent
+local-zone: "8.b.d.0.1.0.0.2.ip6.arpa." transparent
+local-zone: "onion." always_null
+# test local
+# just an example
+#local-zone: "porno." static
+#local-data: 'porno. IN SOA localhost. nobody.invalid. 1 3600 1200 604800 10800'
+#local-data: 'rechner.porno. IN A 127.0.0.1'
+
+remote-control:
+	control-enable: yes
+	
+</file>
+
+===== Refresh script =====
+
+
+<file perl getroot_opennic.pl>
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use XML::Parser;
+use Data::Dumper;
+
+my @bla = `wget --no-check-certificate -q -O - https://servers.opennic.org?tier=1`;
+
+my $done=0;
+my $res="";
+
+while ( @bla ) {
+    my $l = shift @bla;
+    unless ($done) {
+	if ( $l =~ /opennic\.glue/ ) {
+	    $done++;
+	    $res = $l;
+	}
+    }
+}
+
+$res =~ s/\<p\>//g;
+$res =~ s/\<\/p\>//g;
+$res =~ s/\<span\>//g;
+$res =~ s/\<\/span\>//g;
+$res =~ s/\<span\sclass=\'host\'[^\>]+\>//g;
+$res =~ s/\<a.+\>(.+)\<\/a\>//;
+$res =~ s/\<wbr\>/:/g;
+if ( $res =~ /\>(\d+\.\d+\.\d+\.\d+)\</ ) {
+    print $1 . "\n";
+}
+if ( $res =~ /\>([0-9A-Fa-f]+:\S+)\</ ) {
+    print $1 . "\n";
+}
+</file>
+
+<file bash refresh_base.sh>
+#!/bin/bash
+
+# arch linux packets needed:
+# - ldns
+# - unbound
+# - gawk
+# - coreutils
+# - grep
+
+AWK=/usr/bin/awk
+CUT=/usr/bin/cut
+DIG="/usr/bin/drill -t -r /etc/unbound/named.cache.opennic"
+GREP=/bin/grep
+PRINTF=/usr/bin/printf
+SED=/bin/sed
+KF=opennic.dnskey
+CF=named.cache.opennic
+SF=opennic_server.conf
+DF=opennic_domains.conf
+MYIP='<please set me>'
+
+if [ "$MYIP" = "<please set me>" ] ; then
+   echo "set varieble MYIP in this script"
+   exit 1
+fi
+   
+cd `dirname $0`
+
+# Make sure only one copy runs at a time
+LOCK="refresh_base.lock"
+r=$($PRINTF %05d $RANDOM)
+sleep ${r:0:1}.${r:1:5}
+if [ -f $LOCK ]; then
+    last_serial=$(cat $LOCK)
+    dt=$((`date +%s` - `date -r $LOCK +%s`))
+    if [ $dt -lt 600 ]; then
+	echo "Last run ${dt}s < 600s left"
+	exit 0;
+    else
+	echo "Last run ${dt}s"	
+    fi
+fi
+
+touch $LOCK
+
+# first get any tier1 server to start
+NS=( $(./getroot_opennic.pl) )
+
+echo -n "Opennic tier1 Server: "
+
+for ns in "${NS[@]}"; do
+    echo -n "$ns "
+    soa=$($DIG -Q SOA . @$ns)
+    if [ "$soa" ]; then NS0=$(echo $soa | awk '{print $1}') ; break ; fi
+done
+if [ ! "$NS0" ]; then
+    echo "No Opennic tier1 server could not be reached -- aborting!" >&2
+    exit 1
+fi
+
+echo
+
+# get master server 
+NS0=$(echo $NS0 | awk '{print $1}')
+
+echo -n "Master openic server: $NS0 ("
+
+# get ip from master server
+NS=( $(drill -Q @$ns ns0.opennic.glue.) )
+for ns in "${NS[@]}"; do
+    if [ "$soa" ]; then NS0=$ns ; break ; fi
+done
+if [ ! "$NS0" ]; then
+    echo "could not be reached -- aborting!" >&2
+    exit 1
+fi
+
+echo "$NS0)"
+
+soa=$($DIG -Q SOA . @$NS0)
+serial=$(echo $soa | awk '{ print $3}')
+refresh=$(echo $soa | awk '{ print $4}')
+
+echo "Serial: $serial"
+echo "Refresh: $refresh"
+
+echo $serial > $LOCK
+
+if [ -z "$last_serial" ] ; then
+    last_serial=0
+fi
+
+if [ $last_serial == $serial ]; then
+    echo "No Update needed serial not changed"
+    exit 0
+fi
+
+dig . ns @${NS0} > $CF
+echo "Updated $CF"
+
+dig -t DNSKEY . @${NS0} | dnssec-dsfromkey -1 -f - . > $KF
+dig -t DNSKEY . @${NS0} | dnssec-dsfromkey -2 -f - . >> $KF     
+cp $KF /etc/trusted-key.key
+echo "Updated $KF and /etc/trusted-key.key"
+
+# Start printing the new file
+ifs=$IFS
+
+# Collect list of TLDs
+TXT=(dns.opennic.glue $($DIG -Q @$NS0 TXT tlds.opennic.glue | tr -d '"'))
+IFS=$'\n' TLDS=($(sort <<<${TXT[*]}))
+IFS=$ifs
+if [ "${TLDS[*]}" == "dns.opennic.glue" ]; then
+    echo "Failed to obtain list of TLDs" >&2
+    rm -f $LOCK
+    exit 1
+else
+    echo "TLDS: ${TLDS[*]}" >&2
+fi
+
+echo "#" > $DF 
+echo "# OpenNIC zone config - file created by $HOSTNAME" >> $DF
+echo "# Generated on `date '+%A, %d %b %Y at %T'`" >> $DF
+echo "#" >> $DF
+
+echo "#" > $SF
+echo "# OpenNIC server config for opennic - file created by $HOSTNAME" >> $SF
+echo "# Generated on `date '+%A, %d %b %Y at %T'`" >> $SF
+echo "#" >> $SF
+
+
+for TLD in "${TLDS[@]}" ; do
+    if [ $TLD != '.' ]; then
+	echo -n 'domain-insecure: "' >> $SF
+	echo -n $TLD >> $SF
+	echo '"' >> $SF
+    fi
+    # Check if this zone is mastered by this server
+    zone="$TLD.opennic.glue"
+    if [ "$TLD" == "." ]; then
+	zone="" ;
+    fi
+    master=($($DIG -Q TXT $zone. @$NS0 | sed 's/"//g' | $GREP ^ns) ns0.opennic.glue.)
+
+    echo "TLD $TLD master = ${master[*]}"
+    
+    # Begin printing the zone config
+    echo >> $DF
+    echo "auth-zone:" >> $DF
+    echo "   name: $TLD" >> $DF
+    if [ $TLD == '.' ]; then
+	echo "   zonefile: sec/root.zone" >> $DF
+    else
+	echo "   zonefile: sec/${TLD}.zone" >> $DF
+    fi
+    echo "   for-downstream: no" >> $DF
+    # Collect a list of master nameservers for the zone
+    for mm in "${master[@]}" ; do
+	mm=$(echo $mm | $SED 's/\.$//')
+	ns=$(echo $mm | $CUT -d. -f1 | $SED 's/ns//')
+	AT="@$myDNS"
+	if [ "$ns" == "0" ]; then AT="@$NS0"; fi
+	if [ "$AT" == "@" ]; then AT=""; fi
+	
+	# If this is an unknown NS, query its IPs
+	if [ ! "${RES[$ns]}" ]; then
+	    A4=$($DIG -Q A $mm $AT)
+	    A6=$($DIG -Q AAAA $mm $AT)
+	    RES[$ns]="${A4[@]} ${A6[@]}"
+	fi
+	read -a IP <<< ${RES[$ns]}
+	
+	# Print all IPs for all nameservers
+	for addr in "${IP[@]}" ; do
+	    echo "   master: $addr" >> $DF
+	done
+    done
+    echo >> $DF
+done
+echo "Updated $DF $SF"
+
+unbound-control reload_keep_cache
+echo "Restarted unbound"
+
+sleep 10
+
+wget -q --no-check-certificate -O test.txt 'https://report.opennicproject.org/t2log/t1.php?ip_addr=$MYIP'
+if [ $(cat test.txt | perl -n -e 'if ( $p == 1 ) { /Passed/ && print "OK\n" ; $p = 0; } else { if ( /Test results:/ ) { $p=1; } }') != 'OK' ] ; then
+    echo "Opennic Tier1 TEST FAILED"
+    rm -f test.txt
+    exit 1
+else
+    echo "Opennic Tier1 TEST OK"
+    rm -f test.txt
+fi
+
+sleep 10
+
+wget -q --no-check-certificate -O test.txt 'https://servers.opennicproject.org/srvtest3/test.php?ip=$MYIP&ns=$MYIP'
+if [ $(cat test.txt | perl -n -e '/Server\sstatus(.*)$/ && print $1;'  | perl -n -e '/\[(.+)\]/ && print $1;') != '100%' ] ; then
+    echo "Opennic Tier2 TEST FAILED"
+    rm -f test.txt
+    exit 1
+else
+    echo "Opennic Tier2 TEST OK"
+    rm -f test.txt
+fi
+
+if [ -z "$($DIG -TD . soa | grep '^\[T\]' | grep SOA)" ] ; then
+    echo "DNSSEC Test FAILED"
+    exit 1
+else
+    echo "DNSSEC Test OK"
+fi
+
+git commit -am "Serial: $serial"
+</file>
