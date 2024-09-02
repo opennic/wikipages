@@ -6,16 +6,21 @@ That's why I like opennic.
 ===== Contact: =====
 IRC! \\
 Just look out for a guy called the_old_p and it's very likely to be me.\\
+Email: the-old-p@proton.me
 
 === What does he do? ===
+
 Programming with
+  * Assembler 
   * C
   * rust
   * perl
+
 Network Admin for
   * providing you with DNS services
   * a hobby
   * the IT guy
   * fun
+
 === How did I contribute to this Wiki? ==
   * -tbd.
