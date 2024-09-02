@@ -1,5 +1,8 @@
 ====== Unbound Howto ======
 
+This setup is build as an example to work as tier1 or tier2 server.
+There is an update script which sets up all slave zones and does an tier1 anmd tiar2 server test after update.
+ 
 ===== Base setup =====
 
 <file txt unbound.conf>
@@ -340,7 +343,7 @@ echo "Restarted unbound"
 
 sleep 10
 
-wget -q --no-check-certificate -O test.txt 'https://report.opennicproject.org/t2log/t1.php?ip_addr=$MYIP'
+wget -q --no-check-certificate -O test.txt "https://report.opennicproject.org/t2log/t1.php?ip_addr=$MYIP"
 if [ $(cat test.txt | perl -n -e 'if ( $p == 1 ) { /Passed/ && print "OK\n" ; $p = 0; } else { if ( /Test results:/ ) { $p=1; } }') != 'OK' ] ; then
     echo "Opennic Tier1 TEST FAILED"
     rm -f test.txt
@@ -352,7 +355,7 @@ fi
 
 sleep 10
 
-wget -q --no-check-certificate -O test.txt 'https://servers.opennicproject.org/srvtest3/test.php?ip=$MYIP&ns=$MYIP'
+wget -q --no-check-certificate -O test.txt "https://servers.opennicproject.org/srvtest3/test.php?ip=$MYIP&ns=$MYIP"
 if [ $(cat test.txt | perl -n -e '/Server\sstatus(.*)$/ && print $1;'  | perl -n -e '/\[(.+)\]/ && print $1;') != '100%' ] ; then
     echo "Opennic Tier2 TEST FAILED"
     rm -f test.txt
