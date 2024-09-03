@@ -81,6 +81,7 @@ The current and planned deployment of TLS certificates for services running on O
 Add yourself by joining the Wiki and editing this table!
 ^  Name  ^  Profile Link  ^  Software  ^  OS  ^  Version  ^  Protocols  ^  Environment  ^  Server Class  ^  Languages  ^
 |  Olde16  |  [[:user:olde16:]]  |  __Bind9__  |  __Ubuntu__, Any Linux  |  Any  |  __DoH, DoT, DH, TSIG (Transfer), 53__  |  __Private, Public__  |  T1, __T2__  |  __DE__, EN  |
+|  gp68  |  [[:user:gp68:]]  |  __unbound__  |  __Arch__, Debian, Any  |  Any  |    |    |    |   __DE__, EN  |
 |  .  |  .  |  .  |  .  |  .  |  .  |  .  |  .  |  .  |
 Preferences are __marked__.
 ==== Protocols ====

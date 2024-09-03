@@ -10,27 +10,30 @@ Email: the-old-p@proton.me
 
 ==== What does he do? ====
 
-Programming with
-  * Assembler 
-  * C
-  * rust
-  * perl
-
-Network Admin for
-  * providing you with DNS services
-  * a hobby
-  * the IT guy
-  * fun
-
-System Admin for
-  * Debian
-  * Arch
-
-Real Live Meetings
-  * 38c3
-
+  * Programming with
+    * Assembler 
+    * C
+    * rust
+    * perl
+  * Network Admin for
+    * work
+    * hobby
+    * fun
+  * System Admin for
+    * Debian
+    * Arch
+    * Embedded systems
+  * Real Live Meetings
+    * 38c3
+  * Open source tools
+    * gopass
+    * wireguard
+    * matrix ( and bridges )
+    * postgres
+    * .... and many more ....
 
 ==== How did I contribute to this Wiki? ====
+
   * [[user:gp68:unbound|]]
 
 

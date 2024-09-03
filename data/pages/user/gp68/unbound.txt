@@ -1,7 +1,9 @@
 ====== Unbound Howto ======
 
-This setup is build as an example to work as tier1 or tier2 server.
-There is an update script which sets up all slave zones and does an tier1 anmd tiar2 server test after update.
+This setup is build as an example to work as tier1 or tier2 server. \\
+There is an update script which sets up all slave zones and does an tier1 anmd tiar2 server test after update. \\
+The update script also checks dnssec basics and updates the files in git. \\
+///etc/unbound// is a git repository in my setup.
  
 ===== Base setup =====
 
@@ -12,6 +14,7 @@ server:
 	port: 53
 	# ----------------------
 	# optimizations https://nlnetlabs.nl/documentation/unbound/howto-optimise/
+        # adjust for your needs
 	# ----------------------
 	num-threads: 2
 	msg-cache-slabs: 2
@@ -32,6 +35,8 @@ server:
 	incoming-num-tcp: 100 #default 10
 	stream-wait-size: 8m #default 4m
 	# ----------------------
+        # can be set to 0 if you don't need
+        #
 	statistics-interval: 1200
 	# ----------------------
 	port: 53
@@ -44,79 +49,53 @@ server:
 	interface: ::0@853
 	tls-service-key: /etc/unbound/privkey.pem
 	tls-service-pem: /etc/unbound/fullchain.pem
-        # 
+        # i don't like files :-) 
 	use-syslog: yes
-        # first start
+        # -------------------------------------
+        # for the first start update files
+        # named.cache.opennic and opennic.dnskey
+        # manually
+        # -------------------------------------
 	# drill . ns @161.97.219.84 > named.cache.opennic
 	# dig -t DNSKEY . @161.97.219.84 | dnssec-dsfromkey -1 -f - . > opennic.dnskey
 	# dig -t DNSKEY . @161.97.219.84 | dnssec-dsfromkey -2 -f - . > opennic.dnskey
 	root-hints: "/etc/unbound/named.cache.opennic"
 	trust-anchor-file: "/etc/unbound/opennic.dnskey"
+        # --------------------------------------------------
 	# dnssec not working at the moment for all domains
+        # --------------------------------------------------
 	harden-dnssec-stripped: no
 	harden-glue:  no
-	aggressive-nsec: no	
-	do-not-query-localhost: no
+	aggressive-nsec: no
+        # access control for everyone ai and ipv6
 	access-control: 0.0.0.0/0 allow
 	access-control: ::0/0 allow
-	#
+	# no identity needed
 	hide-identity: yes
 	identity: "pope.vatican.va"
 	hide-version: yes
 	version:  "0.0"
 	tls-system-cert: yes
+        # DOS protection
 	#ip-ratelimit-factor: 10
     	#ip-ratelimit: 60
     	ratelimit: 100
+        # ---------------------------------------
+        # for start make am empty file
+        # will be updated by refresh script
+        # 
 	include: /etc/unbound/opennic_server.conf
-	
-local-zone: "168.192.in-addr.arpa." transparent
-local-zone: "10.in-addr.arpa." transparent
-local-zone: "16.172.in-addr.arpa." transparent
-local-zone: "17.172.in-addr.arpa." transparent
-local-zone: "18.172.in-addr.arpa." transparent
-local-zone: "19.172.in-addr.arpa." transparent
-local-zone: "20.172.in-addr.arpa." transparent
-local-zone: "21.172.in-addr.arpa." transparent
-local-zone: "22.172.in-addr.arpa." transparent
-local-zone: "23.172.in-addr.arpa." transparent
-local-zone: "24.172.in-addr.arpa." transparent
-local-zone: "25.172.in-addr.arpa." transparent
-local-zone: "26.172.in-addr.arpa." transparent
-local-zone: "27.172.in-addr.arpa." transparent
-local-zone: "28.172.in-addr.arpa." transparent
-local-zone: "29.172.in-addr.arpa." transparent
-local-zone: "30.172.in-addr.arpa." transparent
-local-zone: "31.172.in-addr.arpa." transparent
-local-zone: "0.in-addr.arpa." transparent
-local-zone: "127.in-addr.arpa." transparent
-local-zone: "254.169.in-addr.arpa." transparent
-local-zone: "2.0.192.in-addr.arpa." transparent
-local-zone: "100.51.198.in-addr.arpa." transparent
-local-zone: "113.0.203.in-addr.arpa." transparent
-local-zone: "255.255.255.255.in-addr.arpa." transparent
-local-zone: "0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa." transparent
-local-zone: "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa." transparent
-local-zone: "d.f.ip6.arpa." transparent
-local-zone: "8.e.f.ip6.arpa." transparent
-local-zone: "9.e.f.ip6.arpa." transparent
-local-zone: "a.e.f.ip6.arpa." transparent
-local-zone: "b.e.f.ip6.arpa." transparent
-local-zone: "8.b.d.0.1.0.0.2.ip6.arpa." transparent
-local-zone: "onion." always_null
-# test local
-# just an example
-#local-zone: "porno." static
-#local-data: 'porno. IN SOA localhost. nobody.invalid. 1 3600 1200 604800 10800'
-#local-data: 'rechner.porno. IN A 127.0.0.1'
-
+	#
+# enable control via locahhost
 remote-control:
 	control-enable: yes
-	
+
+include: /etc/unbound/opennic_domains.conf
 </file>
 
 ===== Refresh script =====
 
+Gets the opennic root nameserver from the web
 
 <file perl getroot_opennic.pl>
 #!/usr/bin/perl
@@ -155,6 +134,14 @@ if ( $res =~ /\>([0-9A-Fa-f]+:\S+)\</ ) {
     print $1 . "\n";
 }
 </file>
+
+Refreshes the files
+  * opennic.dnskey          ( dnssec root key )
+  * named.cache.opennic     ( dns root cache )
+  * opennic_server.conf     ( allow unsecure dnssec queries for opennic domains )
+  * opennic_domains.conf    ( opennic zones secondary )
+
+The script locks for single usage and checks the serial of the root zone for changes.
 
 <file bash refresh_base.sh>
 #!/bin/bash
