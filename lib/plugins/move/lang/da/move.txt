@@ -1,0 +1,10 @@
+====== Flyt ======
+
+Denne udvidelse gør dig i stand til at flytte og/eller omdøbe den aktuelle side, eller det aktuelle navnerum, med følgende restriktioner:
+
+  * Du skal have rettigheder til at redigere den aktuelle side/alle sider i det aktuelle navnerum
+  * Siderne der flyttes må ikke være låst pga. redigering
+  * For at flytte en side, skal du også have rettigheder til at oprette sider i det navnerum der flyttes til
+  * Du kan ikke flytte en side til et navnerum, hvor der allerede findes en side med samme navn.
+
+Alle links til og fra sider der flyttes, vil blive tilrettet så de passer til den nye lokation og/eller det nye navn.

@@ -1,4 +1,5 @@
 <?php
+
 /*        _         _____  _       _       _
  *   ___ | |_  ___ |   __||_| ___ | | ___ | |_
  *  | . ||   || . ||   __|| || . || || -_||  _|
@@ -37,37 +38,27 @@
 
 class phpFiglet
 {
-
     /*
      *  Internal variables
      */
 
-    var $signature;
-    var $hardblank;
-    var $height;
-    var $baseline;
-    var $maxLenght;
-    var $oldLayout;
-    var $commentLines;
-    var $printDirection;
-    var $fullLayout;
-    var $codeTagCount;
-    var $fontFile;
-
-    /*
-     *  Contructor
-     */
-
-    function phpFiglet()
-    {
-
-    }
+    public $signature;
+    public $hardblank;
+    public $height;
+    public $baseline;
+    public $maxLenght;
+    public $oldLayout;
+    public $commentLines;
+    public $printDirection;
+    public $fullLayout;
+    public $codeTagCount;
+    public $fontFile;
 
     /*
      *  Load an flf font file. Return true on success, false on error.
      */
 
-    function loadfont($fontfile)
+    public function loadfont($fontfile)
     {
         $this->fontFile = @file($fontfile);
         if (!$this->fontFile) return false;
@@ -99,11 +90,11 @@ class phpFiglet
      *  for each font height.
      */
 
-    function getCharacter($character, $asarray = false)
+    public function getCharacter($character, $asarray = false)
     {
         $asciValue = ord($character);
         $start = $this->commentLines + ($asciValue - 32) * $this->height;
-        $data = ($asarray) ? array() : "";
+        $data = ($asarray) ? [] : "";
 
         for ($a = 0; $a < $this->height; $a++) {
             $tmp = $this->fontFile[$start + $a];
@@ -125,7 +116,7 @@ class phpFiglet
      *  Returns a figletized line of characters.
      */
 
-    function fetch($line)
+    public function fetch($line)
     {
         $ret = "";
 
@@ -136,7 +127,7 @@ class phpFiglet
         @reset($data);
 
         for ($i = 0; $i < $this->height; $i++) {
-            while (list($k, $v) = each($data)) {
+            foreach ($data as $v) {
                 $ret .= str_replace("\n", "", $v[$i]);
             }
             reset($data);
@@ -150,11 +141,8 @@ class phpFiglet
      *  Display (print) a figletized line of characters.
      */
 
-    function display($line)
+    public function display($line)
     {
-        print $this->fetch($line);
+        echo $this->fetch($line);
     }
-
 }
-
-?>

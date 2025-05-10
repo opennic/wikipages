@@ -1,0 +1,7 @@
+====== Move Manager =====
+
+Antarmuka ini mengizinkan Anda untuk mengurutkan ulang ruangnama, halaman, dan berkas media dengan geser dan lepas.
+
+Untuk memindahkan ruangnama, halaman, atau berkas sekaligus ke tujuan yang sama, Anda dapat menggunakan kotak centang sebagaimana dibawah ini:
+  * klik kotak centang pada ruangnama, halaman, atau berkas yang ingin Anda pindahkan;
+  * pindahkan satu dari butir yang telah dipilih ke tujuan yang diinginkan, semua butir yang dipilih secara otomatis akan dipindahkan ke tujuan tersebut.

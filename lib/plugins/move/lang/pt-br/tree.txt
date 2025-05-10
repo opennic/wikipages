@@ -1,0 +1,6 @@
+====== Gerenciador de Movimentação ======
+Esta interface permite que você reorganize os domínios, páginas e arquivos de mídia da sua wiki via Arraste e Solte.
+
+Para mover vários domínios, páginas ou arquivos de mídia para o mesmo destino, você pode usar as caixas de seleção da seguinte forma:
+  * verifique os domínios, páginas ou arquivos de mídia que deseja mover;
+  * mova um dos itens marcados para o destino desejado, todos os itens selecionados serão movidos para este destino.

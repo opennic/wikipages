@@ -8,12 +8,6 @@
  *             Based on plugin by Michael Arlt <michael.arlt [at] sk-schwanstetten [dot] de>
  */
 
-/* Must be run within Dokuwiki */
-if(!defined('DOKU_INC')) die();
-
-if(!defined('DOKU_PLUGIN')) define('DOKU_PLUGIN', DOKU_INC . 'lib/plugins/');
-require_once(DOKU_PLUGIN . 'syntax.php');
-
 class syntax_plugin_columns extends DokuWiki_Syntax_Plugin {
 
     private $mode;

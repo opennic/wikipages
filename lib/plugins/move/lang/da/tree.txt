@@ -1,0 +1,7 @@
+===== Flytningshåndtering =====
+
+Denne side gør dig i stand til at omarrangere din wikis navnerum, sider og mediefiler via træk og slip.
+
+For at flytte mange navnerum, sider eller mediefiler til det samme navnerum, kan du benytte afkrydsningsfelter som følger:
+  * Marker de navnerum, sider og/eller mediefiler som du ønsker at flytte
+  * Træk et af de markerede elementer til den ønskede lokation, og alle øvrige markerede elementer flyttes automatisk med.

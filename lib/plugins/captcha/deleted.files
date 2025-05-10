@@ -1,0 +1,9 @@
+# This is a list of files that were present in previous releases
+# but were removed later. They should not exist in your installation.
+.github/workflows/phpTestLinux.yml
+.travis.yml
+VeraSe.ttf
+_test/helper.test.php
+info.txt
+sound.png
+style.css

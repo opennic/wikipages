@@ -72,7 +72,7 @@ class helper_plugin_move_handler extends DokuWiki_Plugin {
             // FIXME this simply assumes that the link pointed to :$conf['start'], but it could also point to another page
             // resolve_pageid does a lot more here, but we can't really assume this as the original pages might have been
             // deleted already
-            if(substr($old, -1) === ':') $old .= $conf['start'];
+            if(substr($old, -1) === ':' || $old === '') $old .= $conf['start'];
 
             $moves = $this->page_moves;
         } else {
@@ -132,6 +132,11 @@ class helper_plugin_move_handler extends DokuWiki_Plugin {
         $old    = $relold;
         if($type == 'page') {
             resolve_pageid($this->ns, $old, $exists);
+            // Work around bug in DokuWiki 2020-07-29 where resolve_pageid doesn't append the start page to a link to
+            // the root.
+            if ($old === '') {
+                $old = $conf['start'];
+            }
         } else {
             resolve_mediaid($this->ns, $old, $exists);
         }

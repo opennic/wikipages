@@ -1,7 +1,7 @@
 base   columns
 author Mykola Ostrovskyy
 email  dwpforge@gmail.com
-date   2021-04-04
+date   2023-06-16
 name   Columns Plugin
 desc   Arrange information in multiple columns.
 url    http://www.dokuwiki.org/plugin:columns

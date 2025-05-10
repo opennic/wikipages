@@ -431,12 +431,13 @@ EOT;
 [[.current_ns:|..:current_ns:]]
 [[.parallel_ns:|..parallel_ns:]]
 [[.parallel_ns:|..:parallel_ns:]]
-[[:|..:..:]]
+[[..:..:|..:..:]]
 [[..:..:parent_ns:|..:..:parent_ns:]]
 [[parent_ns:new_page|parent_ns:new_page]]
 [[parent_ns/new_page|parent_ns/new_page]]
 [[/start|/start]]
 EOT;
+        // Note: ..:..: is not a great link for a page in a namespace 'parent_ns', but it is correctly resolved.
 	    $this->assertEquals($expectedContent, $newContent);
 
 	    // page is moved to same NS as backlinking page (parent_ns)
