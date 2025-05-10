@@ -1,5 +1,31 @@
 # Bootstrap3 DokuWiki Template ChangeLog
 
+## [develop]
+
+### Fixes
+    * #562: Image resize (include plugin)
+    * #577: Extra check on login page for PHP>=8.0 (PR)
+    * #583: Template style settings: colour boxes extremely narrow and php warnings
+    * #611: Edit mode when not logged in, shows textarea field with source text "as button"
+    * #614: Navbar appears only when the user is logged (even when configured as "always")
+
+### Changes
+    * #542: Add support for Google Analytics 4
+    * #607: Revert top heading paddind
+
+## [v2024-02-06]
+
+This release increase the compatibility with the latest DokuWiki and PHP releases.
+
+### Changes
+    * #589: Missing Wikipedia logo in interwiki links to Russian language
+    * #584, #604: Improved compatibility with new Translation Plugin
+    * #582: Theme changing doesn't work in Firefox/Gecko
+    * #573: Typeahead blocks global search if match is found
+    * #596, #597: Warnings after upgrade to 2023-04-04a "Jack Jackrum"
+    * #605: detail.php plural of "information"
+
+
 ## [v2022-07-27]
 
 This release increase the compatibility with Hogfather and the upcoming Igor release and fix some regression.
@@ -614,6 +640,7 @@ In this release improved the user experience with new icons for Configuration Ma
 
 
 [Develop]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/master...develop
+[v2024-02-06]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2022-07-27...v2024-02-06
 [v2022-07-27]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2021-03-11...v2022-07-27
 [v2021-03-11]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2020-08-28...v2021-03-11
 [v2020-08-28]: https://github.com/giterlizzi/dokuwiki-template-bootstrap3/compare/v2020-07-29...v2020-08-28

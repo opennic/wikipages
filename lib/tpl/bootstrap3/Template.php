@@ -57,6 +57,7 @@ class Template
                 'tocLayout'                  => $this->getConf('tocLayout'),
                 'useAnchorJS'                => (int) $this->getConf('useAnchorJS'),
                 'useAlternativeToolbarIcons' => (int) $this->getConf('useAlternativeToolbarIcons'),
+                'disableSearchSuggest'       => (int) $this->getConf('disableSearchSuggest'),
             ],
         ];
 
@@ -492,6 +493,7 @@ class Template
         $bootstrap_theme  = $this->getConf('bootstrapTheme');
         $bootswatch_theme = $this->getBootswatchTheme();
         $theme            = (($bootstrap_theme == 'bootswatch') ? $bootswatch_theme : $bootstrap_theme);
+
         return $theme;
     }
 
@@ -778,20 +780,18 @@ class Template
 
         $out = DOKU_LF;
         $out .= '// Google Analytics' . DOKU_LF;
-        $out .= "(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');" . DOKU_LF;
-
-        $out .= 'ga("create", "' . $google_analitycs_id . '", "auto");' . DOKU_LF;
-        $out .= 'ga("send", "pageview");' . DOKU_LF;
+        $out .= 'window.dataLayer = window.dataLayer || [];' . DOKU_LF;
+        $out .= 'function gtag(){dataLayer.push(arguments);}' . DOKU_LF;
+        $out .= 'gtag("js", new Date());' . DOKU_LF;
 
         if ($this->getConf('googleAnalyticsAnonymizeIP')) {
-            $out .= 'ga("set", "anonymizeIp", true);' . DOKU_LF;
+            $out .= 'gtag("config", "' . $google_analitycs_id . '", {"anonimize_ip":true});' . DOKU_LF;
+        } else {
+            $out .= 'gtag("config", "' . $google_analitycs_id . '");' . DOKU_LF;
         }
 
         if ($this->getConf('googleAnalyticsTrackActions')) {
-            $out .= 'ga("send", "event", "DokuWiki", JSINFO.bootstrap3.mode);' . DOKU_LF;
+            $out .= 'gtag("event", JSINFO.bootstrap3.mode, {"eventCategory":"DokuWiki"});' . DOKU_LF;
         }
 
         $out .= '// End Google Analytics' . DOKU_LF;
@@ -1218,7 +1218,9 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
      */
     public function getNavbar()
     {
-        if ($this->getConf('showNavbar') === 'logged' && !$_SERVER['REMOTE_USER']) {
+        global $INPUT;
+
+        if ($this->getConf('showNavbar') === 'logged' && !$INPUT->server->has('REMOTE_USER')) {
             return false;
         }
 
@@ -1499,7 +1501,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
         # Form controls
         foreach ($html->find('input, select, textarea') as $elm) {
-            if (!in_array($elm->type, ['submit', 'reset', 'button', 'hidden', 'image', 'checkbox', 'radio'])) {
+            if (!in_array($elm->type, ['submit', 'reset', 'button', 'hidden', 'image', 'checkbox', 'radio', 'color'])) {
                 $elm->class .= ' form-control';
             }
         }
@@ -2228,7 +2230,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             $toc_undefined = array_pop($toc);
         }
 
-        trigger_event('TPL_TOC_RENDER', $toc, null, false);
+        \dokuwiki\Extension\Event::createAndTrigger('TPL_TOC_RENDER', $toc, null, false);
 
         if ($ACT == 'admin' && $INPUT->str('page') == 'config') {
             $bootstrap3_sections = [
