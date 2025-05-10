@@ -19,3 +19,4 @@ data/media_meta/*
 .gitsync.lock
 *.swp
 *~
+‎data/log/*
