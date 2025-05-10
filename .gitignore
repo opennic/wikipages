@@ -1,3 +1,5 @@
+data/log/*
+!data/log/_dummy
 lib/plugins/authorstats/authorstats.json
 data/index/*.idx
 data/cache/*
@@ -19,4 +21,3 @@ data/media_meta/*
 .gitsync.lock
 *.swp
 *~
-‎data/log/*
