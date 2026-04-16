@@ -18,3 +18,38 @@ To get an overview over the currently configured resolvers we run the ''resolvec
 The section ''Global'' refers to a configuration which is used if no other configuration is provided.
 The section ''eth0'' refers to a configuration used for that particular interface.
 
+Now we configure our resolver for eth0:
+
+  # Fill with public resolvers (Tier 2 server) or 127.0.0.1 and ::1 if your machine is a resolver itself
+  resolvectl dns eth0 <OpenNIC Resolver IP address> [<OpenNIC Resolver IP address> ...]
+  resolvectl dnssec eth0 yes
+  resolvectl dnsovertls eth0 yes
+  resolvectl domain eth0 ""
+
+For DNSSEC to work we have to give systemd a little help, since the root zone is not signed with IANA keys.
+
+  mkdir -p /etc/dnssec-trust-anchors.d/
+  
+Get the DNSKEY for the "." root zone:
+
+  dig DNSKEY . @127.0.0.1 +noall +answer
+  
+Now we have to input those key into a new file:
+
+  touch /etc/dnssec-trust-anchors.d/opennic.positive
+  
+Insert the queries DNSKEYs into this file.
+
+After that remove the TTL (Time-To-Live) value between ''.'' and ''IN''.
+
+After this, we can resolve a query with DNSSEC and DoT:
+
+  root@korridor:~# resolvectl query cloudflare.com
+  cloudflare.com: 104.16.132.229                 -- link: eth0
+                  104.16.133.229                 -- link: eth0
+                  2606:4700::6810:84e5           -- link: eth0
+                  2606:4700::6810:85e5           -- link: eth0
+  
+  -- Information acquired via protocol DNS in 3.3ms.
+  -- Data is authenticated: yes; Data was acquired via local or encrypted transport: yes
+  -- Data from: network
