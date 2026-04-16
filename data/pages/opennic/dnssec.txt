@@ -15,23 +15,21 @@ The file paths in this guide are the defaults on many systems including Ubuntu a
 1. Create the file ''/etc/bind/named.conf.keys'' with the following content:
 
 <file - named.conf.keys>
-trusted-keys {
-        . 257 3 8 "AwEAAaq+qqsdDHByq/DFR5/u23qcDNOQJzjYBcSfjrGN
-                                LdY2+vY+ubhuiz0hG1xk5D+dK78Eh58wZ3tQnsRr3bVN
-                                Vfcovlx/rdwuw5blez2TT0Et4IF/3b/RpMpCwSSOWTMG
-                                vi0EwIMNsjYWEZlRjcWku3cnAAvSD3YdaRW2JCKsbkK5
-                                OQp2YjuQgIOL7J6f8mN6nkfAWd9L2U9H+TSEnx8gqqkX
-                                IEIRWcbdWN1FiCdy3L8CaHbZcttzx5lLOGrjPW+raXn+
-                                KaQSU+WW9n2PPOZbNUrQnsW/DJ+b+soNQQbhwFlp/av5
-                                VzaxB7/57vEKqj71x+Xu8S0sGpLcXrkf5p3ri93ScLsJ
-                                OT11fIlMRIwcKsWZEIIyYzuQeq8MoVTenvN6re/y872V
-                                b6JBHbBMk0JmsRwkXltz9PINWyvVyqM3PA1bJ4fz8Qbq
-                                XnTnJiR/yylhcE8rjPUtnf29NyDN7Co9JzPwnwE74F3k
-                                3R18w45L8E5Dt5it2PIA9/rb6GDMrPAPsa1X82qNLzcb
-                                oosMj9vT7Ofg8M+x2/VYt6u4xX4glZRavyjTs6qGfzFS
-                                +Z44zrIP4CtNa0fL0AwJ/wsK4YJSX0xZ6/CJI/NNXeSg
-                                G5vfMw04kUDI9d9oO9jkAhYDmTaOI6C5nVTymAs3uje8
-                                /mZlo/pUSllB0DkpTgd5PTAwQsA1";
+trust-anchors {
+  . initial-key 257 3 8 "AwEAAbtbsu+wl3fbEDbgvMgJ1BDXeAk5t6BU7B1KGVvc13zMJtjvarxp
+    WWrAb7fmWERX8kJawa3KpYty0EDFQ24nfQyhwEOld442ca89u4/ZU3jP
+    uwKohbGn55vIQ7KjCIrDNvRYjGVn2MNwZnL4WVVclJYsa1cGwVQ9t575
+    I5yvU+5g+jVcjUsGwFn6xmuJC0Z33ABKsC8b1cjfcnvE4wP3CrXOlDQ+
+    Er4uPUtMKrmG+Sj1Bm5U+do78mwEXOlTz/sNj8tkpL0pYB2j+XNaDVrO
+    0uS1beekejnttMsC4SHMCsiwMvigW2O54ByhzijU2v87d7U9WEMVfPvO
+    6gearg1fo/1Tk4buzPZcS+W9WZgFAt7kT1ois3x0GGT7J55zENB9IZU4
+    tMmWdYbZJOZsdAzmshuWJIUlTZdNN5671Rhc6P9TWnMlvb9iNT7G3DZ9
+    PhBw1OF/OmmXobv3Wygbt5+u7q2CPPzwU4WTGpVNtr3Iry2SPW3XVpJS
+    M3+nW7LfxxtWZJlN4MDQYC5IptU+A5EO80/yE38E9tKGDWC1+Nw59QLa
+    BE7ff+Jkq7OMjTHjFhYivkJSv+8LEbkGjWoaMAS2CT3/ZVMYLiQn8THi
+    ZUBF+aOzJMw0EGPag1Qq4vfGgFkQMM3hOaH6bWN1yCvmspuiwLYkNCZZ
+    /l8ThKc57bGYy9TX";
+
 };
 </file>
 
@@ -41,8 +39,9 @@ trusted-keys {
 dig DNSKEY . @195.201.99.61 +short
 </code>
 > <code>
-256 3 8 AwEAAaZnbL4yf5OZKLi/tjNBLKUwLuxhyvhildx0Efb/nMlRrCgafhCD 8A8tZkQLMQjQDu5Uckk/M1wCY5U8A9yvOapWMHx3S9dnFSvp4CFWitvo QYDJIMMooNGdYpljzKtR52wPdUpcqvSRwpp9a4gsoEx/r4jY9vyrT/SO 7yQuhh4uVKtZeHcXl/w2V14zVNUBoDl3SlSYIkVBa2HzponOsDlqJN6V QbZQ4mbvpnvbWOq55E/1pzIIrwp0X2VxSunhU/sGKpfiW9c5O6mPwUGl 1NDeYzycNKGy2Nsx4p4nkN43rRwjDBtD4CSUiTwtsMFTF5xKAbuUgSds BAQMyTnokYs=
-257 3 8 AwEAAaq+qqsdDHByq/DFR5/u23qcDNOQJzjYBcSfjrGNLdY2+vY+ubhu iz0hG1xk5D+dK78Eh58wZ3tQnsRr3bVNVfcovlx/rdwuw5blez2TT0Et 4IF/3b/RpMpCwSSOWTMGvi0EwIMNsjYWEZlRjcWku3cnAAvSD3YdaRW2 JCKsbkK5OQp2YjuQgIOL7J6f8mN6nkfAWd9L2U9H+TSEnx8gqqkXIEIR WcbdWN1FiCdy3L8CaHbZcttzx5lLOGrjPW+raXn+KaQSU+WW9n2PPOZb NUrQnsW/DJ+b+soNQQbhwFlp/av5VzaxB7/57vEKqj71x+Xu8S0sGpLc Xrkf5p3ri93ScLsJOT11fIlMRIwcKsWZEIIyYzuQeq8MoVTenvN6re/y 872Vb6JBHbBMk0JmsRwkXltz9PINWyvVyqM3PA1bJ4fz8QbqXnTnJiR/ yylhcE8rjPUtnf29NyDN7Co9JzPwnwE74F3k3R18w45L8E5Dt5it2PIA 9/rb6GDMrPAPsa1X82qNLzcboosMj9vT7Ofg8M+x2/VYt6u4xX4glZRa vyjTs6qGfzFS+Z44zrIP4CtNa0fL0AwJ/wsK4YJSX0xZ6/CJI/NNXeSg G5vfMw04kUDI9d9oO9jkAhYDmTaOI6C5nVTymAs3uje8/mZlo/pUSllB 0DkpTgd5PTAwQsA1
+257 3 8 AwEAAbtbsu+wl3fbEDbgvMgJ1BDXeAk5t6BU7B1KGVvc13zMJtjvarxp WWrAb7fmWERX8kJawa3KpYty0EDFQ24nfQyhwEOld442ca89u4/ZU3jP uwKohbGn55vIQ7KjCIrDNvRYjGVn2MNwZnL4WVVclJYsa1cGwVQ9t575 I5yvU+5g+jVcjUsGwFn6xmuJC0Z33ABKsC8b1cjfcnvE4wP3CrXOlDQ+ Er4uPUtMKrmG+Sj1Bm5U+do78mwEXOlTz/sNj8tkpL0pYB2j+XNaDVrO 0uS1beekejnttMsC4SHMCsiwMvigW2O54ByhzijU2v87d7U9WEMVfPvO 6gearg1fo/1Tk4buzPZcS+W9WZgFAt7kT1ois3x0GGT7J55zENB9IZU4 tMmWdYbZJOZsdAzmshuWJIUlTZdNN5671Rhc6P9TWnMlvb9iNT7G3DZ9 PhBw1OF/OmmXobv3Wygbt5+u7q2CPPzwU4WTGpVNtr3Iry2SPW3XVpJS M3+nW7LfxxtWZJlN4MDQYC5IptU+A5EO80/yE38E9tKGDWC1+Nw59QLa BE7ff+Jkq7OMjTHjFhYivkJSv+8LEbkGjWoaMAS2CT3/ZVMYLiQn8THi ZUBF+aOzJMw0EGPag1Qq4vfGgFkQMM3hOaH6bWN1yCvmspuiwLYkNCZZ /l8ThKc57bGYy9TX
+256 3 8 AwEAAeTLQxrID2eS743HVStjROHT7LfydvDYj4Y4CIh5usKF0NwWLKMY ybNcXbDXWWJvMKrIDcb/Z1XRe61xriy9LRGOnneAnOF5viESZL+WwR69 y4TpdyTOCebrWI/teGGTSao0YY6ueAZ9RKLiDuNXrm9wozEQj6iCRrbo U/wbPBEHYDvXaj1jxwJYipsop1nYvlHOofhUaJtMJrWI4mb9+INdrzvH MgzdhOj5xYbVQMjIDFzR9wwHSAVV89tr8lLbeTAyXdhUMi9JwqbLp4uZ atzHdXglHlW/7UCCgab0lAVxLJjv8X6QbZyWIYnMfsIIYAUlCzvYCk3v 3fljogGkAmM=
+256 3 8 AwEAAeXw6/FhGTrrrowgiK/4mWwP76JM/Np6FwHmQ+Qn73wdOWT0d189 gkNeVNTVyQNU+q+MBnJ01OFbgQqsey6pd2OjAD5i8pDqZz/0zS7z70Uv eScfqLv08n8qoZOsv7QhytVE9qGqfXgeeGPUctOeqfdlJN/NXnU7crBT 6AxLg1FChV1m3dOcJwCW72XPi/Mbo9dsJSgbWZmVGCILBEQjVa13K4lt roHibq/1kUvmei0TLpzDpwu9OG3m50tAa+JTyId2vqopbCqEk2rQspQ/ TbewkG2jF7TRvDZbRje8Z2eA2HLW3ClrlIFBcyv/0NqrFH9CJCR2g2Mu a77etVdrgUE=
 </code>
 
 2. Add ''dnssec-validation yes;'' to ''/etc/bind/named.conf.options'', replacing ''dnssec-validation auto;'' if it already exists:
