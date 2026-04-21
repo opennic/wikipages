@@ -1,3 +1,5 @@
 My name is Joel.
 
+You can reach me via [[mailto:z.opennic@joestr.priv.at|e-mail]]. :)
+
 I am operating a Tier 2 server in Austria.
