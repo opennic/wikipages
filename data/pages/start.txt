@@ -69,9 +69,10 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
   * [[http://grep.geek/|grep.geek]]
   * [[http://search.libre:45260/|search.libre]]
 ==== Compatible Webspace-Providers ====
-  * [[https://uberspace.de/|Uberspace.de]]
   * [[https://pages.github.com|GitHub Pages]]
-  * [[webspaceproviders|Full list...]]
+  * [[https://www.keyweb.de/en/keyhelp/keyhelp/|KeyHelp]]
+  * [[https://uberspace.de/|Uberspace.de]]
+  * [[/webspaceproviders|Full list …]]
 
 ==== TLS Certificates ====
 The current and planned deployment of TLS certificates for services running on OpenNIC domains is described and worked out [[opennic/TLS|here]].
