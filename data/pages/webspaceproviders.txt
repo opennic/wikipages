@@ -8,6 +8,7 @@
 ^ Provider ^ Tested/Revisited ^ Notes ^
 | [[https://freehostingeu.com|FreeHostingEU.com]] | [[http://fheutest.cyb|2018-04-18]] by [[/user/albino]] | Requires a workaround, therefore not recommendable; see [[http://fheutest.cyb|here]] for details. |
 | [[https://pages.github.com|GitHub Pages]] | [[http://albino.cyb|2018-04-10]] by [[/user/albino]] | See 'A record' instructions [[https://help.github.com/articles/setting-up-an-apex-domain/ | here]]. More info [[http://albino.cyb|here]]. |
+| [[https://www.keyweb.de/en/keyhelp/keyhelp/|KeyHelp]] | [[https://joel.libre|2026-04-21]] by [[/user/joestr1]] | Tested with A records.
 | [[https://surge.sh|Surge]] | [[http://ankit.libre|2018-04-18]] by [[/user/ankit]] | Requires Nodejs based command line client to upload static websites.[[https://surge.sh/help|Documentation]]. See [[http://ankit.libre]]. |
 | [[https://uberspace.de/|Uberspace.de]] | [[https://wiki.uberspace.de/webserver:https#technische_hintergruende|2024-10-06]] by [[/user/shroom]] | Website and panel are only available in German language \\ [[https://uberspace.de/prices|Flexible pricing, minimum price is €1 per month]] \\ OpenNIC sites can't use standard ports (80/443) due to https certificate issues but can use [[https://manual.uberspace.de/basics-ports/|non-reserved ports]]. |
 | [[https://vercel.com/|Vercel]] | [[http://reddium.oss/|2021-12-14]] by [[/user/luqaska]] | Works fine with the CNAME and A records, but I didn't try with NS ones |
