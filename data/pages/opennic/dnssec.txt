@@ -39,9 +39,8 @@ trust-anchors {
 dig DNSKEY . @195.201.99.61 +short
 </code>
 > <code>
-257 3 8 AwEAAbtbsu+wl3fbEDbgvMgJ1BDXeAk5t6BU7B1KGVvc13zMJtjvarxp WWrAb7fmWERX8kJawa3KpYty0EDFQ24nfQyhwEOld442ca89u4/ZU3jP uwKohbGn55vIQ7KjCIrDNvRYjGVn2MNwZnL4WVVclJYsa1cGwVQ9t575 I5yvU+5g+jVcjUsGwFn6xmuJC0Z33ABKsC8b1cjfcnvE4wP3CrXOlDQ+ Er4uPUtMKrmG+Sj1Bm5U+do78mwEXOlTz/sNj8tkpL0pYB2j+XNaDVrO 0uS1beekejnttMsC4SHMCsiwMvigW2O54ByhzijU2v87d7U9WEMVfPvO 6gearg1fo/1Tk4buzPZcS+W9WZgFAt7kT1ois3x0GGT7J55zENB9IZU4 tMmWdYbZJOZsdAzmshuWJIUlTZdNN5671Rhc6P9TWnMlvb9iNT7G3DZ9 PhBw1OF/OmmXobv3Wygbt5+u7q2CPPzwU4WTGpVNtr3Iry2SPW3XVpJS M3+nW7LfxxtWZJlN4MDQYC5IptU+A5EO80/yE38E9tKGDWC1+Nw59QLa BE7ff+Jkq7OMjTHjFhYivkJSv+8LEbkGjWoaMAS2CT3/ZVMYLiQn8THi ZUBF+aOzJMw0EGPag1Qq4vfGgFkQMM3hOaH6bWN1yCvmspuiwLYkNCZZ /l8ThKc57bGYy9TX
-256 3 8 AwEAAeTLQxrID2eS743HVStjROHT7LfydvDYj4Y4CIh5usKF0NwWLKMY ybNcXbDXWWJvMKrIDcb/Z1XRe61xriy9LRGOnneAnOF5viESZL+WwR69 y4TpdyTOCebrWI/teGGTSao0YY6ueAZ9RKLiDuNXrm9wozEQj6iCRrbo U/wbPBEHYDvXaj1jxwJYipsop1nYvlHOofhUaJtMJrWI4mb9+INdrzvH MgzdhOj5xYbVQMjIDFzR9wwHSAVV89tr8lLbeTAyXdhUMi9JwqbLp4uZ atzHdXglHlW/7UCCgab0lAVxLJjv8X6QbZyWIYnMfsIIYAUlCzvYCk3v 3fljogGkAmM=
 256 3 8 AwEAAeXw6/FhGTrrrowgiK/4mWwP76JM/Np6FwHmQ+Qn73wdOWT0d189 gkNeVNTVyQNU+q+MBnJ01OFbgQqsey6pd2OjAD5i8pDqZz/0zS7z70Uv eScfqLv08n8qoZOsv7QhytVE9qGqfXgeeGPUctOeqfdlJN/NXnU7crBT 6AxLg1FChV1m3dOcJwCW72XPi/Mbo9dsJSgbWZmVGCILBEQjVa13K4lt roHibq/1kUvmei0TLpzDpwu9OG3m50tAa+JTyId2vqopbCqEk2rQspQ/ TbewkG2jF7TRvDZbRje8Z2eA2HLW3ClrlIFBcyv/0NqrFH9CJCR2g2Mu a77etVdrgUE=
+257 3 8 AwEAAbtbsu+wl3fbEDbgvMgJ1BDXeAk5t6BU7B1KGVvc13zMJtjvarxp WWrAb7fmWERX8kJawa3KpYty0EDFQ24nfQyhwEOld442ca89u4/ZU3jP uwKohbGn55vIQ7KjCIrDNvRYjGVn2MNwZnL4WVVclJYsa1cGwVQ9t575 I5yvU+5g+jVcjUsGwFn6xmuJC0Z33ABKsC8b1cjfcnvE4wP3CrXOlDQ+ Er4uPUtMKrmG+Sj1Bm5U+do78mwEXOlTz/sNj8tkpL0pYB2j+XNaDVrO 0uS1beekejnttMsC4SHMCsiwMvigW2O54ByhzijU2v87d7U9WEMVfPvO 6gearg1fo/1Tk4buzPZcS+W9WZgFAt7kT1ois3x0GGT7J55zENB9IZU4 tMmWdYbZJOZsdAzmshuWJIUlTZdNN5671Rhc6P9TWnMlvb9iNT7G3DZ9 PhBw1OF/OmmXobv3Wygbt5+u7q2CPPzwU4WTGpVNtr3Iry2SPW3XVpJS M3+nW7LfxxtWZJlN4MDQYC5IptU+A5EO80/yE38E9tKGDWC1+Nw59QLa BE7ff+Jkq7OMjTHjFhYivkJSv+8LEbkGjWoaMAS2CT3/ZVMYLiQn8THi ZUBF+aOzJMw0EGPag1Qq4vfGgFkQMM3hOaH6bWN1yCvmspuiwLYkNCZZ /l8ThKc57bGYy9TX
 </code>
 
 2. Add ''dnssec-validation yes;'' to ''/etc/bind/named.conf.options'', replacing ''dnssec-validation auto;'' if it already exists:
@@ -76,7 +75,7 @@ include "/etc/bind/named.conf.opennic";
 Create ''/etc/powerdns/config.lua'' with the following content:
 
 <file lua config.lua>
-addDS('.', "47089 8 2 6D81988A88BD546E429486CC0A97518F90F9FC6C6C6B7E5BC2788469858C7324")
+addDS('.', "60820 8 2 A01E33C8E95712E555FA9E6C09921830F3A518E36C5998F4ADBF5570AA86B538")
 </file>
 
 Add the following lines to ''/etc/powerdns/recursor.conf'':
@@ -96,8 +95,7 @@ Add the following lines to your ''dnsmasq.conf'' file:
 
 <code>
 dnssec
-trust-anchor=.,33750,8,2,ced6135102155c7a9c8a99945068ee0dcc21e2f70a5046b4e50ae98ad3ba9de2
-trust-anchor=.,47089,8,2,6d81988a88bd546e429486cc0a97518f90f9fc6c6c6b7e5bc2788469858c7324
+trust-anchor=.,60820,8,2,A01E33C8E95712E555FA9E6C09921830F3A518E36C5998F4ADBF5570AA86B538
 </code>
 
 ==== Unbound ====
@@ -121,77 +119,81 @@ auto-trust-anchor-file: "opennic.dnskey"
 Queries to a DNSSEC validating server with the DO flag set should return an answer with the ''ad'' (Authenticated Data) flag set in the header:
 
 <code>
-root@nyc3:~# dig pir.org +dnssec +multi @167.99.153.82
+root@korridor:~# dig pir.org +dnssec +multi @46.102.156.180
 
-; <<>> DiG 9.10.3-P4-Ubuntu <<>> pir.org +dnssec +multi @167.99.153.82
+; <<>> DiG 9.20.21-1~deb13u1-Debian <<>> pir.org +dnssec +multi @46.102.156.180
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3924
-;; flags: qr rd ra ad; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22885
+;; flags: qr rd ra ad; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags: do; udp: 4096
+; EDNS: version: 0, flags: do; udp: 65494
+; COOKIE: 641abe6c795889030100000069f2434e9c48eb04cf870e99 (good)
 ;; QUESTION SECTION:
-;pir.org.               IN A
+;pir.org.		IN A
 
 ;; ANSWER SECTION:
-pir.org.                241 IN A 97.107.141.235
-pir.org.                241 IN RRSIG A 5 2 300 (
-                                20180430162216 20180416162216 30795 pir.org.
-                                Al1OgzE47XZcgl2t9IysJROLgM2Z2/f7tJ6LDuDdTHOD
-                                itT5fJZjRypVJLfZrU73ng5J86dJCFEREk2k6I1lhmno
-                                lJHKH1/MZK+LRDjZWJWqo3F5+MJTFv8W0F8zXWu4AMJE
-                                RYyyhX4fl+mL02T4VLGqpjrH2AX9tH8wRT9TuJE= )
+pir.org.		299 IN A 141.193.213.20
+pir.org.		299 IN A 141.193.213.21
+pir.org.		299 IN RRSIG A 5 2 300 (
+				20260512204001 20260428204001 42621 pir.org.
+				FnApY4+UtOcd3InElCd8W9+q8koa8vw5qt68ZETv+EcN
+				ZnTzUm2qW+9AqE7R0YfS2ZBs9c9fn65CuFsRr+ynEyI/
+				OyekiTuLZhmgZjLR5bSlUi1dGPA0G1EUdBrZvaxJGb3z
+				UYcjWXGoi6zhX7vqzuFwJ0VN7B0aYhQnyvU+0v8= )
 
-;; Query time: 4 msec
-;; SERVER: 167.99.153.82#53(167.99.153.82)
-;; WHEN: Mon Apr 16 19:46:05 UTC 2018
-;; MSG SIZE  rcvd: 21
+;; Query time: 735 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Wed Apr 29 19:43:42 CEST 2026
+;; MSG SIZE  rcvd: 263
 </code>
 
 On these servers, attempting to resolve a domain with broken DNSSEC validation should return a ''SERVFAIL'', without any DNS data:
 
 <code>
-root@nyc3:~# dig dnssec-failed.org +dnssec +multi @167.99.153.82
+root@korridor:~# dig dnssec-failed.org +dnssec +multi @46.102.156.180
 
-; <<>> DiG 9.10.3-P4-Ubuntu <<>> dnssec-failed.org +dnssec +multi @167.99.153.82
+; <<>> DiG 9.20.21-1~deb13u1-Debian <<>> dnssec-failed.org +dnssec +multi
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 10808
+;; ->>HEADER<<- opcode: QUERY, status: SERVFAIL, id: 36673
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags: do; udp: 4096
+; EDNS: version: 0, flags: do; udp: 65494
+; COOKIE: dd4e47674a1c21f40100000069f24389ffb0f254c877cb94 (good)
 ;; QUESTION SECTION:
-;dnssec-failed.org.     IN A
+;dnssec-failed.org.	IN A
 
-;; Query time: 1029 msec
-;; SERVER: 167.99.153.82#53(167.99.153.82)
-;; WHEN: Mon Apr 16 19:48:04 UTC 2018
-;; MSG SIZE  rcvd: 46
+;; Query time: 1555 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Wed Apr 29 19:44:41 CEST 2026
+;; MSG SIZE  rcvd: 74
 </code>
 
 And finally, requesting a domain with no DNSSEC data should just return a normal response, with no ''ad'' flag:
 
 <code>
-root@nyc3:~# dig google.com +dnssec +multi @167.99.153.82
+root@korridor:~# dig google.com +dnssec +multi @46.102.156.180
 
-; <<>> DiG 9.10.3-P4-Ubuntu <<>> google.com +dnssec +multi @167.99.153.82
+; <<>> DiG 9.20.21-1~deb13u1-Debian <<>> google.com +dnssec +multi @46.102.156.180
 ;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51509
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15620
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
 ;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags: do; udp: 4096
+; EDNS: version: 0, flags: do; udp: 1232
+; COOKIE: 19b6c445faa8b2370100000069f2442a56ff0168fadfb041 (good)
 ;; QUESTION SECTION:
-;google.com.            IN A
+;google.com.		IN A
 
 ;; ANSWER SECTION:
-google.com.             40 IN A 172.217.12.206
+google.com.		285 IN A 142.251.38.142
 
-;; Query time: 2 msec
-;; SERVER: 167.99.153.82#53(167.99.153.82)
-;; WHEN: Mon Apr 16 19:48:56 UTC 2018
-;; MSG SIZE  rcvd: 55
+;; Query time: 3 msec
+;; SERVER: 46.102.156.180#53(46.102.156.180) (UDP)
+;; WHEN: Wed Apr 29 19:47:22 CEST 2026
+;; MSG SIZE  rcvd: 83
 </code>
