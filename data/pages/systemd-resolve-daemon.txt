@@ -30,17 +30,13 @@ For DNSSEC to work we have to give systemd a little help, since the root zone is
 
   mkdir -p /etc/dnssec-trust-anchors.d/
   
-Get the DNSKEY for the "." root zone:
+Get the DS record for the DNSKEY for the "." root zone:
 
-  dig DNSKEY . @127.0.0.1 +noall +answer
-  
-Now we have to input those key into a new file:
+  dig @195.201.99.61 . DNSKEY | dnssec-dsfromkey -2 -f - . > /etc/dnssec-trust-anchors.d/opennic.positive
 
-  touch /etc/dnssec-trust-anchors.d/opennic.positive
-  
-Insert the queries DNSKEYs into this file.
+Now restart the resolver:
 
-After that remove the TTL (Time-To-Live) value between ''.'' and ''IN''.
+  systemctl restart systemd-resolved.service
 
 After this, we can resolve a query with DNSSEC and DoT:
 
