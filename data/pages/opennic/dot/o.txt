@@ -57,7 +57,6 @@ Domains may also be revoked:
 
 All abuse and trademark infringements reports should be sent to:
 
-  * abuse@opennic.o
   * dot-o.abuse@emreoyun.tr
 
 If operators found a website that violates the Turkish Laws, the registrar be also reported to Turkish authorities upon discovery, reports, or official requests.
@@ -72,5 +71,4 @@ This charter may be updated at any time by the operators. Continued use of a .o 
   * TLD Registration Website (Secure): https://dot-o.eo.gl/
   * Operator Website: https://emreoyun.tr
   * Operator Contact: admin@emreoyun.tr
-  * Abuse Contact (OpenNIC): abuse@opennic.o
   * Abuse Contact (ICANN): dot-o.abuse@emreoyun.tr
