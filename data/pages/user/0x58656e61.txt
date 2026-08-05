@@ -1,4 +1,4 @@
 I have a DNS server at 50.117.253.214 (kneesurgery.moe) which is located in Yellowknife, NT, Canada.
-
+It's the same as a Tier 2 server but I don't know if I'm allowed to call it that since it isn't in the servers list due to Yellowknife being an invalid location or something.\\ 
 [[https://discord.dog/1279381033112043552|Discord]]\\
 [[sysadmin@kneesurgery.moe|Email]]\\
