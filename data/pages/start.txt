@@ -61,7 +61,6 @@ Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the sear
 
 ==== OpenNIC Search Engines ====
   * [[http://grep.geek/|grep.geek]]
-  * [[http://search.libre:45260/|search.libre]]
 ==== Compatible Webspace-Providers ====
   * [[https://pages.github.com|GitHub Pages]]
   * [[https://www.keyweb.de/en/keyhelp/keyhelp/|KeyHelp]]
