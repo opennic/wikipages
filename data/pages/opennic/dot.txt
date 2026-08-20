@@ -40,12 +40,12 @@ These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, i
 ^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
 ^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
 ^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns8.nic.fur\\ ns10.nic.fur\\ ns12.nic.fur\\ ns13.nic.fur\\ ns15.nic.fur | 188.40.132.212\\ 178.63.26.172\\ 178.63.145.230\\ 151.236.24.112\\ 2a01:4f8:221:1e01::1f:12 | ''Operational'' |
-^ [[http://intranic.ti/|IntraNIC]] | .ku                               | Kurdish people | ns1.namora.ti | 107.150.55.38	 | New Server |
-^ :::                                     | .te                               | Tamil Eelam | ns1.namora.ti | 107.150.55.38	 | New Server |
-^ :::                                     | .ti                               | Tibet | ns1.namora.ti | 107.150.55.38	 | New Server |
-^ :::                                     | .uu                               | Uyghur people | ns1.namora.ti | 107.150.55.38	 | New Server |
-^ :::                                     | .ko                               | Internal use | ns1.namora.ti | 107.150.55.38	 | New Server |
-^ :::                                     | .rm                               | Internal use | ns1.namora.ti | 107.150.55.38	 | New Server |
+^ [[http://intranic.ti/|IntraNIC]] | .ku                               | Kurdish people | ku.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .ti                               | Tibet | ti.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .uu                               | Uyghur people | uu.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .ko                               | Internal use | ko.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .rm                               | Internal use | rm.tld.root | 107.150.55.38	 | New Server |
 For a complete zone set ready to use visit: [[opennic:t2slaved|Slaved Zones with BIND9]]
 
 ===== Technical Zones =====
