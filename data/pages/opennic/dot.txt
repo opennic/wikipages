@@ -43,10 +43,10 @@ For a complete zone set ready to use visit: [[opennic:t2slaved|Slaved Zones with
 These top level domains are not currently peered through OpenNIC.
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
-^ [[http://intranic.an/|IntraNIC]]                                     | .2s                               | Two-spirit people | 2s.tld.root | 107.150.55.38	 | ''Peer Pending'' |
-^ :::                                     | .an                               | Aboriginal People | an.tld.root | 107.150.55.38	 | ''Peer Pending'' |
-^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | ''Peer Pending'' |
-^ :::                                     | .ind                               | Indigenous People | ind.tld.root | 107.150.55.38	 | ''Peer Pending'' |
+^ [[http://intranic.an/|IntraNIC]]                                     | .2s                               | Two-spirit people | 2s.tld.root | 138.197.141.248	 | ''Peer Pending'' |
+^ :::                                     | .an                               | Aboriginal People | an.tld.root | 138.197.141.248	 | ''Peer Pending'' |
+^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 138.197.141.248	 | ''Peer Pending'' |
+^ :::                                     | .ind                               | Indigenous People | ind.tld.root | 138.197.141.248	 | ''Peer Pending'' |
 ===== Technical Zones =====
 
 These zones are also served on the OpenNIC network for technical and organizational purposes.
