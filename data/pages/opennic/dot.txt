@@ -36,12 +36,6 @@ These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, i
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
 ^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns8.nic.fur\\ ns10.nic.fur\\ ns12.nic.fur\\ ns13.nic.fur\\ ns15.nic.fur | 188.40.132.212\\ 178.63.26.172\\ 178.63.145.230\\ 151.236.24.112\\ 2a01:4f8:221:1e01::1f:12 | ''Operational'' |
-^ [[http://intranic.an/|IntraNIC]] | .ku                               | Kurdish people | ku.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .ti                               | Tibet | ti.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .uu                               | Uyghur people | uu.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .an                               | Internal use | an.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | Coming Soon! |
 For a complete zone set ready to use visit: [[opennic:t2slaved|Slaved Zones with BIND9]]
 
 ===== :!:PENDING Peered Top-Level Domains =====
