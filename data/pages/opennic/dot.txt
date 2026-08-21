@@ -35,10 +35,6 @@ FIXME We're still missing some information! If you can fill in some of the blank
 These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, instead you should contact their respective organization.
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
-^ [[https://emercoin.com/|Emercoin]]      | .bazar                            | Free marketplace | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
-^ :::                                     | .coin                             | Digital currency and commerce websites | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
-^ :::                                     | .emc                              | Websites associated with the Emercoin project | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
-^ :::                                     | .lib                              | From Words Library and Liberty - that is, knowledge and freedom | seed1.emercoin.com\\ seed2.emercoin.com | 208.87.98.37\\ 172.106.88.242 | ''NXDOMAIN'', ConfigErr\\ :!: |
 ^ [[http://www.nic.fur/|FurNIC]]          | .fur((Originally an OpenNIC TLD)) | Furries, Furry Fandom and other Anthropormorphic interest websites | ns8.nic.fur\\ ns10.nic.fur\\ ns12.nic.fur\\ ns13.nic.fur\\ ns15.nic.fur | 188.40.132.212\\ 178.63.26.172\\ 178.63.145.230\\ 151.236.24.112\\ 2a01:4f8:221:1e01::1f:12 | ''Operational'' |
 ^ [[http://intranic.an/|IntraNIC]] | .ku                               | Kurdish people | ku.tld.root | 107.150.55.38	 | New Server |
 ^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | New Server |
@@ -48,6 +44,14 @@ These TLDs are accessible from the OpenNIC network but not managed by OpenNIC, i
 ^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | Coming Soon! |
 For a complete zone set ready to use visit: [[opennic:t2slaved|Slaved Zones with BIND9]]
 
+===== :!:PENDING Peered Top-Level Domains =====
+^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
+^ [[http://intranic.an/|IntraNIC]] | .ku                               | Kurdish people | ku.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .ti                               | Tibet | ti.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .uu                               | Uyghur people | uu.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .an                               | Internal use | an.tld.root | 107.150.55.38	 | New Server |
+^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | Coming Soon! |
 ===== Technical Zones =====
 
 These zones are also served on the OpenNIC network for technical and organizational purposes.
