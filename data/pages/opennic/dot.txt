@@ -44,11 +44,11 @@ These top level domains are not currently peered through OpenNIC.
 
 ^ Authority                               ^ Name                              ^ Intended Usage ^ Master/Name Servers ^ IP-Address ^ Notice ^
 ^ [[http://intranic.an/|IntraNIC]] | .ku                               | Kurdish people | ku.tld.root | 107.150.55.38	 | ''Peer Pending'' |
-^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .ti                               | Tibet | ti.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .uu                               | Uyghur people | uu.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .an                               | Internal use | an.tld.root | 107.150.55.38	 | New Server |
-^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | Coming Soon! |
+^ :::                                     | .te                               | Tamil Eelam | te.tld.root | 107.150.55.38	 | ''Peer Pending'' |
+^ :::                                     | .ti                               | Tibet | ti.tld.root | 107.150.55.38	 | ''Peer Pending'' |
+^ :::                                     | .uu                               | Uyghur people | uu.tld.root | 107.150.55.38	 | ''Peer Pending'' |
+^ :::                                     | .an                               | Internal use | an.tld.root | 107.150.55.38	 | ''Peer Pending'' |
+^ :::                                     | .fn                               | First Nations/Native Americans | fn.tld.root | 107.150.55.38	 | ''Peer Pending'' |
 ===== Technical Zones =====
 
 These zones are also served on the OpenNIC network for technical and organizational purposes.
