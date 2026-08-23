@@ -181,7 +181,7 @@ zone "gopher" IN{
 zone "micro" IN{
 	type slave;
 	file "/etc/bind/zones/slaves/micro.zone";
-	masters { 128.177.28.254; };
+	masters { 103.249.236.158; };
 	allow-transfer { any; };
 	notify no;
 };
