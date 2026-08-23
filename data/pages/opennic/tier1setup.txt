@@ -209,6 +209,17 @@ zone "pirate" IN{
 };
 </code>
 
+== o ==
+<code>
+zone "o" IN{
+	type slave;
+	file "/etc/bind/zones/slaves/o.zone";
+	masters { 153.56.130.67; };
+	allow-transfer { any; };
+	notify no;
+};
+</code>
+
 == oz ==
 <code>
 zone "oz" IN{
