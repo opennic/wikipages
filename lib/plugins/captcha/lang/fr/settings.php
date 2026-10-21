@@ -3,12 +3,12 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Schplurtz le Déboulonné <Schplurtz@laposte.net>
  * @author LORTET <v@lortet.fr>
  * @author Emmanuel Dupin <seedfloyd@gmail.com>
  * @author bruno <bruno@ninesys.fr>
  * @author Fabrice Dejaigher <fabrice@chtiland.com>
  * @author Pietroni <pietroni@informatique.univ-paris-diderot.fr>
- * @author Schplurtz le Déboulonné <Schplurtz@laposte.net>
  */
 $lang['mode']                  = 'Quel type de CAPTCHA utiliser ?';
 $lang['mode_o_js']             = 'Texte (prérempli avec JavaScript)';
@@ -30,3 +30,5 @@ $lang['loginprotect']          = 'Exiger un CAPTCHA pour se connecter ?';
 $lang['loginprotect_o_0']      = 'Jamais';
 $lang['loginprotect_o_1']      = 'Toujours';
 $lang['loginprotect_o_2']      = 'Après 3 tentatives infructueuses';
+$lang['logindenial']           = 'Utiliser un temps d\'attente exponentiel en cas d\'échec. Valeur en secondes. Doublé à chaque tentative. 0 pour désactiver.';
+$lang['logindenial_max']       = 'Temps d\'attente maximal en secondes';

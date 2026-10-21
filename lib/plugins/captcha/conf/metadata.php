@@ -27,3 +27,5 @@ $meta['width'] = array('numeric', '_pattern' => '/[0-9]+/');
 $meta['height'] = array('numeric', '_pattern' => '/[0-9]+/');
 $meta['question'] = array('string');
 $meta['answer'] = array('string');
+$meta['logindenial'] = array('numeric', '_min' => 0, '_max' => 60);
+$meta['logindenial_max'] = array('numeric', '_min' => 0, '_max' => 86400);

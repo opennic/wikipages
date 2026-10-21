@@ -26,7 +26,7 @@ class FileCookie
     public function __construct($ident, $rand)
     {
         global $conf;
-        $this->path = $conf['tmpdir'] . '/captcha/' . date('Y-m-d') . '/' . md5($ident . $rand) . '.cookie';
+        $this->path = $conf['tmpdir'] . '/captcha/cookie/' . date('Y-m-d') . '/' . md5($ident . $rand) . '.cookie';
         io_makeFileDir($this->path);
     }
 
@@ -58,12 +58,14 @@ class FileCookie
     public static function clean()
     {
         global $conf;
-        $path = $conf['tmpdir'] . '/captcha/';
+        $path = $conf['tmpdir'] . '/captcha/cookie/';
         $dirs = glob("$path/*", GLOB_ONLYDIR);
+        if (!$dirs) return;
+
         $today = date('Y-m-d');
         foreach ($dirs as $dir) {
             if (basename($dir) === $today) continue;
-            if (!preg_match('/\/captcha\//', $dir)) continue; // safety net
+            if (!preg_match('/\/captcha\/cookie\//', $dir)) continue; // safety net
             io_rmdir($dir, true);
         }
     }

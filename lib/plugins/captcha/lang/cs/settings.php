@@ -28,3 +28,5 @@ $lang['loginprotect']          = 'Vyžadovat pro přihlášení CAPTCHA?';
 $lang['loginprotect_o_0']      = 'Nikdy';
 $lang['loginprotect_o_1']      = 'Vždy';
 $lang['loginprotect_o_2']      = 'Po 3 neúspěšných pokusech';
+$lang['logindenial']           = 'Použít exponenciální čekací dobu pro neúspěšná přihlášení. Základní čekací doba v sekundách (s každým neúspěchem se zdvojnásobí). Pro vypnutí nastavte 0.';
+$lang['logindenial_max']       = 'Maximální čekací doba v sekundách';

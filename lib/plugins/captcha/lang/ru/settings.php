@@ -3,9 +3,9 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Aleksandr Selivanov <alexgearbox@yandex.ru>
  * @author Iliya <iliyabylich04@gmail.com>
  * @author Yuriy Skalko <yuriy.skalko@gmail.com>
- * @author Aleksandr Selivanov <alexgearbox@gmail.com>
  * @author Ilya Rozhkov <impeck@ya.ru>
  * @author Shpak Andrey <ashpak@ashpak.ru>
  */
@@ -29,3 +29,5 @@ $lang['loginprotect']          = 'Требовать ввод CAPTCHA для в�
 $lang['loginprotect_o_0']      = 'Ничего';
 $lang['loginprotect_o_1']      = 'Всегда';
 $lang['loginprotect_o_2']      = 'После 3-х неверных попыток';
+$lang['logindenial']           = 'Использовать экспоненциальное время ожидания для неудачных попыток входа в систему. Базовое время ожидания в секундах (0 (ноль) для отключения; удваивается с каждой неудачей).';
+$lang['logindenial_max']       = 'Макс. время ожидания в секундах';

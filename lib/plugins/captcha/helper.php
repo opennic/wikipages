@@ -71,9 +71,9 @@ class helper_plugin_captcha extends Plugin
         $txtlen = $this->getConf('lettercount');
 
         $out = '';
-        $out .= '<div id="plugin__captcha_wrapper">';
+        $out .= '<div class="plugin__captcha_wrapper">';
         $out .= '<input type="hidden" name="' . $this->field_sec . '" value="' . hsc($secret) . '" />';
-        $out .= '<label for="plugin__captcha">' . $text . '</label> ';
+        $out .= '<span class="plugin__captcha_label">' . $text . '</span> ';
 
         switch ($this->getConf('mode')) {
             case 'math':
@@ -81,7 +81,7 @@ class helper_plugin_captcha extends Plugin
                 $out .= $this->obfuscateText($code);
                 break;
             case 'js':
-                $out .= sprintf('<span id="plugin__captcha_code">%s</span>', $this->obfuscateText($code));
+                $out .= sprintf('<span class="plugin__captcha_code">%s</span>', $this->obfuscateText($code));
                 break;
             case 'svg':
                 $out .= $this->htmlSvg($code);

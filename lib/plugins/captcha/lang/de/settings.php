@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Seb <test@example.com>
  * @author AloisT <tiefenbrunner@outlook.com>
  * @author Andreas Gohr <andi@splitbrain.org>
  * @author Thomas Templin <templin@gnuwhv.de>
@@ -29,3 +30,5 @@ $lang['loginprotect']          = 'Benötigt es ein CAPTCHA um sich einzuloggen?'
 $lang['loginprotect_o_0']      = 'Niemals';
 $lang['loginprotect_o_1']      = 'Immer';
 $lang['loginprotect_o_2']      = 'Nach 3 Fehlversuchen';
+$lang['logindenial']           = 'Exponentielle Wartezeit für falsche Logins verwenden. Basiswartezeit in Sekunden (0 zum Deaktivieren, verdoppelt sich mit jeden Fehlversuch)';
+$lang['logindenial_max']       = 'Maximale Wartezeit in Sekunden';

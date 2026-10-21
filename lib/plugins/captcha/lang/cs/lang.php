@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Martin Růžička <martinr@post.cz>
  * @author Antonin Komenda <gree@grees.net>
  * @author Jaroslav Lichtblau <jlichtblau@seznam.cz>
  */
@@ -11,3 +12,7 @@ $lang['fillcaptcha']           = 'Vyplňte, prosím, všechna písmena v poli, a
 $lang['fillmath']              = 'Prosíme, vyřešte nasledující rovnici, abyste dokázali, že nejste robot.';
 $lang['soundlink']             = 'Pokud nedokážete přečíst písmena na obrázku, stáhněte si tento .wav soubor, kde je text přečtený.';
 $lang['honeypot']              = 'Ponechte prosím toto pole prázdné:';
+$lang['logindenial']           = 'Příliš mnoho neúspěšných pokusů. Před dalším pokusem počkejte prosím %s';
+$lang['timeout_hours']         = '%d hod.';
+$lang['timeout_minutes']       = '%d min.';
+$lang['timeout_seconds']       = '%d sek.';

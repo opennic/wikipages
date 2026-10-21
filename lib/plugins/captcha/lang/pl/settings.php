@@ -3,6 +3,7 @@
 /**
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
+ * @author Piotr Strebski <piotr@strebski.pl>
  * @author Marek Adamski <fevbew@wp.pl>
  * @author ExtremeOnly <krekora31@gmail.com>
  * @author Paweł Jan Czochański <czochanski@gmail.com>
@@ -28,3 +29,5 @@ $lang['loginprotect']          = 'Wymagaj CAPTCHA, aby się zalogować?';
 $lang['loginprotect_o_0']      = 'Nigdy';
 $lang['loginprotect_o_1']      = 'Zawsze';
 $lang['loginprotect_o_2']      = 'Po 3 nieudanych próbach';
+$lang['logindenial']           = 'Użyj wykładniczego czasu oczekiwania z powodu nieudanego logowania. Podstawowy czas oczekiwania w sekundach (0, aby wyłączyć; podwaja się po każdym błędzie)';
+$lang['logindenial_max']       = 'Maksymalny czas oczekiwania w sekundach';
