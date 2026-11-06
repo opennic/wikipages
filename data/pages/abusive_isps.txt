@@ -23,10 +23,14 @@ Now try again on the alternative port:
 
 You can see that the SOA returned is OpenNIC's, meaning no hijacking has taken place on the alternative port. If this result differs from the previous result or the first result times out with ''connection timed out; no servers could be reached'', then your ISP is likely to be hijacking DNS.
 
-==== What can I do about it? ====
-Please refer to the answer of [[https://unix.stackexchange.com/questions/144482/|this question]] to use iptables to reroute your DNS traffic to an alternative port on an OpenNIC server. Remember to change the server's IP address.
+Note that absence of evidence != evidence of absence, meaning that even if this test shows no tampering happening, it's still possible for your ISP to be tampering with DNS requests and responses in a transparent manner.
 
-You could also contact your ISP to complain about their use of DNS hijacking.
+==== What can I do about it? ====
+Multiple workarounds exist for different cases:
+
+  * Use DoH, DoT, or DNSCrypt where possible. Either of those will transmit your data fully encrypted without your ISP being able to see or tamper with your DNS traffic.
+  * [[https://unix.stackexchange.com/questions/144482/|Redirect outbound DNS traffic]] to an alternative port supported by the selected DNS resolver.
+  * Contact your ISP to complain about their use of DNS hijacking.
 
 ==== Abusive ISP List ====
 This list is very incomplete. If you are certain that your ISP is hijacking DNS or is involved in other questionable practices, please add it below.
