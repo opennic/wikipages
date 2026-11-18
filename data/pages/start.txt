@@ -41,7 +41,7 @@ We are always looking for more wizards on other platforms - if interested in dev
 
 ==== Web Proxies ====
 Want to see what OpenNIC is all about? Access via an OpenNIC proxy (use the search engines below to start your journey).
-  * http://proxy.opennic.org/
+  * http://proxy.opennic.org/ (now not available)
 
 ==== Infrastructure Setup ====
 
